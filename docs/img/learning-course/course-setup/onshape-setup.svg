@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" rx="8" fill="#1a1c2e" stroke="#54AC58" stroke-width="2"/>
+  <rect x="20" y="20" width="760" height="410" rx="4" fill="none" stroke="#54AC58" stroke-width="1" stroke-dasharray="8,4" opacity="0.4"/>
+  <text x="400" y="210" text-anchor="middle" fill="#54AC58" font-family="Inter, sans-serif" font-size="24" font-weight="600">Onshape Setup Screenshot</text>
+  <text x="400" y="250" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="14">Replace with actual image</text>
+</svg>

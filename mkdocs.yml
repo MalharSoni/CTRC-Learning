@@ -1,0 +1,173 @@
+site_name: CTRC Learning
+site_description: A comprehensive learning guide and technical reference for FRC Design using Onshape — by Caution Tape Robotics Club.
+site_url: ""
+repo_name: ctrc/CTRC-Learning
+repo_url: https://github.com/ctrc/CTRC-Learning
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.footer
+    - navigation.prune
+    - navigation.top
+    - navigation.path
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - content.action.edit
+    - content.action.view
+    - header.autohide
+  language: en
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to Light Mode
+      primary: green
+      accent: white
+    - media: "(prefers-color-scheme: dark)"
+      scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Switch to Dark Mode
+      primary: green
+      accent: black
+
+  icon:
+    logo: fontawesome/solid/book-open
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: material/information
+      tip: fontawesome/solid/fire
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: "#"
+
+nav:
+  - Home: index.md
+  - Website Feature Guide: website-feature-guide.md
+  - V5 Foundation Program:
+    - foundation/index.md
+    - Unit 1 - Drivetrain Mastery:
+      - foundation/unit1/index.md
+      - "1.1 Safety & Common Parts": foundation/unit1/safety-and-parts.md
+      - "1.2 Structure & Bracing": foundation/unit1/structure-and-bracing.md
+      - "1.3 Gear Ratios & Friction": foundation/unit1/gear-ratios-and-friction.md
+      - "1.4 Drivetrain Build": foundation/unit1/drivetrain-build.md
+      - "🏆 Free Spin Challenge": foundation/unit1/challenge-free-spin.md
+      - "🏆 Obstacle Course Time Trial": foundation/unit1/challenge-time-trial.md
+    - Unit 2 - Programming (LemLib):
+      - foundation/unit2/index.md
+      - "2.1 VSCode & LemLib Setup": foundation/unit2/vscode-lemlib-setup.md
+      - "2.2 Drive Config & Controls": foundation/unit2/drive-config-controls.md
+      - "2.3 Motorized Shovel": foundation/unit2/motorized-shovel.md
+      - "2.4 PID Tuning": foundation/unit2/pid-tuning.md
+      - "2.5 Autonomous Routing": foundation/unit2/autonomous-routing.md
+      - "🏆 Pickup Relay": foundation/unit2/challenge-pickup-relay.md
+      - "🏆 Auton Showdown": foundation/unit2/challenge-auton-showdown.md
+    - Unit 3 - Onshape CAD:
+      - foundation/unit3/index.md
+      - "3.1 Interface & Sketching": foundation/unit3/interface-and-sketching.md
+      - "3.2 3D Modeling & Printing": foundation/unit3/3d-modeling-and-printing.md
+      - "3.3 Advanced Features": foundation/unit3/advanced-features.md
+      - "3.4 VEX Parts & Mates": foundation/unit3/vex-parts-and-mates.md
+      - "3.5 Render & Present": foundation/unit3/render-and-present.md
+      - "🎨 3D Print Keychain": foundation/unit3/challenge-3d-print-keychain.md
+      - "🏆 CAD Battle": foundation/unit3/challenge-cad-battle.md
+      - "🏆 CAD vs Real": foundation/unit3/challenge-cad-vs-real.md
+    - Unit 4 - Mechanisms:
+      - foundation/unit4/index.md
+      - "4.1 Wedge & Pushing": foundation/unit4/wedge-and-pushing.md
+      - "4.2 Intakes": foundation/unit4/intakes.md
+      - "4.3 Linear Slider": foundation/unit4/linear-slider.md
+      - "🏆 Sumo Bots": foundation/unit4/challenge-sumo-bots.md
+      - "🏆 Sack Attack": foundation/unit4/challenge-sack-attack.md
+      - "🏆 Ball Sweep": foundation/unit4/challenge-ball-sweep.md
+    - Unit 5 - Competition Ready:
+      - foundation/unit5/index.md
+      - "5.1 Robot Integration": foundation/unit5/robot-integration.md
+      - "5.2 Autonomous Strategy": foundation/unit5/autonomous-strategy.md
+      - "5.3 Match Strategy": foundation/unit5/match-strategy.md
+      - "🏆 2v2 Matches": foundation/unit5/challenge-2v2-matches.md
+  - Projects:
+    - projects/index.md
+    - BattleBots:
+      - projects/battlebots/index.md
+      - "Rules & Overview": projects/battlebots/rules-and-overview.md
+      - "Robot Archetypes": projects/battlebots/robot-archetypes.md
+      - "Weapon Design": projects/battlebots/weapon-design.md
+      - "Drivetrain (N20 Motors)": projects/battlebots/drivetrain-design.md
+      - "CAD Your Bot": projects/battlebots/cad-your-bot.md
+      - "3D Printing Guide": projects/battlebots/3d-printing-guide.md
+      - "Malenki Nano Setup": projects/battlebots/malenki-nano-setup.md
+      - "Assembly & Wiring": projects/battlebots/assembly-and-wiring.md
+      - "Testing & Safety": projects/battlebots/testing-and-safety.md
+  - Design Handbook:
+    - design-handbook/index.md
+    - Structure:
+      - design-handbook/structure/index.md
+    - Power Transmission:
+      - design-handbook/power-transmission/index.md
+    - Mechanisms:
+      - design-handbook/mechanisms/index.md
+  - Mechanism Examples:
+    - mechanism-examples/index.md
+  - Best Practices:
+    - best-practices/index.md
+  - Other Resources:
+    - resources/index.md
+  - Educator's Guide:
+    - educators-guide/index.md
+  - Changelog: changelog.md
+  - Contribution:
+    - contribution/index.md
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - md_in_html
+  - def_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - glightbox:
+      background: none
+      width: 90%
+      shadow: true
+  - search
