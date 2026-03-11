@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block announce %}
+  <a href="http://localhost:3000" style="display:flex;align-items:center;justify-content:center;gap:6px;">
+    Parent? Visit the CTRC Information Hub &rarr;
+  </a>
+{% endblock %}
 {% block htmltitle %}
   {% if page.is_homepage %}
     <title>{{ config.site_name }}</title>

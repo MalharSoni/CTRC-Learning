@@ -1,5 +1,33 @@
+# MkDocs
 site/
 __pycache__/
 *.pyc
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug
+npm-debug.log*
+
+# OS
 .DS_Store
 .playwright-mcp/
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
