@@ -58,7 +58,7 @@ Whether you're picking up a wrench for the first time or already know your way a
 
     Lesson plans, pacing guides, and assessment rubrics for mentors and coaches running a VEX V5 robotics program.
 
-    [:octicons-arrow-right-24: Educator's Guide](educators/index.md)
+    [:octicons-arrow-right-24: Educator's Guide](educators-guide/index.md)
 
 </div>
 

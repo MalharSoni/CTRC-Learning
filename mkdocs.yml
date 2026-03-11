@@ -1,8 +1,8 @@
 site_name: CTRC Learning
-site_description: A comprehensive learning guide and technical reference for FRC Design using Onshape — by Caution Tape Robotics Club.
-site_url: ""
-repo_name: ctrc/CTRC-Learning
-repo_url: https://github.com/ctrc/CTRC-Learning
+site_description: CTRC Learning Hub — VEX V5 Foundation Program & BattleBots curriculum by Caution Tape Robotics Club.
+site_url: https://malharsoni.github.io/CTRC-Learning/
+repo_name: MalharSoni/CTRC-Learning
+repo_url: https://github.com/MalharSoni/CTRC-Learning
 edit_uri: edit/main/docs/
 
 theme:
