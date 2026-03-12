@@ -93,8 +93,8 @@ PETG sits between PLA+ and TPU. It's stiffer than TPU but tougher than PLA+. It 
 | **Nozzle temp** | 210-220°C | Check your filament's recommendation |
 | **Bed temp** | 60°C | Standard for PLA+ |
 
-!!! example "🖥️ Screenshot Needed"
-    Slicer showing PLA+ structural: 0.2mm layer, 40-60% infill, 4 walls, gyroid
+!!! note "Print Settings"
+    Teacher will provide optimized slicer profiles for all materials. Focus on understanding layer orientation principles below.
 
 ### PLA+ Settings (Weapon — Maximum Strength)
 
@@ -107,8 +107,8 @@ PETG sits between PLA+ and TPU. It's stiffer than TPU but tougher than PLA+. It 
 | **Top/bottom layers** | 6+ | |
 | **Print speed** | 40-50mm/s | Slower for better adhesion |
 
-!!! example "🖥️ Screenshot Needed"
-    Slicer showing PLA+ weapon: 80-100% infill, 5+ walls
+!!! note "Print Settings"
+    Teacher will provide optimized weapon slicer profiles. Your focus: export STLs and understand orientation.
 
 ### TPU 95A Settings
 
@@ -122,14 +122,27 @@ PETG sits between PLA+ and TPU. It's stiffer than TPU but tougher than PLA+. It 
 | **Nozzle temp** | 220-235°C | Higher than PLA |
 | **Bed temp** | 50-60°C | |
 
-!!! example "🖥️ Screenshot Needed"
-    Slicer showing TPU 95A: 20-30mm/s speed, minimal retraction
+!!! note "Print Settings"
+    Teacher will provide TPU slicer profiles. TPU is challenging to print - focus on correct part orientation.
 
 ---
 
 ## Print Orientation
 
 **Layer orientation is the single most important decision after material choice.** 3D printed parts are weakest in the Z direction (between layers). A part that's strong when hit from the side might snap like a cracker when hit from the top.
+
+### Understanding Layer Lines and Strength
+
+When 3D printing, each layer bonds to the previous layer. This bond is the weakest point. Look at this comparison:
+
+![Print Orientation Comparison](images/printing/hole-orientation-comparison.jpg)
+
+**Key Principle:** Orient parts so that impact forces don't try to pull layers apart.
+
+- **Red (BAD):** Horizontal holes have weak points where layer lines concentrate stress around the hole
+- **Green (GOOD):** Vertical holes have solid lines of plastic surrounding them, distributing forces evenly
+
+This is especially critical for motor mounts, weapon axles, and chassis stress points.
 
 ### Rules of Thumb
 
@@ -142,17 +155,13 @@ PETG sits between PLA+ and TPU. It's stiffer than TPU but tougher than PLA+. It 
 | Part | Best Orientation | Why |
 |------|-----------------|-----|
 | **Weapon bar** | Flat on bed, widest face down | Impact is on the edges, layers stack through the thickness |
-
-!!! example "📐 Diagram Needed"
-    Correct vs incorrect print orientation for weapon bar, layer lines and impact arrows
-
 | **Chassis** | Open-side up (like a tray) | Forces are mostly horizontal, layers stack vertically |
-
-!!! example "📐 Diagram Needed"
-    Correct chassis print orientation: open-side up, tray-like, with layer direction
-
 | **Armor panel** | Flat on bed | Impact hits the face, layers are perpendicular to the hit |
 | **Wheel** | Axle vertical (hub side down) | Rotational forces are distributed across layers |
+| **Motor mounts** | Holes running vertically through layers | See diagram above - vertical holes are strongest |
+
+!!! tip "Quick Check Before Printing"
+    Before you slice a part, ask yourself: "If this part gets hit, which direction will the force come from?" Then orient the part so layers are stacked in that direction, not perpendicular to it.
 
 ---
 

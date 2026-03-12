@@ -1,6 +1,9 @@
-# Assembly & Wiring
+# Chassis Assembly
 
-You have your printed parts, your motors, your Malenki Nano, your battery, and your weapon. Now it's time to put it all together. This guide walks you through the full assembly process step by step.
+You have your printed parts, motors, and hardware. Now it's time to put the mechanical chassis together. This guide walks you through the assembly process step by step.
+
+!!! note "Electronics & Wiring"
+    Your teacher will handle all electronics, wiring, and safety setup. This module focuses only on mechanical assembly - screws, motors, wheels, and chassis structure.
 
 Take your time. A robot assembled carefully fights better than one thrown together in a rush.
 
@@ -21,24 +24,15 @@ Gather everything on a clean, well-lit workspace:
 | 3D printed armor panels (if applicable) | As designed | |
 | N20 3V 300RPM motors | 2 | Tested, working |
 | Brushless weapon motor | 1 | Tested, working |
-| Malenki Nano | 1 | Bound to transmitter, failsafe set |
-| LiPo battery | 1 | Fully charged |
-| Weapon lock mechanism | 1 | Pin, clip, or bracket |
-| Wires (28-30 AWG) | Assorted | Pre-cut to length |
-| Velcro strips | As needed | For Nano and battery |
-| Screws / fasteners | As designed | |
-| Zip ties | Several | For wire management |
-| Heat shrink tubing | Assorted sizes | For solder joints |
+| Screws / fasteners | As designed | M2, M3, or designed size |
+| CA glue (super glue) | 1 bottle | For securing motors |
+| Velcro strips (optional) | As needed | For removable panels |
 
 ### Tools Needed
 
-- Soldering iron + solder
-- Wire strippers
-- Flush cutters / side cutters
 - Small Phillips and hex screwdrivers
 - CA glue (super glue)
-- Tweezers
-- Multimeter (for checking connections)
+- Fine sandpaper (if motor fit needs adjustment)
 - Scale (for final weight check)
 
 ---
@@ -52,8 +46,8 @@ Gather everything on a clean, well-lit workspace:
 5. If the fit is too tight, lightly sand the pocket with fine sandpaper
 6. Verify: the motor shaft spins freely and extends past the chassis wall
 
-!!! example "📷 Photo Needed"
-    N20 motor press-fit into 3D printed chassis motor pocket
+![Motor Installation](images/assembly/motor-mounts-shaping.jpg)
+*Motor mount being shaped to fit the motor profile securely*
 
 !!! warning "Don't Force It"
     If the motor won't go in, do NOT hammer it or use pliers. You'll damage the internal gears. Sand the pocket wider or reprint with 0.1mm more tolerance.
@@ -68,8 +62,8 @@ Gather everything on a clean, well-lit workspace:
 4. If using a set screw, tighten it gently against the flat of the D-shaft
 5. Test: spin each wheel by hand — it should spin freely without wobbling
 
-!!! example "📷 Photo Needed"
-    Wheel on N20 D-shaft showing D-flat alignment
+!!! tip "D-Shaft Alignment"
+    The D-flat on the motor shaft must line up with the D-flat in the wheel hub. If it doesn't align, the wheel will slip when the motor spins.
 
 ### If the Wheel Slips on the Shaft
 
@@ -79,19 +73,47 @@ Gather everything on a clean, well-lit workspace:
 
 ---
 
-## Step 3: Mount the Malenki Nano
+---
 
-1. Position the Malenki Nano in its designated mounting area inside the chassis
-2. **Velcro method** (recommended): Stick a small piece of adhesive velcro on the Nano's bottom and a matching piece on the chassis platform. Press together firmly.
-3. **Printed mount method**: If you designed clip-in tabs or screw posts, secure the Nano using those features
-4. Ensure the Nano is:
-    - Away from the weapon motor (to avoid interference)
-    - Accessible for future debugging (you may need to re-solder or re-bind)
-    - Oriented so wire routing is clean
+## Step 3: Assemble Chassis Frame
+
+Now that motors and wheels are installed, it's time to close up the chassis.
+
+![Frame Assembly](images/assembly/frame-assembly.jpg)
+*Aluminum frame with motors and wheels mounted - your 3D printed chassis follows the same concept*
+
+1. **If your design has multiple chassis pieces** (top plate, bottom plate, side panels):
+   - Align all screw holes
+   - Insert screws and tighten gradually (don't fully tighten one screw before starting the others)
+   - Work in a cross pattern to distribute pressure evenly
+
+2. **If your design is a single-piece chassis:**
+   - Skip to armor installation below
+
+3. **Check alignment:**
+   - Wheels should spin freely without rubbing
+   - Motors should be secure and not wobbling
+   - No parts should be cracked or stressed
 
 ---
 
-## Step 4: Mount the Brushless Weapon Motor
+## Step 4: Add Armor (If Applicable)
+
+If your design includes armor panels or bumpers, install them now.
+
+![Armor Installation](images/assembly/armor-plates-cutting.jpg)
+*Cutting and shaping armor panels from UHMW plastic or thin aluminum*
+
+![Side Bumpers](images/assembly/side-bumpers-assembly.jpg)
+*Side bumpers being attached with fasteners to protect wheels*
+
+1. Position armor panels according to your CAD design
+2. Secure with screws, CA glue, or velcro (depending on design)
+3. Armor should cover vulnerable areas: wheels, electronics space, battery
+
+---
+
+## Step 5: Mount the Weapon Motor (Teacher Assisted)
 
 1. Position the weapon motor in its mount at the front of the chassis
 2. Secure using screws through the motor's mounting holes into the chassis (or printed clamp)
@@ -103,109 +125,41 @@ Gather everything on a clean, well-lit workspace:
 
 ---
 
-## Step 5: Attach the Weapon
+## Step 6: Install Weapon (For Spinner Designs)
 
-1. Slide the **TPU weapon hub** onto the weapon motor shaft
-2. Secure the hub to the shaft (set screw, press fit, or D-shaft engagement)
-3. Attach the **weapon** (blade/drum/bar) to the hub
-4. The weapon should be secured to the hub via screws, press fit, or keyed interface
-5. Spin the weapon by hand — it should spin smoothly without wobbling or rubbing on anything
+!!! warning "Teacher Supervised"
+    Weapon installation should be done with teacher supervision for safety.
 
-!!! example "📷 Photo Needed"
-    TPU weapon hub on motor shaft with weapon attached
+If your robot has an active weapon (spinner, hammer, etc.):
 
-### Checking Weapon Clearance
+![Weapon Motor Mount](images/assembly/weapon-motor-mount.jpg)
+*Brushless motor mounted for weapon drive*
 
-- Spin the weapon a full 360 degrees by hand
-- Watch for contact with the chassis, wires, or any other component
-- There should be at least **2mm clearance** between the weapon and everything else
-- If the weapon rubs, adjust the mounting or modify the chassis
+![Weapon Assembly](images/assembly/weapon-blade-assembly.jpg)
+*Aluminum weapon bar - your 3D printed weapon follows similar principles*
 
-!!! example "📷 Photo Needed"
-    2mm+ clearance between spinning weapon and chassis
+![Shaft Collars](images/assembly/shaft-collars-installation.jpg)
+*Shaft collars securing rotating weapon on axle - prevents lateral movement*
 
----
+1. Mount weapon motor securely to chassis (teacher will assist)
+2. Attach TPU weapon hub to motor shaft
+3. Secure weapon to hub
+4. Add shaft collars or retention hardware
+5. **Check clearance:** Spin weapon by hand - minimum 2mm clearance from all parts
 
-## Step 6: Wire Everything
+### For Wedge/Pusher Designs
 
-Follow the wiring diagram from the [Malenki Nano Setup](malenki-nano-setup.md) module.
+![Wedge Installation](images/assembly/wedge-installation.jpg)
+*UHMW wedge plate being installed as front defensive element*
 
-### Wiring Order
-
-Wire in this specific order to keep things organized:
-
-1. **Drive motors first**: Solder wires from each N20 motor to the Nano's Motor A and Motor B outputs
-2. **Weapon motor second**: Connect the three brushless phase wires from the weapon motor to the Nano's brushless output
-3. **Battery last**: Prepare the battery connection but **do NOT plug it in yet**
-
-### Wire Routing
-
-- Route wires **along the chassis walls**, not across open space
-- Keep wires **away from the weapon's path of rotation**
-- Use **zip ties** every 20-30mm to secure wires to the chassis
-- Leave a **service loop** (small slack) at each connection point for strain relief
-- Cross-check: with the weapon spinning, would any wire get caught? If yes, re-route it.
-
-!!! example "📷 Photo Needed"
-    Wiring routed along chassis walls, zip-tied, away from weapon path
-
-### Soldering Tips
-
-- **Tin both surfaces** before joining (add solder to the wire and the pad separately, then join)
-- Use **heat shrink tubing** on every solder joint — bare joints short-circuit
-- Keep solder joints **small and clean** — big blobs add weight and can break loose
-- Pull-test every joint after soldering — a gentle tug should not break it
+If you're building a wedge bot:
+1. Attach front wedge plate according to CAD design
+2. Ensure wedge is rigid and won't flex during pushing matches
+3. Angle should be low enough to get under opponents
 
 ---
 
-## Step 7: Install the Battery
-
-1. Place the LiPo battery into its compartment in the chassis
-2. Secure with a **velcro strap** over the top, or a printed retaining clip
-3. The battery must be held firmly — it should NOT move or rattle during driving
-4. Connect the battery lead to the Nano's power input (**do NOT plug in yet** — save this for testing)
-5. Ensure the battery connector is accessible for easy removal (you'll need to unplug for charging)
-
----
-
-## Step 8: Install the Weapon Lock
-
-Every robot must have a **physical weapon lock** — a mechanism that prevents the weapon from spinning when outside the arena.
-
-### Common Weapon Lock Designs
-
-- **Pin lock**: A pin or bolt that slides through the chassis and weapon, physically preventing rotation
-- **Zip-tie lock**: A zip tie looped through the weapon and chassis (simple but effective)
-- **Printed bracket**: A removable bracket that blocks weapon rotation
-
-!!! example "📐 Diagram Needed"
-    Three weapon lock designs: pin lock, zip-tie lock, printed bracket — cross-sections
-
-### Weapon Lock Requirements
-
-- Must be **easy to insert** from outside the robot (you add it before removing the robot from the arena)
-- Must be **easy to remove** (you remove it after placing the robot in the arena, before the fight starts)
-- Must **reliably prevent weapon rotation** — test it by trying to spin the weapon with the lock in place
-- Should be **visible** — paint it bright red or orange so referees can confirm it's installed
-
----
-
-## Step 9: Close Up and Add Armor
-
-1. If your design has a top plate or lid, attach it now
-2. Install any armor panels (TPU or PETG) on exposed sides
-3. Secure armor with screws, clips, or press-fit tabs
-4. Ensure all panels are firmly attached — loose armor becomes projectiles in the arena
-
-!!! example "📷 Photo Needed"
-    Fully assembled robot, top plate removed, all internal wiring visible
-
-!!! example "📷 Photo Needed"
-    Fully assembled robot with armor on, ready to fight
-
----
-
-## Step 10: Final Weight Check
+## Step 7: Final Weight Check (Mechanical Assembly Complete)
 
 **Put your completed robot on a scale.**
 
@@ -231,24 +185,19 @@ Every robot must have a **physical weapon lock** — a mechanism that prevents t
 
 ---
 
-## Assembly Checklist
+## Assembly Checklist (Mechanical Only)
 
 - [ ] N20 drive motors installed (left and right)
 - [ ] Wheels attached and spinning freely
-- [ ] Malenki Nano mounted securely
-- [ ] Weapon motor mounted securely
-- [ ] Weapon attached to motor via hub, spinning freely with 2mm+ clearance
-- [ ] All wiring soldered, heat-shrunk, and zip-tied
-- [ ] Wires routed away from weapon path
-- [ ] Battery installed and secured
-- [ ] Battery connector accessible for removal
-- [ ] Weapon lock installed and functional
-- [ ] Armor panels attached
+- [ ] Chassis frame assembled (all screws tightened)
+- [ ] Armor panels attached (if applicable)
+- [ ] Weapon motor mounted (if applicable)
+- [ ] Weapon spinning freely with 2mm+ clearance
 - [ ] Total weight checked (~500g target)
-- [ ] Photos taken of completed assembly
+- [ ] Photos taken of completed chassis assembly
 
 ---
 
 ## Next Step
 
-Your robot is built — but you're not done yet. Before you fight, you must test everything safely. Head to **[Testing & Safety](testing-and-safety.md)** for the testing protocol and safety procedures.
+Your mechanical chassis is complete! Give it to your teacher for electronics installation, wiring, and safety testing. Once electronics are installed, you'll be ready to test and compete!

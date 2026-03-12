@@ -125,9 +125,10 @@ nav:
       - "Drivetrain (N20 Motors)": projects/battlebots/drivetrain-design.md
       - "CAD Your Bot": projects/battlebots/cad-your-bot.md
       - "3D Printing Guide": projects/battlebots/3d-printing-guide.md
-      - "Malenki Nano Setup": projects/battlebots/malenki-nano-setup.md
-      - "Assembly & Wiring": projects/battlebots/assembly-and-wiring.md
-      - "Testing & Safety": projects/battlebots/testing-and-safety.md
+      - "Chassis Assembly": projects/battlebots/assembly-and-wiring.md
+      # Teacher-only modules (not in student navigation):
+      # - "Malenki Nano Setup": projects/battlebots/malenki-nano-setup.md
+      # - "Testing & Safety": projects/battlebots/testing-and-safety.md
   - Design Handbook:
     - design-handbook/index.md
     - Structure:
