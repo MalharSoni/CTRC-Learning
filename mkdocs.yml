@@ -48,8 +48,9 @@ theme:
       primary: green
       accent: black
 
+  logo: assets/ctrc-logo-white.png
+  favicon: assets/ctrc-logo-white.png
   icon:
-    logo: fontawesome/solid/book-open
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -70,8 +71,7 @@ extra:
       link: "#"
 
 nav:
-  - Home: index.md
-  - Website Feature Guide: website-feature-guide.md
+  - Home: index.html
   - V5 Foundation Program:
     - foundation/index.md
     - Unit 1 - Drivetrain Mastery:
@@ -138,13 +138,6 @@ nav:
       - design-handbook/mechanisms/index.md
   - Mechanism Examples:
     - mechanism-examples/index.md
-  - Best Practices:
-    - best-practices/index.md
-  - Other Resources:
-    - resources/index.md
-  - Educator's Guide:
-    - educators-guide/index.md
-  - Changelog: changelog.md
   - Contribution:
     - contribution/index.md
 
@@ -164,6 +157,9 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/flip-button.css
+  - stylesheets/lesson-enhancements.css
+  - https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css
 
 plugins:
   - glightbox:
