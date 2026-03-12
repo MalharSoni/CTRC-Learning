@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tubelight Glow Effect - Visual Reference</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0a;
+      color: white;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #737373;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: #171717;
+      border: 1px solid #404040;
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .card h2 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card p {
+      font-size: 11.5px;
+      color: #737373;
+      margin-bottom: 20px;
+    }
+
+    .glow-demo {
+      background: #0a0a0a;
+      border-radius: 6px;
+      padding: 40px 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100px;
+    }
+
+    .glow-bar {
+      position: relative;
+      width: 70%;
+      height: 2px;
+    }
+
+    /* Default Green Glow */
+    .green-glow {
+      background: #00ff00;
+      border-radius: 999px;
+    }
+
+    .green-glow .layer-1 {
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      background: rgba(0, 255, 0, 0.3);
+      border-radius: 999px;
+      filter: blur(16px);
+      top: -16px;
+    }
+
+    .green-glow .layer-2 {
+      position: absolute;
+      width: 100%;
+      height: 24px;
+      background: rgba(0, 255, 0, 0.4);
+      border-radius: 999px;
+      filter: blur(12px);
+      top: -12px;
+    }
+
+    .green-glow .layer-3 {
+      position: absolute;
+      width: 100%;
+      height: 16px;
+      background: rgba(0, 255, 0, 0.6);
+      border-radius: 999px;
+      filter: blur(4px);
+      top: -8px;
+    }
+
+    /* Blue Variant */
+    .blue-glow {
+      background: #3B82F6;
+      border-radius: 999px;
+    }
+
+    .blue-glow .layer-1 {
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      background: rgba(59, 130, 246, 0.3);
+      border-radius: 999px;
+      filter: blur(16px);
+      top: -16px;
+    }
+
+    .blue-glow .layer-2 {
+      position: absolute;
+      width: 100%;
+      height: 24px;
+      background: rgba(59, 130, 246, 0.4);
+      border-radius: 999px;
+      filter: blur(12px);
+      top: -12px;
+    }
+
+    .blue-glow .layer-3 {
+      position: absolute;
+      width: 100%;
+      height: 16px;
+      background: rgba(59, 130, 246, 0.6);
+      border-radius: 999px;
+      filter: blur(4px);
+      top: -8px;
+    }
+
+    /* Purple Variant */
+    .purple-glow {
+      background: #A855F7;
+      border-radius: 999px;
+    }
+
+    .purple-glow .layer-1 {
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      background: rgba(168, 85, 247, 0.3);
+      border-radius: 999px;
+      filter: blur(16px);
+      top: -16px;
+    }
+
+    .purple-glow .layer-2 {
+      position: absolute;
+      width: 100%;
+      height: 24px;
+      background: rgba(168, 85, 247, 0.4);
+      border-radius: 999px;
+      filter: blur(12px);
+      top: -12px;
+    }
+
+    .purple-glow .layer-3 {
+      position: absolute;
+      width: 100%;
+      height: 16px;
+      background: rgba(168, 85, 247, 0.6);
+      border-radius: 999px;
+      filter: blur(4px);
+      top: -8px;
+    }
+
+    /* Subtle Glow */
+    .subtle-glow {
+      background: #00ff00;
+      border-radius: 999px;
+    }
+
+    .subtle-glow .layer-1 {
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      background: rgba(0, 255, 0, 0.15);
+      border-radius: 999px;
+      filter: blur(16px);
+      top: -16px;
+    }
+
+    .subtle-glow .layer-2 {
+      position: absolute;
+      width: 100%;
+      height: 24px;
+      background: rgba(0, 255, 0, 0.25);
+      border-radius: 999px;
+      filter: blur(12px);
+      top: -12px;
+    }
+
+    .subtle-glow .layer-3 {
+      position: absolute;
+      width: 100%;
+      height: 16px;
+      background: rgba(0, 255, 0, 0.4);
+      border-radius: 999px;
+      filter: blur(4px);
+      top: -8px;
+    }
+
+    /* Intense Glow */
+    .intense-glow {
+      background: #00ff00;
+      border-radius: 999px;
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    .intense-glow .layer-1 {
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      background: rgba(0, 255, 0, 0.5);
+      border-radius: 999px;
+      filter: blur(16px);
+      top: -16px;
+    }
+
+    .intense-glow .layer-2 {
+      position: absolute;
+      width: 100%;
+      height: 24px;
+      background: rgba(0, 255, 0, 0.7);
+      border-radius: 999px;
+      filter: blur(12px);
+      top: -12px;
+    }
+
+    .intense-glow .layer-3 {
+      position: absolute;
+      width: 100%;
+      height: 16px;
+      background: rgba(0, 255, 0, 0.9);
+      border-radius: 999px;
+      filter: blur(4px);
+      top: -8px;
+    }
+
+    /* Thin Glow */
+    .thin-glow {
+      background: #00ff00;
+      border-radius: 999px;
+      height: 1px;
+    }
+
+    .thin-glow .layer-1 {
+      position: absolute;
+      width: 100%;
+      height: 24px;
+      background: rgba(0, 255, 0, 0.3);
+      border-radius: 999px;
+      filter: blur(12px);
+      top: -12px;
+    }
+
+    .thin-glow .layer-2 {
+      position: absolute;
+      width: 100%;
+      height: 16px;
+      background: rgba(0, 255, 0, 0.4);
+      border-radius: 999px;
+      filter: blur(4px);
+      top: -8px;
+    }
+
+    .code-block {
+      background: #0a0a0a;
+      border: 1px solid #262626;
+      border-radius: 6px;
+      padding: 16px;
+      margin-top: 16px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 11px;
+      color: #A3A3A3;
+      overflow-x: auto;
+    }
+
+    .code-block code {
+      display: block;
+      white-space: pre;
+    }
+
+    .layer-label {
+      font-size: 10px;
+      color: #737373;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    .color-value {
+      font-family: 'Monaco', monospace;
+      font-size: 11px;
+      color: #00ff00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tubelight Glow Effect - Visual Reference</h1>
+    <p class="subtitle">Live preview of all glow variations</p>
+
+    <!-- Color Variants -->
+    <div class="grid">
+      <div class="card">
+        <h2>Green Glow (Default)</h2>
+        <p>CTRC Learning brand color</p>
+        <div class="glow-demo">
+          <div class="glow-bar green-glow">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+            <div class="layer-3"></div>
+          </div>
+        </div>
+        <p class="layer-label">Color: <span class="color-value">#00ff00</span></p>
+      </div>
+
+      <div class="card">
+        <h2>Blue Glow</h2>
+        <p>Tech/corporate variant</p>
+        <div class="glow-demo">
+          <div class="glow-bar blue-glow">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+            <div class="layer-3"></div>
+          </div>
+        </div>
+        <p class="layer-label">Color: <span class="color-value">#3B82F6</span></p>
+      </div>
+
+      <div class="card">
+        <h2>Purple Glow</h2>
+        <p>Creative/premium variant</p>
+        <div class="glow-demo">
+          <div class="glow-bar purple-glow">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+            <div class="layer-3"></div>
+          </div>
+        </div>
+        <p class="layer-label">Color: <span class="color-value">#A855F7</span></p>
+      </div>
+    </div>
+
+    <!-- Intensity Variants -->
+    <h1 style="margin-top: 40px;">Intensity Variations</h1>
+    <p class="subtitle">Same color, different opacity levels</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Subtle Glow</h2>
+        <p>Professional, minimal</p>
+        <div class="glow-demo">
+          <div class="glow-bar subtle-glow">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+            <div class="layer-3"></div>
+          </div>
+        </div>
+        <p class="layer-label">Opacity: <span class="color-value">15%, 25%, 40%</span></p>
+      </div>
+
+      <div class="card">
+        <h2>Medium Glow</h2>
+        <p>Default intensity</p>
+        <div class="glow-demo">
+          <div class="glow-bar green-glow">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+            <div class="layer-3"></div>
+          </div>
+        </div>
+        <p class="layer-label">Opacity: <span class="color-value">30%, 40%, 60%</span></p>
+      </div>
+
+      <div class="card">
+        <h2>Intense Glow</h2>
+        <p>Dramatic, attention-grabbing</p>
+        <div class="glow-demo">
+          <div class="glow-bar intense-glow">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+            <div class="layer-3"></div>
+          </div>
+        </div>
+        <p class="layer-label">Opacity: <span class="color-value">50%, 70%, 90%</span></p>
+      </div>
+    </div>
+
+    <!-- Size Variants -->
+    <h1 style="margin-top: 40px;">Size Variations</h1>
+    <p class="subtitle">Different bar thickness</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Thin Bar</h2>
+        <p>Minimal, elegant</p>
+        <div class="glow-demo">
+          <div class="glow-bar thin-glow">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+          </div>
+        </div>
+        <p class="layer-label">Height: <span class="color-value">1px</span></p>
+      </div>
+
+      <div class="card">
+        <h2>Default Bar</h2>
+        <p>Standard thickness</p>
+        <div class="glow-demo">
+          <div class="glow-bar green-glow">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+            <div class="layer-3"></div>
+          </div>
+        </div>
+        <p class="layer-label">Height: <span class="color-value">2px</span></p>
+      </div>
+
+      <div class="card">
+        <h2>Thick Bar</h2>
+        <p>Bold, prominent</p>
+        <div class="glow-demo">
+          <div class="glow-bar green-glow" style="height: 3px;">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+            <div class="layer-3"></div>
+          </div>
+        </div>
+        <p class="layer-label">Height: <span class="color-value">3px</span></p>
+      </div>
+    </div>
+
+    <!-- Code Reference -->
+    <h1 style="margin-top: 40px;">Code Reference</h1>
+    <p class="subtitle">Copy-paste ready snippets</p>
+
+    <div class="card">
+      <h2>Default Green Glow (Active State)</h2>
+      <p>Complete layer structure</p>
+      <div class="code-block">
+        <code>&lt;div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-[70%] h-[2px] bg-[#00ff00] rounded-full"&gt;
+  {/* Layer 1: Outer glow */}
+  &lt;div className="absolute w-full h-8 bg-[#00ff00]/30 rounded-full blur-lg -top-4" /&gt;
+
+  {/* Layer 2: Mid glow */}
+  &lt;div className="absolute w-full h-6 bg-[#00ff00]/40 rounded-full blur-md -top-3" /&gt;
+
+  {/* Layer 3: Inner glow */}
+  &lt;div className="absolute w-full h-4 bg-[#00ff00]/60 rounded-full blur-sm -top-2" /&gt;
+
+  {/* Layer 4: Core bar */}
+  &lt;div className="absolute w-full h-2 bg-[#00ff00] rounded-full" /&gt;
+&lt;/div&gt;</code>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 24px;">
+      <h2>Hover State</h2>
+      <p>Subtle preview glow</p>
+      <div class="code-block">
+        <code>&lt;div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-[70%] h-[2px] bg-[#00ff00]/40 rounded-full"&gt;
+  &lt;div className="absolute w-full h-4 bg-[#00ff00]/20 rounded-full blur-sm -top-2" /&gt;
+&lt;/div&gt;</code>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

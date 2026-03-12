@@ -1,0 +1,49 @@
+<svg width="1200" height="250" viewBox="0 0 1200 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .logo-text-main {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-weight: 900;
+        fill: #2B2B2B;
+        font-style: italic;
+      }
+      .logo-text-sub {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-weight: 900;
+        fill: #2B2B2B;
+        font-style: italic;
+      }
+      .logo-hex { fill: #2B2B2B; }
+      .logo-stripe { fill: #F5D000; }
+      .logo-stripes-pattern { fill: #F5D000; }
+    </style>
+  </defs>
+
+  <!-- Hexagon Icon -->
+  <g transform="translate(20, 50)">
+    <!-- Outer hexagon -->
+    <path class="logo-hex" d="M 50 0 L 150 0 L 200 87 L 150 174 L 50 174 L 0 87 Z" stroke-width="20" stroke="#2B2B2B" fill="none"/>
+    <!-- Inner yellow stripes -->
+    <rect class="logo-stripe" x="70" y="50" width="25" height="74" rx="2"/>
+    <rect class="logo-stripe" x="105" y="50" width="25" height="74" rx="2"/>
+  </g>
+
+  <!-- CAUTION TAPE text -->
+  <text x="250" y="120" class="logo-text-main" font-size="120" letter-spacing="-2">CAUTION TAPE</text>
+
+  <!-- ROBOTICS text -->
+  <text x="250" y="195" class="logo-text-sub" font-size="68" letter-spacing="0">ROBOTICS</text>
+
+  <!-- Yellow caution stripes pattern -->
+  <g transform="translate(810, 165)">
+    <rect class="logo-stripes-pattern" x="0" y="0" width="30" height="50" transform="skewX(-15)"/>
+    <rect class="logo-stripes-pattern" x="45" y="0" width="30" height="50" transform="skewX(-15)"/>
+    <rect class="logo-stripes-pattern" x="90" y="0" width="30" height="50" transform="skewX(-15)"/>
+    <rect class="logo-stripes-pattern" x="135" y="0" width="30" height="50" transform="skewX(-15)"/>
+    <rect class="logo-stripes-pattern" x="180" y="0" width="30" height="50" transform="skewX(-15)"/>
+    <rect class="logo-stripes-pattern" x="225" y="0" width="30" height="50" transform="skewX(-15)"/>
+    <rect class="logo-stripes-pattern" x="270" y="0" width="30" height="50" transform="skewX(-15)"/>
+    <rect class="logo-stripes-pattern" x="315" y="0" width="30" height="50" transform="skewX(-15)"/>
+    <rect class="logo-stripes-pattern" x="360" y="0" width="30" height="50" transform="skewX(-15)"/>
+  </g>
+</svg>

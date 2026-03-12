@@ -1,0 +1,117 @@
+:root {
+  --md-primary-fg-color: #54AC58;
+  --md-accent-fg-color: #54AC58;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #54AC58;
+  --md-accent-fg-color: #54AC58;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #171717;
+}
+
+a:hover {
+  color: white;
+}
+
+[data-md-color-scheme="default"] a:hover {
+  color: black;
+}
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: rgb(84, 172, 88);
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(84, 172, 88, 0.1);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: rgb(84, 172, 88);
+}
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: rgb(84, 172, 88);
+}
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(84, 172, 88, 0.1);
+}
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before {
+  background-color: rgb(84, 172, 88);
+}
+
+abbr {
+  text-decoration: underline;
+  text-decoration-color: #54AC58;
+  text-underline-offset: 3px;
+}
+
+.footerlink {
+  color: #54AC58;
+  font-weight: bold;
+}
+
+.gnext, .gprev {
+  display: none !important;
+}
+
+.slide-embed-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.slide-embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Media placeholder boxes */
+.media-placeholder {
+  background: #1a1c2e;
+  border: 2px dashed #54AC58;
+  border-radius: 8px;
+  padding: 24px 20px;
+  margin: 16px 0;
+  text-align: center;
+  color: #8b8fa3;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.media-placeholder .ph-type {
+  display: inline-block;
+  background: #54AC58;
+  color: #111;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+.media-placeholder .ph-desc {
+  color: #a0a4b8;
+  font-size: 13px;
+}
+[data-md-color-scheme="default"] .media-placeholder {
+  background: #f0f1f5;
+  border-color: #54AC58;
+  color: #555;
+}
+[data-md-color-scheme="default"] .media-placeholder .ph-desc {
+  color: #555;
+}

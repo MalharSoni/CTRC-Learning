@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Effect Variations - CTRC Learning</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #00ff88;
+      --accent-dim: #00cc6a;
+      --accent-dark: #00994f;
+      --bg-dark: #0a0a0a;
+      --bg-dark-2: #0f0f0f;
+      --bg-dark-3: #141414;
+      --text-primary: #ffffff;
+      --text-secondary: #a0aec0;
+      --text-tertiary: #718096;
+      --border: rgba(255, 255, 255, 0.08);
+      --glass-bg: rgba(20, 20, 20, 0.6);
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+      --glow: 0 0 20px rgba(0, 255, 136, 0.3);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 3rem 2rem;
+      overflow-x: hidden;
+    }
+
+    /* Background canvas */
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .header p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+    }
+
+    /* Control panel */
+    .controls {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .controls h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .control-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .control-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .control-btn {
+      padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 8px;
+      background: var(--bg-dark-3);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .control-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .control-btn.active {
+      background: var(--accent);
+      color: var(--bg-dark);
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+    }
+
+    /* Comparison grid */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .option-section {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .option-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .option-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .option-description {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    /* Base card styles */
+    .demo-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-description {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      color: var(--bg-dark);
+      font-weight: 700;
+      box-shadow: var(--glow);
+      z-index: 2;
+    }
+
+    /* Option A: Subtle Lift */
+    .option-a .demo-card {
+      transition: all 0.3s ease;
+    }
+
+    .option-a .demo-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .option-a .demo-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .option-a .demo-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Option B: Opacity Shift */
+    .option-b .demo-card {
+      opacity: 0.9;
+      transition: all 0.3s ease;
+    }
+
+    .option-b .demo-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .option-b .demo-card:hover {
+      opacity: 1;
+      border-color: var(--accent);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .option-b .demo-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Option C: Border Glow Only */
+    .option-c .demo-card {
+      transition: all 0.3s ease;
+    }
+
+    .option-c .demo-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    /* Current (for reference) */
+    .current .demo-card {
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .current .demo-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .current .demo-card::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: all 0.4s;
+      border-radius: 50%;
+    }
+
+    .current .demo-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .current .demo-card:hover::after {
+      width: 400px;
+      height: 400px;
+    }
+
+    .current .demo-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+      box-shadow: var(--glow), var(--shadow-lg);
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="content-wrapper">
+    <!-- Header -->
+    <div class="header">
+      <h1>Hover Effect Variations</h1>
+      <p>Compare different hover effects and cursor glow options</p>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <h3>Cursor Glow Options</h3>
+      <div class="control-group">
+        <button class="control-btn" data-glow="none">No Glow</button>
+        <button class="control-btn active" data-glow="subtle">Subtle (20%)</button>
+        <button class="control-btn" data-glow="edges">Edges Only</button>
+        <button class="control-btn" data-glow="original">Original (100%)</button>
+      </div>
+    </div>
+
+    <!-- Comparison Grid -->
+    <div class="comparison-grid">
+      <!-- Current Implementation -->
+      <div class="option-section current">
+        <div class="option-label">Current</div>
+        <h2 class="option-title">Original Design</h2>
+        <p class="option-description">Current implementation with color change, lift, glow, and radial gradient effect on hover.</p>
+
+        <div class="demo-card">
+          <div class="checkmark">✓</div>
+          <div class="card-icon">🎓</div>
+          <h3 class="card-title">Student</h3>
+          <p class="card-description">I'm here to learn robotics, build robots, and compete. Show me hands-on lessons and projects.</p>
+        </div>
+      </div>
+
+      <!-- Option A: Subtle Lift -->
+      <div class="option-section option-a">
+        <div class="option-label">Option A</div>
+        <h2 class="option-title">Subtle Lift</h2>
+        <p class="option-description">Clean lift effect with border accent. No color change. Professional and understated.</p>
+
+        <div class="demo-card">
+          <div class="checkmark">✓</div>
+          <div class="card-icon">🎓</div>
+          <h3 class="card-title">Student</h3>
+          <p class="card-description">I'm here to learn robotics, build robots, and compete. Show me hands-on lessons and projects.</p>
+        </div>
+      </div>
+
+      <!-- Option B: Opacity Shift -->
+      <div class="option-section option-b">
+        <div class="option-label">Option B</div>
+        <h2 class="option-title">Opacity Shift</h2>
+        <p class="option-description">Subtle opacity change (90% → 100%) with border accent. Minimal shadow increase.</p>
+
+        <div class="demo-card">
+          <div class="checkmark">✓</div>
+          <div class="card-icon">🎓</div>
+          <h3 class="card-title">Student</h3>
+          <p class="card-description">I'm here to learn robotics, build robots, and compete. Show me hands-on lessons and projects.</p>
+        </div>
+      </div>
+
+      <!-- Option C: Border Glow Only -->
+      <div class="option-section option-c">
+        <div class="option-label">Option C</div>
+        <h2 class="option-title">Border Glow Only</h2>
+        <p class="option-description">Minimal effect. Border color shifts to accent with subtle glow. Everything else static.</p>
+
+        <div class="demo-card">
+          <div class="checkmark">✓</div>
+          <div class="card-icon">🎓</div>
+          <h3 class="card-title">Student</h3>
+          <p class="card-description">I'm here to learn robotics, build robots, and compete. Show me hands-on lessons and projects.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    let mouseX = width / 2;
+    let mouseY = height / 2;
+
+    // Glow intensity control
+    let glowIntensity = 0.2; // Default: subtle (20%)
+    let glowMode = 'subtle';
+
+    // Particle system
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+        this.opacity = Math.random() * 0.5 + 0.2;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // Mouse attraction
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 150) {
+          const force = (150 - distance) / 150;
+          this.x += dx * force * 0.02;
+          this.y += dy * force * 0.02;
+        }
+
+        // Wrap around edges
+        if (this.x < 0) this.x = width;
+        if (this.x > width) this.x = 0;
+        if (this.y < 0) this.y = height;
+        if (this.y > height) this.y = 0;
+      }
+
+      draw() {
+        ctx.fillStyle = `rgba(0, 255, 136, ${this.opacity * glowIntensity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    // Create particles
+    const particles = [];
+    for (let i = 0; i < 100; i++) {
+      particles.push(new Particle());
+    }
+
+    // Grid properties
+    const gridSize = 40;
+    const maxDistance = 150;
+
+    // Create grid points
+    const points = [];
+    for (let x = 0; x < width + gridSize; x += gridSize) {
+      for (let y = 0; y < height + gridSize; y += gridSize) {
+        points.push({
+          x: x,
+          y: y,
+          baseX: x,
+          baseY: y
+        });
+      }
+    }
+
+    // Mouse move handler
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Resize handler
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    // Control buttons
+    const controlBtns = document.querySelectorAll('.control-btn');
+    controlBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const glowType = btn.getAttribute('data-glow');
+
+        // Update active state
+        controlBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Update glow settings
+        glowMode = glowType;
+        switch(glowType) {
+          case 'none':
+            glowIntensity = 0;
+            break;
+          case 'subtle':
+            glowIntensity = 0.2;
+            break;
+          case 'edges':
+            glowIntensity = 0.15;
+            break;
+          case 'original':
+            glowIntensity = 1;
+            break;
+        }
+      });
+    });
+
+    // Animation loop
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Update grid points with mouse attraction
+      points.forEach(point => {
+        const dx = mouseX - point.baseX;
+        const dy = mouseY - point.baseY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < maxDistance) {
+          const force = (maxDistance - distance) / maxDistance;
+          point.x = point.baseX + dx * force * 0.3;
+          point.y = point.baseY + dy * force * 0.3;
+        } else {
+          point.x += (point.baseX - point.x) * 0.1;
+          point.y += (point.baseY - point.y) * 0.1;
+        }
+      });
+
+      // Draw grid
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+      ctx.lineWidth = 1;
+
+      // Draw vertical lines
+      for (let x = 0; x <= width / gridSize; x++) {
+        ctx.beginPath();
+        for (let y = 0; y <= height / gridSize; y++) {
+          const index = x + y * Math.ceil(width / gridSize) + Math.ceil(width / gridSize);
+          if (points[index]) {
+            if (y === 0) {
+              ctx.moveTo(points[index].x, points[index].y);
+            } else {
+              ctx.lineTo(points[index].x, points[index].y);
+            }
+          }
+        }
+        ctx.stroke();
+      }
+
+      // Draw horizontal lines
+      for (let y = 0; y <= height / gridSize; y++) {
+        ctx.beginPath();
+        for (let x = 0; x <= width / gridSize; x++) {
+          const index = x + y * Math.ceil(width / gridSize) + Math.ceil(width / gridSize);
+          if (points[index]) {
+            if (x === 0) {
+              ctx.moveTo(points[index].x, points[index].y);
+            } else {
+              ctx.lineTo(points[index].x, points[index].y);
+            }
+          }
+        }
+        ctx.stroke();
+      }
+
+      // Update and draw particles
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+
+      // Draw connections between nearby particles
+      particles.forEach((p1, i) => {
+        particles.slice(i + 1).forEach(p2 => {
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 100) {
+            ctx.strokeStyle = `rgba(0, 255, 136, ${0.2 * (1 - distance / 100) * glowIntensity})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        });
+      });
+
+      // Draw glow around mouse (different modes)
+      if (glowMode === 'edges') {
+        // Only show glow near edges
+        const edgeDistance = 200;
+        const nearEdge = mouseX < edgeDistance || mouseX > width - edgeDistance ||
+                        mouseY < edgeDistance || mouseY > height - edgeDistance;
+
+        if (nearEdge) {
+          const gradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, maxDistance);
+          gradient.addColorStop(0, `rgba(0, 255, 136, ${0.03 * glowIntensity})`);
+          gradient.addColorStop(0.5, `rgba(0, 255, 136, ${0.01 * glowIntensity})`);
+          gradient.addColorStop(1, 'rgba(0, 255, 136, 0)');
+
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, width, height);
+        }
+      } else if (glowMode !== 'none') {
+        // Standard radial glow
+        const gradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, maxDistance);
+        gradient.addColorStop(0, `rgba(0, 255, 136, ${0.15 * glowIntensity})`);
+        gradient.addColorStop(0.5, `rgba(0, 255, 136, ${0.05 * glowIntensity})`);
+        gradient.addColorStop(1, 'rgba(0, 255, 136, 0)');
+
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
