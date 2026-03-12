@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aceternity UI Wave 2 - Component Preview</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #00ff88;
+      --accent-dim: #00cc6a;
+      --accent-dark: #00994f;
+      --bg-dark: #0a0a0a;
+      --bg-dark-2: #0f0f0f;
+      --bg-dark-3: #141414;
+      --text-primary: #ffffff;
+      --text-secondary: #a0aec0;
+      --text-tertiary: #718096;
+      --border: rgba(255, 255, 255, 0.08);
+      --glass-bg: rgba(20, 20, 20, 0.6);
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Dot Grid Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 60px;
+    }
+
+    .component-section {
+      margin-bottom: 80px;
+      padding: 40px;
+      background: var(--bg-dark-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .component-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .component-description {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+    }
+
+    .component-preview {
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-dark-3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 40px;
+    }
+
+    /* Animated Modal Styles */
+    .modal-trigger {
+      position: relative;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--accent);
+      color: var(--bg-dark);
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.15s;
+    }
+
+    .modal-trigger:hover {
+      background: var(--accent-dim);
+      transform: scale(1.02);
+    }
+
+    .modal-trigger:active {
+      transform: scale(0.97);
+    }
+
+    /* Hover Border Gradient Styles */
+    .hover-gradient-btn {
+      position: relative;
+      padding: 2px;
+      border-radius: 9999px;
+      background: var(--bg-dark-2);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .hover-gradient-btn:hover {
+      background: var(--bg-dark-3);
+    }
+
+    .hover-gradient-btn-inner {
+      padding: 12px 24px;
+      border-radius: 9999px;
+      background: var(--bg-dark-2);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Sticky Scroll Styles */
+    .sticky-scroll-container {
+      height: 500px;
+      overflow-y: scroll;
+      background: var(--bg-dark-2);
+      border-radius: 8px;
+      padding: 40px;
+    }
+
+    .sticky-scroll-content {
+      display: flex;
+      gap: 40px;
+    }
+
+    .scroll-text-section {
+      flex: 1;
+    }
+
+    .scroll-item {
+      margin: 80px 0;
+      transition: opacity 0.3s;
+    }
+
+    .scroll-item h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .scroll-item p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      max-width: 500px;
+    }
+
+    .scroll-sticky-visual {
+      position: sticky;
+      top: 40px;
+      width: 320px;
+      height: 240px;
+      border-radius: 8px;
+      background: linear-gradient(to bottom right, rgba(0, 255, 136, 0.1), rgba(0, 204, 106, 0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .code-block {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+      margin-top: 20px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 12px;
+      color: var(--text-secondary);
+      overflow-x: auto;
+    }
+
+    .code-block pre {
+      margin: 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-right: 8px;
+      margin-bottom: 12px;
+    }
+
+    .badge-green {
+      background: rgba(0, 255, 136, 0.15);
+      color: var(--accent);
+    }
+
+    .badge-blue {
+      background: rgba(59, 130, 246, 0.15);
+      color: #3B82F6;
+    }
+
+    .badge-yellow {
+      background: rgba(245, 158, 11, 0.15);
+      color: #F59E0B;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .feature-card {
+      padding: 16px;
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .feature-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    @media (max-width: 768px) {
+      .sticky-scroll-content {
+        flex-direction: column;
+      }
+
+      .scroll-sticky-visual {
+        position: relative;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Aceternity UI - Wave 2 Components</h1>
+    <p class="subtitle">
+      Three new components adapted for CTRC Learning: Animated Modal, Sticky Scroll Reveal, and Hover Border Gradient
+    </p>
+
+    <!-- Component 1: Animated Modal -->
+    <section class="component-section">
+      <div class="component-title">1. Animated Modal</div>
+      <div class="component-description">
+        A customizable modal with smooth animations, outside-click detection, and compound component pattern.
+      </div>
+
+      <div class="badges">
+        <span class="badge badge-green">Framer Motion</span>
+        <span class="badge badge-blue">Compound Pattern</span>
+        <span class="badge badge-yellow">Phosphor Icons</span>
+      </div>
+
+      <div class="component-preview">
+        <button class="modal-trigger" onclick="alert('Modal would open here! See animated-modal-demo.tsx for full implementation.')">
+          Start Learning VEX V5
+        </button>
+      </div>
+
+      <div class="code-block">
+        <pre>import { Modal, ModalTrigger, ModalBody, ModalContent, ModalFooter } from "./animated-modal";
+
+&lt;Modal&gt;
+  &lt;ModalTrigger&gt;Open Modal&lt;/ModalTrigger&gt;
+  &lt;ModalBody&gt;
+    &lt;ModalContent&gt;
+      &lt;h2&gt;Your Content Here&lt;/h2&gt;
+      &lt;p&gt;Modal body content...&lt;/p&gt;
+    &lt;/ModalContent&gt;
+    &lt;ModalFooter&gt;
+      &lt;button&gt;Action&lt;/button&gt;
+    &lt;/ModalFooter&gt;
+  &lt;/ModalBody&gt;
+&lt;/Modal&gt;</pre>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Smooth Animations</h4>
+          <p>Spring-based animations for natural feel using Framer Motion</p>
+        </div>
+        <div class="feature-card">
+          <h4>Outside Click</h4>
+          <p>Automatically closes when clicking outside the modal</p>
+        </div>
+        <div class="feature-card">
+          <h4>Flexible Content</h4>
+          <p>Use ModalContent and ModalFooter for structured layouts</p>
+        </div>
+        <div class="feature-card">
+          <h4>Dark Theme</h4>
+          <p>Styled for CTRC's dark theme with accent color</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Component 2: Sticky Scroll Reveal -->
+    <section class="component-section">
+      <div class="component-title">2. Sticky Scroll Reveal</div>
+      <div class="component-description">
+        A scroll-based component with sticky content on one side and revealing text on the other.
+      </div>
+
+      <div class="badges">
+        <span class="badge badge-green">Scroll-Based</span>
+        <span class="badge badge-blue">Sticky Position</span>
+        <span class="badge badge-yellow">Animated</span>
+      </div>
+
+      <div class="component-preview">
+        <div class="sticky-scroll-container">
+          <div class="sticky-scroll-content">
+            <div class="scroll-text-section">
+              <div class="scroll-item">
+                <h3>Learn Programming</h3>
+                <p>Master C++ programming for VEX V5 robotics. Start with basic motor control and progress to advanced autonomous routines.</p>
+              </div>
+              <div class="scroll-item">
+                <h3>Build Real Robots</h3>
+                <p>Construct competition-grade robots using VEX V5 components. Learn mechanical design principles and gear ratios.</p>
+              </div>
+              <div class="scroll-item">
+                <h3>Compete & Win</h3>
+                <p>Apply your skills in VEX competitions. Learn game strategy and driver practice techniques.</p>
+              </div>
+              <div class="scroll-item">
+                <h3>Join Community</h3>
+                <p>Connect with other VEX teams. Access our Discord with 500+ active members.</p>
+              </div>
+            </div>
+            <div class="scroll-sticky-visual">
+              Sticky Visual Area
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre>import { StickyScrollReveal } from "./sticky-scroll-reveal";
+
+const content = [
+  {
+    title: "Section 1",
+    description: "Description text...",
+    content: &lt;YourComponent /&gt;
+  },
+  // ... more sections
+];
+
+&lt;StickyScrollReveal content={content} /&gt;</pre>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Scroll Progress</h4>
+          <p>Tracks scroll position to reveal content progressively</p>
+        </div>
+        <div class="feature-card">
+          <h4>Sticky Visual</h4>
+          <p>Right-side content stays fixed while text scrolls</p>
+        </div>
+        <div class="feature-card">
+          <h4>Gradient Backgrounds</h4>
+          <p>Dynamic gradient changes based on active section</p>
+        </div>
+        <div class="feature-card">
+          <h4>Responsive</h4>
+          <p>Hides sticky visual on mobile, stacks vertically</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Component 3: Hover Border Gradient -->
+    <section class="component-section">
+      <div class="component-title">3. Hover Border Gradient</div>
+      <div class="component-description">
+        An animated button with a rotating gradient border effect that responds to hover.
+      </div>
+
+      <div class="badges">
+        <span class="badge badge-green">Gradient Animation</span>
+        <span class="badge badge-blue">Hover Effect</span>
+        <span class="badge badge-yellow">Customizable</span>
+      </div>
+
+      <div class="component-preview">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+          <div class="hover-gradient-btn">
+            <div class="hover-gradient-btn-inner">
+              ✨ Get Started
+            </div>
+          </div>
+          <div class="hover-gradient-btn">
+            <div class="hover-gradient-btn-inner">
+              Start Course →
+            </div>
+          </div>
+          <div class="hover-gradient-btn">
+            <div class="hover-gradient-btn-inner">
+              📥 Download
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre>import { HoverBorderGradient } from "./hover-border-gradient";
+
+&lt;HoverBorderGradient
+  containerClassName="rounded-full"
+  duration={1}
+  clockwise={true}
+  className="bg-[var(--bg-dark-2)] text-white"
+&gt;
+  Button Text
+&lt;/HoverBorderGradient&gt;</pre>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Rotating Gradient</h4>
+          <p>Animated border gradient rotates around the button</p>
+        </div>
+        <div class="feature-card">
+          <h4>Configurable Speed</h4>
+          <p>Control animation duration (default 1s)</p>
+        </div>
+        <div class="feature-card">
+          <h4>Direction Control</h4>
+          <p>Rotate clockwise or counter-clockwise</p>
+        </div>
+        <div class="feature-card">
+          <h4>Flexible Styling</h4>
+          <p>Works with any border radius (rounded-full, rounded-md, etc.)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation & Usage -->
+    <section class="component-section">
+      <div class="component-title">Installation & Dependencies</div>
+      <div class="component-description">
+        All components require these dependencies to function properly.
+      </div>
+
+      <div class="code-block">
+        <pre># Required Dependencies
+npm install framer-motion @phosphor-icons/react clsx tailwind-merge
+
+# Component Files
+docs/components/
+  ├── animated-modal.tsx
+  ├── animated-modal-demo.tsx
+  ├── sticky-scroll-reveal.tsx
+  ├── sticky-scroll-reveal-demo.tsx
+  ├── hover-border-gradient.tsx
+  ├── hover-border-gradient-demo.tsx
+  └── lib-utils-cn.ts (already exists)</pre>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>framer-motion</h4>
+          <p>Animation library for React - powers all motion effects</p>
+        </div>
+        <div class="feature-card">
+          <h4>@phosphor-icons/react</h4>
+          <p>Icon library used throughout CTRC Learning</p>
+        </div>
+        <div class="feature-card">
+          <h4>clsx + tailwind-merge</h4>
+          <p>Class name utilities for the cn() function</p>
+        </div>
+        <div class="feature-card">
+          <h4>TypeScript</h4>
+          <p>All components are fully typed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">
+      <p style="color: var(--text-tertiary); font-size: 12px;">
+        CTRC Learning - Aceternity UI Components Wave 2 • March 2026
+      </p>
+    </div>
+  </div>
+</body>
+</html>

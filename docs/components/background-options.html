@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Options - CTRC Learning</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .option-card {
+      border: 1px solid #333;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .option-header {
+      padding: 1.5rem;
+      background: #1a1a1a;
+      border-bottom: 1px solid #333;
+    }
+
+    .option-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .option-subtitle {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .preview-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      min-width: 300px;
+    }
+
+    .hero-overlay h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-overlay p {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .option-details {
+      padding: 1.5rem;
+    }
+
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .pros, .cons {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .pros h4 {
+      color: #22c55e;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cons h4 {
+      color: #ef4444;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pros ul, .cons ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    .pros li::before {
+      content: "✓ ";
+      color: #22c55e;
+      margin-right: 0.5rem;
+    }
+
+    .cons li::before {
+      content: "× ";
+      color: #ef4444;
+      margin-right: 0.5rem;
+    }
+
+    .implementation {
+      background: #0d1117;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 3px solid #00ff88;
+    }
+
+    .implementation h4 {
+      color: #00ff88;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .implementation p {
+      font-size: 0.85rem;
+      color: #ccc;
+      font-family: 'Monaco', 'Courier New', monospace;
+    }
+
+    /* Option 1: Minimal Dot Grid */
+    .bg-option-1 {
+      background-color: #0a0a0a;
+      background-image: radial-gradient(circle, #222 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    /* Option 2: Gradient Mesh */
+    .bg-option-2 {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+      position: relative;
+    }
+
+    .bg-option-2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 200, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(200, 0, 255, 0.06) 0%, transparent 50%);
+      animation: mesh-shift 20s ease-in-out infinite;
+    }
+
+    @keyframes mesh-shift {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+
+    /* Option 3: Hexagon Pattern */
+    .bg-option-3 {
+      background-color: #0a0a0a;
+      background-image: 
+        linear-gradient(30deg, transparent 40%, rgba(0, 255, 136, 0.03) 40%, rgba(0, 255, 136, 0.03) 60%, transparent 60%),
+        linear-gradient(90deg, transparent 40%, rgba(0, 255, 136, 0.03) 40%, rgba(0, 255, 136, 0.03) 60%, transparent 60%),
+        linear-gradient(150deg, transparent 40%, rgba(0, 255, 136, 0.03) 40%, rgba(0, 255, 136, 0.03) 60%, transparent 60%);
+      background-size: 60px 104px;
+    }
+
+    /* Option 4: Solid + Noise */
+    .bg-option-4 {
+      background: #0a0a0a;
+      position: relative;
+    }
+
+    .bg-option-4::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* Option 5: Animated Waves */
+    .bg-option-5 {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-option-5::before,
+    .bg-option-5::after {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+    }
+
+    .bg-option-5::before {
+      animation: wave-1 25s linear infinite;
+    }
+
+    .bg-option-5::after {
+      background: radial-gradient(circle, rgba(136, 0, 255, 0.04) 0%, transparent 50%);
+      animation: wave-2 30s linear infinite reverse;
+    }
+
+    @keyframes wave-1 {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes wave-2 {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .select-button {
+      width: 100%;
+      padding: 1rem;
+      background: #00ff88;
+      color: #0a0a0a;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 1rem;
+    }
+
+    .select-button:hover {
+      background: #00cc6a;
+      transform: translateY(-2px);
+    }
+
+    .select-button:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose Your Background</h1>
+  
+  <div class="options-grid">
+    <!-- Option 1: Minimal Dot Grid -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-title">Option 1: Minimal Dot Grid</div>
+        <div class="option-subtitle">Professional • Static • Linear-inspired</div>
+      </div>
+      <div class="preview-container bg-option-1">
+        <div class="hero-overlay">
+          <h2>CTRC Learning</h2>
+          <p>Clean, professional, distraction-free</p>
+        </div>
+      </div>
+      <div class="option-details">
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Zero performance cost</li>
+              <li>Professional aesthetic</li>
+              <li>No distractions</li>
+              <li>Works everywhere</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>No interactivity</li>
+              <li>Static (no movement)</li>
+              <li>Less "wow" factor</li>
+            </ul>
+          </div>
+        </div>
+        <div class="implementation">
+          <h4>Implementation</h4>
+          <p>Pure CSS • radial-gradient() • 30px grid spacing</p>
+        </div>
+        <button class="select-button" onclick="alert('Option 1 selected: Minimal Dot Grid')">Select This Background</button>
+      </div>
+    </div>
+
+    <!-- Option 2: Gradient Mesh -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-title">Option 2: Gradient Mesh</div>
+        <div class="option-subtitle">Ambient • Animated • Vercel-inspired</div>
+      </div>
+      <div class="preview-container bg-option-2">
+        <div class="hero-overlay">
+          <h2>CTRC Learning</h2>
+          <p>Subtle movement, ambient depth</p>
+        </div>
+      </div>
+      <div class="option-details">
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Subtle animation</li>
+              <li>Depth perception</li>
+              <li>Modern aesthetic</li>
+              <li>Low CPU usage</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>No mouse interaction</li>
+              <li>Constant animation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="implementation">
+          <h4>Implementation</h4>
+          <p>CSS gradients • 20s keyframe animation • 3 radial layers</p>
+        </div>
+        <button class="select-button" onclick="alert('Option 2 selected: Gradient Mesh')">Select This Background</button>
+      </div>
+    </div>
+
+    <!-- Option 3: Hexagon Pattern -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-title">Option 3: Hexagon Pattern</div>
+        <div class="option-subtitle">Robotics Theme • Geometric • Static</div>
+      </div>
+      <div class="preview-container bg-option-3">
+        <div class="hero-overlay">
+          <h2>CTRC Learning</h2>
+          <p>Technical, robotics-inspired geometry</p>
+        </div>
+      </div>
+      <div class="option-details">
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Robotics branding</li>
+              <li>Unique pattern</li>
+              <li>Zero performance cost</li>
+              <li>Professional look</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>No interactivity</li>
+              <li>Pattern may feel busy</li>
+              <li>Static</li>
+            </ul>
+          </div>
+        </div>
+        <div class="implementation">
+          <h4>Implementation</h4>
+          <p>Pure CSS • 3 linear gradients at 30°/90°/150° • 60px spacing</p>
+        </div>
+        <button class="select-button" onclick="alert('Option 3 selected: Hexagon Pattern')">Select This Background</button>
+      </div>
+    </div>
+
+    <!-- Option 4: Solid + Noise -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-title">Option 4: Solid + Subtle Noise</div>
+        <div class="option-subtitle">Ultra-Minimal • Stripe-inspired • Premium</div>
+      </div>
+      <div class="preview-container bg-option-4">
+        <div class="hero-overlay">
+          <h2>CTRC Learning</h2>
+          <p>Maximum focus, zero distraction</p>
+        </div>
+      </div>
+      <div class="option-details">
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Absolute focus</li>
+              <li>Premium feel</li>
+              <li>Near-zero cost</li>
+              <li>Timeless design</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Very minimal</li>
+              <li>No visual interest</li>
+              <li>May feel "empty"</li>
+            </ul>
+          </div>
+        </div>
+        <div class="implementation">
+          <h4>Implementation</h4>
+          <p>Solid color + SVG noise filter (3% opacity) • Stripe aesthetic</p>
+        </div>
+        <button class="select-button" onclick="alert('Option 4 selected: Solid + Noise')">Select This Background</button>
+      </div>
+    </div>
+
+    <!-- Option 5: Animated Waves -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-title">Option 5: Animated Waves</div>
+        <div class="option-subtitle">Ambient • Slow Rotation • Calming</div>
+      </div>
+      <div class="preview-container bg-option-5">
+        <div class="hero-overlay">
+          <h2>CTRC Learning</h2>
+          <p>Gentle, ambient movement</p>
+        </div>
+      </div>
+      <div class="option-details">
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Calming motion</li>
+              <li>Ambient aesthetic</li>
+              <li>Low CPU (GPU-accelerated)</li>
+              <li>Unique feel</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Constant animation</li>
+              <li>No mouse interaction</li>
+              <li>May distract some users</li>
+            </ul>
+          </div>
+        </div>
+        <div class="implementation">
+          <h4>Implementation</h4>
+          <p>2 rotating radial gradients • 25s/30s rotation • GPU-accelerated</p>
+        </div>
+        <button class="select-button" onclick="alert('Option 5 selected: Animated Waves')">Select This Background</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add button click handlers to copy selection info
+    document.querySelectorAll('.select-button').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const optionTitle = this.closest('.option-card').querySelector('.option-title').textContent;
+        console.log('User selected:', optionTitle);
+      });
+    });
+  </script>
+</body>
+</html>

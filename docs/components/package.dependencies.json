@@ -1,0 +1,21 @@
+{
+  "name": "ctrc-animated-sidebar-dependencies",
+  "description": "Required dependencies for CTRC Animated Sidebar component",
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.344.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "notes": {
+    "installation": "npm install framer-motion lucide-react clsx tailwind-merge",
+    "peer_dependencies": "Requires React 18+ and Next.js 14+ (or any React setup with Next.js Link)",
+    "bundle_size": "~8KB gzipped with proper tree-shaking"
+  }
+}

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aceternity UI Component Catalog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #00ff88, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: #888;
+      font-size: 1.1rem;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #00ff88;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .filter-bar {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-button {
+      padding: 0.5rem 1rem;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #999;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .filter-button:hover {
+      border-color: #00ff88;
+      color: #00ff88;
+    }
+
+    .filter-button.active {
+      background: #00ff88;
+      color: #0a0a0a;
+      border-color: #00ff88;
+    }
+
+    .category-section {
+      margin-bottom: 4rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #222;
+    }
+
+    .category-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .category-count {
+      background: #222;
+      color: #00ff88;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .component-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .component-card:hover {
+      border-color: #00ff88;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 255, 136, 0.15);
+    }
+
+    .component-card.selected {
+      border-color: #00ff88;
+      border-width: 2px;
+      background: #1a1a1a;
+    }
+
+    .component-card.selected::before {
+      content: '✓';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #00ff88;
+      color: #0a0a0a;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      z-index: 10;
+    }
+
+    .component-preview {
+      height: 160px;
+      background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #444;
+      font-size: 3rem;
+      border-bottom: 1px solid #222;
+    }
+
+    .component-info {
+      padding: 1.25rem;
+    }
+
+    .component-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .component-description {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    .component-tags {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tag.new {
+      background: #00ff88;
+      color: #0a0a0a;
+      border-color: #00ff88;
+      font-weight: 700;
+    }
+
+    .selected-count {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #00ff88;
+      color: #0a0a0a;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 900;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 32px rgba(0, 255, 136, 0.3);
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 1000;
+    }
+
+    .selected-count:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px rgba(0, 255, 136, 0.4);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Aceternity UI Component Catalog</h1>
+    <p class="subtitle">Click components to select them • 200+ premium components available</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number" id="total-count">0</div>
+        <div class="stat-label">Total Components</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="selected-count-display">0</div>
+        <div class="stat-label">Selected</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <span style="color: #666; font-weight: 600;">Filter by category:</span>
+    <button class="filter-button active" data-filter="all">All Components</button>
+    <button class="filter-button" data-filter="backgrounds">Backgrounds</button>
+    <button class="filter-button" data-filter="cards">Cards</button>
+    <button class="filter-button" data-filter="text">Text</button>
+    <button class="filter-button" data-filter="buttons">Buttons</button>
+    <button class="filter-button" data-filter="navigation">Navigation</button>
+    <button class="filter-button" data-filter="scroll">Scroll & Parallax</button>
+    <button class="filter-button" data-filter="3d">3D Effects</button>
+    <button class="filter-button" data-filter="inputs">Inputs & Forms</button>
+  </div>
+
+  <div id="components-container"></div>
+
+  <div class="selected-count hidden" id="selected-badge" onclick="exportSelected()">
+    <span id="selected-badge-count">0</span> Selected • Export List
+  </div>
+
+  <script>
+    const components = {
+      "Backgrounds & Effects": [
+        { name: "Webcam Pixel Grid", desc: "Real-time webcam pixel grid effect, perfect for pixel art and retro aesthetics", tags: ["new", "webcam"], category: "backgrounds" },
+        { name: "Images Badge", desc: "Badge with images that can be hovered to reveal more images", tags: ["new"], category: "backgrounds" },
+        { name: "Parallax Hero Images", desc: "Absolutely positioned images with mouse-driven parallax effect for hero sections", tags: ["new", "parallax"], category: "backgrounds" },
+        { name: "Scales", desc: "Repeating diagonal, horizontal, or vertical line pattern background effect", tags: ["new"], category: "backgrounds" },
+        { name: "Dotted Glow Background", desc: "Background effect with opacity animation and glow effect", tags: ["new"], category: "backgrounds" },
+        { name: "Background Ripple Effect", desc: "Grid of cells that ripple when clicked", tags: ["new", "interactive"], category: "backgrounds" },
+        { name: "Sparkles", desc: "Configurable sparkles component for backgrounds or standalone use", tags: [], category: "backgrounds" },
+        { name: "Background Gradient", desc: "Animated gradient background", tags: [], category: "backgrounds" },
+        { name: "Gradient Animation", desc: "Smooth gradient background animation", tags: [], category: "backgrounds" },
+        { name: "Wavy Background", desc: "Cool background effect with waves that move", tags: [], category: "backgrounds" },
+        { name: "Background Boxes", desc: "Full width background box container that highlights on hover", tags: [], category: "backgrounds" },
+        { name: "Background Beams", desc: "Multiple background beams following SVG paths", tags: [], category: "backgrounds" },
+        { name: "Background Beams With Collision", desc: "Exploding beams in the background", tags: [], category: "backgrounds" },
+        { name: "Background Lines", desc: "SVG paths that animate in wave pattern (height.app style)", tags: [], category: "backgrounds" },
+        { name: "Aurora Background", desc: "Subtle Aurora or Southern Lights background", tags: [], category: "backgrounds" },
+        { name: "Meteors", desc: "Group of beams like meteors in background", tags: [], category: "backgrounds" },
+        { name: "Glowing Stars", desc: "Card background stars that animate on hover", tags: [], category: "backgrounds" },
+        { name: "Shooting Stars", desc: "Shooting star animation on starry background (figmaplug.in style)", tags: [], category: "backgrounds" },
+        { name: "Vortex", desc: "Wavy, swirly vortex background ideal for CTAs", tags: [], category: "backgrounds" },
+        { name: "Spotlight", desc: "Spotlight effect for drawing attention to elements", tags: ["updated"], category: "backgrounds" },
+        { name: "Spotlight New", desc: "New spotlight with left and right spotlight, configurable", tags: ["new"], category: "backgrounds" },
+        { name: "Canvas Reveal Effect", desc: "Dot background that expands on hover (Clerk's website style)", tags: [], category: "backgrounds" },
+        { name: "SVG Mask Effect", desc: "Mask reveal effect on cursor hover", tags: [], category: "backgrounds" },
+        { name: "Tracing Beam", desc: "Beam that follows SVG path as user scrolls", tags: [], category: "scroll" },
+        { name: "Lamp effect", desc: "Lamp effect as seen on Linear, great for section headers", tags: [], category: "backgrounds" },
+        { name: "Grid and Dot Backgrounds", desc: "Simple grid and dots background", tags: [], category: "backgrounds" },
+        { name: "Glowing Effect", desc: "Border glowing effect (Cursor's website style)", tags: [], category: "backgrounds" },
+        { name: "Google Gemini Effect", desc: "SVG effect as seen on Google Gemini Website", tags: [], category: "backgrounds" },
+        { name: "Noise Background", desc: "Dynamic background with animated gradients, noise texture, smooth motion", tags: ["new"], category: "backgrounds" }
+      ],
+      "Card Components": [
+        { name: "Keyboard", desc: "Mac style keyboard component with mechanical key sound effects", tags: ["new", "audio"], category: "cards" },
+        { name: "Tooltip Card", desc: "Tooltip card container that follows mouse pointer when hovered", tags: ["new"], category: "cards" },
+        { name: "ASCII Art", desc: "Convert any image to ASCII art with customizable charsets and animations", tags: ["new"], category: "cards" },
+        { name: "Pixelated Canvas", desc: "Convert image to pixelated canvas with mouse distortion (Tailwind CSS Website style)", tags: ["new"], category: "cards" },
+        { name: "3D Card Effect", desc: "Card perspective effect with elevated elements on hover", tags: [], category: "cards" },
+        { name: "Evervault Card", desc: "Cool card with hover effect, encrypted text and mixed gradient", tags: [], category: "cards" },
+        { name: "Card Stack", desc: "Cards stack on top of each other, perfect for testimonials", tags: [], category: "cards" },
+        { name: "Card Hover Effect", desc: "Cool hover effect for cards", tags: [], category: "cards" },
+        { name: "Wobble Card", desc: "Card that translates and scales on mousemove", tags: [], category: "cards" },
+        { name: "Expandable Card", desc: "Click cards to expand and show additional information", tags: [], category: "cards" },
+        { name: "Card Spotlight", desc: "Card with spotlight effect revealing radial gradient", tags: [], category: "cards" },
+        { name: "Focus Cards", desc: "Hover over cards to focus, blurring the rest", tags: [], category: "cards" },
+        { name: "Infinite Moving Cards", desc: "Cards that move infinitely in a loop", tags: [], category: "cards" },
+        { name: "Draggable Card", desc: "Tiltable, draggable card that jumps on bounds", tags: [], category: "cards" },
+        { name: "Comet Card", desc: "Perspective, 3D, Tilt card (Perplexity Comet style)", tags: ["new"], category: "cards" },
+        { name: "Glare Card", desc: "Glare effect on hover (Linear's website style)", tags: [], category: "cards" },
+        { name: "Direction Aware Hover", desc: "Direction aware hover using Framer Motion", tags: [], category: "cards" }
+      ],
+      "Scroll & Parallax": [
+        { name: "Parallax Scroll", desc: "Grid where two columns scroll in opposite directions", tags: [], category: "scroll" },
+        { name: "Sticky Scroll Reveal", desc: "Sticky container that reveals text on scroll", tags: [], category: "scroll" },
+        { name: "Macbook Scroll", desc: "Image comes out of screen on scroll (Fey.com style)", tags: ["new"], category: "scroll" },
+        { name: "Container Scroll Animation", desc: "Scroll animation that rotates in 3D", tags: [], category: "scroll" },
+        { name: "Hero Parallax", desc: "Scroll effect with rotation, translation and opacity animations", tags: [], category: "scroll" }
+      ],
+      "Text Components": [
+        { name: "Canvas Text", desc: "Animated text with colorful curved lines rendered on canvas", tags: ["new"], category: "text" },
+        { name: "Encrypted Text", desc: "Text reveals gradually with gibberish effect", tags: ["new"], category: "text" },
+        { name: "Layout Text Flip", desc: "Text flip effect that changes layout of surrounding text", tags: ["new"], category: "text" },
+        { name: "Colourful Text", desc: "Text with various colours, filter and scale effects", tags: [], category: "text" },
+        { name: "Text Generate Effect", desc: "Text fades in on page load, one by one", tags: [], category: "text" },
+        { name: "Typewriter Effect", desc: "Text generates as if typed on screen", tags: [], category: "text" },
+        { name: "Flip Words", desc: "Component that flips through list of words", tags: [], category: "text" },
+        { name: "Text Hover Effect", desc: "Text animates and outlines gradient on hover (x.ai style)", tags: [], category: "text" },
+        { name: "Container Text Flip", desc: "Container that flips through words, animating width", tags: [], category: "text" },
+        { name: "Hero Highlight", desc: "Background effect with text highlight component", tags: [], category: "text" },
+        { name: "Text Reveal Card", desc: "Mousemove effect to reveal text content", tags: [], category: "text" }
+      ],
+      "Buttons": [
+        { name: "Noise Background", desc: "Dynamic button background with gradients and noise", tags: ["new"], category: "buttons" },
+        { name: "Tailwind CSS buttons", desc: "Curated list of battle tested Tailwind CSS buttons", tags: [], category: "buttons" },
+        { name: "Hover Border Gradient", desc: "Hover effect that expands with gradient border", tags: [], category: "buttons" },
+        { name: "Moving Border", desc: "Border that moves around container", tags: [], category: "buttons" },
+        { name: "Stateful Button", desc: "Button showing loading and success states", tags: [], category: "buttons" }
+      ],
+      "Navigation": [
+        { name: "Floating Navbar", desc: "Sticky navbar that hides on scroll, reveals when scrolled up", tags: [], category: "navigation" },
+        { name: "Navbar Menu", desc: "Navbar menu that animates children on hover", tags: [], category: "navigation" },
+        { name: "Sidebar", desc: "Expandable sidebar on hover, mobile responsive and dark mode", tags: [], category: "navigation" },
+        { name: "Floating Dock", desc: "Floating dock Mac OS style component", tags: [], category: "navigation" },
+        { name: "Tabs", desc: "Animated tabs to switch content", tags: [], category: "navigation" },
+        { name: "Resizable Navbar", desc: "Navbar that changes width on scroll, responsive", tags: [], category: "navigation" },
+        { name: "Sticky Banner", desc: "Banner that sticks to top, hides when scrolling down", tags: [], category: "navigation" }
+      ],
+      "Inputs & Forms": [
+        { name: "Signup Form", desc: "Customizable form with shadcn input/label and framer motion", tags: [], category: "inputs" },
+        { name: "Placeholders And Vanish Input", desc: "Sliding placeholders and vanish effect on submit", tags: [], category: "inputs" },
+        { name: "File Upload", desc: "Minimal file upload form with drag and drop", tags: [], category: "inputs" }
+      ],
+      "Overlays & Popovers": [
+        { name: "Dither Shader", desc: "Real-time ordered dithering effect for images", tags: ["new"], category: "backgrounds" },
+        { name: "Animated Modal", desc: "Customizable compound modal with animated transitions", tags: [], category: "navigation" },
+        { name: "Animated Tooltip", desc: "Cool tooltip that reveals on hover, follows mouse", tags: [], category: "navigation" },
+        { name: "Link Preview", desc: "Dynamic link previews for anchor tags", tags: [], category: "navigation" }
+      ],
+      "Carousels & Sliders": [
+        { name: "Images Slider", desc: "Full page slider with keyboard navigation", tags: [], category: "navigation" },
+        { name: "Carousel", desc: "Customizable carousel with microinteractions and slider", tags: [], category: "navigation" },
+        { name: "Apple Cards Carousel", desc: "Sleek minimal carousel (apple.com style)", tags: [], category: "cards" },
+        { name: "Animated Testimonials", desc: "Minimal testimonials sections with image and quote", tags: [], category: "cards" }
+      ],
+      "Layout & Grid": [
+        { name: "Layout Grid", desc: "Layout effect that animates grid item on click", tags: [], category: "backgrounds" },
+        { name: "Bento Grid", desc: "Skewed grid layout with Title, description and header", tags: [], category: "backgrounds" },
+        { name: "Container Cover", desc: "Cover component with beams and space effect", tags: [], category: "backgrounds" }
+      ],
+      "Data & Visualization": [
+        { name: "GitHub Globe", desc: "Globe animation (GitHub homepage style), interactive", tags: [], category: "3d" },
+        { name: "World Map", desc: "World map with animated lines and dots", tags: [], category: "backgrounds" },
+        { name: "Timeline", desc: "Timeline component with sticky header and scroll beam", tags: [], category: "scroll" },
+        { name: "Compare", desc: "Comparison component between two images", tags: [], category: "navigation" },
+        { name: "Codeblock", desc: "Configurable code block with syntax highlighting", tags: [], category: "text" }
+      ],
+      "Cursor & Pointer": [
+        { name: "Following Pointer", desc: "Custom pointer that follows mouse and animates", tags: [], category: "backgrounds" },
+        { name: "Pointer Highlight", desc: "Highlights text when in view with pointer and border", tags: [], category: "text" },
+        { name: "Lens", desc: "Lens component to zoom into images, videos, anything", tags: [], category: "backgrounds" }
+      ],
+      "3D": [
+        { name: "3D Globe", desc: "Realistic globe with tooltips and avatar tips", tags: ["new"], category: "3d" },
+        { name: "3D Pin", desc: "Gradient pin that animates on hover", tags: [], category: "3d" },
+        { name: "3D Marquee", desc: "3D Marquee effect with grid for testimonials", tags: [], category: "3d" }
+      ],
+      "Loaders": [
+        { name: "Multi Step Loader", desc: "Step loader for screens that take time to load", tags: [], category: "buttons" },
+        { name: "Loader", desc: "Simple and minimal loaders", tags: [], category: "buttons" }
+      ]
+    };
+
+    let selectedComponents = new Set();
+
+    function renderComponents() {
+      const container = document.getElementById('components-container');
+      container.innerHTML = '';
+      
+      let totalCount = 0;
+      
+      Object.entries(components).forEach(([category, items]) => {
+        const section = document.createElement('div');
+        section.className = 'category-section';
+        section.dataset.category = category.toLowerCase().replace(/\s+/g, '-');
+        
+        section.innerHTML = `
+          <div class="category-header">
+            <h2 class="category-title">${category}</h2>
+            <span class="category-count">${items.length}</span>
+          </div>
+          <div class="components-grid" id="grid-${category.replace(/\s+/g, '-')}"></div>
+        `;
+        
+        container.appendChild(section);
+        
+        const grid = section.querySelector('.components-grid');
+        
+        items.forEach(component => {
+          totalCount++;
+          const card = document.createElement('div');
+          card.className = 'component-card';
+          card.dataset.name = component.name;
+          card.dataset.category = component.category;
+          
+          const tagsHTML = component.tags.map(tag => 
+            `<span class="tag ${tag}">${tag}</span>`
+          ).join('');
+          
+          card.innerHTML = `
+            <div class="component-preview">✨</div>
+            <div class="component-info">
+              <div class="component-name">${component.name}</div>
+              <div class="component-description">${component.desc}</div>
+              <div class="component-tags">${tagsHTML}</div>
+            </div>
+          `;
+          
+          card.addEventListener('click', () => toggleSelection(component.name, card));
+          grid.appendChild(card);
+        });
+      });
+      
+      document.getElementById('total-count').textContent = totalCount;
+    }
+
+    function toggleSelection(name, card) {
+      if (selectedComponents.has(name)) {
+        selectedComponents.delete(name);
+        card.classList.remove('selected');
+      } else {
+        selectedComponents.add(name);
+        card.classList.add('selected');
+      }
+      updateSelectedCount();
+    }
+
+    function updateSelectedCount() {
+      const count = selectedComponents.size;
+      document.getElementById('selected-count-display').textContent = count;
+      document.getElementById('selected-badge-count').textContent = count;
+      
+      if (count > 0) {
+        document.getElementById('selected-badge').classList.remove('hidden');
+      } else {
+        document.getElementById('selected-badge').classList.add('hidden');
+      }
+    }
+
+    function exportSelected() {
+      const list = Array.from(selectedComponents).sort();
+      console.log('Selected Components:', list);
+      alert(`Selected ${list.length} components:\n\n${list.join('\n')}\n\nCheck console for full list.`);
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(list.join('\n')).then(() => {
+        console.log('✓ Copied to clipboard');
+      });
+    }
+
+    // Filter functionality
+    document.querySelectorAll('.filter-button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.filter-button').forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        
+        const filter = button.dataset.filter;
+        
+        document.querySelectorAll('.component-card').forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Hide empty categories
+        document.querySelectorAll('.category-section').forEach(section => {
+          const visibleCards = section.querySelectorAll('.component-card[style="display: block;"], .component-card:not([style])');
+          section.style.display = visibleCards.length > 0 ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Initialize
+    renderComponents();
+  </script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTRC Search Bar Preview</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      padding: 40px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #a3a3a3;
+      margin-bottom: 32px;
+    }
+
+    kbd {
+      background: #262626;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.875rem;
+    }
+
+    .trigger-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 36px;
+      padding: 0 12px;
+      border-radius: 8px;
+      border: 1px solid #404040;
+      background: rgba(23, 23, 23, 0.5);
+      color: #a3a3a3;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .trigger-button:hover {
+      background: rgba(38, 38, 38, 0.5);
+      border-color: #525252;
+    }
+
+    .search-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      display: none;
+      z-index: 50;
+    }
+
+    .modal-backdrop.active {
+      display: block;
+    }
+
+    .search-dialog {
+      position: fixed;
+      top: 15vh;
+      left: 50%;
+      transform: translateX(-50%) scale(0.95);
+      width: 90%;
+      max-width: 672px;
+      background: #171717;
+      border-radius: 12px;
+      border: 1px solid #404040;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 51;
+      opacity: 0;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .search-dialog.active {
+      display: block;
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .search-input-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid #262626;
+    }
+
+    .search-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .search-input::placeholder {
+      color: #737373;
+    }
+
+    .close-button {
+      padding: 4px;
+      border-radius: 6px;
+      background: transparent;
+      border: none;
+      color: #a3a3a3;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .close-button:hover {
+      background: #262626;
+    }
+
+    .results {
+      max-height: 60vh;
+      overflow-y: auto;
+      padding: 8px 0;
+    }
+
+    .category-label {
+      padding: 8px 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #737373;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .result-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-left: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .result-item:hover,
+    .result-item.selected {
+      background: rgba(16, 185, 129, 0.1);
+      border-left-color: #10b981;
+    }
+
+    .result-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .result-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .result-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .result-description {
+      font-size: 0.75rem;
+      color: #a3a3a3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+      border-top: 1px solid #262626;
+      background: rgba(23, 23, 23, 0.5);
+      font-size: 0.75rem;
+      color: #737373;
+    }
+
+    .footer-shortcuts {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-shortcut {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .footer kbd {
+      padding: 2px 6px;
+      background: #262626;
+      color: #a3a3a3;
+    }
+
+    .features {
+      margin-top: 48px;
+    }
+
+    .features h2 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .features ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .features li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: #d4d4d4;
+    }
+
+    .check {
+      color: #10b981;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CTRC Learning Search</h1>
+    <p class="subtitle">
+      Press <kbd>⌘K</kbd> or <kbd>Ctrl+K</kbd> to open search
+    </p>
+
+    <button class="trigger-button" onclick="openSearch()">
+      <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" stroke-width="2"></circle>
+        <path d="m21 21-4.3-4.3" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+      <span>Search CTRC Learning...</span>
+      <kbd style="margin-left: auto;">⌘K</kbd>
+    </button>
+
+    <div class="features">
+      <h2>Features</h2>
+      <ul>
+        <li><span class="check">✓</span> Fuzzy search across lessons, projects, and handbook topics</li>
+        <li><span class="check">✓</span> Keyboard navigation with arrow keys</li>
+        <li><span class="check">✓</span> Quick access with Cmd+K / Ctrl+K</li>
+        <li><span class="check">✓</span> Dark theme with green highlights (CTRC brand colors)</li>
+        <li><span class="check">✓</span> Categorized results for easy scanning</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="backdrop" onclick="closeSearch()"></div>
+
+  <div class="search-dialog" id="dialog">
+    <div class="search-input-container">
+      <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" stroke-width="2"></circle>
+        <path d="m21 21-4.3-4.3" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+      <input
+        type="text"
+        class="search-input"
+        id="searchInput"
+        placeholder="Search lessons, projects, handbook..."
+      >
+      <button class="close-button" onclick="closeSearch()">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="results">
+      <div class="category-label">Lessons</div>
+      <div class="result-item selected">
+        <svg class="result-icon" fill="none" stroke="#10b981" viewBox="0 0 24 24" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <div class="result-content">
+          <div class="result-label">Unit 1.1 - Introduction to Robotics</div>
+          <div class="result-description">Basic robotics concepts and VEX hardware</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#10b981" viewBox="0 0 24 24" stroke-width="2">
+          <path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+
+      <div class="result-item">
+        <svg class="result-icon" fill="none" stroke="#10b981" viewBox="0 0 24 24" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <div class="result-content">
+          <div class="result-label">Unit 2.1 - Programming Fundamentals</div>
+          <div class="result-description">VEXcode basics and autonomous programming</div>
+        </div>
+      </div>
+
+      <div class="category-label">Projects</div>
+      <div class="result-item">
+        <svg class="result-icon" fill="none" stroke="#3b82f6" viewBox="0 0 24 24" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"></path>
+        </svg>
+        <div class="result-content">
+          <div class="result-label">BattleBots Project</div>
+          <div class="result-description">Build and program a combat robot</div>
+        </div>
+        <kbd>⌘B</kbd>
+      </div>
+
+      <div class="category-label">Design Handbook</div>
+      <div class="result-item">
+        <svg class="result-icon" fill="none" stroke="#f59e0b" viewBox="0 0 24 24" stroke-width="2">
+          <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
+          <path d="M9 18h6M10 22h4"></path>
+        </svg>
+        <div class="result-content">
+          <div class="result-label">PID Control</div>
+          <div class="result-description">Proportional-Integral-Derivative tuning</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-shortcuts">
+        <div class="footer-shortcut">
+          <kbd>↑</kbd><kbd>↓</kbd>
+          <span>Navigate</span>
+        </div>
+        <div class="footer-shortcut">
+          <kbd>↵</kbd>
+          <span>Select</span>
+        </div>
+        <div class="footer-shortcut">
+          <kbd>Esc</kbd>
+          <span>Close</span>
+        </div>
+      </div>
+      <div>12 results</div>
+    </div>
+  </div>
+
+  <script>
+    function openSearch() {
+      document.getElementById('backdrop').classList.add('active');
+      document.getElementById('dialog').classList.add('active');
+      document.getElementById('searchInput').focus();
+    }
+
+    function closeSearch() {
+      document.getElementById('backdrop').classList.remove('active');
+      document.getElementById('dialog').classList.remove('active');
+    }
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const isOpen = document.getElementById('dialog').classList.contains('active');
+        if (isOpen) {
+          closeSearch();
+        } else {
+          openSearch();
+        }
+      }
+
+      if (e.key === 'Escape') {
+        closeSearch();
+      }
+    });
+  </script>
+</body>
+</html>

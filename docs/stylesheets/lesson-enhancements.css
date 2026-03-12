@@ -1,0 +1,513 @@
+/* ==========================================
+   CTRC Learning - Lesson Enhancements
+   Glassmorphic, glowing, animated components
+   ========================================== */
+
+/* ===== PHOSPHOR ICON BADGES ===== */
+.lesson-metadata {
+  display: flex;
+  gap: 0.875rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.badge i {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.badge-beginner {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+
+.badge-intermediate {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+}
+
+.badge-advanced {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.badge-time {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+}
+
+.badge-hands-on {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.3);
+  color: #a855f7;
+}
+
+.badge-theory {
+  background: rgba(236, 72, 153, 0.1);
+  border-color: rgba(236, 72, 153, 0.3);
+  color: #ec4899;
+}
+
+/* ===== TIMELINE COMPONENT ===== */
+.lesson-timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 0.625rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg,
+    rgba(34, 197, 94, 0.5) 0%,
+    rgba(59, 130, 246, 0.3) 50%,
+    rgba(168, 85, 247, 0.2) 100%);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background: #171717;
+  border: 3px solid #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.timeline-item.completed .timeline-dot {
+  border-color: #22c55e;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2),
+              0 0 12px rgba(34, 197, 94, 0.4);
+}
+
+.timeline-item.current .timeline-dot {
+  border-color: #3b82f6;
+  background: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2),
+              0 0 12px rgba(59, 130, 246, 0.4);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.timeline-item.upcoming .timeline-dot {
+  border-color: #737373;
+  background: transparent;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2),
+                0 0 12px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.1),
+                0 0 20px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.timeline-content {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.timeline-item.current .timeline-content {
+  background: rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.timeline-item.completed .timeline-content {
+  opacity: 0.7;
+}
+
+.timeline-content:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+.timeline-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--md-default-fg-color);
+}
+
+.timeline-meta {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+  font-weight: 500;
+}
+
+/* ===== GLOWING KEY TAKEAWAYS BOX ===== */
+.key-takeaways {
+  position: relative;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background: rgba(34, 197, 94, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.key-takeaways::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.3),
+    rgba(59, 130, 246, 0.2),
+    rgba(168, 85, 247, 0.1));
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.key-takeaways:hover::before {
+  opacity: 1;
+  animation: glow-border 3s ease-in-out infinite;
+}
+
+@keyframes glow-border {
+  0%, 100% {
+    filter: blur(8px);
+  }
+  50% {
+    filter: blur(12px);
+  }
+}
+
+.key-takeaways h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  color: #22c55e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.key-takeaways ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.key-takeaways li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.key-takeaways li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 4px;
+  color: #22c55e;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* ===== FLIP BUTTON NAVIGATION ===== */
+.lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.08);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--md-default-fg-color);
+  transition: all 0.15s ease;
+  text-align: center;
+  overflow: hidden;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.2),
+    rgba(59, 130, 246, 0.15));
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.nav-button:hover::before {
+  opacity: 1;
+}
+
+.nav-button:active {
+  transform: scale(0.97);
+}
+
+.nav-button.prev {
+  text-align: left;
+}
+
+.nav-button.next {
+  text-align: right;
+}
+
+.nav-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== FEATURE CARDS (for unit overview) ===== */
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  position: relative;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  transition: all 0.15s ease;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #3b82f6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(34, 197, 94, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15),
+              0 0 24px rgba(34, 197, 94, 0.1);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-card-icon {
+  font-size: 2rem;
+  color: #22c55e;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.feature-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--md-default-fg-color);
+}
+
+.feature-card p {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+/* ===== ANIMATED KNOWLEDGE CHECK ===== */
+.knowledge-check {
+  margin: 2rem 0;
+}
+
+.knowledge-check .admonition {
+  transition: all 0.15s ease;
+  border-left: 4px solid #3b82f6;
+}
+
+.knowledge-check .admonition:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.knowledge-check details {
+  transition: all 0.2s ease;
+}
+
+.knowledge-check details[open] {
+  animation: expand-answer 0.3s ease-out;
+}
+
+@keyframes expand-answer {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.knowledge-check details summary {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s ease;
+}
+
+.knowledge-check details summary:hover {
+  color: #22c55e;
+}
+
+/* ===== GLASSMORPHIC CALLOUTS ===== */
+.md-typeset .admonition,
+.md-typeset details {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.md-typeset .admonition-title {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .lesson-metadata {
+    gap: 0.5rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.625rem;
+  }
+
+  .timeline-container {
+    padding-left: 2rem;
+  }
+
+  .timeline-dot {
+    width: 1rem;
+    height: 1rem;
+    left: -1.75rem;
+  }
+
+  .feature-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-navigation {
+    flex-direction: column;
+  }
+
+  .nav-button {
+    min-width: 100%;
+    text-align: center !important;
+  }
+}
+
+/* ===== ICON STYLING ===== */
+.phosphor-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure Phosphor icons inherit color */
+.phosphor-icon svg,
+.phosphor-icon i {
+  color: currentColor;
+  fill: currentColor;
+}

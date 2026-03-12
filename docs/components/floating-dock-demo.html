@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Dock Demo - CTRC Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #00ff88;
+      --accent-dim: #00cc6a;
+      --bg-dark: #0a0a0a;
+      --bg-dark-2: #141414;
+      --bg-dark-3: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #a0aec0;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    /* Floating Dock Styles */
+    .floating-dock {
+      display: flex;
+      height: 4rem;
+      gap: 1rem;
+      align-items: flex-end;
+      border-radius: 1rem;
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 0 1rem;
+      padding-bottom: 0.75rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .dock-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      background: var(--bg-dark-2);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .dock-item:hover {
+      background: var(--bg-dark-3);
+      color: var(--accent);
+      transform: scale(1.2) translateY(-8px);
+    }
+
+    .dock-item svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .dock-item-tooltip {
+      position: absolute;
+      bottom: calc(100% + 0.5rem);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-dark-2);
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s;
+    }
+
+    .dock-item:hover .dock-item-tooltip {
+      opacity: 1;
+    }
+
+    /* Demo sections */
+    .demo-section {
+      margin-top: 4rem;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .demo-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .demo-section p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .code-block {
+      background: var(--bg-dark-2);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      overflow-x: auto;
+      margin-bottom: 2rem;
+    }
+
+    .code-block pre {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .code-block code {
+      color: var(--accent);
+    }
+  </style>
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <h1>Floating Dock Component</h1>
+  <p>macOS-style navigation dock with smooth hover animations. Hover over icons to see the magnification effect.</p>
+
+  <!-- Desktop Dock -->
+  <div class="floating-dock">
+    <a href="#home" class="dock-item">
+      <i class="ph ph-house"></i>
+      <span class="dock-item-tooltip">Home</span>
+    </a>
+    <a href="#learn" class="dock-item">
+      <i class="ph ph-book-open"></i>
+      <span class="dock-item-tooltip">Learn</span>
+    </a>
+    <a href="#projects" class="dock-item">
+      <i class="ph ph-folder-open"></i>
+      <span class="dock-item-tooltip">Projects</span>
+    </a>
+    <a href="#design" class="dock-item">
+      <i class="ph ph-palette"></i>
+      <span class="dock-item-tooltip">Design</span>
+    </a>
+    <a href="#build" class="dock-item">
+      <i class="ph ph-wrench"></i>
+      <span class="dock-item-tooltip">Build</span>
+    </a>
+    <a href="#compete" class="dock-item">
+      <i class="ph ph-trophy"></i>
+      <span class="dock-item-tooltip">Compete</span>
+    </a>
+    <a href="#community" class="dock-item">
+      <i class="ph ph-users"></i>
+      <span class="dock-item-tooltip">Community</span>
+    </a>
+  </div>
+
+  <div class="demo-section">
+    <h2>Usage Example</h2>
+    <p>Import and use the FloatingDock component in your React application:</p>
+
+    <div class="code-block">
+      <pre><code>import { FloatingDock } from './floating-dock'
+import { House, BookOpen, Trophy } from '@phosphor-icons/react'
+
+const links = [
+  { title: "Home", icon: &lt;House size={20} /&gt;, href: "/" },
+  { title: "Learn", icon: &lt;BookOpen size={20} /&gt;, href: "/lessons" },
+  { title: "Compete", icon: &lt;Trophy size={20} /&gt;, href: "/competition" },
+]
+
+&lt;FloatingDock items={links} /&gt;</code></pre>
+    </div>
+
+    <h2>Features</h2>
+    <p>
+      • Smooth magnification effect on hover<br>
+      • Responsive desktop and mobile variants<br>
+      • Phosphor Icons integration<br>
+      • CTRC design system colors<br>
+      • Backdrop blur for glass effect<br>
+      • Tooltip labels on hover
+    </p>
+
+    <h2>Installation</h2>
+    <div class="code-block">
+      <pre><code>npm install @phosphor-icons/react framer-motion</code></pre>
+    </div>
+  </div>
+
+  <script>
+    // Add smooth scale animation on hover with JavaScript for enhanced effect
+    const dockItems = document.querySelectorAll('.dock-item');
+
+    dockItems.forEach(item => {
+      item.addEventListener('mouseenter', (e) => {
+        const siblings = Array.from(item.parentElement.children).filter(el => el !== item);
+        siblings.forEach((sibling, index) => {
+          const distance = Math.abs(Array.from(item.parentElement.children).indexOf(item) - Array.from(item.parentElement.children).indexOf(sibling));
+          if (distance === 1) {
+            sibling.style.transform = 'scale(1.1) translateY(-4px)';
+          }
+        });
+      });
+
+      item.addEventListener('mouseleave', (e) => {
+        const siblings = Array.from(item.parentElement.children);
+        siblings.forEach(sibling => {
+          if (sibling !== item) {
+            sibling.style.transform = 'scale(1) translateY(0)';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

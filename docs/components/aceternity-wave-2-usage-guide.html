@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aceternity Wave 2 - Quick Usage Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #00ff88;
+      --bg-dark: #0a0a0a;
+      --bg-dark-2: #0f0f0f;
+      --bg-dark-3: #141414;
+      --text-primary: #ffffff;
+      --text-secondary: #a0aec0;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      color: white;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .code-block {
+      background: var(--bg-dark-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+
+    .code-block pre {
+      margin: 0;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 13px;
+      color: #e0e0e0;
+      line-height: 1.5;
+    }
+
+    .code-block code {
+      color: var(--accent);
+    }
+
+    .tip {
+      background: rgba(0, 255, 136, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .tip strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .warning {
+      background: rgba(245, 158, 11, 0.1);
+      border-left: 4px solid #F59E0B;
+      padding: 12px 16px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .warning strong {
+      color: #F59E0B;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    th {
+      background: var(--bg-dark-2);
+      padding: 10px;
+      text-align: left;
+      font-weight: 700;
+      color: white;
+      border: 1px solid var(--border);
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .file-tree {
+      background: var(--bg-dark-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .file-tree .folder {
+      color: #3B82F6;
+    }
+
+    .file-tree .file {
+      color: var(--text-secondary);
+    }
+
+    ul, ol {
+      margin: 16px 0;
+      padding-left: 24px;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(0, 255, 136, 0.15);
+      color: var(--accent);
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Aceternity Wave 2 - Quick Usage Guide</h1>
+    <p>Copy-paste examples for all three components. Adapt to your needs.</p>
+
+    <!-- Files -->
+    <h2>📁 Files Created</h2>
+    <div class="file-tree">
+<span class="folder">docs/components/</span>
+├── <span class="file">animated-modal.tsx</span>                 ← Component
+├── <span class="file">animated-modal-demo.tsx</span>            ← Demo/Example
+├── <span class="file">sticky-scroll-reveal.tsx</span>           ← Component
+├── <span class="file">sticky-scroll-reveal-demo.tsx</span>      ← Demo/Example
+├── <span class="file">hover-border-gradient.tsx</span>          ← Component
+├── <span class="file">hover-border-gradient-demo.tsx</span>     ← Demo/Example
+├── <span class="file">aceternity-wave-2-preview.html</span>     ← Visual preview
+├── <span class="file">aceternity-wave-2-usage-guide.html</span> ← This file
+└── <span class="file">ACETERNITY_WAVE_2_README.md</span>        ← Full docs
+    </div>
+
+    <!-- Installation -->
+    <h2>📦 Installation</h2>
+
+    <div class="code-block">
+      <pre>npm install framer-motion @phosphor-icons/react clsx tailwind-merge</pre>
+    </div>
+
+    <div class="tip">
+      <strong>✓ Already Installed?</strong> If you completed Wave 1, you likely already have these dependencies.
+    </div>
+
+    <!-- Component 1 -->
+    <h2>1️⃣ Animated Modal</h2>
+    <span class="badge">Compound Components</span>
+    <span class="badge">Framer Motion</span>
+
+    <h3>Basic Usage</h3>
+    <div class="code-block">
+      <pre>import {
+  Modal,
+  ModalTrigger,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+} from "./components/animated-modal";
+
+export function MyModal() {
+  return (
+    &lt;Modal&gt;
+      &lt;ModalTrigger&gt;
+        Open Modal
+      &lt;/ModalTrigger&gt;
+
+      &lt;ModalBody&gt;
+        &lt;ModalContent&gt;
+          &lt;h2 className="text-2xl font-bold text-white mb-4"&gt;
+            Modal Title
+          &lt;/h2&gt;
+          &lt;p className="text-neutral-400"&gt;
+            Your content goes here...
+          &lt;/p&gt;
+        &lt;/ModalContent&gt;
+
+        &lt;ModalFooter&gt;
+          &lt;button&gt;Cancel&lt;/button&gt;
+          &lt;button&gt;Confirm&lt;/button&gt;
+        &lt;/ModalFooter&gt;
+      &lt;/ModalBody&gt;
+    &lt;/Modal&gt;
+  );
+}</pre>
+    </div>
+
+    <h3>With Animated Trigger</h3>
+    <div class="code-block">
+      <pre>import { RocketLaunch } from "@phosphor-icons/react";
+
+&lt;ModalTrigger className="flex justify-center group/modal-btn"&gt;
+  &lt;span className="group-hover/modal-btn:translate-x-40 transition duration-500"&gt;
+    Click Me
+  &lt;/span&gt;
+  &lt;div className="-translate-x-40 group-hover/modal-btn:translate-x-0 absolute inset-0 flex items-center justify-center transition duration-500"&gt;
+    &lt;RocketLaunch size={20} weight="bold" /&gt;
+  &lt;/div&gt;
+&lt;/ModalTrigger&gt;</pre>
+    </div>
+
+    <h3>Props</h3>
+    <table>
+      <tr>
+        <th>Component</th>
+        <th>Props</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>ModalTrigger</td>
+        <td>children, className</td>
+        <td>Button to open modal</td>
+      </tr>
+      <tr>
+        <td>ModalBody</td>
+        <td>children, className</td>
+        <td>Modal container</td>
+      </tr>
+      <tr>
+        <td>ModalContent</td>
+        <td>children, className</td>
+        <td>Main content area</td>
+      </tr>
+      <tr>
+        <td>ModalFooter</td>
+        <td>children, className</td>
+        <td>Footer with actions</td>
+      </tr>
+    </table>
+
+    <div class="tip">
+      <strong>✓ Auto Features:</strong> Outside-click detection, Escape key, body scroll lock, backdrop blur.
+    </div>
+
+    <!-- Component 2 -->
+    <h2>2️⃣ Sticky Scroll Reveal</h2>
+    <span class="badge">Scroll-Based</span>
+    <span class="badge">Sticky Position</span>
+
+    <h3>Basic Usage</h3>
+    <div class="code-block">
+      <pre>import { StickyScrollReveal } from "./components/sticky-scroll-reveal";
+
+const content = [
+  {
+    title: "Section 1",
+    description: "First section description...",
+    content: (
+      &lt;div className="flex items-center justify-center h-full"&gt;
+        &lt;p&gt;Visual content here&lt;/p&gt;
+      &lt;/div&gt;
+    ),
+  },
+  {
+    title: "Section 2",
+    description: "Second section description...",
+    content: (
+      &lt;div&gt;Different visual&lt;/div&gt;
+    ),
+  },
+  // Add 2-4 more sections...
+];
+
+export function MyScroll() {
+  return &lt;StickyScrollReveal content={content} /&gt;;
+}</pre>
+    </div>
+
+    <h3>With Icons</h3>
+    <div class="code-block">
+      <pre>import { Code, Robot, Trophy } from "@phosphor-icons/react";
+
+const content = [
+  {
+    title: "Learn to Code",
+    description: "Master C++ programming...",
+    content: (
+      &lt;div className="h-full flex items-center justify-center"&gt;
+        &lt;Code size={80} weight="duotone" className="text-[var(--accent)]" /&gt;
+      &lt;/div&gt;
+    ),
+  },
+  // ... more sections
+];</pre>
+    </div>
+
+    <h3>Props</h3>
+    <table>
+      <tr>
+        <th>Prop</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>content</td>
+        <td>StickyScrollContent[]</td>
+        <td>Array of section objects (required)</td>
+      </tr>
+      <tr>
+        <td>contentClassName</td>
+        <td>string</td>
+        <td>Classes for sticky visual container (optional)</td>
+      </tr>
+    </table>
+
+    <div class="warning">
+      <strong>⚠ Best Practice:</strong> Use 3-5 sections max. Too many sections make scrolling tedious.
+    </div>
+
+    <!-- Component 3 -->
+    <h2>3️⃣ Hover Border Gradient</h2>
+    <span class="badge">Gradient Animation</span>
+    <span class="badge">Hover Effect</span>
+
+    <h3>Basic Usage</h3>
+    <div class="code-block">
+      <pre>import { HoverBorderGradient } from "./components/hover-border-gradient";
+
+export function MyButton() {
+  return (
+    &lt;HoverBorderGradient
+      containerClassName="rounded-full"
+      className="bg-[var(--bg-dark-2)] text-white"
+    &gt;
+      Click Me
+    &lt;/HoverBorderGradient&gt;
+  );
+}</pre>
+    </div>
+
+    <h3>With Icons & Custom Duration</h3>
+    <div class="code-block">
+      <pre>import { ArrowRight } from "@phosphor-icons/react";
+
+&lt;HoverBorderGradient
+  containerClassName="rounded-full"
+  duration={2}              // 2 second rotation
+  clockwise={false}         // Counter-clockwise
+  className="bg-[var(--bg-dark-2)] text-white flex items-center gap-2"
+&gt;
+  &lt;span&gt;Get Started&lt;/span&gt;
+  &lt;ArrowRight size={16} weight="bold" /&gt;
+&lt;/HoverBorderGradient&gt;</pre>
+    </div>
+
+    <h3>As a Link (Not Button)</h3>
+    <div class="code-block">
+      <pre>&lt;HoverBorderGradient
+  as="a"
+  href="/courses"
+  containerClassName="rounded-md"
+  className="bg-[var(--bg-dark-2)] text-white"
+&gt;
+  View Courses
+&lt;/HoverBorderGradient&gt;</pre>
+    </div>
+
+    <h3>Props</h3>
+    <table>
+      <tr>
+        <th>Prop</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>children</td>
+        <td>ReactNode</td>
+        <td>-</td>
+        <td>Button content</td>
+      </tr>
+      <tr>
+        <td>containerClassName</td>
+        <td>string</td>
+        <td>-</td>
+        <td>Outer container classes</td>
+      </tr>
+      <tr>
+        <td>className</td>
+        <td>string</td>
+        <td>-</td>
+        <td>Inner content classes</td>
+      </tr>
+      <tr>
+        <td>as</td>
+        <td>ElementType</td>
+        <td>"button"</td>
+        <td>HTML element type</td>
+      </tr>
+      <tr>
+        <td>duration</td>
+        <td>number</td>
+        <td>1</td>
+        <td>Animation duration (seconds)</td>
+      </tr>
+      <tr>
+        <td>clockwise</td>
+        <td>boolean</td>
+        <td>true</td>
+        <td>Rotation direction</td>
+      </tr>
+    </table>
+
+    <div class="tip">
+      <strong>✓ Versatile:</strong> Works with rounded-full, rounded-md, rounded-lg, or any border radius.
+    </div>
+
+    <!-- Common Patterns -->
+    <h2>🎨 Common Patterns</h2>
+
+    <h3>Pattern 1: Modal with Feature Grid</h3>
+    <div class="code-block">
+      <pre>&lt;ModalContent&gt;
+  &lt;h2&gt;Features&lt;/h2&gt;
+  &lt;div className="grid grid-cols-2 gap-4"&gt;
+    {features.map((feature, idx) =&gt; (
+      &lt;motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: idx * 0.1 }}
+        className="p-4 bg-[var(--bg-dark-3)] rounded-lg"
+      &gt;
+        {feature.icon}
+        &lt;h3&gt;{feature.title}&lt;/h3&gt;
+        &lt;p&gt;{feature.description}&lt;/p&gt;
+      &lt;/motion.div&gt;
+    ))}
+  &lt;/div&gt;
+&lt;/ModalContent&gt;</pre>
+    </div>
+
+    <h3>Pattern 2: Sticky Scroll with Images</h3>
+    <div class="code-block">
+      <pre>content: (
+  &lt;div className="h-full w-full flex items-center justify-center p-8"&gt;
+    &lt;img
+      src="/path/to/image.jpg"
+      alt="Description"
+      className="rounded-lg object-cover w-full h-full"
+    /&gt;
+  &lt;/div&gt;
+)</pre>
+    </div>
+
+    <h3>Pattern 3: CTA Button Group</h3>
+    <div class="code-block">
+      <pre>&lt;div className="flex gap-4"&gt;
+  &lt;button className="px-4 py-2 rounded-md border border-[var(--border)] text-neutral-400"&gt;
+    Secondary Action
+  &lt;/button&gt;
+
+  &lt;HoverBorderGradient containerClassName="rounded-md"&gt;
+    Primary Action
+  &lt;/HoverBorderGradient&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+    <!-- Tips -->
+    <h2>💡 Pro Tips</h2>
+
+    <ol>
+      <li><strong>Modal:</strong> Keep content under 600px height to avoid scroll issues</li>
+      <li><strong>Sticky Scroll:</strong> Use 3-5 sections for optimal UX (not too long)</li>
+      <li><strong>Hover Gradient:</strong> Use sparingly - not every button needs it!</li>
+      <li><strong>Performance:</strong> Lazy load heavy modal content</li>
+      <li><strong>Accessibility:</strong> Always provide meaningful alt text for images</li>
+      <li><strong>Mobile:</strong> Test all components on mobile - sticky scroll hides visual on small screens</li>
+    </ol>
+
+    <!-- Customization -->
+    <h2>🎨 Customization</h2>
+
+    <h3>Change Accent Color Globally</h3>
+    <div class="code-block">
+      <pre>/* In your CSS */
+:root {
+  --accent: #ff00ff;  /* Change to purple */
+}</pre>
+    </div>
+
+    <h3>Override Component Styles</h3>
+    <div class="code-block">
+      <pre>&lt;HoverBorderGradient
+  containerClassName="rounded-md shadow-lg"
+  className="bg-blue-600 text-white font-bold px-8 py-4"
+&gt;
+  Custom Styled Button
+&lt;/HoverBorderGradient&gt;</pre>
+    </div>
+
+    <!-- Next Steps -->
+    <h2>📚 Next Steps</h2>
+
+    <ul>
+      <li>Open <code>aceternity-wave-2-preview.html</code> to see all components live</li>
+      <li>Check <code>*-demo.tsx</code> files for full working examples</li>
+      <li>Read <code>ACETERNITY_WAVE_2_README.md</code> for complete documentation</li>
+      <li>Import components into your pages and customize as needed</li>
+    </ul>
+
+    <div class="tip">
+      <strong>✓ Need Help?</strong> All demo files show real-world usage. Copy-paste and modify!
+    </div>
+
+    <!-- Footer -->
+    <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center; color: var(--text-secondary); font-size: 12px;">
+      CTRC Learning - Aceternity UI Wave 2 • March 2026
+    </div>
+  </div>
+</body>
+</html>

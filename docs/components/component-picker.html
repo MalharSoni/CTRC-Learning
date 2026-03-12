@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Picker - CTRC Learning</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #00ff88, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: #888;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .note {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-left: 3px solid #00ff88;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .category-section {
+      margin-bottom: 4rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #222;
+    }
+
+    .category-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .category-count {
+      background: #222;
+      color: #00ff88;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .components-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .component-row {
+      background: #111;
+      border: 2px solid #222;
+      border-radius: 12px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .component-row:hover {
+      border-color: #333;
+      background: #151515;
+    }
+
+    .component-row.selected {
+      border-color: #00ff88;
+      background: #1a1a1a;
+    }
+
+    .component-checkbox {
+      width: 28px;
+      height: 28px;
+      border: 2px solid #444;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .component-row.selected .component-checkbox {
+      background: #00ff88;
+      border-color: #00ff88;
+    }
+
+    .component-row.selected .component-checkbox::after {
+      content: '✓';
+      color: #0a0a0a;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .component-info {
+      flex: 1;
+    }
+
+    .component-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .tag {
+      background: #00ff88;
+      color: #0a0a0a;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tag.implemented {
+      background: #3b82f6;
+    }
+
+    .component-description {
+      color: #888;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .component-link {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      color: #00ff88;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .component-link:hover {
+      background: #222;
+      border-color: #00ff88;
+    }
+
+    .selected-panel {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #111;
+      border-top: 2px solid #00ff88;
+      padding: 1.5rem;
+      transform: translateY(100%);
+      transition: transform 0.3s;
+      box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .selected-panel.visible {
+      transform: translateY(0);
+    }
+
+    .selected-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .selected-info {
+      flex: 1;
+    }
+
+    .selected-count {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #00ff88;
+      margin-bottom: 0.5rem;
+    }
+
+    .selected-names {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #00ff88;
+      color: #0a0a0a;
+    }
+
+    .btn-primary:hover {
+      background: #00cc6a;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #333;
+    }
+
+    .btn-secondary:hover {
+      background: #222;
+      border-color: #444;
+    }
+
+    .already-implemented {
+      opacity: 0.6;
+    }
+
+    .implementation-status {
+      font-size: 0.85rem;
+      color: #3b82f6;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Pick Your Components</h1>
+    <p class="subtitle">Select components you want to add to CTRC Learning</p>
+    <div class="note">
+      <strong>📌 Note:</strong> Components marked "Implemented" are already in your project. Click component names to preview them on Aceternity UI.
+    </div>
+  </div>
+
+  <div id="components-container"></div>
+
+  <div class="selected-panel" id="selected-panel">
+    <div class="selected-content">
+      <div class="selected-info">
+        <div class="selected-count"><span id="count">0</span> components selected</div>
+        <div class="selected-names" id="selected-list"></div>
+      </div>
+      <div class="action-buttons">
+        <button class="btn btn-secondary" onclick="clearSelection()">Clear All</button>
+        <button class="btn btn-primary" onclick="exportSelection()">Copy List & Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const alreadyImplemented = [
+      'Glowing Effect',
+      'Timeline',
+      'Sidebar',
+      'Navbar Menu',
+      'Background Gradient',
+      'Canvas Reveal Effect',
+      'Flip Words',
+      'Text Generate Effect'
+    ];
+
+    const components = {
+      "🎨 Backgrounds & Visual Effects": [
+        { name: "Dotted Glow Background", desc: "Subtle dot pattern with glow - perfect for hero sections", url: "https://ui.aceternity.com/components/dotted-glow-background", new: true },
+        { name: "Grid and Dot Backgrounds", desc: "Simple, clean grid patterns - professional and minimal", url: "https://ui.aceternity.com/components/grid-and-dot-backgrounds" },
+        { name: "Noise Background", desc: "Animated gradient with noise texture - dynamic and modern", url: "https://ui.aceternity.com/components/noise-background", new: true },
+        { name: "Aurora Background", desc: "Northern lights effect - colorful and ambient", url: "https://ui.aceternity.com/components/aurora-background" },
+        { name: "Wavy Background", desc: "Smooth wave patterns - calming and fluid", url: "https://ui.aceternity.com/components/wavy-background" },
+        { name: "Meteors", desc: "Falling meteor streaks - dynamic and eye-catching", url: "https://ui.aceternity.com/components/meteors" },
+        { name: "Shooting Stars", desc: "Starfield with shooting stars - magical atmosphere", url: "https://ui.aceternity.com/components/shooting-stars" },
+        { name: "Sparkles", desc: "Configurable sparkle particles - add magic to any element", url: "https://ui.aceternity.com/components/sparkles" },
+        { name: "Spotlight", desc: "Attention-grabbing spotlight effect", url: "https://ui.aceternity.com/components/spotlight" },
+        { name: "Background Beams", desc: "Animated light beams - futuristic feel", url: "https://ui.aceternity.com/components/background-beams" },
+        { name: "Glowing Effect", desc: "Border glow (Cursor.com style) - already implemented ✓", url: "https://ui.aceternity.com/components/glowing-effect" }
+      ],
+      "🃏 Cards & Containers": [
+        { name: "3D Card Effect", desc: "Perspective tilt on hover - elevates card elements", url: "https://ui.aceternity.com/components/3d-card" },
+        { name: "Card Spotlight", desc: "Radial gradient spotlight reveal on hover", url: "https://ui.aceternity.com/components/card-spotlight" },
+        { name: "Expandable Card", desc: "Click to expand cards and reveal more content", url: "https://ui.aceternity.com/components/expandable-cards" },
+        { name: "Focus Cards", desc: "Hover focuses one card, blurs others - great for showcasing", url: "https://ui.aceternity.com/components/focus-cards" },
+        { name: "Glare Card", desc: "Linear-style glare effect on hover - premium feel", url: "https://ui.aceternity.com/components/glare-card" },
+        { name: "Bento Grid", desc: "Skewed grid layout - modern dashboard style", url: "https://ui.aceternity.com/components/bento-grid" },
+        { name: "Card Stack", desc: "Cards stack up after interval - perfect for testimonials", url: "https://ui.aceternity.com/components/card-stack" },
+        { name: "Infinite Moving Cards", desc: "Continuous scrolling loop - logos/testimonials", url: "https://ui.aceternity.com/components/infinite-moving-cards" }
+      ],
+      "✍️ Text & Typography": [
+        { name: "Text Shimmer", desc: "Shimmering text effect - eye-catching headers", url: "https://ui.aceternity.com/components/text-shimmer" },
+        { name: "Typewriter Effect", desc: "Typing animation - great for hero text", url: "https://ui.aceternity.com/components/typewriter-effect" },
+        { name: "Text Hover Effect", desc: "Gradient outline on hover (x.ai style)", url: "https://ui.aceternity.com/components/text-hover-effect" },
+        { name: "Hero Highlight", desc: "Background highlight for hero text", url: "https://ui.aceternity.com/components/hero-highlight" },
+        { name: "Flip Words", desc: "Word rotation effect - already implemented ✓", url: "https://ui.aceternity.com/components/flip-words" },
+        { name: "Text Generate Effect", desc: "Fade-in word by word - already implemented ✓", url: "https://ui.aceternity.com/components/text-generate-effect" }
+      ],
+      "📜 Scroll Effects & Parallax": [
+        { name: "Parallax Scroll", desc: "Columns scroll in opposite directions - depth effect", url: "https://ui.aceternity.com/components/parallax-scroll" },
+        { name: "Sticky Scroll Reveal", desc: "Content reveals as you scroll past sticky element", url: "https://ui.aceternity.com/components/sticky-scroll-reveal" },
+        { name: "Hero Parallax", desc: "3D rotation parallax - impressive hero section", url: "https://ui.aceternity.com/components/hero-parallax" },
+        { name: "Container Scroll Animation", desc: "3D rotation on scroll - marketing sections", url: "https://ui.aceternity.com/components/container-scroll-animation" },
+        { name: "Tracing Beam", desc: "Beam follows SVG path as user scrolls", url: "https://ui.aceternity.com/components/tracing-beam" },
+        { name: "Timeline", desc: "Vertical timeline with scroll beam - already implemented ✓", url: "https://ui.aceternity.com/components/timeline" }
+      ],
+      "🧭 Navigation & Menus": [
+        { name: "Floating Navbar", desc: "Hides on scroll down, reveals on scroll up - clean UX", url: "https://ui.aceternity.com/components/floating-navbar" },
+        { name: "Floating Dock", desc: "Mac OS style dock navigation - iconic look", url: "https://ui.aceternity.com/components/floating-dock" },
+        { name: "Tabs", desc: "Animated tab switcher with smooth transitions", url: "https://ui.aceternity.com/components/tabs" },
+        { name: "Sidebar", desc: "Expandable sidebar - already implemented ✓", url: "https://ui.aceternity.com/components/sidebar" },
+        { name: "Navbar Menu", desc: "Animated hover states - already implemented ✓", url: "https://ui.aceternity.com/components/navbar-menu" }
+      ],
+      "🎯 Buttons & CTAs": [
+        { name: "Moving Border", desc: "Animated border - makes buttons stand out", url: "https://ui.aceternity.com/components/moving-border" },
+        { name: "Hover Border Gradient", desc: "Gradient expands on hover - premium button feel", url: "https://ui.aceternity.com/components/hover-border-gradient" },
+        { name: "Tailwind CSS Buttons", desc: "Collection of battle-tested button styles", url: "https://ui.aceternity.com/components/tailwind-css-buttons" }
+      ],
+      "📝 Forms & Inputs": [
+        { name: "Placeholders And Vanish Input", desc: "Sliding placeholders with vanish effect - polished forms", url: "https://ui.aceternity.com/components/placeholders-and-vanish-input" },
+        { name: "File Upload", desc: "Drag and drop file upload with grid background", url: "https://ui.aceternity.com/components/file-upload" },
+        { name: "Signup Form", desc: "Modern signup form with animations", url: "https://ui.aceternity.com/components/signup-form" }
+      ],
+      "🌐 3D & Interactive": [
+        { name: "3D Globe", desc: "Interactive rotating globe with tooltips", url: "https://ui.aceternity.com/components/3d-globe", new: true },
+        { name: "3D Pin", desc: "Animated product pin with gradient", url: "https://ui.aceternity.com/components/3d-pin" },
+        { name: "Lens", desc: "Zoom lens effect for images/videos", url: "https://ui.aceternity.com/components/lens" },
+        { name: "Compare", desc: "Before/after image slider", url: "https://ui.aceternity.com/components/compare" }
+      ],
+      "🎠 Carousels & Sliders": [
+        { name: "Apple Cards Carousel", desc: "Apple.com style minimal carousel", url: "https://ui.aceternity.com/components/apple-cards-carousel" },
+        { name: "Carousel", desc: "Customizable carousel with micro-interactions", url: "https://ui.aceternity.com/components/carousel" },
+        { name: "Animated Testimonials", desc: "Testimonial cards with smooth animations", url: "https://ui.aceternity.com/components/animated-testimonials" }
+      ],
+      "💡 Special Effects": [
+        { name: "Lamp effect", desc: "Linear-style lamp for section headers", url: "https://ui.aceternity.com/components/lamp" },
+        { name: "Animated Modal", desc: "Smooth modal transitions", url: "https://ui.aceternity.com/components/animated-modal" },
+        { name: "Animated Tooltip", desc: "Tooltip that follows mouse pointer", url: "https://ui.aceternity.com/components/animated-tooltip" },
+        { name: "Link Preview", desc: "Dynamic previews for links", url: "https://ui.aceternity.com/components/link-preview" },
+        { name: "Canvas Reveal Effect", desc: "Dot expansion on hover (Clerk style) - already implemented ✓", url: "https://ui.aceternity.com/components/canvas-reveal-effect" }
+      ]
+    };
+
+    let selectedComponents = new Set();
+
+    function renderComponents() {
+      const container = document.getElementById('components-container');
+      container.innerHTML = '';
+      
+      Object.entries(components).forEach(([category, items]) => {
+        const section = document.createElement('div');
+        section.className = 'category-section';
+        
+        section.innerHTML = `
+          <div class="category-header">
+            <h2 class="category-title">${category}</h2>
+            <span class="category-count">${items.length}</span>
+          </div>
+          <div class="components-list" id="list-${category.replace(/\s+/g, '-')}"></div>
+        `;
+        
+        container.appendChild(section);
+        
+        const list = section.querySelector('.components-list');
+        
+        items.forEach(component => {
+          const isImplemented = alreadyImplemented.includes(component.name);
+          const row = document.createElement('div');
+          row.className = `component-row ${isImplemented ? 'already-implemented' : ''}`;
+          row.dataset.name = component.name;
+          
+          const tags = [];
+          if (component.new) tags.push('<span class="tag">new</span>');
+          if (isImplemented) tags.push('<span class="tag implemented">implemented</span>');
+          
+          row.innerHTML = `
+            <div class="component-checkbox"></div>
+            <div class="component-info">
+              <div class="component-name">
+                ${component.name}
+                ${tags.join('')}
+              </div>
+              <div class="component-description">${component.desc}</div>
+            </div>
+            <a href="${component.url}" target="_blank" class="component-link" onclick="event.stopPropagation()">
+              Preview →
+            </a>
+          `;
+          
+          if (!isImplemented) {
+            row.addEventListener('click', () => toggleSelection(component.name, row));
+          }
+          
+          list.appendChild(row);
+        });
+      });
+    }
+
+    function toggleSelection(name, row) {
+      if (selectedComponents.has(name)) {
+        selectedComponents.delete(name);
+        row.classList.remove('selected');
+      } else {
+        selectedComponents.add(name);
+        row.classList.add('selected');
+      }
+      updateSelectedPanel();
+    }
+
+    function updateSelectedPanel() {
+      const count = selectedComponents.size;
+      const panel = document.getElementById('selected-panel');
+      
+      if (count > 0) {
+        panel.classList.add('visible');
+        document.getElementById('count').textContent = count;
+        const names = Array.from(selectedComponents).join(', ');
+        document.getElementById('selected-list').textContent = names;
+      } else {
+        panel.classList.remove('visible');
+      }
+    }
+
+    function clearSelection() {
+      selectedComponents.clear();
+      document.querySelectorAll('.component-row').forEach(row => {
+        row.classList.remove('selected');
+      });
+      updateSelectedPanel();
+    }
+
+    function exportSelection() {
+      const list = Array.from(selectedComponents).sort();
+      const output = `Selected Components (${list.length}):\n\n${list.join('\n')}`;
+      
+      navigator.clipboard.writeText(list.join('\n')).then(() => {
+        alert(`✓ Copied ${list.length} components to clipboard!\n\n${output}`);
+        console.log('Selected components:', list);
+      });
+    }
+
+    // Initialize
+    renderComponents();
+  </script>
+</body>
+</html>
