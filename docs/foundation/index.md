@@ -21,19 +21,119 @@ Every unit in the Foundation Program follows the same three-phase cycle:
 
 ---
 
+## Your Learning Journey
+
+<div class="lesson-timeline">
+  <div class="timeline-container">
+    <div class="timeline-item completed">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Unit 1: Drivetrain Mastery</div>
+        <div class="timeline-meta">4 modules • 2 challenges • Foundation</div>
+      </div>
+    </div>
+    <div class="timeline-item current">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Unit 2: Programming</div>
+        <div class="timeline-meta">5 modules • 2 challenges • LemLib & Controls</div>
+      </div>
+    </div>
+    <div class="timeline-item upcoming">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Unit 3: Onshape CAD</div>
+        <div class="timeline-meta">5 modules • 3 challenges • 3D Design</div>
+      </div>
+    </div>
+    <div class="timeline-item upcoming">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Unit 4: Mechanisms</div>
+        <div class="timeline-meta">3 modules • 3 challenges • Game-Specific</div>
+      </div>
+    </div>
+    <div class="timeline-item upcoming">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Unit 5: Competition Ready</div>
+        <div class="timeline-meta">3 modules • 1 final challenge • Match Play</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
 ## Program Structure
 
-The Foundation Program is divided into **5 units**, each focusing on a critical domain of competitive robotics. Units build on each other — you must complete them in order.
+<div class="feature-cards">
+  <a href="unit1/index.md" class="feature-card">
+    <div class="feature-card-icon">
+      <i class="ph ph-gear"></i>
+    </div>
+    <h3>Unit 1: Drivetrain Mastery</h3>
+    <p>Master VEX parts, structural building, gear ratios, and friction management. Build your first competition drivetrain from scratch.</p>
+    <div style="margin-top: 1rem; font-size: 0.75rem; color: #737373;">
+      4 modules • 60 min each
+    </div>
+  </a>
 
-### Unit Overview
+  <a href="unit2/index.md" class="feature-card">
+    <div class="feature-card-icon">
+      <i class="ph ph-code"></i>
+    </div>
+    <h3>Unit 2: Programming</h3>
+    <p>Learn VSCode, LemLib, driver controls, PID tuning, and autonomous routing. Program your robot to move intelligently.</p>
+    <div style="margin-top: 1rem; font-size: 0.75rem; color: #737373;">
+      5 modules • 60-90 min each
+    </div>
+  </a>
 
-| Unit | Title | Modules | Challenges | Focus |
-|------|-------|---------|------------|-------|
-| **1** | [Drivetrain Mastery](unit1/index.md) | 4 | 2 | Parts, structure, gear ratios, building a drivetrain |
-| **2** | [Programming](unit2/index.md) | 5 | 2 | VSCode, LemLib, controls, PID, autonomous |
-| **3** | [Onshape CAD](unit3/index.md) | 5 | 3 | 3D modeling, assemblies, rendering, design iteration |
-| **4** | [Mechanisms](unit4/index.md) | 3 | 3 | Wedges, intakes, linear sliders, game mechanisms |
-| **5** | [Competition Ready](unit5/index.md) | 3 | 1 | Integration, autonomous, strategy, 2v2 matches |
+  <a href="unit3/index.md" class="feature-card">
+    <div class="feature-card-icon">
+      <i class="ph ph-cube"></i>
+    </div>
+    <h3>Unit 3: Onshape CAD</h3>
+    <p>Design in 3D using Onshape. Model VEX robots, render professional images, and iterate designs before building.</p>
+    <div style="margin-top: 1rem; font-size: 0.75rem; color: #737373;">
+      5 modules • 60-90 min each
+    </div>
+  </a>
+
+  <a href="unit4/index.md" class="feature-card">
+    <div class="feature-card-icon">
+      <i class="ph ph-lightning"></i>
+    </div>
+    <h3>Unit 4: Mechanisms</h3>
+    <p>Build game-specific mechanisms: wedges, intakes, linear sliders. Learn to manipulate game objects efficiently.</p>
+    <div style="margin-top: 1rem; font-size: 0.75rem; color: #737373;">
+      3 modules • 90 min each
+    </div>
+  </a>
+
+  <a href="unit5/index.md" class="feature-card">
+    <div class="feature-card-icon">
+      <i class="ph ph-trophy"></i>
+    </div>
+    <h3>Unit 5: Competition Ready</h3>
+    <p>Integrate everything into a complete robot. Master autonomous strategy and match tactics. Compete in 2v2 matches.</p>
+    <div style="margin-top: 1rem; font-size: 0.75rem; color: #737373;">
+      3 modules • 90-120 min each
+    </div>
+  </a>
+
+  <div class="feature-card" style="border: 2px dashed rgba(255,255,255,0.15); background: rgba(255,255,255,0.01);">
+    <div class="feature-card-icon" style="color: #737373;">
+      <i class="ph ph-plus-circle"></i>
+    </div>
+    <h3 style="color: #737373;">Advanced Units Coming Soon</h3>
+    <p>Advanced mechanisms, custom controllers, vision tracking, and tournament preparation.</p>
+    <div style="margin-top: 1rem; font-size: 0.75rem; color: #737373;">
+      Future content
+    </div>
+  </div>
+</div>
 
 ---
 
@@ -41,11 +141,15 @@ The Foundation Program is divided into **5 units**, each focusing on a critical 
 
 By the end of the Foundation Program, every student will have:
 
-- [x] Built a fully functional competition drivetrain from scratch
-- [x] Programmed driver controls, button-mapped mechanisms, and autonomous routines
-- [x] Designed robot components in Onshape CAD
-- [x] Built and integrated at least two game mechanisms
-- [x] Competed in simulated match play with strategy and scouting
+<div class="key-takeaways">
+
+- Built a fully functional competition drivetrain from scratch
+- Programmed driver controls, button-mapped mechanisms, and autonomous routines
+- Designed robot components in Onshape CAD
+- Built and integrated at least two game mechanisms
+- Competed in simulated match play with strategy and scouting
+
+</div>
 
 ---
 
@@ -77,6 +181,26 @@ Each unit includes **field challenges** — timed, scored, competitive events th
 
 ## Getting Started
 
-Start with **[Unit 1: Drivetrain Mastery](unit1/index.md)** — it's the foundation everything else builds on. You can't program a robot you haven't built, and you can't build a robot if you don't know your parts.
+<div class="lesson-navigation" style="border-top: none; padding-top: 0; margin-top: 2rem;">
+  <a href="unit1/index.md" class="nav-button next" style="flex: initial; min-width: 300px;">
+    <span>Start Unit 1: Drivetrain Mastery <i class="ph ph-arrow-right"></i></span>
+  </a>
+</div>
 
-Good luck. Build something great.
+---
+
+<style>
+.feature-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.feature-card h3 {
+  transition: color 0.15s ease;
+}
+
+.feature-card:hover h3 {
+  color: #22c55e;
+}
+</style>

@@ -1,10 +1,77 @@
 # Module 1.3: Gear Ratios & Friction
 
-Gear ratios let you customize your robot's speed and torque without changing motors. Friction management determines how much of your motor's power actually reaches the wheels. Master both, and your drivetrain will outperform robots with the same hardware.
+<div class="lesson-metadata">
+  <span class="badge badge-beginner">
+    <i class="ph ph-gauge"></i>
+    Beginner
+  </span>
+  <span class="badge badge-time">
+    <i class="ph ph-clock"></i>
+    60 minutes
+  </span>
+  <span class="badge badge-hands-on">
+    <i class="ph ph-wrench"></i>
+    Hands-on
+  </span>
+</div>
 
 ---
 
-## Gear Ratios
+## Unit 1 Progress
+
+<div class="lesson-timeline">
+  <div class="timeline-container">
+    <div class="timeline-item completed">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Module 1.1: Safety & Common Parts</div>
+        <div class="timeline-meta">Completed</div>
+      </div>
+    </div>
+    <div class="timeline-item completed">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Module 1.2: Structure & Bracing</div>
+        <div class="timeline-meta">Completed</div>
+      </div>
+    </div>
+    <div class="timeline-item current">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Module 1.3: Gear Ratios & Friction</div>
+        <div class="timeline-meta">In Progress</div>
+      </div>
+    </div>
+    <div class="timeline-item upcoming">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Module 1.4: Drivetrain Build</div>
+        <div class="timeline-meta">Up Next</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Lesson Overview
+
+Gear ratios let you customize your robot's speed and torque without changing motors. Friction management determines how much of your motor's power actually reaches the wheels. Master both, and your drivetrain will outperform robots with the same hardware.
+
+### Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+- [ ] Calculate gear ratios and predict their effect on speed and torque
+- [ ] Choose the right gear ratio for different robot mechanisms
+- [ ] Identify and eliminate axial friction in rotating assemblies
+- [ ] Build assemblies with controlled play to minimize friction
+- [ ] Construct ultra-low-friction screw joints using shoulder screws
+- [ ] Diagnose and fix drivetrain friction issues
+
+---
+
+## Lesson: Gear Ratios
 
 ### The Basics
 
@@ -75,24 +142,9 @@ Total: 1:3 × 1:3 = 1:9 (9x torque, 1/9 speed)
 
     This gives you the same RPM as a red cartridge but with different motor characteristics.
 
-!!! example "Activity: Build Three Gear Ratios"
-    **Time:** 25 minutes | **Format:** Individual
-
-    Build three separate gear assemblies (not on a drivetrain — just on a test frame):
-
-    1. **1:1 ratio** — same size gears. Spin the input and observe the output speed.
-    2. **1:3 ratio** — small driving, large driven. Feel the increased torque (resistance to stopping the output).
-    3. **5:1 ratio** — large driving, small driven. Notice the speed increase but easy-to-stop output.
-
-    **For each ratio, answer:**
-
-    - How fast does the output spin relative to the input?
-    - How hard is it to stop the output gear with your finger?
-    - When would this ratio be useful on a robot?
-
 ---
 
-## Friction
+## Lesson: Friction Management
 
 Friction is the invisible enemy. Every point of contact between moving parts steals energy from your motors. A robot with poor friction management can lose **30–50% of its motor power** to heat and wasted energy.
 
@@ -155,7 +207,7 @@ Radial friction occurs when an **axle rubs against its mounting hole**. This is 
 
 ---
 
-## Screw Joints
+## Lesson: Screw Joints
 
 A **screw joint** is a technique where a shoulder screw acts as an axle for a rotating component. Instead of using a VEX axle through bearings, you use a shoulder screw through the component's bore.
 
@@ -185,26 +237,9 @@ A **screw joint** is a technique where a shoulder screw acts as an axle for a ro
 !!! tip "The Nylock Sweet Spot"
     Tighten the nylock nut until it just touches the spacer stack, then back off about 1/8 turn. The component should spin freely. The nylock's nylon insert will hold the nut at this position permanently.
 
-!!! example "Activity: Screw Joint Free Spin Challenge"
-    **Time:** 15 minutes | **Format:** Individual
-
-    1. Build a small frame from C-Channel.
-    2. Mount a wheel on a **screw joint** (shoulder screw through the hub).
-    3. Add spacers so the wheel doesn't rub the frame.
-    4. Flick the wheel and time how long it spins.
-    5. **Target: 5+ seconds of free spin.**
-
-    **Compare to Module 1.1 results:** Is the screw joint assembly better or worse than your axle-and-bearing assembly? Why?
-
-    **Typical results:**
-
-    - Poorly built axle assembly: 1–3 seconds
-    - Well-built axle assembly: 4–6 seconds
-    - Well-built screw joint: 6–10+ seconds
-
 ---
 
-## Applying It All: Drivetrain Friction
+## Lesson: Drivetrain Friction Diagnosis
 
 Your drivetrain is the most friction-critical assembly on the robot. Every wheel, every gear, every axle must spin freely.
 
@@ -224,14 +259,146 @@ Your drivetrain is the most friction-critical assembly on the robot. Every wheel
 
 ---
 
+## Assignment
+
+Complete these three hands-on activities to prove your understanding:
+
+### Activity 1: Build Three Gear Ratios
+**Time:** 25 minutes | **Format:** Individual
+
+Build three separate gear assemblies (not on a drivetrain — just on a test frame):
+
+1. **1:1 ratio** — same size gears. Spin the input and observe the output speed.
+2. **1:3 ratio** — small driving, large driven. Feel the increased torque (resistance to stopping the output).
+3. **5:1 ratio** — large driving, small driven. Notice the speed increase but easy-to-stop output.
+
+**For each ratio, answer:**
+
+- How fast does the output spin relative to the input?
+- How hard is it to stop the output gear with your finger?
+- When would this ratio be useful on a robot?
+
+---
+
+### Activity 2: Screw Joint Free Spin Challenge
+**Time:** 15 minutes | **Format:** Individual
+
+1. Build a small frame from C-Channel.
+2. Mount a wheel on a **screw joint** (shoulder screw through the hub).
+3. Add spacers so the wheel doesn't rub the frame.
+4. Flick the wheel and time how long it spins.
+5. **Target: 5+ seconds of free spin.**
+
+**Compare to Module 1.1 results:** Is the screw joint assembly better or worse than your axle-and-bearing assembly? Why?
+
+**Typical results:**
+
+- Poorly built axle assembly: 1–3 seconds
+- Well-built axle assembly: 4–6 seconds
+- Well-built screw joint: 6–10+ seconds
+
+---
+
+### Activity 3: Friction Audit
+**Time:** 20 minutes | **Format:** Pairs
+
+If you've already started building a drivetrain (from Module 1.4 or earlier):
+
+1. Go through the **Drivetrain Friction Checklist** above
+2. Perform the **Disengage Test**
+3. Identify and fix at least one friction source
+4. Re-test and document the improvement
+
+If you haven't built a drivetrain yet, skip this activity and return to it after Module 1.4.
+
+---
+
+## Knowledge Check
+
+<div class="knowledge-check">
+
+Answer these questions to verify your understanding:
+
+!!! question "Question 1"
+    If you have a 12-tooth driving gear and a 36-tooth driven gear, what is the gear ratio? What effect does this have on speed and torque?
+
+    ??? success "Answer"
+        **Ratio:** 1:3 (or just "3" as a multiplier on the driven side)
+
+        **Effect:** 3x torque increase, 1/3 speed decrease
+
+!!! question "Question 2"
+    You need your robot to climb a steep ramp. Should you use a torque ratio (small → large) or speed ratio (large → small)?
+
+    ??? success "Answer"
+        **Torque ratio** (small driving → large driven)
+
+        Climbing requires more pushing force (torque), not speed. A 1:3 or 1:5 torque ratio would work well.
+
+!!! question "Question 3"
+    What is axial friction, and how do you prevent it?
+
+    ??? success "Answer"
+        **Axial friction** occurs when a rotating component's face rubs against a stationary surface (like a gear face pressed against C-Channel).
+
+        **Prevention:** Add spacers to create a small gap (~1mm) between the rotating component and the surface.
+
+!!! question "Question 4"
+    What is "controlled play" and why is it important?
+
+    ??? success "Answer"
+        **Controlled play** is a small intentional gap (~1mm) between a rotating component and adjacent surfaces.
+
+        **Importance:** It prevents binding/friction while keeping the component aligned. Too tight = friction. Too loose = wobble and misalignment.
+
+!!! question "Question 5"
+    Your drivetrain fails the disengage test (doesn't roll freely when motors are removed). Name three possible causes.
+
+    ??? success "Answer"
+        Possible causes (any 3):
+
+        1. Gears or wheels pressed against C-Channel (axial friction)
+        2. Axles without bearings (radial friction)
+        3. Shaft collars over-tightened against bearings
+        4. Gears meshing too tightly or misaligned
+        5. Wheels binding on frame
+
+</div>
+
+---
+
+## Additional Resources
+
+Want to go deeper? Check out these optional resources:
+
+- **VEX Library:** [Gear Ratios Explained](https://kb.vex.com/) (official VEX Knowledge Base article)
+- **Video:** [Compound Gear Trains](https://www.youtube.com/results?search_query=compound+gear+train+explained) (search for gear train tutorials)
+- **Calculator:** [VEX Drivetrain Speed Calculator](https://www.vexforum.com/t/drivetrain-speed-calculator/) (VEX Forum tool)
+- **Advanced:** [Efficiency Losses in Gear Trains](https://www.vexforum.com/) (VEX Forum discussion on real-world friction losses)
+
+---
+
 ## Key Takeaways
 
-- [x] Gear ratios trade speed for torque — you can't increase both
-- [x] Small driving → large driven = more torque, less speed
-- [x] Large driving → small driven = more speed, less torque
-- [x] Axial friction from components rubbing surfaces is the biggest energy thief
-- [x] Controlled play (~1mm gap) prevents binding without causing wobble
-- [x] Screw joints using shoulder screws provide ultra-low-friction rotation
-- [x] Always test with the disengage test — if it doesn't roll freely, fix it
+<div class="key-takeaways">
 
-**Next up:** [Module 1.4: Drivetrain Build](drivetrain-build.md) — put it all together and build your competition drivetrain.
+- Gear ratios trade speed for torque — you can't increase both
+- Small driving → large driven = more torque, less speed
+- Large driving → small driven = more speed, less torque
+- Axial friction from components rubbing surfaces is the biggest energy thief
+- Controlled play (~1mm gap) prevents binding without causing wobble
+- Screw joints using shoulder screws provide ultra-low-friction rotation
+- Always test with the disengage test — if it doesn't roll freely, fix it
+
+</div>
+
+---
+
+<div class="lesson-navigation">
+  <a href="structure-and-bracing.md" class="nav-button prev">
+    <span><i class="ph ph-arrow-left"></i> Previous: Structure & Bracing</span>
+  </a>
+  <a href="drivetrain-build.md" class="nav-button next">
+    <span>Next: Drivetrain Build <i class="ph ph-arrow-right"></i></span>
+  </a>
+</div>
