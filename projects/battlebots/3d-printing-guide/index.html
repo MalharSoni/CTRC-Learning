@@ -942,6 +942,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Required
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#materials-for-combat-robots" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1190,6 +1212,17 @@
     <span class="md-ellipsis">
       
         Post-Processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Criteria
       
     </span>
   </a>
@@ -1469,6 +1502,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Required
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#materials-for-combat-robots" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1724,6 +1779,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-step" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1836,6 +1902,20 @@
 <h1 id="3d-printing-guide">3D Printing Guide</h1>
 <p>Your CAD model is done — now it's time to turn those STL files into real, physical parts. 3D printing is one of the most powerful tools in small combat robotics: you can design a part in the morning, print it in the afternoon, and test it in the arena by evening. When it breaks, you print another one.</p>
 <p>This guide covers material selection, print settings, orientation strategy, and common issues for combat robot parts.</p>
+<hr>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By completing this module, you will be able to:</p>
+<ul>
+<li>Choose appropriate materials for each part (PLA+ for structure, TPU for armor/hubs, PETG for balance)</li>
+<li>Explain why print orientation affects part strength (layer lines and impact direction)</li>
+<li>Orient parts correctly to maximize strength against expected forces</li>
+<li>Identify and troubleshoot common print issues (warping, stringing, poor adhesion)</li>
+<li>Estimate print times and plan printing schedules</li>
+<li>Prepare STL files for teacher handoff with correct orientation notes</li>
+</ul>
+<hr>
+<h2 id="time-required">Time Required</h2>
+<p>1-2 hours (reading and preparation; actual print time is 8-16 hours total for all parts)</p>
 <hr>
 <h2 id="materials-for-combat-robots">Materials for Combat Robots</h2>
 <p>Not all 3D printing filaments are created equal. For a combat robot, you need materials that can survive impacts, vibration, and the occasional direct hit from a spinning weapon. Here are the three materials you'll use.</p>
@@ -2158,7 +2238,7 @@
 <p><strong>Layer orientation is the single most important decision after material choice.</strong> 3D printed parts are weakest in the Z direction (between layers). A part that's strong when hit from the side might snap like a cracker when hit from the top.</p>
 <h3 id="understanding-layer-lines-and-strength">Understanding Layer Lines and Strength</h3>
 <p>When 3D printing, each layer bonds to the previous layer. This bond is the weakest point. Look at this comparison:</p>
-<p><a class="glightbox" data-type="image" data-width="90%" data-height="auto" href="../images/printing/hole-orientation-comparison.jpg" data-desc-position="bottom"><img alt="Print Orientation Comparison" src="../images/printing/hole-orientation-comparison.jpg"></a></p>
+<p><a class="glightbox" data-type="image" data-width="90%" data-height="auto" href="../images/printing/hole-orientation-comparison.jpg" data-desc-position="bottom"><img alt="3D printed parts comparison showing horizontal holes with visible layer lines at stress points versus vertical holes with solid material distribution - vertical orientation is significantly stronger" src="../images/printing/hole-orientation-comparison.jpg"></a></p>
 <p><strong>Key Principle:</strong> Orient parts so that impact forces don't try to pull layers apart.</p>
 <ul>
 <li><strong>Red (BAD):</strong> Horizontal holes have weak points where layer lines concentrate stress around the hole</li>
@@ -2309,8 +2389,19 @@
 <li><strong>Label your parts</strong> — write on them with a marker so you know what goes where</li>
 </ol>
 <hr>
+<h2 id="success-criteria">Success Criteria</h2>
+<p>You are ready to move on when you can:</p>
+<ul>
+<li>[ ] Assign correct materials to each part (PLA+ for chassis, TPU for weapon hub, etc.)</li>
+<li>[ ] Explain why holes should be oriented vertically for maximum strength</li>
+<li>[ ] Orient your weapon for printing (flat on bed, layers perpendicular to impact)</li>
+<li>[ ] Estimate total print time for all parts (8-16 hours range)</li>
+<li>[ ] Hand off STL files to teacher with orientation recommendations</li>
+<li>[ ] Identify 3 common print issues and their fixes</li>
+</ul>
+<hr>
 <h2 id="next-step">Next Step</h2>
-<p>Your parts are printed — now it's time to set up your electronics. Head to the <strong><a href="../malenki-nano-setup/">Malenki Nano Setup</a></strong> guide to wire and configure your control board.</p>
+<p>Hand your STL files to your teacher for printing with optimized settings. While parts are printing, you can review the <a href="../assembly-and-wiring/">Chassis Assembly</a> module to prepare for the build phase.</p>
 
 
 

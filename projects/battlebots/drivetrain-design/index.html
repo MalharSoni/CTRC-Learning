@@ -2042,10 +2042,78 @@
 <li><strong>Set screw</strong>: Add a set screw hole perpendicular to the shaft for extra security</li>
 <li><strong>Glue</strong>: In a pinch, a drop of CA (super glue) on the shaft before pressing the wheel on works — but makes future disassembly harder</li>
 </ul>
-<div class="admonition example">
-<p class="admonition-title">📐 Diagram Needed</p>
-<p>Wheel hub mating with D-shaft: flat alignment and optional set screw cross-section</p>
+<details class="info">
+<summary>D-Shaft Interface Diagram</summary>
+<p><strong>How the N20 motor shaft connects to your wheel:</strong></p>
+<div class="highlight"><pre><span></span><code>FRONT VIEW (looking at shaft end):
+
+     Standard Round Shaft        D-Shaft (N20 Motor)
+     ┌──────────────┐           ┌──────────────┐
+     │              │           │              │
+     │      ○○      │           │    ○○        │
+     │              │           │   ╱  ╲       │
+     │              │           │  │    │      │
+     └──────────────┘           └──│────│──────┘
+                                   Flat
+     Spins freely in hole       edge
+
+
+SIDE VIEW (shaft profile):
+
+Round Shaft:
+    ═══════════════════
+    (No flat - just circular)
+
+D-Shaft:
+    ═══════════════════
+           ▬▬▬▬▬▬
+    (Flat machined on one side)
+
+
+WHY D-SHAFT?
+
+Without flat (round):         With flat (D-shaft):
+┌────────┐                   ┌────────┐
+│  Wheel │ spins on          │  Wheel │ locks to
+│   ○○   │ shaft             │   ○╱   │ shaft
+└────────┘                   └────────┘
+  Slips!                       Grips!
+
+
+3D PRINTED WHEEL SOCKET:
+
+Top View:                    Cross-Section:
+┌────────────┐              ┌────────────┐
+│     ○╱     │              │    ╱╲      │
+│    /  \    │              │   /  \     │
+│   |    |   │              │  |    |    │
+│    \  /    │              │   \  /     │
+│     ○╱     │              │    ╲/      │
+└────────────┘              └────────────┘
+  D-shaped                   Flat edge matches
+  pocket                     motor shaft flat
+</code></pre></div>
+<p><strong>N20 MOTOR SHAFT SPECIFICATIONS:</strong></p>
+<ul>
+<li>Diameter: 3.0mm</li>
+<li>Flat width: 2.5mm (D-cut depth)</li>
+<li>Shaft length: 9mm</li>
+<li>Material: Steel</li>
+</ul>
+<p><strong>CAD DESIGN TIP:</strong></p>
+<p>When modeling wheel socket in Onshape:</p>
+<ol>
+<li>Sketch circle: 3.0mm diameter</li>
+<li>Sketch rectangle across circle (width: 3.0mm, height: 0.5mm cut depth)</li>
+<li>Extrude pocket: 4mm deep</li>
+<li>Add 0.1mm clearance for easy fit</li>
+</ol>
+<p>Result: Wheel locks onto shaft, no slipping!</p>
+<div class="admonition tip">
+<p class="admonition-title">Common 3D Printing Issue</p>
+<p>If D-pocket prints too tight, use 3.1mm diameter instead of 3.0mm for easier assembly.</p>
 </div>
+</details>
 <hr>
 <h2 id="drivetrain-design-checklist">Drivetrain Design Checklist</h2>
 <p>Before finalizing your drivetrain design:</p>

@@ -1909,10 +1909,36 @@ $$</p>
 </tbody>
 </table>
 <p><strong>Practical implication:</strong> A weapon with more mass at the edges (like a ring or bar tips) stores more energy than one with mass at the center (like a solid disc), for the same total weight.</p>
-<div class="admonition example">
-<p class="admonition-title">📐 Diagram Needed</p>
-<p>Mass distribution comparison: solid disc vs ring vs bar relative to spin axis</p>
-</div>
+<details class="info">
+<summary>Mass Distribution Comparison</summary>
+<p><strong>How mass placement affects energy storage:</strong></p>
+<div class="highlight"><pre><span></span><code>SOLID DISC              RING                    BAR
+(Low MOI)               (High MOI)              (Highest MOI)
+
+    ████                 ████                    ████
+  ████████             ██    ██                  ██
+ ██████████           ██  ○  ██                  ██
+ ██████████           ██      ██                 ██
+  ████████             ██    ██                  ██
+    ████                 ████                    ████
+
+Mass centered          Mass at edges           Mass at extremes
+near axis              of disc                 (furthest from axis)
+
+MOI = LOW              MOI = MEDIUM            MOI = HIGH
+Easy to spin up        Moderate spin-up        Slow spin-up
+Less stored energy     Good energy storage     Maximum energy storage
+</code></pre></div>
+<p><strong>Moment of Inertia (MOI) Formula:</strong> MOI = m × r²</p>
+<p>Where: m = mass, r = distance from rotation axis</p>
+<p><strong>Design Trade-off:</strong></p>
+<ul>
+<li><strong>Solid Disc</strong>: Spins up fast, less kinetic energy per hit</li>
+<li><strong>Ring</strong>: Balanced approach, most common for beginners</li>
+<li><strong>Bar</strong>: Maximum damage per hit, but requires powerful motor</li>
+</ul>
+<p><strong>For Beetleweight Bots:</strong> Most successful designs use a thin ring or bar configuration to maximize energy storage while keeping the weapon lightweight.</p>
+</details>
 <hr>
 <h2 id="bite">Bite</h2>
 <p><strong>Bite</strong> is the distance the weapon's impactor travels forward into the opponent between successive hits. It determines how deeply your weapon cuts into the target.</p>
@@ -1925,10 +1951,55 @@ $$</p>
 <li><strong>Too much bite</strong> (few teeth, low RPM): The weapon digs in deep but can stall on impact or rip itself out of the opponent violently.</li>
 <li><strong>Good bite</strong> (balanced): The weapon cuts in, delivers energy, and ejects the opponent.</li>
 </ul>
-<div class="admonition example">
-<p class="admonition-title">📐 Diagram Needed</p>
-<p>Bite: forward travel of weapon tooth between impacts, with closing speed and tooth spacing</p>
-</div>
+<details class="info">
+<summary>Bite Calculation Diagram</summary>
+<p><strong>Understanding how deep your weapon cuts:</strong></p>
+<div class="highlight"><pre><span></span><code>                    WEAPON DISC ROTATION
+                         ↓
+        ═══════════════════════════════════
+        ║                                 ║
+        ║    ┌─────────────────────────┐ ║
+        ║    │  Tooth 1        Tooth 2 │ ║  ← Weapon disc with 2 teeth
+        ║    │     ▲              ▲    │ ║
+        ║    └─────┼──────────────┼────┘ ║
+        ║          │              │      ║
+        ║          │←─ Spacing ──→│      ║
+        ║                                 ║
+        ╚═══════════════════════════════════
+
+                    BITE GEOMETRY
+                         ↓
+                 ┌──────────────┐
+                 │    TOOTH     │
+                 └───┬──────────┘
+                     │
+                     │ ← Bite depth
+                     │
+        ═════════════╧═════════════  ← Opponent armor
+        ─────────────→
+        Forward travel distance
+</code></pre></div>
+<p><strong>BITE FORMULA:</strong>
+Bite (mm) = (Forward Travel × 360°) / (Tooth Spacing Angle)</p>
+<p>Where:</p>
+<ul>
+<li>Forward Travel = Robot's drive speed × contact time</li>
+<li>Tooth Spacing Angle = 360° / Number of Teeth</li>
+</ul>
+<p><strong>EXAMPLE CALCULATION:</strong></p>
+<ul>
+<li>2-tooth weapon → 180° spacing</li>
+<li>Robot moves 5mm forward during hit</li>
+<li>Bite = (5mm × 360°) / 180° = 10mm</li>
+</ul>
+<p><strong>GOOD BITE RANGE:</strong></p>
+<ul>
+<li>Minimum: 3mm (can grab armor)</li>
+<li>Optimal: 5-10mm (solid hit)</li>
+<li>Too much: &gt;15mm (weapon bogs down)</li>
+</ul>
+<p><strong>Key Insight:</strong> More teeth = less bite depth. For beetleweight bots, 2-4 teeth is optimal for good bite without excessive drag.</p>
+</details>
 <h3 id="bite-design-guidelines-for-500g-robots">Bite Design Guidelines for 500g Robots</h3>
 <table>
 <thead>
