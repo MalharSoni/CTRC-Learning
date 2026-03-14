@@ -71,7 +71,7 @@ extra:
       link: "#"
 
 nav:
-  - Home: index.html
+  - Home: index.md
   - V5 Foundation Program:
     - foundation/index.md
     - Unit 1 - Drivetrain Mastery:
