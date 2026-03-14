@@ -345,19 +345,15 @@
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/AGENT_TEAM_PLAN/</loc>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/AGENT_3_REPORT/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/ARCHITECTURE_PLAN/</loc>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/CONTRIBUTING/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/AUDIT_REPORT/</loc>
-         <lastmod>2026-03-14</lastmod>
-    </url>
-    <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/EXECUTION_ROADMAP/</loc>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/CURRICULUM_GUIDE/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
@@ -365,7 +361,15 @@
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/GLOSSARY/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
          <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/LICENSE_COMPLIANCE/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/MAINTENANCE/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
@@ -377,7 +381,7 @@
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/RESOURCE_ACQUISITION_REPORT/</loc>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/README_STANDARDS/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
@@ -393,6 +397,18 @@
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/SUCCESS_CRITERIA/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/TESTING_CHECKLIST/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/VISUAL_ASSETS/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
          <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/VISUAL_STANDARDS/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
@@ -402,6 +418,18 @@
     </url>
     <url>
          <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/cad-your-bot/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/checkpoint-assembly-ready/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/checkpoint-cad-complete/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/checkpoint-testing-ready/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
@@ -421,6 +449,10 @@
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/sources/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
          <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/testing-and-safety/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
@@ -429,43 +461,95 @@
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/archive/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/archive/AGENT_1_REPORT/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/archive/AGENT_4_REPORT/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/archive/AGENT_5_REPORT/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/archive/AGENT_TEAM_PLAN/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/archive/ARCHITECTURE_PLAN/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/archive/AUDIT_REPORT/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/archive/EXECUTION_ROADMAP/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/archive/RESOURCE_ACQUISITION_REPORT/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
          <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/ATTRIBUTION_AUDIT/</loc>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/COMPLETION_SUMMARY/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/CONTENT_ACQUISITION_REPORT/</loc>
-         <lastmod>2026-03-14</lastmod>
-    </url>
-    <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/DOWNLOAD_CHECKLIST/</loc>
-         <lastmod>2026-03-14</lastmod>
-    </url>
-    <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/IMAGE_SOURCES/</loc>
-         <lastmod>2026-03-14</lastmod>
-    </url>
-    <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/INTEGRATION_GUIDE/</loc>
-         <lastmod>2026-03-14</lastmod>
-    </url>
-    <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/MANUAL_TASKS_REQUIRED/</loc>
-         <lastmod>2026-03-14</lastmod>
-    </url>
-    <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/QUICK_REFERENCE/</loc>
-         <lastmod>2026-03-14</lastmod>
-    </url>
-    <url>
-         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/SOURCING_SUMMARY/</loc>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/QUICK_START_PHASE_2/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>
          <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/attribution/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/AGENT_2_REPORT/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/ATTRIBUTION_AUDIT/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/CONTENT_ACQUISITION_REPORT/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/DOWNLOAD_CHECKLIST/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/IMAGE_SOURCES/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/INTEGRATION_GUIDE/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/MANUAL_TASKS_REQUIRED/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/QUICK_REFERENCE/</loc>
+         <lastmod>2026-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://malharsoni.github.io/CTRC-Learning/projects/battlebots/images/archive/SOURCING_SUMMARY/</loc>
          <lastmod>2026-03-14</lastmod>
     </url>
     <url>

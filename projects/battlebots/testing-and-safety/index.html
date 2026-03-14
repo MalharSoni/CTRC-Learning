@@ -1421,10 +1421,69 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition example">
-<p class="admonition-title">📐 Diagram Needed</p>
-<p>7-step power-on sequence flowchart</p>
+<details class="info">
+<summary>Power-On Sequence Flowchart</summary>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────┐
+│  SAFE POWER-ON PROCEDURE                    │
+└─────────────────────────────────────────────┘
+
+    ┌────────────────────────────────┐
+    │ 1. WEAPON LOCK INSTALLED       │
+    │    ✓ Pin/zip-tie in place      │
+    │    ✓ Weapon cannot spin        │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 2. TRANSMITTER ON              │
+    │    ✓ Turn on controller FIRST  │
+    │    ✓ Check for bind light      │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 3. VERIFY RECEIVER OFF         │
+    │    ✓ Robot has no power yet    │
+    │    ✓ Battery disconnected      │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 4. CONNECT BATTERY             │
+    │    ✓ Plug in main battery      │
+    │    ✓ Listen for Malenki beeps  │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 5. VERIFY FAILSAFE WORKS       │
+    │    ✓ Turn transmitter OFF      │
+    │    ✓ Weapon must NOT spin      │
+    │    ✓ Turn transmitter back ON  │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 6. TEST CONTROLS               │
+    │    ✓ Drive forward/reverse     │
+    │    ✓ Verify steering works     │
+    │    ✓ DO NOT activate weapon    │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 7. REMOVE WEAPON LOCK (ARENA)  │
+    │    ⚠️  ONLY in sealed arena    │
+    │    ⚠️  NEVER outside arena     │
+    │    ✓ Now ready for combat      │
+    └────────────────────────────────┘
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">CRITICAL RULE</p>
+<p><strong>ALWAYS</strong> power transmitter ON before connecting robot battery.
+If receiver powers on first, weapon may activate unexpectedly!</p>
 </div>
+</details>
 <h3 id="power-off-sequence-after-testing-or-fighting">Power-Off Sequence (After Testing or Fighting)</h3>
 <p>Reverse the order:</p>
 <table>
@@ -1473,10 +1532,67 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition example">
-<p class="admonition-title">📐 Diagram Needed</p>
-<p>7-step power-off sequence flowchart (reverse order)</p>
+<details class="info">
+<summary>Power-Off Sequence Flowchart</summary>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────┐
+│  SAFE POWER-OFF PROCEDURE                   │
+└─────────────────────────────────────────────┘
+
+    ┌────────────────────────────────┐
+    │ 1. WEAPON FULLY STOPPED        │
+    │    ✓ Wait for weapon to stop   │
+    │    ✓ No spinning parts moving  │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 2. INSTALL WEAPON LOCK         │
+    │    ✓ Insert pin/zip-tie        │
+    │    ✓ Verify weapon cannot spin │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 3. DISCONNECT BATTERY          │
+    │    ✓ Unplug main battery       │
+    │    ✓ Robot has no power        │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 4. VERIFY NO POWER             │
+    │    ✓ No lights on Malenki      │
+    │    ✓ No sounds from motors     │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 5. TRANSMITTER OFF             │
+    │    ✓ Turn off controller LAST  │
+    │    ✓ Store safely              │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 6. WEAPON LOCK STAYS IN        │
+    │    ✓ Lock remains installed    │
+    │    ✓ Safe to handle robot      │
+    └──────────────┬─────────────────┘
+                   │
+                   ▼
+    ┌────────────────────────────────┐
+    │ 7. STORE SAFELY                │
+    │    ✓ Battery in fireproof bag  │
+    │    ✓ Robot in secure location  │
+    └────────────────────────────────┘
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">CRITICAL RULE</p>
+<p><strong>ALWAYS</strong> disconnect battery before turning OFF transmitter.
+Reverse order from power-on sequence!</p>
+<p><strong>NEVER REMOVE WEAPON LOCK OUTSIDE ARENA</strong></p>
 </div>
+</details>
 <div class="admonition danger">
 <p class="admonition-title">NEVER Power On a Spinning Weapon Outside of an Enclosed Test Area</p>
 <p>Even at 500g, a spinning weapon can cause serious injury — lacerations, broken fingers, eye damage. If the weapon is not inside the sealed arena or an enclosed test box, it must not be powered. No exceptions. No "quick tests." No "just checking."</p>

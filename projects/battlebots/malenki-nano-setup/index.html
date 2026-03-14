@@ -1262,10 +1262,53 @@
 <li>Connect the <strong>negative (-)</strong> battery wire to the Nano power input <strong>negative</strong></li>
 <li>Double-check polarity before plugging in — <strong>reverse polarity will destroy the board</strong></li>
 </ol>
-<div class="admonition example">
-<p class="admonition-title">📐 Diagram Needed</p>
-<p>Correct polarity (red to +, black to -) vs reversed (X mark) — NEVER reverse</p>
+<details class="info">
+<summary>Battery Polarity Diagram - CRITICAL SAFETY</summary>
+<div class="highlight"><pre><span></span><code>✅ CORRECT POLARITY:
+
+    Battery               Malenki Nano
+    ┌─────────┐           ┌──────────┐
+    │   2S    │           │          │
+    │  LiPo   │  Red  ──→ │ BAT+     │
+    │  7.4V   │           │          │
+    │         │  Black ──→│ BAT-     │
+    └─────────┘           │          │
+                          └──────────┘
+
+    Result: ESC powers on normally
+    Status: ✓ SAFE
+
+
+❌ REVERSED POLARITY:
+
+    Battery               Malenki Nano
+    ┌─────────┐           ┌──────────┐
+    │   2S    │           │          │
+    │  LiPo   │  Red  ──→ │ BAT-     │  ⚠️ WRONG!
+    │  7.4V   │           │          │
+    │         │  Black ──→│ BAT+     │  ⚠️ WRONG!
+    └─────────┘           │          │
+                          └──────────┘
+
+    Result: 💥 INSTANT DAMAGE
+    Status: ✗ ESC DESTROYED
+</code></pre></div>
+<p><strong>Color Code Standard:</strong></p>
+<ul>
+<li><strong>Red</strong> = Positive (+)</li>
+<li><strong>Black</strong> = Negative (-)</li>
+</ul>
+<p><strong>HOW TO CHECK POLARITY:</strong></p>
+<ol>
+<li>Look for + and - symbols printed on Malenki Nano PCB</li>
+<li>Use multimeter: Red probe → suspected positive, Black probe → suspected negative</li>
+<li>Should read ~7.4V (not -7.4V)</li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">NEVER ASSUME POLARITY</p>
+<p>Always verify with multimeter before first connection!</p>
 </div>
+</details>
 <div class="admonition danger">
 <p class="admonition-title">Check Polarity Twice</p>
 <p>Reversing the battery polarity (connecting + to - and - to +) will permanently destroy the Malenki Nano. There is no protection circuit. Check your wiring TWICE before connecting the battery for the first time.</p>
@@ -1283,10 +1326,85 @@
 <li>Connect these three wires to the Nano's <strong>brushless output</strong> (three pads/pins)</li>
 <li>The order of the three wires determines spin direction — if the weapon spins the wrong way, swap any two of the three wires</li>
 </ol>
-<div class="admonition example">
-<p class="admonition-title">📐 Diagram Needed</p>
-<p>Wiring diagram: LiPo→Nano, Motor A→left N20, Motor B→right N20, Brushless→weapon, wire colors marked</p>
-</div>
+<details class="info">
+<summary>Complete Malenki Nano Wiring Diagram</summary>
+<div class="highlight"><pre><span></span><code>                    MALENKI NANO ESC
+        ┌────────────────────────────────────┐
+        │                                    │
+        │  ┌──────────┐      ┌──────────┐  │
+        │  │  Motor   │      │  Motor   │  │
+        │  │ Driver 1 │      │ Driver 2 │  │
+        │  └──────────┘      └──────────┘  │
+        │                                    │
+        │       RX        ARM       LED      │
+        │       ○○        ○○        ○○       │
+        └───────┬┬────────┬┬────────┬┬───────┘
+                ││        ││        ││
+                ││        ││        └┴─── Optional LED indicator
+                ││        ││
+                ││        └┴───── Arming switch (optional)
+                ││
+                └┴───── Receiver signal wires
+
+
+RECEIVER CONNECTION (3-wire servo cable):
+┌─────────────────────────────────────────────┐
+│  FROM RECEIVER    →    TO MALENKI NANO      │
+├─────────────────────────────────────────────┤
+│  Ch1 Signal (white) →  RX Pin 1 (Signal)    │
+│  Ch2 Signal (white) →  RX Pin 2 (Signal)    │
+│  Ground (black)     →  RX Pin 3 (Ground)    │
+│  5V+ (red)          →  RX Pin 4 (5V)        │
+└─────────────────────────────────────────────┘
+
+
+MOTOR CONNECTIONS:
+┌─────────────────────────────────────────────┐
+│  LEFT DRIVE MOTORS:                         │
+│  ○ M1+  ──── Red wire from left motor       │
+│  ○ M1-  ──── Black wire from left motor     │
+│                                             │
+│  RIGHT DRIVE MOTORS:                        │
+│  ○ M2+  ──── Red wire from right motor      │
+│  ○ M2-  ──── Black wire from right motor    │
+└─────────────────────────────────────────────┘
+
+
+BATTERY CONNECTION:
+┌─────────────────────────────────────────────┐
+│  2S LiPo Battery (7.4V)                     │
+│                                             │
+│  BAT+  ──── Red wire from battery           │
+│  BAT-  ──── Black wire from battery         │
+│                                             │
+│  ⚠️  POLARITY CRITICAL!                     │
+│  Reverse polarity = INSTANT DAMAGE          │
+└─────────────────────────────────────────────┘
+
+
+COMPLETE SYSTEM OVERVIEW:
+
+     ┌─────────┐
+     │ Battery │ (2S LiPo 7.4V)
+     └────┬────┘
+          │ (BAT+/BAT-)
+          ▼
+    ┌──────────────┐
+    │  MALENKI     │◄──── Receiver signal
+    │  NANO ESC    │      (Ch1, Ch2, GND, 5V)
+    └──┬────────┬──┘
+       │        │
+       ▼        ▼
+    [M1+/M1-][M2+/M2-]
+       │        │
+       ▼        ▼
+    Left     Right
+    Motors   Motors
+</code></pre></div>
+<p><strong>Common Mistake:</strong>
+Reversing motor polarity won't damage anything, but robot will drive backwards!
+Solution: Swap the + and - wires on that motor.</p>
+</details>
 <hr>
 <h2 id="channel-mapping">Channel Mapping</h2>
 <p>The Malenki Nano maps radio channels to motor outputs:</p>

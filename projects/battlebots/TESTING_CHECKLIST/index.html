@@ -1,0 +1,2528 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CTRC Learning Hub — VEX V5 Foundation Program &amp; BattleBots curriculum by Caution Tape Robotics Club.">
+      
+      
+      
+        <link rel="canonical" href="https://malharsoni.github.io/CTRC-Learning/projects/battlebots/TESTING_CHECKLIST/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/ctrc-logo-white.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Pre-Deployment Testing Checklist - CTRC Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M13%209h-2V7h2m0%2010h-2v-6h2m-1-9A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M160.5-26.4c9.3-7.8%2023-7.5%2031.9.9%2012.3%2011.6%2023.3%2024.4%2033.9%2037.4%2013.5%2016.5%2029.7%2038.3%2045.3%2064.2%205.2-6.8%2010-12.8%2014.2-17.9%201.1-1.3%202.2-2.7%203.3-4.1C297%2044.3%20306.8%2032%20319.9%2032c13.4%200%2022.8%2011.9%2030.8%2022.1q1.95%202.55%203.9%204.8c10.3%2012.4%2024%2030.3%2037.7%2052.4%2027.2%2043.9%2055.6%20106.4%2055.6%20176.6%200%20123.7-100.3%20224-224%20224S0%20411.7%200%20288c0-91.1%2041.1-170%2080.5-225%2019.9-27.7%2039.7-49.9%2054.6-65.1%208.2-8.4%2016.5-16.7%2025.5-24.2zM225.7%20416c25.3%200%2047.7-7%2068.8-21%2042.1-29.4%2053.4-88.2%2028.1-134.4-4.5-9-16-9.6-22.5-2l-25.2%2029.3c-6.6%207.6-18.5%207.4-24.7-.5-17.3-22.1-49.1-62.4-65.3-83-5.4-6.9-15.2-8-21.5-1.9-18.3%2017.8-51.5%2056.8-51.5%20104.3%200%2068.6%2050.6%20109.2%20113.7%20109.2z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M480-16c6.9%200%2013%204.4%2015.2%2010.9l13.5%2040.4%2040.4%2013.5C555.6%2051%20560%2057.1%20560%2064s-4.4%2013-10.9%2015.2l-40.4%2013.5-13.5%2040.4c-2.2%206.5-8.3%2010.9-15.2%2010.9s-13-4.4-15.2-10.9l-13.5-40.4-40.4-13.5C404.4%2077%20400%2070.9%20400%2064s4.4-13%2010.9-15.2l40.4-13.5%2013.5-40.4C467-11.6%20473.1-16%20480-16M321.4%2097.4c12.5-12.5%2032.8-12.5%2045.3%200l80%2080c12.5%2012.5%2012.5%2032.8%200%2045.3l-10.9%2010.9c7.9%2022%2012.2%2045.7%2012.2%2070.5%200%20114.9-93.1%20208-208%20208S32%20418.9%2032%20304%20125.1%2096%20240%2096c24.7%200%2048.5%204.3%2070.5%2012.3zM144%20304c0-53%2043-96%2096-96%2013.3%200%2024-10.7%2024-24s-10.7-24-24-24c-79.5%200-144%2064.5-144%20144%200%2013.3%2010.7%2024%2024%2024s24-10.7%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M416%20427.4c58.5-44%2096-111.6%2096-187.4C512%20107.5%20397.4%200%20256%200S0%20107.5%200%20240c0%2075.8%2037.5%20143.4%2096%20187.4V464c0%2026.5%2021.5%2048%2048%2048h32v-40c0-13.3%2010.7-24%2024-24s24%2010.7%2024%2024v40h64v-40c0-13.3%2010.7-24%2024-24s24%2010.7%2024%2024v40h32c26.5%200%2048-21.5%2048-48zM96%20256a64%2064%200%201%201%20128%200%2064%2064%200%201%201-128%200m256-64a64%2064%200%201%201%200%20128%2064%2064%200%201%201%200-128%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20640%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M352%200c0-17.7-14.3-32-32-32s-32%2014.3-32%2032v64h-96c-53%200-96%2043-96%2096v224c0%2053%2043%2096%2096%2096h256c53%200%2096-43%2096-96V160c0-53-43-96-96-96h-96zM160%20368c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24m120%200c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24m120%200c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24M224%20176a48%2048%200%201%201%200%2096%2048%2048%200%201%201%200-96m144%2048a48%2048%200%201%201%2096%200%2048%2048%200%201%201-96%200m-304%200c0-17.7-14.3-32-32-32S0%20206.3%200%20224v96c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32zm544-32c-17.7%200-32%2014.3-32%2032v96c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32v-96c0-17.7-14.3-32-32-32%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flip-button.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/lesson-enhancements.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: none; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pre-deployment-testing-checklist" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CTRC Learning" class="md-header__button md-logo" aria-label="CTRC Learning" data-md-component="logo">
+      
+  <img src="../../../assets/ctrc-logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CTRC Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pre-Deployment Testing Checklist
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="white" aria-label="Switch to Light Mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to Light Mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="black" aria-label="Switch to Dark Mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to Dark Mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MalharSoni/CTRC-Learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    MalharSoni/CTRC-Learning
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../foundation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  V5 Foundation Program
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../design-handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Design Handbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../mechanism-examples/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mechanism Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../contribution/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contribution
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CTRC Learning" class="md-nav__button md-logo" aria-label="CTRC Learning" data-md-component="logo">
+      
+  <img src="../../../assets/ctrc-logo-white.png" alt="logo">
+
+    </a>
+    CTRC Learning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MalharSoni/CTRC-Learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    MalharSoni/CTRC-Learning
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../foundation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V5 Foundation Program
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../design-handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Handbook
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../mechanism-examples/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanism Examples
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../contribution/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribution
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-content-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 1: Content Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: Content Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#markdown-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown Rendering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heading-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heading Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Completeness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-visual-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2: Visual Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Visual Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alt-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alt Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Captions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-accessibility-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 3: Accessibility Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: Accessibility Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color Contrast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Alternatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-reader-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screen Reader Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoom-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zoom &amp; Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-link-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 4: Link Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: Link Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internal-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-link-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Link Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Link Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-mobile-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 5: Mobile Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 5: Mobile Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#responsive-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsive Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-image-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Image Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-typography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Typography
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-testing-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Testing Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-6-build-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 6: Build Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 6: Build Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-7-navigation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 7: Navigation Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 7: Navigation Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sidebar-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sidebar Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadcrumbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breadcrumbs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previousnext-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Previous/Next Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-8-student-experience-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 8: Student Experience Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 8: Student Experience Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clarity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engagement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engagement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completeness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-9-performance-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 9: Performance Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 9: Performance Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-load-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Page Load Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asset Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-10-cross-browser-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 10: Cross-Browser Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 10: Cross-Browser Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desktop-browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop Browsers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Browsers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browser-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browser Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-11-security-privacy-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 11: Security &amp; Privacy Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 11: Security &amp; Privacy Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#student-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Student Privacy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#licensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licensing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-12-post-deployment-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 12: Post-Deployment Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 12: Post-Deployment Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-site-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live Site Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spot Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-device-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Device Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-log-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Log Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build &amp; Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browser-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browser Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-testing-future-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Testing (Future Implementation)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Common Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images-dont-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images Don't Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links-dont-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links Don't Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-layout-broken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Layout Broken
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Not Working
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/MalharSoni/CTRC-Learning/edit/main/docs/projects/battlebots/TESTING_CHECKLIST.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/MalharSoni/CTRC-Learning/raw/main/docs/projects/battlebots/TESTING_CHECKLIST.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+    </a>
+  
+
+
+<h1 id="pre-deployment-testing-checklist">Pre-Deployment Testing Checklist</h1>
+<p><strong>Version:</strong> 1.0
+<strong>Last Updated:</strong> March 13, 2026
+<strong>Purpose:</strong> Comprehensive checklist to verify curriculum quality before deployment</p>
+<p>Use this checklist before deploying any changes to the live curriculum site.</p>
+<hr>
+<h2 id="quick-start">Quick Start</h2>
+<p><strong>For minor changes (typos, small fixes):</strong>
+- Run Sections 1, 2, and 6 (Content, Visual, Build)</p>
+<p><strong>For major changes (new modules, restructuring):</strong>
+- Run all sections</p>
+<p><strong>For image-heavy changes:</strong>
+- Run Sections 2, 3, and 6 (Visual, Accessibility, Build)</p>
+<hr>
+<h2 id="section-1-content-checks">Section 1: Content Checks</h2>
+<h3 id="markdown-rendering">Markdown Rendering</h3>
+<ul>
+<li>[ ] All markdown files render correctly (<code>mkdocs serve</code>)</li>
+<li>[ ] No markdown syntax errors visible</li>
+<li>[ ] Code blocks display with syntax highlighting</li>
+<li>[ ] Tables render correctly</li>
+<li>[ ] Lists (ordered, unordered, checklists) format correctly</li>
+</ul>
+<h3 id="heading-hierarchy">Heading Hierarchy</h3>
+<ul>
+<li>[ ] Each page has exactly one H1 (title)</li>
+<li>[ ] Headings follow proper hierarchy (H1 → H2 → H3, no skips)</li>
+<li>[ ] Heading text is clear and descriptive</li>
+<li>[ ] Section organization is logical</li>
+</ul>
+<h3 id="content-completeness">Content Completeness</h3>
+<ul>
+<li>[ ] All learning objectives are addressed in module content</li>
+<li>[ ] Prerequisites listed for each module</li>
+<li>[ ] Success criteria present and measurable</li>
+<li>[ ] Common mistakes section has 2-3 specific callouts</li>
+<li>[ ] "Next Step" section links to appropriate module</li>
+</ul>
+<h3 id="technical-accuracy">Technical Accuracy</h3>
+<ul>
+<li>[ ] All technical specifications verified against sources</li>
+<li>[ ] Hardware part numbers correct</li>
+<li>[ ] Software instructions match current UI</li>
+<li>[ ] Calculations are correct</li>
+<li>[ ] No contradictions between modules</li>
+</ul>
+<h3 id="safety-content">Safety Content</h3>
+<ul>
+<li>[ ] All safety warnings present where needed</li>
+<li>[ ] Safety warnings include "why" explanations</li>
+<li>[ ] Weapon safety procedures complete</li>
+<li>[ ] Battery safety information accurate</li>
+<li>[ ] Failsafe procedures correct</li>
+</ul>
+<h3 id="writing-quality">Writing Quality</h3>
+<ul>
+<li>[ ] Active voice used throughout</li>
+<li>[ ] Second person perspective ("you")</li>
+<li>[ ] Tone is encouraging but realistic</li>
+<li>[ ] No jargon without definitions</li>
+<li>[ ] No spelling errors (run spell check)</li>
+<li>[ ] Consistent terminology (robot not bot, chassis not frame)</li>
+</ul>
+<hr>
+<h2 id="section-2-visual-checks">Section 2: Visual Checks</h2>
+<h3 id="image-loading">Image Loading</h3>
+<ul>
+<li>[ ] All images load correctly (no broken image icons)</li>
+<li>[ ] Images display at appropriate size</li>
+<li>[ ] Images are sharp and readable</li>
+<li>[ ] No distortion or aspect ratio issues</li>
+</ul>
+<h3 id="alt-text">Alt Text</h3>
+<ul>
+<li>[ ] All images have alt text</li>
+<li>[ ] Alt text is descriptive (not just "image" or "diagram")</li>
+<li>[ ] Alt text length is appropriate (15-25 words)</li>
+<li>[ ] Alt text describes what's shown, not just names it</li>
+</ul>
+<h3 id="captions">Captions</h3>
+<ul>
+<li>[ ] All images have captions (in italics)</li>
+<li>[ ] Captions explain what to observe or learn</li>
+<li>[ ] Captions don't just repeat alt text</li>
+<li>[ ] Attribution included in caption (if CC-licensed)</li>
+</ul>
+<h3 id="image-quality">Image Quality</h3>
+<ul>
+<li>[ ] Images are properly sized (not too large)</li>
+<li>[ ] File sizes meet category limits (check VISUAL_STANDARDS.md)</li>
+<li>[ ] Images are well-lit and clearly visible</li>
+<li>[ ] Critical details are in focus</li>
+<li>[ ] Screenshots are readable (text, dimensions visible)</li>
+</ul>
+<h3 id="image-paths">Image Paths</h3>
+<ul>
+<li>[ ] All image paths are relative (../images/...)</li>
+<li>[ ] Paths use forward slashes (/)</li>
+<li>[ ] Image file names match markdown references (case-sensitive)</li>
+<li>[ ] Images in correct subdirectories</li>
+</ul>
+<h3 id="attribution">Attribution</h3>
+<ul>
+<li>[ ] All CC-licensed images have attribution</li>
+<li>[ ] Attribution format is correct (author, license, link)</li>
+<li>[ ] Attribution documented in attribution.md</li>
+<li>[ ] Original CTRC content noted as such</li>
+</ul>
+<hr>
+<h2 id="section-3-accessibility-checks">Section 3: Accessibility Checks</h2>
+<h3 id="color-contrast">Color Contrast</h3>
+<ul>
+<li>[ ] Text on diagrams meets 4.5:1 contrast ratio (WCAG AA)</li>
+<li>[ ] UI elements meet 3:1 contrast ratio</li>
+<li>[ ] Tested with WebAIM Contrast Checker</li>
+<li>[ ] Color is not sole method of conveying information</li>
+</ul>
+<h3 id="text-alternatives">Text Alternatives</h3>
+<ul>
+<li>[ ] All images have descriptive alt text</li>
+<li>[ ] Complex diagrams have text description in content</li>
+<li>[ ] Charts/graphs have data tables or text summaries</li>
+<li>[ ] Video/GIF content has text description</li>
+</ul>
+<h3 id="structure">Structure</h3>
+<ul>
+<li>[ ] Headings used for structure (not just bold text)</li>
+<li>[ ] Lists used appropriately (not just line breaks)</li>
+<li>[ ] Tables have header rows</li>
+<li>[ ] Semantic HTML used where appropriate</li>
+</ul>
+<h3 id="keyboard-navigation">Keyboard Navigation</h3>
+<ul>
+<li>[ ] All interactive elements accessible via keyboard</li>
+<li>[ ] Tab order is logical</li>
+<li>[ ] Focus indicators visible</li>
+<li>[ ] No keyboard traps</li>
+</ul>
+<h3 id="screen-reader-testing">Screen Reader Testing</h3>
+<ul>
+<li>[ ] Content makes sense when read linearly</li>
+<li>[ ] Headings provide structure</li>
+<li>[ ] Links are descriptive (not just "click here")</li>
+<li>[ ] Image alt text provides context</li>
+</ul>
+<h3 id="zoom-scaling">Zoom &amp; Scaling</h3>
+<ul>
+<li>[ ] Content readable at 200% zoom</li>
+<li>[ ] No horizontal scrolling at 200% zoom (except tables)</li>
+<li>[ ] Images scale appropriately</li>
+<li>[ ] Text doesn't overlap at larger sizes</li>
+</ul>
+<hr>
+<h2 id="section-4-link-checks">Section 4: Link Checks</h2>
+<h3 id="internal-links">Internal Links</h3>
+<ul>
+<li>[ ] All internal links resolve (no 404s)</li>
+<li>[ ] Section links jump to correct heading</li>
+<li>[ ] "Next Step" links go to correct module</li>
+<li>[ ] Cross-references between modules work</li>
+<li>[ ] Image links are correct</li>
+</ul>
+<h3 id="internal-link-format">Internal Link Format</h3>
+<ul>
+<li>[ ] Links use relative paths (not absolute)</li>
+<li>[ ] Links include .md extension</li>
+<li>[ ] Section anchors are lowercase with hyphens</li>
+<li>[ ] No broken fragment identifiers (#section-name)</li>
+</ul>
+<h3 id="external-links">External Links</h3>
+<ul>
+<li>[ ] All external links work (not dead)</li>
+<li>[ ] External links use HTTPS when available</li>
+<li>[ ] Product links go to correct items</li>
+<li>[ ] Datasheet links are current</li>
+<li>[ ] Resource links are active</li>
+</ul>
+<h3 id="link-context">Link Context</h3>
+<ul>
+<li>[ ] Links have descriptive text (not "click here")</li>
+<li>[ ] Link purpose is clear from context</li>
+<li>[ ] External links noted as such (if applicable)</li>
+</ul>
+<hr>
+<h2 id="section-5-mobile-checks">Section 5: Mobile Checks</h2>
+<h3 id="responsive-layout">Responsive Layout</h3>
+<ul>
+<li>[ ] Content readable on small screens (320px width)</li>
+<li>[ ] Navigation works on mobile</li>
+<li>[ ] Sidebar collapses correctly</li>
+<li>[ ] No horizontal scrolling (except tables)</li>
+</ul>
+<h3 id="mobile-image-display">Mobile Image Display</h3>
+<ul>
+<li>[ ] Images scale to screen width</li>
+<li>[ ] Images maintain aspect ratio</li>
+<li>[ ] High-res images don't cause slowdown</li>
+<li>[ ] Image captions readable on mobile</li>
+</ul>
+<h3 id="mobile-typography">Mobile Typography</h3>
+<ul>
+<li>[ ] Text is readable at default zoom</li>
+<li>[ ] Font sizes appropriate for mobile</li>
+<li>[ ] Line length comfortable (not too wide)</li>
+<li>[ ] Headings scale appropriately</li>
+</ul>
+<h3 id="mobile-tables">Mobile Tables</h3>
+<ul>
+<li>[ ] Tables scroll horizontally if needed</li>
+<li>[ ] Table headers remain visible</li>
+<li>[ ] Cell content doesn't overflow</li>
+<li>[ ] Tables readable on small screens</li>
+</ul>
+<h3 id="mobile-navigation">Mobile Navigation</h3>
+<ul>
+<li>[ ] Hamburger menu works</li>
+<li>[ ] Navigation items accessible</li>
+<li>[ ] Breadcrumbs work</li>
+<li>[ ] Search function works on mobile</li>
+</ul>
+<h3 id="mobile-testing-devices">Mobile Testing Devices</h3>
+<ul>
+<li>[ ] Tested on iPhone (iOS Safari)</li>
+<li>[ ] Tested on Android (Chrome)</li>
+<li>[ ] Tested on tablet (iPad or Android)</li>
+<li>[ ] Tested in browser DevTools responsive mode</li>
+</ul>
+<hr>
+<h2 id="section-6-build-checks">Section 6: Build Checks</h2>
+<h3 id="local-build">Local Build</h3>
+<p></p><div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
+</code></pre></div>
+- [ ] Build completes without errors
+- [ ] No warnings about missing pages
+- [ ] No warnings about broken links
+- [ ] site/ folder generated correctly<p></p>
+<h3 id="build-output">Build Output</h3>
+<ul>
+<li>[ ] All HTML files present in site/</li>
+<li>[ ] All images copied to site/images/</li>
+<li>[ ] CSS and JavaScript files present</li>
+<li>[ ] Search index generated</li>
+</ul>
+<h3 id="configuration">Configuration</h3>
+<ul>
+<li>[ ] mkdocs.yml syntax is valid</li>
+<li>[ ] Navigation structure is correct</li>
+<li>[ ] All paths in navigation exist</li>
+<li>[ ] Theme configuration correct</li>
+</ul>
+<h3 id="server-test">Server Test</h3>
+<p></p><div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>serve
+</code></pre></div>
+- [ ] Server starts without errors
+- [ ] Site loads at localhost:8000
+- [ ] Hot reload works (changes appear)
+- [ ] No console errors in browser<p></p>
+<hr>
+<h2 id="section-7-navigation-checks">Section 7: Navigation Checks</h2>
+<h3 id="sidebar-navigation">Sidebar Navigation</h3>
+<ul>
+<li>[ ] All modules appear in navigation</li>
+<li>[ ] Navigation order is logical</li>
+<li>[ ] Navigation labels are clear</li>
+<li>[ ] Indentation reflects hierarchy</li>
+<li>[ ] No duplicate entries</li>
+</ul>
+<h3 id="breadcrumbs">Breadcrumbs</h3>
+<ul>
+<li>[ ] Breadcrumbs show correct path</li>
+<li>[ ] Breadcrumb links work</li>
+<li>[ ] Current page highlighted</li>
+<li>[ ] Breadcrumbs make sense</li>
+</ul>
+<h3 id="search-functionality">Search Functionality</h3>
+<ul>
+<li>[ ] Search box present and visible</li>
+<li>[ ] Search returns relevant results</li>
+<li>[ ] Can find modules by title</li>
+<li>[ ] Can find content by keyword</li>
+<li>[ ] Search results link correctly</li>
+</ul>
+<h3 id="previousnext-links">Previous/Next Links</h3>
+<ul>
+<li>[ ] Previous/Next links present at bottom of page</li>
+<li>[ ] Links go to correct modules</li>
+<li>[ ] Order matches logical sequence</li>
+<li>[ ] Links work correctly</li>
+</ul>
+<hr>
+<h2 id="section-8-student-experience-checks">Section 8: Student Experience Checks</h2>
+<h3 id="learning-flow">Learning Flow</h3>
+<ul>
+<li>[ ] Modules follow logical progression</li>
+<li>[ ] Each module builds on previous</li>
+<li>[ ] Prerequisites clearly stated</li>
+<li>[ ] Transitions between modules smooth</li>
+</ul>
+<h3 id="clarity">Clarity</h3>
+<ul>
+<li>[ ] Learning objectives clear in each module</li>
+<li>[ ] Instructions are step-by-step where needed</li>
+<li>[ ] Complex concepts broken down</li>
+<li>[ ] Examples provided for difficult topics</li>
+</ul>
+<h3 id="engagement">Engagement</h3>
+<ul>
+<li>[ ] Content is encouraging</li>
+<li>[ ] Real-world examples used</li>
+<li>[ ] Student action items clear</li>
+<li>[ ] Success criteria motivating</li>
+</ul>
+<h3 id="support">Support</h3>
+<ul>
+<li>[ ] Common mistakes addressed</li>
+<li>[ ] Troubleshooting guidance provided</li>
+<li>[ ] Safety warnings clear and visible</li>
+<li>[ ] Resources linked appropriately</li>
+</ul>
+<h3 id="completeness">Completeness</h3>
+<ul>
+<li>[ ] All learning objectives met by content</li>
+<li>[ ] Success criteria align with objectives</li>
+<li>[ ] No gaps in instruction</li>
+<li>[ ] No orphaned content (unlinked pages)</li>
+</ul>
+<hr>
+<h2 id="section-9-performance-checks">Section 9: Performance Checks</h2>
+<h3 id="page-load-time">Page Load Time</h3>
+<ul>
+<li>[ ] Homepage loads in under 3 seconds</li>
+<li>[ ] Module pages load in under 3 seconds</li>
+<li>[ ] Image-heavy pages load in under 5 seconds</li>
+<li>[ ] Tested on fast and slow connections</li>
+</ul>
+<h3 id="image-optimization">Image Optimization</h3>
+<ul>
+<li>[ ] All images compressed appropriately</li>
+<li>[ ] No images over 500KB (check VISUAL_STANDARDS.md)</li>
+<li>[ ] Images served at appropriate resolution</li>
+<li>[ ] Lazy loading working (if implemented)</li>
+</ul>
+<h3 id="asset-size">Asset Size</h3>
+<ul>
+<li>[ ] Total site size reasonable</li>
+<li>[ ] CSS minified (if applicable)</li>
+<li>[ ] JavaScript minified (if applicable)</li>
+<li>[ ] No unnecessary files in build</li>
+</ul>
+<h3 id="search-performance">Search Performance</h3>
+<ul>
+<li>[ ] Search index size reasonable</li>
+<li>[ ] Search results appear quickly</li>
+<li>[ ] No lag when typing in search box</li>
+</ul>
+<hr>
+<h2 id="section-10-cross-browser-checks">Section 10: Cross-Browser Checks</h2>
+<h3 id="desktop-browsers">Desktop Browsers</h3>
+<ul>
+<li>[ ] Chrome (latest)</li>
+<li>[ ] Firefox (latest)</li>
+<li>[ ] Safari (latest)</li>
+<li>[ ] Edge (latest)</li>
+</ul>
+<h3 id="mobile-browsers">Mobile Browsers</h3>
+<ul>
+<li>[ ] Safari iOS (latest)</li>
+<li>[ ] Chrome Android (latest)</li>
+<li>[ ] Firefox Mobile</li>
+</ul>
+<h3 id="browser-features">Browser Features</h3>
+<ul>
+<li>[ ] Images load in all browsers</li>
+<li>[ ] CSS renders correctly</li>
+<li>[ ] JavaScript works (if used)</li>
+<li>[ ] Fonts load correctly</li>
+<li>[ ] No layout breaks</li>
+</ul>
+<hr>
+<h2 id="section-11-security-privacy-checks">Section 11: Security &amp; Privacy Checks</h2>
+<h3 id="external-resources">External Resources</h3>
+<ul>
+<li>[ ] All external resources use HTTPS</li>
+<li>[ ] No mixed content warnings</li>
+<li>[ ] External links open safely</li>
+<li>[ ] No tracking scripts (unless approved)</li>
+</ul>
+<h3 id="student-privacy">Student Privacy</h3>
+<ul>
+<li>[ ] No personal student information exposed</li>
+<li>[ ] No identifying photos without permission</li>
+<li>[ ] Attribution doesn't expose private data</li>
+</ul>
+<h3 id="licensing">Licensing</h3>
+<ul>
+<li>[ ] All CC-licensed content properly attributed</li>
+<li>[ ] No copyright violations</li>
+<li>[ ] Original work clearly marked</li>
+<li>[ ] License compliance verified</li>
+</ul>
+<hr>
+<h2 id="section-12-post-deployment-checks">Section 12: Post-Deployment Checks</h2>
+<p>Run these checks after deploying to live site:</p>
+<h3 id="live-site-verification">Live Site Verification</h3>
+<ul>
+<li>[ ] Site deployed successfully (GitHub Pages built)</li>
+<li>[ ] Live URL loads correctly</li>
+<li>[ ] Changes visible on live site (cache cleared)</li>
+<li>[ ] No deployment errors in GitHub Actions</li>
+</ul>
+<h3 id="spot-checks">Spot Checks</h3>
+<ul>
+<li>[ ] Homepage loads correctly</li>
+<li>[ ] Random module loads correctly</li>
+<li>[ ] Random image loads correctly</li>
+<li>[ ] Search works on live site</li>
+<li>[ ] Navigation works on live site</li>
+</ul>
+<h3 id="cross-device-verification">Cross-Device Verification</h3>
+<ul>
+<li>[ ] Tested on actual iOS device</li>
+<li>[ ] Tested on actual Android device</li>
+<li>[ ] Tested on desktop computer</li>
+<li>[ ] Tested on tablet</li>
+</ul>
+<h3 id="cache-issues">Cache Issues</h3>
+<ul>
+<li>[ ] Hard refresh loads latest version (Ctrl+Shift+R)</li>
+<li>[ ] Incognito mode shows correct version</li>
+<li>[ ] Mobile browser shows latest version</li>
+</ul>
+<hr>
+<h2 id="testing-log-template">Testing Log Template</h2>
+<p>Use this template to document testing:</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Testing Log</span>
+
+<span class="gs">**Tested by:**</span> [Your Name]
+<span class="gs">**Date:**</span> [YYYY-MM-DD]
+<span class="gs">**Branch/Commit:**</span> [branch name or commit hash]
+<span class="gs">**Type of change:**</span> [Minor fix / Major update / New module / etc.]
+
+<span class="gu">### Sections Tested</span>
+<span class="k">- [x]</span> Content Checks
+<span class="k">- [x]</span> Visual Checks
+<span class="k">- [x]</span> Build Checks
+<span class="k">- [ ]</span> Mobile Checks (skipped - minor text change)
+<span class="k">- [x]</span> Navigation Checks
+
+<span class="gu">### Issues Found</span>
+<span class="k">1.</span> <span class="gs">**Issue:**</span> Broken link in module 3
+   <span class="gs">**Fixed:**</span> Yes, updated link to correct URL
+   <span class="gs">**Commit:**</span> abc123
+
+<span class="k">2.</span> <span class="gs">**Issue:**</span> Image missing alt text
+   <span class="gs">**Fixed:**</span> Yes, added descriptive alt text
+   <span class="gs">**Commit:**</span> def456
+
+<span class="gu">### Deployment Status</span>
+<span class="k">- [x]</span> Local testing complete
+<span class="k">- [x]</span> All issues resolved
+<span class="k">- [x]</span> Deployed to live site
+<span class="k">- [x]</span> Live site verified
+
+<span class="gu">### Post-Deployment Verification</span>
+<span class="k">- [x]</span> Homepage loads
+<span class="k">- [x]</span> Changes visible
+<span class="k">- [x]</span> No console errors
+<span class="k">- [x]</span> Mobile view tested
+
+<span class="gu">### Notes</span>
+Everything tested successfully. Minor link fix in module 3.
+No issues on live site.
+</code></pre></div>
+<hr>
+<h2 id="quick-reference-commands">Quick Reference Commands</h2>
+<h3 id="build-test">Build &amp; Test</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Strict build (catches errors)</span>
+mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
+
+<span class="c1"># Local server</span>
+mkdocs<span class="w"> </span>serve
+
+<span class="c1"># Check for large images</span>
+find<span class="w"> </span>docs/projects/battlebots/images<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-size<span class="w"> </span>+500k
+
+<span class="c1"># Check for missing alt text (manual review needed)</span>
+grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">"!\[\]("</span><span class="w"> </span>docs/projects/battlebots/*.md
+
+<span class="c1"># Check for broken internal links (basic)</span>
+grep<span class="w"> </span>-r<span class="w"> </span><span class="s2">"](.*\.md"</span><span class="w"> </span>docs/projects/battlebots/*.md<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"^\s*#"</span>
+</code></pre></div>
+<h3 id="external-tools">External Tools</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install link checker (if needed)</span>
+npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>broken-link-checker
+
+<span class="c1"># Run link checker</span>
+blc<span class="w"> </span>http://localhost:8000<span class="w"> </span>-ro<span class="w"> </span>--exclude<span class="w"> </span><span class="s2">"linkedin.com|facebook.com"</span>
+
+<span class="c1"># Spell check (if aspell installed)</span>
+aspell<span class="w"> </span>check<span class="w"> </span>docs/projects/battlebots/module-name.md
+</code></pre></div>
+<h3 id="browser-testing">Browser Testing</h3>
+<ul>
+<li>Chrome DevTools responsive mode: Ctrl+Shift+M</li>
+<li>Chrome DevTools accessibility audit: Lighthouse tab</li>
+<li>Firefox responsive design mode: Ctrl+Shift+M</li>
+<li>WebAIM WAVE: https://wave.webaim.org/</li>
+<li>WebAIM Contrast Checker: https://webaim.org/resources/contrastchecker/</li>
+</ul>
+<hr>
+<h2 id="automated-testing-future-implementation">Automated Testing (Future Implementation)</h2>
+<p>Consider implementing these automated tests:</p>
+<p><strong>Continuous Integration (CI):</strong>
+</p><div class="highlight"><pre><span></span><code><span class="c1"># .github/workflows/test.yml</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test Curriculum</span>
+
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.x</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install mkdocs mkdocs-material</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build site</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs build --strict</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check for missing alt text</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">if grep -r "!\[\](" docs/projects/battlebots/*.md; then</span>
+<span class="w">            </span><span class="no">echo "Error: Found images without alt text"</span>
+<span class="w">            </span><span class="no">exit 1</span>
+<span class="w">          </span><span class="no">fi</span>
+</code></pre></div><p></p>
+<p><strong>Link Checking:</strong>
+- Run broken-link-checker in CI
+- Scheduled weekly link checks
+- Report dead links automatically</p>
+<p><strong>Image Optimization:</strong>
+- Check file sizes in CI
+- Warn if images exceed limits
+- Suggest optimization commands</p>
+<hr>
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+<h3 id="build-fails">Build Fails</h3>
+<p><strong>Error:</strong> <code>Config value: 'nav'</code>
+<strong>Fix:</strong> Check mkdocs.yml for YAML syntax errors (indentation, colons)</p>
+<p><strong>Error:</strong> <code>File not found</code>
+<strong>Fix:</strong> Verify file path in navigation matches actual file location</p>
+<h3 id="images-dont-load">Images Don't Load</h3>
+<p><strong>Issue:</strong> Broken image icon appears
+<strong>Fix:</strong> Check path is relative (../images/...), file exists, case matches</p>
+<h3 id="links-dont-work">Links Don't Work</h3>
+<p><strong>Issue:</strong> 404 error when clicking link
+<strong>Fix:</strong> Verify .md extension included, path is relative, file exists</p>
+<h3 id="mobile-layout-broken">Mobile Layout Broken</h3>
+<p><strong>Issue:</strong> Horizontal scrolling on mobile
+<strong>Fix:</strong> Check for wide tables, code blocks, or images without max-width</p>
+<h3 id="search-not-working">Search Not Working</h3>
+<p><strong>Issue:</strong> Search returns no results
+<strong>Fix:</strong> Rebuild site (stop and restart mkdocs serve)</p>
+<hr>
+<h2 id="summary-checklist">Summary Checklist</h2>
+<p>Quick pre-deployment verification:</p>
+<p><strong>Critical (Always):</strong>
+- [ ] Build succeeds with <code>mkdocs build --strict</code>
+- [ ] All new content tested in <code>mkdocs serve</code>
+- [ ] All links verified (internal and external)
+- [ ] All images load correctly
+- [ ] All images have alt text
+- [ ] No spelling errors
+- [ ] Mobile view tested</p>
+<p><strong>Important (Major Changes):</strong>
+- [ ] Cross-browser testing complete
+- [ ] Accessibility checks complete
+- [ ] Performance acceptable
+- [ ] Post-deployment verification done</p>
+<p><strong>Nice to Have (When Time Allows):</strong>
+- [ ] Screen reader tested
+- [ ] Link checker run
+- [ ] Multiple device testing
+- [ ] User acceptance testing</p>
+<hr>
+<p><strong>Testing Checklist Version:</strong> 1.0
+<strong>Last Updated:</strong> March 13, 2026
+<strong>Next Review:</strong> Before 2027 competition season</p>
+<p>This checklist is a living document. Suggest improvements by opening an issue or submitting a pull request.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="#" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.footer", "navigation.prune", "navigation.top", "navigation.path", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy", "content.tooltips", "content.action.edit", "content.action.view", "header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
