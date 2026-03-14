@@ -125,6 +125,7 @@ nav:
       - "CAD Your Bot": projects/battlebots/cad-your-bot.md
       - "3D Printing Guide": projects/battlebots/3d-printing-guide.md
       - "Chassis Assembly": projects/battlebots/assembly-and-wiring.md
+      - "Sources & Acknowledgments": projects/battlebots/sources.md
       # Teacher-only modules (not in student navigation):
       # - "Malenki Nano Setup": projects/battlebots/malenki-nano-setup.md
       # - "Testing & Safety": projects/battlebots/testing-and-safety.md

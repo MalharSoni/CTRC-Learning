@@ -9,6 +9,25 @@ Take your time. A robot assembled carefully fights better than one thrown togeth
 
 ---
 
+## Learning Objectives
+
+By completing this module, you will be able to:
+
+- Install N20 motors in chassis pockets using press-fit or glue
+- Attach wheels to motor D-shafts with proper alignment
+- Assemble multi-piece chassis with screws and proper tightening sequence
+- Mount weapon motors and install spinning weapons with clearance checks
+- Verify completed chassis weight and identify areas to add/remove mass
+- Prepare robot for teacher handoff (electronics installation)
+
+---
+
+## Time Required
+
+2-3 hours
+
+---
+
 ## Before You Start
 
 Gather everything on a clean, well-lit workspace:
@@ -46,8 +65,8 @@ Gather everything on a clean, well-lit workspace:
 5. If the fit is too tight, lightly sand the pocket with fine sandpaper
 6. Verify: the motor shaft spins freely and extends past the chassis wall
 
-![Motor Installation](images/assembly/motor-mounts-shaping.jpg)
-*Motor mount being shaped to fit the motor profile securely*
+![Hands using file to shape 3D printed motor mount pocket ensuring N20 brushed motor fits securely with correct D-shaft alignment](images/assembly/motor-mounts-shaping.jpg)
+*Motor mount being shaped to fit the motor profile securely - your 3D printed chassis pockets should have similar precision fit*
 
 !!! warning "Don't Force It"
     If the motor won't go in, do NOT hammer it or use pliers. You'll damage the internal gears. Sand the pocket wider or reprint with 0.1mm more tolerance.
@@ -79,8 +98,8 @@ Gather everything on a clean, well-lit workspace:
 
 Now that motors and wheels are installed, it's time to close up the chassis.
 
-![Frame Assembly](images/assembly/frame-assembly.jpg)
-*Aluminum frame with motors and wheels mounted - your 3D printed chassis follows the same concept*
+![Aluminum combat robot chassis showing drive motors mounted at rear with wheels attached and weapon motor positioned at front - demonstrates proper component layout](images/assembly/frame-assembly.jpg)
+*Aluminum frame with motors and wheels mounted - your 3D printed chassis follows the same component placement principles*
 
 1. **If your design has multiple chassis pieces** (top plate, bottom plate, side panels):
    - Align all screw holes
@@ -101,11 +120,11 @@ Now that motors and wheels are installed, it's time to close up the chassis.
 
 If your design includes armor panels or bumpers, install them now.
 
-![Armor Installation](images/assembly/armor-plates-cutting.jpg)
-*Cutting and shaping armor panels from UHMW plastic or thin aluminum*
+![Hands cutting white UHMW plastic armor panel using cutting tools to protect vulnerable areas of combat robot chassis](images/assembly/armor-plates-cutting.jpg)
+*Cutting and shaping armor panels from UHMW plastic - for 3D printed robots, use TPU or PETG armor panels instead*
 
-![Side Bumpers](images/assembly/side-bumpers-assembly.jpg)
-*Side bumpers being attached with fasteners to protect wheels*
+![Black protective side bumpers being mounted to robot chassis with screws to shield drive wheels from side impacts](images/assembly/side-bumpers-assembly.jpg)
+*Side bumpers being attached with fasteners to protect wheels from opponent weapons and impacts*
 
 1. Position armor panels according to your CAD design
 2. Secure with screws, CA glue, or velcro (depending on design)
@@ -132,14 +151,14 @@ If your design includes armor panels or bumpers, install them now.
 
 If your robot has an active weapon (spinner, hammer, etc.):
 
-![Weapon Motor Mount](images/assembly/weapon-motor-mount.jpg)
-*Brushless motor mounted for weapon drive*
+![Brushless outrunner motor securely mounted to robot chassis using clamp or screws with shaft positioned for weapon attachment](images/assembly/weapon-motor-mount.jpg)
+*Brushless motor mounted for weapon drive - ensure mounting is rigid to handle weapon impact forces*
 
-![Weapon Assembly](images/assembly/weapon-blade-assembly.jpg)
-*Aluminum weapon bar - your 3D printed weapon follows similar principles*
+![Horizontal aluminum weapon bar with angled teeth mounted on motor shaft showing proper balance and impactor positioning for maximum kinetic energy](images/assembly/weapon-blade-assembly.jpg)
+*Aluminum weapon bar with aggressive impactors - your 3D printed PLA+ weapon follows the same design principles of balanced mass distribution*
 
-![Shaft Collars](images/assembly/shaft-collars-installation.jpg)
-*Shaft collars securing rotating weapon on axle - prevents lateral movement*
+![Metal shaft collars with set screws tightened onto weapon motor shaft preventing axial movement of spinning weapon during impacts](images/assembly/shaft-collars-installation.jpg)
+*Shaft collars securing rotating weapon on axle - prevents lateral movement and keeps weapon centered during spinning*
 
 1. Mount weapon motor securely to chassis (teacher will assist)
 2. Attach TPU weapon hub to motor shaft
@@ -149,8 +168,8 @@ If your robot has an active weapon (spinner, hammer, etc.):
 
 ### For Wedge/Pusher Designs
 
-![Wedge Installation](images/assembly/wedge-installation.jpg)
-*UHMW wedge plate being installed as front defensive element*
+![White UHMW plastic wedge plate with low ground clearance angle mounted to robot front to get under opponents and deflect attacks](images/assembly/wedge-installation.jpg)
+*UHMW wedge plate being installed as front defensive element - angled to maximize ground game and win head-to-head collisions*
 
 If you're building a wedge bot:
 1. Attach front wedge plate according to CAD design
@@ -195,6 +214,19 @@ If you're building a wedge bot:
 - [ ] Weapon spinning freely with 2mm+ clearance
 - [ ] Total weight checked (~500g target)
 - [ ] Photos taken of completed chassis assembly
+
+---
+
+## Success Criteria
+
+You are ready to move on when you can:
+
+- [ ] Complete the Assembly Checklist above (all items checked)
+- [ ] Demonstrate that both drive motors spin freely when wheels are turned by hand
+- [ ] Show that weapon spins freely with 2mm+ clearance from all chassis parts
+- [ ] Verify total mechanical weight is 450-520g (or explain why it's different)
+- [ ] Identify which components are removable for repairs (wheels, weapon, armor)
+- [ ] Hand off completed mechanical chassis to teacher with assembly photos
 
 ---
 

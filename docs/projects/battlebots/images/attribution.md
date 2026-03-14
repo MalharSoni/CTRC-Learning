@@ -242,11 +242,105 @@
 **License:** Editorial content - educational use with attribution
 **Usage:** General reference for weapon types and weight classes
 
+## Original Diagrams Created by CTRC
+
+The following diagrams were created specifically for this curriculum and require no external attribution. They are original works and may be used freely within the CTRC BattleBots curriculum.
+
+**License:** Original works by CTRC Learning Team, March 2026
+
+### Weapon Physics Diagrams
+
+#### Mass Distribution Comparison Diagram
+**File:** Integrated into `weapon-design.md`
+**Format:** ASCII art diagram
+**Content:** Visual comparison of solid disc vs ring vs bar weapon configurations, showing moment of inertia concepts
+**Usage:** Module 3 (Weapon Design) - explaining energy storage in spinning weapons
+**Created:** March 13, 2026
+
+#### Bite Calculation Diagram
+**File:** Integrated into `weapon-design.md`
+**Format:** ASCII art diagram
+**Content:** Tooth spacing, forward travel, and bite depth visualization with formula and example calculation
+**Usage:** Module 3 (Weapon Design) - explaining weapon bite physics
+**Created:** March 13, 2026
+
+### Safety & Procedure Flowcharts
+
+#### Power-On Sequence Flowchart
+**File:** Integrated into `testing-and-safety.md`
+**Format:** ASCII flowchart (7 steps)
+**Content:** Safe robot power-on procedure from weapon lock to arena testing
+**Usage:** Module 9 (Testing & Safety) - teacher reference for safe robot operation
+**Created:** March 13, 2026
+
+#### Power-Off Sequence Flowchart
+**File:** Integrated into `testing-and-safety.md`
+**Format:** ASCII flowchart (7 steps)
+**Content:** Safe robot shutdown procedure (reverse of power-on)
+**Usage:** Module 9 (Testing & Safety) - teacher reference for safe robot operation
+**Created:** March 13, 2026
+
+### Electronics & Wiring Diagrams
+
+#### Battery Polarity Diagram
+**File:** Integrated into `malenki-nano-setup.md`
+**Format:** ASCII comparison diagram
+**Content:** Correct vs reversed battery polarity, showing safe and unsafe connections
+**Usage:** Module 7 (Malenki Nano Setup) - preventing ESC destruction from reversed polarity
+**Created:** March 13, 2026
+
+#### Complete Malenki Nano Wiring Diagram
+**File:** Integrated into `malenki-nano-setup.md`
+**Format:** ASCII system diagram
+**Content:** Full system wiring: Battery → Malenki Nano → Motors, with pin-by-pin connections
+**Usage:** Module 7 (Malenki Nano Setup) - complete robot wiring reference
+**Created:** March 13, 2026
+
+### Drivetrain Diagrams
+
+#### D-Shaft Interface Diagram
+**File:** Integrated into `drivetrain-design.md`
+**Format:** ASCII multi-view diagram
+**Content:** Front view, side view, cross-section, and CAD design tips for N20 motor D-shaft connection
+**Usage:** Module 4 (Drivetrain Design) - designing wheel hubs that lock to motor shaft
+**Created:** March 13, 2026
+
+### Standalone Diagram Files
+
+The following standalone .md files contain extended versions of the integrated diagrams:
+
+- `/images/weapons/mass-distribution-comparison.md`
+- `/images/weapons/bite-calculation-diagram.md`
+- `/images/safety/power-on-sequence.md`
+- `/images/safety/power-off-sequence.md`
+- `/images/electronics/malenki-nano-wiring.md`
+- `/images/electronics/polarity-diagram.md`
+- `/images/motors/d-shaft-diagram.md`
+
+**Purpose:** Provide detailed reference versions that can be viewed independently or linked from other documentation.
+
+## CAD Screenshots
+
+### Onshape Mass Properties Screenshot
+
+#### onshape-mass-properties-overview-*.png
+**File:** `/images/cad/onshape-mass-properties-overview-2026-03-12T23-37-24-035Z.png`
+**Source:** User-created screenshot from Onshape
+**Content:** Mass properties dialog showing mass, center of mass, and volume calculations
+**Usage:** Module 5 (CAD Your Bot) - demonstrating weight budget verification
+**License:** User-created content (no external attribution needed)
+**Created:** March 12, 2026
+
+**Note:** Additional CAD screenshots (bounding box, chassis views, assembly) are documented as manual tasks in `/images/MANUAL_TASKS_REQUIRED.md`
+
 ## Notes
 
 - All images downloaded for educational use in CTRC BattleBots curriculum
-- Wiring and electronics photos were deliberately excluded per curriculum design
+- Wiring and electronics photos were deliberately excluded per curriculum design; replaced with original ASCII diagrams
 - Focus maintained on mechanical assembly, 3D printing orientation, and weapon archetypes
 - Robot archetype images sourced from Creative Commons projects, educational resources, and product documentation
 - All motor reference materials are from manufacturer datasheets and open-source CAD models
+- **Original diagrams created by CTRC Learning Team (March 13, 2026)** are freely usable within this curriculum
 - Downloaded: March 12, 2026
+- Diagrams created: March 13, 2026
+- Last updated: March 13, 2026

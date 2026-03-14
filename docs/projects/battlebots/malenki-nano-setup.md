@@ -1,8 +1,30 @@
 # Malenki Nano Setup & Wiring
 
+!!! warning "Teacher Module"
+    This module is for **teachers only**. Students complete mechanical assembly and hand off to teachers for electronics installation.
+
 The **Malenki Nano** is the brain of your combat robot. It's an all-in-one control board that combines a radio receiver, two brushed motor ESCs (for driving), and one brushless ESC (for your weapon) on a single tiny PCB. One board does everything — no separate receiver, no separate ESCs, no extra wiring.
 
 This guide covers what the Malenki Nano does, how to wire it, how to bind it to your transmitter, and — critically — how to set up failsafe so your weapon doesn't become a runaway hazard.
+
+---
+
+## Learning Objectives
+
+By completing this module, you will be able to:
+
+- Identify all Malenki Nano connections (power, drive motors, weapon motor, bind)
+- Wire the Malenki Nano to battery, N20 motors, and brushless weapon motor with correct polarity
+- Bind the Malenki Nano to a radio transmitter
+- Configure and test failsafe so weapon and drive motors stop when signal is lost
+- Troubleshoot common wiring issues (reversed motors, no power, weapon doesn't spin)
+- Apply wiring best practices (strain relief, routing away from weapon, solder joints)
+
+---
+
+## Time Required
+
+1-2 hours per robot
 
 ---
 
@@ -72,8 +94,52 @@ Here's how everything connects to the Malenki Nano:
 3. Connect the **negative (-)** battery wire to the Nano power input **negative**
 4. Double-check polarity before plugging in — **reverse polarity will destroy the board**
 
-!!! example "📐 Diagram Needed"
-    Correct polarity (red to +, black to -) vs reversed (X mark) — NEVER reverse
+??? info "Battery Polarity Diagram - CRITICAL SAFETY"
+
+    ```
+    ✅ CORRECT POLARITY:
+
+        Battery               Malenki Nano
+        ┌─────────┐           ┌──────────┐
+        │   2S    │           │          │
+        │  LiPo   │  Red  ──→ │ BAT+     │
+        │  7.4V   │           │          │
+        │         │  Black ──→│ BAT-     │
+        └─────────┘           │          │
+                              └──────────┘
+
+        Result: ESC powers on normally
+        Status: ✓ SAFE
+
+
+    ❌ REVERSED POLARITY:
+
+        Battery               Malenki Nano
+        ┌─────────┐           ┌──────────┐
+        │   2S    │           │          │
+        │  LiPo   │  Red  ──→ │ BAT-     │  ⚠️ WRONG!
+        │  7.4V   │           │          │
+        │         │  Black ──→│ BAT+     │  ⚠️ WRONG!
+        └─────────┘           │          │
+                              └──────────┘
+
+        Result: 💥 INSTANT DAMAGE
+        Status: ✗ ESC DESTROYED
+    ```
+
+    **Color Code Standard:**
+
+    - **Red** = Positive (+)
+    - **Black** = Negative (-)
+
+    **HOW TO CHECK POLARITY:**
+
+    1. Look for + and - symbols printed on Malenki Nano PCB
+    2. Use multimeter: Red probe → suspected positive, Black probe → suspected negative
+    3. Should read ~7.4V (not -7.4V)
+
+    !!! danger "NEVER ASSUME POLARITY"
+        Always verify with multimeter before first connection!
 
 !!! danger "Check Polarity Twice"
     Reversing the battery polarity (connecting + to - and - to +) will permanently destroy the Malenki Nano. There is no protection circuit. Check your wiring TWICE before connecting the battery for the first time.
@@ -91,8 +157,86 @@ Here's how everything connects to the Malenki Nano:
 2. Connect these three wires to the Nano's **brushless output** (three pads/pins)
 3. The order of the three wires determines spin direction — if the weapon spins the wrong way, swap any two of the three wires
 
-!!! example "📐 Diagram Needed"
-    Wiring diagram: LiPo→Nano, Motor A→left N20, Motor B→right N20, Brushless→weapon, wire colors marked
+??? info "Complete Malenki Nano Wiring Diagram"
+
+    ```
+                        MALENKI NANO ESC
+            ┌────────────────────────────────────┐
+            │                                    │
+            │  ┌──────────┐      ┌──────────┐  │
+            │  │  Motor   │      │  Motor   │  │
+            │  │ Driver 1 │      │ Driver 2 │  │
+            │  └──────────┘      └──────────┘  │
+            │                                    │
+            │       RX        ARM       LED      │
+            │       ○○        ○○        ○○       │
+            └───────┬┬────────┬┬────────┬┬───────┘
+                    ││        ││        ││
+                    ││        ││        └┴─── Optional LED indicator
+                    ││        ││
+                    ││        └┴───── Arming switch (optional)
+                    ││
+                    └┴───── Receiver signal wires
+
+
+    RECEIVER CONNECTION (3-wire servo cable):
+    ┌─────────────────────────────────────────────┐
+    │  FROM RECEIVER    →    TO MALENKI NANO      │
+    ├─────────────────────────────────────────────┤
+    │  Ch1 Signal (white) →  RX Pin 1 (Signal)    │
+    │  Ch2 Signal (white) →  RX Pin 2 (Signal)    │
+    │  Ground (black)     →  RX Pin 3 (Ground)    │
+    │  5V+ (red)          →  RX Pin 4 (5V)        │
+    └─────────────────────────────────────────────┘
+
+
+    MOTOR CONNECTIONS:
+    ┌─────────────────────────────────────────────┐
+    │  LEFT DRIVE MOTORS:                         │
+    │  ○ M1+  ──── Red wire from left motor       │
+    │  ○ M1-  ──── Black wire from left motor     │
+    │                                             │
+    │  RIGHT DRIVE MOTORS:                        │
+    │  ○ M2+  ──── Red wire from right motor      │
+    │  ○ M2-  ──── Black wire from right motor    │
+    └─────────────────────────────────────────────┘
+
+
+    BATTERY CONNECTION:
+    ┌─────────────────────────────────────────────┐
+    │  2S LiPo Battery (7.4V)                     │
+    │                                             │
+    │  BAT+  ──── Red wire from battery           │
+    │  BAT-  ──── Black wire from battery         │
+    │                                             │
+    │  ⚠️  POLARITY CRITICAL!                     │
+    │  Reverse polarity = INSTANT DAMAGE          │
+    └─────────────────────────────────────────────┘
+
+
+    COMPLETE SYSTEM OVERVIEW:
+
+         ┌─────────┐
+         │ Battery │ (2S LiPo 7.4V)
+         └────┬────┘
+              │ (BAT+/BAT-)
+              ▼
+        ┌──────────────┐
+        │  MALENKI     │◄──── Receiver signal
+        │  NANO ESC    │      (Ch1, Ch2, GND, 5V)
+        └──┬────────┬──┘
+           │        │
+           ▼        ▼
+        [M1+/M1-][M2+/M2-]
+           │        │
+           ▼        ▼
+        Left     Right
+        Motors   Motors
+    ```
+
+    **Common Mistake:**
+    Reversing motor polarity won't damage anything, but robot will drive backwards!
+    Solution: Swap the + and - wires on that motor.
 
 ---
 
@@ -201,6 +345,20 @@ After setting failsafe, test it thoroughly:
 
 ---
 
+## Success Criteria
+
+Electronics installation is complete when you can:
+
+- [ ] Verify all wires are soldered (no twisted connections) with heat shrink
+- [ ] Demonstrate transmitter binding (robot responds to controls)
+- [ ] Show correct drive motor direction (forward/reverse, left/right)
+- [ ] Show correct weapon motor spin direction
+- [ ] Demonstrate successful failsafe test (transmitter off = all motors stop)
+- [ ] Route all wires away from weapon path with strain relief
+- [ ] Take photos of completed wiring for repair reference
+
+---
+
 ## Next Step
 
-Your electronics are set up and tested. Time to put it all together — head to **[Assembly & Wiring](assembly-and-wiring.md)** for the full build process.
+Electronics are complete. Proceed to **[Testing & Safety](testing-and-safety.md)** for final safety checks and pre-competition testing.

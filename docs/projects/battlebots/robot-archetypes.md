@@ -6,6 +6,24 @@ This page covers the two main categories allowed: **vertical spinners** and **ho
 
 ---
 
+## Learning Objectives
+
+By completing this module, you will be able to:
+
+- Distinguish between vertical spinners (drum, eggbeater, large disc) and horizontal spinners (midcutter, undercutter)
+- Compare the advantages and disadvantages of each archetype
+- Explain why "ground game" (getting under your opponent) matters in spinner-vs-spinner fights
+- Choose an appropriate archetype for your first combat robot based on build complexity and performance
+- Design a simple wedge front to improve ground game
+
+---
+
+## Time Required
+
+45 minutes
+
+---
+
 ## Vertical Spinners
 
 A vertical spinner has a weapon that rotates in the **vertical plane** — think of a circular saw or a front-loading washing machine. The weapon spins perpendicular to the ground and hits opponents with an upward (or downward) strike.
@@ -31,8 +49,19 @@ A **drum spinner** is a wide, low-diameter cylinder that covers the front of the
 - Requires precise bearing mounts to spin smoothly
 - Heavy for its energy storage compared to other designs
 
-!!! example "📷 Photo Needed"
-    Real drum spinner combat robot (beetle/antweight) showing drum weapon
+!!! note "Photo: Manual Download Required"
+    **Reference Example:** Drum spinner combat robot
+
+    **Sources to download from:**
+
+    - [AlexKorvin's Beetleweight Drum Spinner](https://www.thingiverse.com/thing:7001396) (Thingiverse - CC Licensed)
+    - [Team Small Robots "Puca"](https://teamsmallrobots.com/blog/introducing-puca-a-4wd-drum-spinner/)
+
+    **What to look for:** Clear side view showing cylindrical drum weapon with teeth/impactors on the perimeter.
+
+    **Installation:** Download photo and save to `/docs/projects/battlebots/images/archetypes/drum-spinner-example.jpg`
+
+    📖 See `/images/MANUAL_TASKS_REQUIRED.md` for detailed instructions (Task 1.1)
 
 ### Eggbeater / Beater Bar
 
@@ -176,6 +205,18 @@ Consider these factors when choosing:
 
 !!! info "First-Time Builder Recommendation"
     If this is your first combat robot, consider a **drum spinner** or **eggbeater**. They're the most forgiving designs — the weapon doubles as frontal armor, they have good ground game potential, and they're less affected by recoil than horizontal spinners.
+
+---
+
+## Success Criteria
+
+You are ready to move on when you can:
+
+- [ ] Name all 5 spinner archetypes covered (drum, eggbeater, large vert, midcutter, undercutter)
+- [ ] Explain one advantage and one disadvantage for vertical vs horizontal spinners
+- [ ] Describe why a lower robot usually wins when two spinners collide head-on
+- [ ] Choose which archetype you want to build and justify your choice
+- [ ] Sketch (on paper or digitally) your intended weapon layout
 
 ---
 

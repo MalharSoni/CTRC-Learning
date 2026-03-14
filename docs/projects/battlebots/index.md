@@ -39,7 +39,9 @@ Before starting this project, you must have completed:
 
 ---
 
-## Project Phases
+## Student Workflow
+
+These are the modules **you will complete** as a student:
 
 | Phase | Module | Estimated Time |
 |-------|--------|---------------|
@@ -48,11 +50,31 @@ Before starting this project, you must have completed:
 | 3 | [Weapon Design](weapon-design.md) | 1-2 hours |
 | 4 | [Drivetrain (N20 Motors)](drivetrain-design.md) | 1-2 hours |
 | 5 | [CAD Your Bot](cad-your-bot.md) | 4-8 hours |
-| 6 | [3D Printing Guide](3d-printing-guide.md) | 2-4 hours (plus print time) |
-| 7 | [Malenki Nano Setup](malenki-nano-setup.md) | 1-2 hours |
-| 8 | [Assembly & Wiring](assembly-and-wiring.md) | 2-3 hours |
-| 9 | [Testing & Safety](testing-and-safety.md) | 1-2 hours |
-| **Total** | | **13-24 hours** |
+| 6 | [3D Printing Guide](3d-printing-guide.md) | 1-2 hours (reading/prep) |
+| 7 | [Chassis Assembly](assembly-and-wiring.md) | 2-3 hours |
+| **Student Total** | | **10-19 hours** |
+
+### Handoff Points
+
+**After Phase 5 (CAD Complete):**
+Export your STL files and give them to your teacher for 3D printing with optimized settings.
+
+**After Phase 7 (Mechanical Assembly Complete):**
+Give your completed chassis to your teacher for electronics installation, wiring, and safety testing.
+
+---
+
+## Teacher Workflow
+
+These modules are **teacher-supervised** or **teacher-only**:
+
+| Phase | Module | Responsibility |
+|-------|--------|----------------|
+| 6b | 3D Printing (Execution) | **Teacher** prints all parts with optimized settings |
+| 8 | Malenki Nano Setup | **Teacher** handles all electronics and wiring |
+| 9 | Testing & Safety | **Teacher** conducts failsafe tests and safety checks |
+
+**Estimated teacher time:** 4-6 hours per student robot (printing time not included)
 
 ---
 

@@ -1,8 +1,31 @@
 # Testing & Safety
 
+!!! warning "Teacher Module"
+    This module is for **teachers only**. Teachers conduct all safety testing and verify robots are competition-ready.
+
 Your robot is assembled. Before it enters the arena, you must test every system and verify every safety measure. This page covers LiPo battery safety, the mandatory power-on/power-off procedure, drive and weapon testing, and the pre-fight checklist.
 
 **Read this entire page. Every rule here exists because someone got hurt when it wasn't followed.**
+
+---
+
+## Learning Objectives
+
+By completing this module, you will be able to:
+
+- Explain and enforce LiPo battery safety (charging, storage, damage detection)
+- Execute the correct power-on and power-off sequences for combat robots
+- Test drive systems for correct direction, speed, and control
+- Test weapon systems safely (in arena/test box, with weapon lock, with failsafe verified)
+- Conduct failsafe tests before every event
+- Complete the pre-fight checklist for all safety, mechanical, and operational items
+- Handle emergency situations (runaway robot, battery damage, injury)
+
+---
+
+## Time Required
+
+1-2 hours (initial testing per robot, plus pre-event checks)
 
 ---
 
@@ -73,8 +96,68 @@ Follow this exact order:
 | 6 | **Close/seal the arena** | Enclose the robot before any weapon testing |
 | 7 | **Pick up the transmitter and test** | Now you can drive and spin up the weapon |
 
-!!! example "📐 Diagram Needed"
-    7-step power-on sequence flowchart
+??? info "Power-On Sequence Flowchart"
+
+    ```
+    ┌─────────────────────────────────────────────┐
+    │  SAFE POWER-ON PROCEDURE                    │
+    └─────────────────────────────────────────────┘
+
+        ┌────────────────────────────────┐
+        │ 1. WEAPON LOCK INSTALLED       │
+        │    ✓ Pin/zip-tie in place      │
+        │    ✓ Weapon cannot spin        │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 2. TRANSMITTER ON              │
+        │    ✓ Turn on controller FIRST  │
+        │    ✓ Check for bind light      │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 3. VERIFY RECEIVER OFF         │
+        │    ✓ Robot has no power yet    │
+        │    ✓ Battery disconnected      │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 4. CONNECT BATTERY             │
+        │    ✓ Plug in main battery      │
+        │    ✓ Listen for Malenki beeps  │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 5. VERIFY FAILSAFE WORKS       │
+        │    ✓ Turn transmitter OFF      │
+        │    ✓ Weapon must NOT spin      │
+        │    ✓ Turn transmitter back ON  │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 6. TEST CONTROLS               │
+        │    ✓ Drive forward/reverse     │
+        │    ✓ Verify steering works     │
+        │    ✓ DO NOT activate weapon    │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 7. REMOVE WEAPON LOCK (ARENA)  │
+        │    ⚠️  ONLY in sealed arena    │
+        │    ⚠️  NEVER outside arena     │
+        │    ✓ Now ready for combat      │
+        └────────────────────────────────┘
+    ```
+
+    !!! danger "CRITICAL RULE"
+        **ALWAYS** power transmitter ON before connecting robot battery.
+        If receiver powers on first, weapon may activate unexpectedly!
 
 ### Power-Off Sequence (After Testing or Fighting)
 
@@ -90,8 +173,67 @@ Reverse the order:
 | 6 | **Disconnect the battery / turn the robot OFF** | Now safe to handle |
 | 7 | **Turn off the transmitter** | Last step — ensures the robot always has a signal while powered |
 
-!!! example "📐 Diagram Needed"
-    7-step power-off sequence flowchart (reverse order)
+??? info "Power-Off Sequence Flowchart"
+
+    ```
+    ┌─────────────────────────────────────────────┐
+    │  SAFE POWER-OFF PROCEDURE                   │
+    └─────────────────────────────────────────────┘
+
+        ┌────────────────────────────────┐
+        │ 1. WEAPON FULLY STOPPED        │
+        │    ✓ Wait for weapon to stop   │
+        │    ✓ No spinning parts moving  │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 2. INSTALL WEAPON LOCK         │
+        │    ✓ Insert pin/zip-tie        │
+        │    ✓ Verify weapon cannot spin │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 3. DISCONNECT BATTERY          │
+        │    ✓ Unplug main battery       │
+        │    ✓ Robot has no power        │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 4. VERIFY NO POWER             │
+        │    ✓ No lights on Malenki      │
+        │    ✓ No sounds from motors     │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 5. TRANSMITTER OFF             │
+        │    ✓ Turn off controller LAST  │
+        │    ✓ Store safely              │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 6. WEAPON LOCK STAYS IN        │
+        │    ✓ Lock remains installed    │
+        │    ✓ Safe to handle robot      │
+        └──────────────┬─────────────────┘
+                       │
+                       ▼
+        ┌────────────────────────────────┐
+        │ 7. STORE SAFELY                │
+        │    ✓ Battery in fireproof bag  │
+        │    ✓ Robot in secure location  │
+        └────────────────────────────────┘
+    ```
+
+    !!! danger "CRITICAL RULE"
+        **ALWAYS** disconnect battery before turning OFF transmitter.
+        Reverse order from power-on sequence!
+
+        **NEVER REMOVE WEAPON LOCK OUTSIDE ARENA**
 
 !!! danger "NEVER Power On a Spinning Weapon Outside of an Enclosed Test Area"
     Even at 500g, a spinning weapon can cause serious injury — lacerations, broken fingers, eye damage. If the weapon is not inside the sealed arena or an enclosed test box, it must not be powered. No exceptions. No "quick tests." No "just checking."
@@ -247,6 +389,22 @@ Safety in combat robotics is not about following rules to avoid getting in troub
 
 !!! tip "The Golden Rule of Combat Robotics"
     Treat every robot as if its weapon could spin up at any moment. Handle with respect. Never put your hand near a weapon unless the battery is disconnected and the weapon lock is installed.
+
+---
+
+## Success Criteria
+
+Robot is competition-ready when you can:
+
+- [ ] Complete the Pre-Fight Checklist (all items checked)
+- [ ] Demonstrate correct power-on sequence (transmitter first, then robot)
+- [ ] Demonstrate correct power-off sequence (weapon lock first, then power off)
+- [ ] Show successful failsafe test (weapon stops when transmitter turns off)
+- [ ] Verify battery is healthy (no puffing, correct voltage, no damage)
+- [ ] Confirm robot weight is within limit
+- [ ] Demonstrate drive control (forward, reverse, turn left, turn right)
+- [ ] Demonstrate weapon control (spin up, spin down, controlled throttle)
+- [ ] Brief student driver on controls and safety procedures
 
 ---
 

@@ -6,6 +6,25 @@ This guide covers material selection, print settings, orientation strategy, and 
 
 ---
 
+## Learning Objectives
+
+By completing this module, you will be able to:
+
+- Choose appropriate materials for each part (PLA+ for structure, TPU for armor/hubs, PETG for balance)
+- Explain why print orientation affects part strength (layer lines and impact direction)
+- Orient parts correctly to maximize strength against expected forces
+- Identify and troubleshoot common print issues (warping, stringing, poor adhesion)
+- Estimate print times and plan printing schedules
+- Prepare STL files for teacher handoff with correct orientation notes
+
+---
+
+## Time Required
+
+1-2 hours (reading and preparation; actual print time is 8-16 hours total for all parts)
+
+---
+
 ## Materials for Combat Robots
 
 Not all 3D printing filaments are created equal. For a combat robot, you need materials that can survive impacts, vibration, and the occasional direct hit from a spinning weapon. Here are the three materials you'll use.
@@ -135,7 +154,7 @@ PETG sits between PLA+ and TPU. It's stiffer than TPU but tougher than PLA+. It 
 
 When 3D printing, each layer bonds to the previous layer. This bond is the weakest point. Look at this comparison:
 
-![Print Orientation Comparison](images/printing/hole-orientation-comparison.jpg)
+![3D printed parts comparison showing horizontal holes with visible layer lines at stress points versus vertical holes with solid material distribution - vertical orientation is significantly stronger](images/printing/hole-orientation-comparison.jpg)
 
 **Key Principle:** Orient parts so that impact forces don't try to pull layers apart.
 
@@ -252,6 +271,19 @@ After printing:
 
 ---
 
+## Success Criteria
+
+You are ready to move on when you can:
+
+- [ ] Assign correct materials to each part (PLA+ for chassis, TPU for weapon hub, etc.)
+- [ ] Explain why holes should be oriented vertically for maximum strength
+- [ ] Orient your weapon for printing (flat on bed, layers perpendicular to impact)
+- [ ] Estimate total print time for all parts (8-16 hours range)
+- [ ] Hand off STL files to teacher with orientation recommendations
+- [ ] Identify 3 common print issues and their fixes
+
+---
+
 ## Next Step
 
-Your parts are printed — now it's time to set up your electronics. Head to the **[Malenki Nano Setup](malenki-nano-setup.md)** guide to wire and configure your control board.
+Hand your STL files to your teacher for printing with optimized settings. While parts are printing, you can review the [Chassis Assembly](assembly-and-wiring.md) module to prepare for the build phase.

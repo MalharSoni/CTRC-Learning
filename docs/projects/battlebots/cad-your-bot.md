@@ -4,6 +4,25 @@ This is where your robot goes from an idea to a real design. You'll use Onshape 
 
 ---
 
+## Learning Objectives
+
+By completing this module, you will be able to:
+
+- Create a bounding box sketch (6"x6") to constrain your design
+- Model a unibody chassis with motor pockets, battery compartment, and electronics mount
+- Design and mate drive wheels and weapon in an Onshape assembly
+- Use Onshape mass properties to verify weight (~500g) and center of mass
+- Export STL files with correct units and resolution for 3D printing
+- Complete a design review checklist before printing
+
+---
+
+## Time Required
+
+4-8 hours (varies widely based on CAD experience)
+
+---
+
 ## Before You Start
 
 Make sure you have:
@@ -249,6 +268,19 @@ Once your design is approved:
 - [ ] Everything fits within 6" x 6" footprint
 - [ ] Design reviewed with mentor
 - [ ] STL files exported for all printable parts
+
+---
+
+## Success Criteria
+
+You are ready to move on when you can:
+
+- [ ] Complete the CAD Checklist above (all items checked)
+- [ ] Show that your assembly fits within the 6"x6" bounding box from top view
+- [ ] Demonstrate mass properties showing total weight 470-530g
+- [ ] Verify weapon center of mass is on the spin axis (balanced)
+- [ ] Export all STL files with clear file names and correct units
+- [ ] Pass design review with a mentor (if required)
 
 ---
 

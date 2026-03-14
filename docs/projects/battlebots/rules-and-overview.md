@@ -6,6 +6,24 @@ Read this entire page. Every rule exists for a reason.
 
 ---
 
+## Learning Objectives
+
+By completing this module, you will be able to:
+
+- Explain the weight limit (~500g) and size limit (6"x6" footprint) for competition robots
+- Identify which weapon types are allowed (spinners only) and which are prohibited
+- Describe the three critical safety requirements: weapon locks, LiPo handling, and failsafes
+- Understand how matches work: duration, knockout rules, and judging criteria
+- Complete the pre-fight checklist before every match
+
+---
+
+## Time Required
+
+30 minutes
+
+---
+
 ## Robot Specifications
 
 ### Weight Limit
@@ -160,6 +178,18 @@ Before every match, confirm:
 - [ ] Robot is at or near the weight limit
 - [ ] Radio transmitter has fresh batteries
 - [ ] You know which direction your robot drives (test before the event!)
+
+---
+
+## Success Criteria
+
+You are ready to move on when you can:
+
+- [ ] State the weight limit (~500g) and size limit (6"x6") from memory
+- [ ] List at least 3 allowed weapon types and 3 prohibited types
+- [ ] Explain why spinning weapons must never be powered on outside the arena
+- [ ] Describe the three judging criteria (damage, aggression, control) and their point values
+- [ ] Complete the pre-fight checklist without looking at the guide
 
 ---
 

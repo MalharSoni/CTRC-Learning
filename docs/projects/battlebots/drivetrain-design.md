@@ -4,6 +4,25 @@ Your drivetrain is how your robot moves around the arena. A combat robot that ca
 
 ---
 
+## Learning Objectives
+
+By completing this module, you will be able to:
+
+- Identify the key specifications of N20 3V 300RPM motors
+- Design a 2WD skid-steer layout with proper motor placement
+- Size wheels appropriately (25-35mm diameter) for torque and speed balance
+- Create motor mounts that secure motors without crushing them
+- Design wheel hubs with D-shaft connections to prevent slipping
+- Allocate weight budget (100-150g) for the complete drivetrain
+
+---
+
+## Time Required
+
+1-2 hours
+
+---
+
 ## N20 Motor Specifications
 
 The N20 is a micro geared motor widely used in small combat robots, educational robotics, and hobby projects. The "N20" refers to the motor housing size (20mm long body).
@@ -173,8 +192,80 @@ The N20 has a **3mm D-shaft** — a round shaft with one flat side. Your wheel h
 - **Set screw**: Add a set screw hole perpendicular to the shaft for extra security
 - **Glue**: In a pinch, a drop of CA (super glue) on the shaft before pressing the wheel on works — but makes future disassembly harder
 
-!!! example "📐 Diagram Needed"
-    Wheel hub mating with D-shaft: flat alignment and optional set screw cross-section
+??? info "D-Shaft Interface Diagram"
+
+    **How the N20 motor shaft connects to your wheel:**
+
+    ```
+    FRONT VIEW (looking at shaft end):
+
+         Standard Round Shaft        D-Shaft (N20 Motor)
+         ┌──────────────┐           ┌──────────────┐
+         │              │           │              │
+         │      ○○      │           │    ○○        │
+         │              │           │   ╱  ╲       │
+         │              │           │  │    │      │
+         └──────────────┘           └──│────│──────┘
+                                       Flat
+         Spins freely in hole       edge
+
+
+    SIDE VIEW (shaft profile):
+
+    Round Shaft:
+        ═══════════════════
+        (No flat - just circular)
+
+    D-Shaft:
+        ═══════════════════
+               ▬▬▬▬▬▬
+        (Flat machined on one side)
+
+
+    WHY D-SHAFT?
+
+    Without flat (round):         With flat (D-shaft):
+    ┌────────┐                   ┌────────┐
+    │  Wheel │ spins on          │  Wheel │ locks to
+    │   ○○   │ shaft             │   ○╱   │ shaft
+    └────────┘                   └────────┘
+      Slips!                       Grips!
+
+
+    3D PRINTED WHEEL SOCKET:
+
+    Top View:                    Cross-Section:
+    ┌────────────┐              ┌────────────┐
+    │     ○╱     │              │    ╱╲      │
+    │    /  \    │              │   /  \     │
+    │   |    |   │              │  |    |    │
+    │    \  /    │              │   \  /     │
+    │     ○╱     │              │    ╲/      │
+    └────────────┘              └────────────┘
+      D-shaped                   Flat edge matches
+      pocket                     motor shaft flat
+    ```
+
+    **N20 MOTOR SHAFT SPECIFICATIONS:**
+
+    - Diameter: 3.0mm
+    - Flat width: 2.5mm (D-cut depth)
+    - Shaft length: 9mm
+    - Material: Steel
+
+    **CAD DESIGN TIP:**
+
+    When modeling wheel socket in Onshape:
+
+    1. Sketch circle: 3.0mm diameter
+    2. Sketch rectangle across circle (width: 3.0mm, height: 0.5mm cut depth)
+    3. Extrude pocket: 4mm deep
+    4. Add 0.1mm clearance for easy fit
+
+    Result: Wheel locks onto shaft, no slipping!
+
+    !!! tip "Common 3D Printing Issue"
+        If D-pocket prints too tight, use 3.1mm diameter instead of 3.0mm for easier assembly.
 
 ---
 
@@ -190,6 +281,19 @@ Before finalizing your drivetrain design:
 - [ ] Weight is under 150g for the complete drivetrain
 - [ ] Shaft connection is secure (D-shaft + set screw or glue)
 - [ ] Ground clearance allows front wedge to get under opponents
+
+---
+
+## Success Criteria
+
+You are ready to move on when you can:
+
+- [ ] State the N20 motor specifications (3V, 300RPM, 3mm D-shaft)
+- [ ] Complete the Drivetrain Design Checklist above
+- [ ] Sketch your motor placement (rear, center, or front mounted)
+- [ ] Design wheels with correct D-shaft hubs (3mm with flat)
+- [ ] Estimate total drivetrain weight and confirm it's under 150g
+- [ ] Explain why direct drive (no external gears) is preferred for this weight class
 
 ---
 

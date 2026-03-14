@@ -6,6 +6,24 @@ This page covers the physics of spinning weapons, how to design for maximum effe
 
 ---
 
+## Learning Objectives
+
+By completing this module, you will be able to:
+
+- Explain how kinetic energy in spinning weapons is calculated (KE = ½Iω²)
+- Define "bite" and explain why it matters for weapon effectiveness
+- Check weapon balance using Onshape mass properties
+- Choose appropriate materials for weapons (PLA+, PETG, TPU for hub)
+- Allocate weight budget between weapon, chassis, drivetrain, and electronics
+
+---
+
+## Time Required
+
+1-2 hours
+
+---
+
 ## Spinner Physics
 
 ### Kinetic Energy
@@ -37,8 +55,40 @@ The moment of inertia depends on the **mass distribution** of your weapon. Mass 
 
 **Practical implication:** A weapon with more mass at the edges (like a ring or bar tips) stores more energy than one with mass at the center (like a solid disc), for the same total weight.
 
-!!! example "📐 Diagram Needed"
-    Mass distribution comparison: solid disc vs ring vs bar relative to spin axis
+??? info "Mass Distribution Comparison"
+
+    **How mass placement affects energy storage:**
+
+    ```
+    SOLID DISC              RING                    BAR
+    (Low MOI)               (High MOI)              (Highest MOI)
+
+        ████                 ████                    ████
+      ████████             ██    ██                  ██
+     ██████████           ██  ○  ██                  ██
+     ██████████           ██      ██                 ██
+      ████████             ██    ██                  ██
+        ████                 ████                    ████
+
+    Mass centered          Mass at edges           Mass at extremes
+    near axis              of disc                 (furthest from axis)
+
+    MOI = LOW              MOI = MEDIUM            MOI = HIGH
+    Easy to spin up        Moderate spin-up        Slow spin-up
+    Less stored energy     Good energy storage     Maximum energy storage
+    ```
+
+    **Moment of Inertia (MOI) Formula:** MOI = m × r²
+
+    Where: m = mass, r = distance from rotation axis
+
+    **Design Trade-off:**
+
+    - **Solid Disc**: Spins up fast, less kinetic energy per hit
+    - **Ring**: Balanced approach, most common for beginners
+    - **Bar**: Maximum damage per hit, but requires powerful motor
+
+    **For Beetleweight Bots:** Most successful designs use a thin ring or bar configuration to maximize energy storage while keeping the weapon lightweight.
 
 ---
 
@@ -56,8 +106,58 @@ $$
 - **Too much bite** (few teeth, low RPM): The weapon digs in deep but can stall on impact or rip itself out of the opponent violently.
 - **Good bite** (balanced): The weapon cuts in, delivers energy, and ejects the opponent.
 
-!!! example "📐 Diagram Needed"
-    Bite: forward travel of weapon tooth between impacts, with closing speed and tooth spacing
+??? info "Bite Calculation Diagram"
+
+    **Understanding how deep your weapon cuts:**
+
+    ```
+                        WEAPON DISC ROTATION
+                             ↓
+            ═══════════════════════════════════
+            ║                                 ║
+            ║    ┌─────────────────────────┐ ║
+            ║    │  Tooth 1        Tooth 2 │ ║  ← Weapon disc with 2 teeth
+            ║    │     ▲              ▲    │ ║
+            ║    └─────┼──────────────┼────┘ ║
+            ║          │              │      ║
+            ║          │←─ Spacing ──→│      ║
+            ║                                 ║
+            ╚═══════════════════════════════════
+
+                        BITE GEOMETRY
+                             ↓
+                     ┌──────────────┐
+                     │    TOOTH     │
+                     └───┬──────────┘
+                         │
+                         │ ← Bite depth
+                         │
+            ═════════════╧═════════════  ← Opponent armor
+            ─────────────→
+            Forward travel distance
+    ```
+
+    **BITE FORMULA:**
+    Bite (mm) = (Forward Travel × 360°) / (Tooth Spacing Angle)
+
+    Where:
+
+    - Forward Travel = Robot's drive speed × contact time
+    - Tooth Spacing Angle = 360° / Number of Teeth
+
+    **EXAMPLE CALCULATION:**
+
+    - 2-tooth weapon → 180° spacing
+    - Robot moves 5mm forward during hit
+    - Bite = (5mm × 360°) / 180° = 10mm
+
+    **GOOD BITE RANGE:**
+
+    - Minimum: 3mm (can grab armor)
+    - Optimal: 5-10mm (solid hit)
+    - Too much: >15mm (weapon bogs down)
+
+    **Key Insight:** More teeth = less bite depth. For beetleweight bots, 2-4 teeth is optimal for good bite without excessive drag.
 
 ### Bite Design Guidelines for 500g Robots
 
@@ -203,6 +303,19 @@ The tradeoff is real:
 
 !!! info "Design for Your Strategy"
     If you want to be a knockout machine, invest in weapon weight. If you want to survive to a judges' decision, invest in armor and drivetrain. If you want control, invest in drivetrain. There's no single right answer — it depends on how you want to fight.
+
+---
+
+## Success Criteria
+
+You are ready to move on when you can:
+
+- [ ] Calculate or estimate kinetic energy for a weapon given mass, radius, and RPM
+- [ ] Explain why doubling RPM gives 4x the energy (quadratic relationship)
+- [ ] Define "bite" in your own words and why it affects weapon performance
+- [ ] Check center of mass in Onshape mass properties to verify weapon balance
+- [ ] Choose materials for your weapon (PLA+ for blade, TPU for hub)
+- [ ] Estimate weapon weight and allocate remaining weight to other systems
 
 ---
 
