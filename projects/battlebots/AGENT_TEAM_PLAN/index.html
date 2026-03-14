@@ -1,0 +1,3386 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CTRC Learning Hub — VEX V5 Foundation Program &amp; BattleBots curriculum by Caution Tape Robotics Club.">
+      
+      
+      
+        <link rel="canonical" href="https://malharsoni.github.io/CTRC-Learning/projects/battlebots/AGENT_TEAM_PLAN/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/ctrc-logo-white.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>BattleBots Curriculum - 5-Agent Parallel Execution Plan - CTRC Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M13%209h-2V7h2m0%2010h-2v-6h2m-1-9A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M160.5-26.4c9.3-7.8%2023-7.5%2031.9.9%2012.3%2011.6%2023.3%2024.4%2033.9%2037.4%2013.5%2016.5%2029.7%2038.3%2045.3%2064.2%205.2-6.8%2010-12.8%2014.2-17.9%201.1-1.3%202.2-2.7%203.3-4.1C297%2044.3%20306.8%2032%20319.9%2032c13.4%200%2022.8%2011.9%2030.8%2022.1q1.95%202.55%203.9%204.8c10.3%2012.4%2024%2030.3%2037.7%2052.4%2027.2%2043.9%2055.6%20106.4%2055.6%20176.6%200%20123.7-100.3%20224-224%20224S0%20411.7%200%20288c0-91.1%2041.1-170%2080.5-225%2019.9-27.7%2039.7-49.9%2054.6-65.1%208.2-8.4%2016.5-16.7%2025.5-24.2zM225.7%20416c25.3%200%2047.7-7%2068.8-21%2042.1-29.4%2053.4-88.2%2028.1-134.4-4.5-9-16-9.6-22.5-2l-25.2%2029.3c-6.6%207.6-18.5%207.4-24.7-.5-17.3-22.1-49.1-62.4-65.3-83-5.4-6.9-15.2-8-21.5-1.9-18.3%2017.8-51.5%2056.8-51.5%20104.3%200%2068.6%2050.6%20109.2%20113.7%20109.2z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M480-16c6.9%200%2013%204.4%2015.2%2010.9l13.5%2040.4%2040.4%2013.5C555.6%2051%20560%2057.1%20560%2064s-4.4%2013-10.9%2015.2l-40.4%2013.5-13.5%2040.4c-2.2%206.5-8.3%2010.9-15.2%2010.9s-13-4.4-15.2-10.9l-13.5-40.4-40.4-13.5C404.4%2077%20400%2070.9%20400%2064s4.4-13%2010.9-15.2l40.4-13.5%2013.5-40.4C467-11.6%20473.1-16%20480-16M321.4%2097.4c12.5-12.5%2032.8-12.5%2045.3%200l80%2080c12.5%2012.5%2012.5%2032.8%200%2045.3l-10.9%2010.9c7.9%2022%2012.2%2045.7%2012.2%2070.5%200%20114.9-93.1%20208-208%20208S32%20418.9%2032%20304%20125.1%2096%20240%2096c24.7%200%2048.5%204.3%2070.5%2012.3zM144%20304c0-53%2043-96%2096-96%2013.3%200%2024-10.7%2024-24s-10.7-24-24-24c-79.5%200-144%2064.5-144%20144%200%2013.3%2010.7%2024%2024%2024s24-10.7%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M416%20427.4c58.5-44%2096-111.6%2096-187.4C512%20107.5%20397.4%200%20256%200S0%20107.5%200%20240c0%2075.8%2037.5%20143.4%2096%20187.4V464c0%2026.5%2021.5%2048%2048%2048h32v-40c0-13.3%2010.7-24%2024-24s24%2010.7%2024%2024v40h64v-40c0-13.3%2010.7-24%2024-24s24%2010.7%2024%2024v40h32c26.5%200%2048-21.5%2048-48zM96%20256a64%2064%200%201%201%20128%200%2064%2064%200%201%201-128%200m256-64a64%2064%200%201%201%200%20128%2064%2064%200%201%201%200-128%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20640%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M352%200c0-17.7-14.3-32-32-32s-32%2014.3-32%2032v64h-96c-53%200-96%2043-96%2096v224c0%2053%2043%2096%2096%2096h256c53%200%2096-43%2096-96V160c0-53-43-96-96-96h-96zM160%20368c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24m120%200c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24m120%200c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24M224%20176a48%2048%200%201%201%200%2096%2048%2048%200%201%201%200-96m144%2048a48%2048%200%201%201%2096%200%2048%2048%200%201%201-96%200m-304%200c0-17.7-14.3-32-32-32S0%20206.3%200%20224v96c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32zm544-32c-17.7%200-32%2014.3-32%2032v96c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32v-96c0-17.7-14.3-32-32-32%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flip-button.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/lesson-enhancements.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: none; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#battlebots-curriculum-5-agent-parallel-execution-plan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CTRC Learning" class="md-header__button md-logo" aria-label="CTRC Learning" data-md-component="logo">
+      
+  <img src="../../../assets/ctrc-logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CTRC Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BattleBots Curriculum - 5-Agent Parallel Execution Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="white" aria-label="Switch to Light Mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to Light Mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="black" aria-label="Switch to Dark Mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to Dark Mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MalharSoni/CTRC-Learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    MalharSoni/CTRC-Learning
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../foundation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  V5 Foundation Program
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../design-handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Design Handbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../mechanism-examples/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mechanism Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../contribution/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contribution
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CTRC Learning" class="md-nav__button md-logo" aria-label="CTRC Learning" data-md-component="logo">
+      
+  <img src="../../../assets/ctrc-logo-white.png" alt="logo">
+
+    </a>
+    CTRC Learning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MalharSoni/CTRC-Learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    MalharSoni/CTRC-Learning
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../foundation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V5 Foundation Program
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../design-handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Handbook
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../mechanism-examples/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanism Examples
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../contribution/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribution
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#team-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Team Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-1-content-audit-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 1: Content Audit &amp; Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-2-visual-asset-quality-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 2: Visual Asset Quality Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-3-attribution-licensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 3: Attribution &amp; Licensing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-4-student-experience-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 4: Student Experience Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-5-documentation-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 5: Documentation &amp; Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-1-content-audit-fix_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 1: Content Audit &amp; Fix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent 1: Content Audit &amp; Fix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-11-navigation-fixes-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.1: Navigation Fixes (CRITICAL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-12-add-path-markers-to-all-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.2: Add Path Markers to All Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-13-add-alt-text-to-all-existing-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.3: Add Alt Text to All Existing Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-14-fix-inconsistent-file-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.4: Fix Inconsistent File Naming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-15-create-markdown-lint-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.5: Create Markdown Lint Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-2-visual-asset-quality-control_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 2: Visual Asset Quality Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent 2: Visual Asset Quality Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mission_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-tasks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-21-source-robot-archetype-photos-critical-tier-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.1: Source Robot Archetype Photos (CRITICAL - Tier 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-22-create-cad-workflow-screenshots-critical-tier-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.2: Create CAD Workflow Screenshots (CRITICAL - Tier 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-23-create-weapon-design-diagrams-tier-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.3: Create Weapon Design Diagrams (Tier 3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-24-source-safety-hardware-photos-tier-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.4: Source Safety &amp; Hardware Photos (Tier 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-25-optimize-all-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.5: Optimize All Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deliverables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-3-attribution-licensing_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 3: Attribution &amp; Licensing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent 3: Attribution &amp; Licensing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mission_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-tasks_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-31-verify-licenses-for-new-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.1: Verify Licenses for New Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-32-update-attributionmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.2: Update Attribution.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-33-add-inline-attribution-to-captions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.3: Add Inline Attribution to Captions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-34-consolidate-documentation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.4: Consolidate Documentation Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-35-create-attribution-footer-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.5: Create Attribution Footer Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deliverables_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-4-student-experience-testing_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 4: Student Experience Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent 4: Student Experience Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mission_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-tasks_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-41-create-checkpoint-handoff-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.1: Create Checkpoint Handoff Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-42-add-learning-objectives-to-all-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.2: Add Learning Objectives to All Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-43-add-success-criteria-to-all-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.3: Add Success Criteria to All Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-44-add-common-mistakes-callouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.4: Add "Common Mistakes" Callouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-45-create-quick-reference-cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.5: Create Quick Reference Cheat Sheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-46-test-workflow-from-student-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.6: Test Workflow from Student Perspective
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deliverables_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-5-documentation-maintenance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 5: Documentation &amp; Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent 5: Documentation &amp; Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mission_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-tasks_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-51-create-visual-style-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5.1: Create Visual Style Guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sizing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-53-create-troubleshooting-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5.3: Create Troubleshooting Guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-54-create-quality-standards-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5.4: Create Quality Standards Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-55-create-maintenance-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5.5: Create Maintenance Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deliverables_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordination-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordination &amp; Communication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coordination &amp; Communication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#daily-standup-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Standup (Async)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handoff-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handoff Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conflict-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conflict Resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-setup-30-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Setup (30 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-parallel-execution-6-8-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Parallel Execution (6-8 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-integration-1-2-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Integration (1-2 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-validation-1-2-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Validation (1-2 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-deployment-30-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Deployment (30 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#completion-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceptance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Mitigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risk-1-images-cant-be-sourced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 1: Images Can't Be Sourced
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-2-agents-block-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 2: Agents Block Each Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-3-time-overruns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 3: Time Overruns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-4-quality-issues-found-late" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 4: Quality Issues Found Late
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-5-licensing-issues-discovered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 5: Licensing Issues Discovered
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-execution-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Execution Review
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/MalharSoni/CTRC-Learning/edit/main/docs/projects/battlebots/AGENT_TEAM_PLAN.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/MalharSoni/CTRC-Learning/raw/main/docs/projects/battlebots/AGENT_TEAM_PLAN.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+    </a>
+  
+
+
+<h1 id="battlebots-curriculum-5-agent-parallel-execution-plan">BattleBots Curriculum - 5-Agent Parallel Execution Plan</h1>
+<p><strong>Date:</strong> March 12, 2026
+<strong>Objective:</strong> Complete visual asset integration and quality improvements using coordinated agent teams
+<strong>Estimated Total Time:</strong> 8-12 hours (parallel execution)</p>
+<hr>
+<h2 id="team-structure">Team Structure</h2>
+<h3 id="agent-1-content-audit-fix">Agent 1: Content Audit &amp; Fix</h3>
+<p><strong>Focus:</strong> Structural improvements, navigation fixes, content consistency
+<strong>Skillset:</strong> Markdown editing, content strategy, information architecture
+<strong>Output:</strong> Updated module files with fixes, improved navigation</p>
+<h3 id="agent-2-visual-asset-quality-control">Agent 2: Visual Asset Quality Control</h3>
+<p><strong>Focus:</strong> Image sourcing, optimization, integration, alt text
+<strong>Skillset:</strong> Image research, file management, accessibility standards
+<strong>Output:</strong> Complete image library with proper attribution and optimization</p>
+<h3 id="agent-3-attribution-licensing">Agent 3: Attribution &amp; Licensing</h3>
+<p><strong>Focus:</strong> Source verification, legal compliance, documentation
+<strong>Skillset:</strong> License interpretation, attribution standards, documentation
+<strong>Output:</strong> Comprehensive attribution system, consolidated documentation</p>
+<h3 id="agent-4-student-experience-testing">Agent 4: Student Experience Testing</h3>
+<p><strong>Focus:</strong> Workflow validation, usability improvements, handoff clarity
+<strong>Skillset:</strong> UX design, educational best practices, student perspective
+<strong>Output:</strong> Enhanced module structure, checkpoint pages, success criteria</p>
+<h3 id="agent-5-documentation-maintenance">Agent 5: Documentation &amp; Maintenance</h3>
+<p><strong>Focus:</strong> Style guides, contributor guidelines, future-proofing
+<strong>Skillset:</strong> Technical writing, standards documentation, process design
+<strong>Output:</strong> Maintainer resources, quality standards, troubleshooting guides</p>
+<hr>
+<h2 id="agent-1-content-audit-fix_1">Agent 1: Content Audit &amp; Fix</h2>
+<h3 id="mission">Mission</h3>
+<p>Fix all structural issues, navigation inconsistencies, and content gaps identified in audit.</p>
+<h3 id="specific-tasks">Specific Tasks</h3>
+<h4 id="task-11-navigation-fixes-critical">Task 1.1: Navigation Fixes (CRITICAL)</h4>
+<p><strong>Estimated Time:</strong> 30 minutes</p>
+<p><strong>Actions:</strong>
+1. Edit <code>index.md</code>:
+   - Remove phases 7-9 from phase table (teacher modules)
+   - Add note after phase 7: "Your teacher will complete electronics, wiring, and safety testing"
+   - Update total time estimate to 13-18 hours (student-only phases)</p>
+<ol>
+<li>Verify <code>mkdocs.yml</code>:</li>
+<li>Confirm teacher modules remain commented out</li>
+<li>Test navigation after changes</li>
+</ol>
+<p><strong>Files Modified:</strong>
+- <code>/docs/projects/battlebots/index.md</code></p>
+<p><strong>Success Criteria:</strong>
+- [ ] Student phase table shows only phases 1-7
+- [ ] Clear handoff message after mechanical assembly
+- [ ] Navigation doesn't reference hidden modules</p>
+<hr>
+<h4 id="task-12-add-path-markers-to-all-modules">Task 1.2: Add Path Markers to All Modules</h4>
+<p><strong>Estimated Time:</strong> 45 minutes</p>
+<p><strong>Actions:</strong>
+Add role marker admonition to top of each module (after title, before content):</p>
+<p><strong>Student Modules (7 files):</strong>
+</p><div class="highlight"><pre><span></span><code>!!! info "Student Module"
+    This module is completed by you. Ask your teacher if you have questions, but the work is yours.
+</code></pre></div><p></p>
+<p><strong>Teacher Modules (2 files):</strong>
+</p><div class="highlight"><pre><span></span><code>!!! warning "Teacher Module"
+    This module is completed by teachers/mentors. Students will receive a completed, safety-tested robot after this phase.
+</code></pre></div><p></p>
+<p><strong>Files Modified:</strong>
+- All 9 module files</p>
+<p><strong>Success Criteria:</strong>
+- [ ] Every module has clear role marker at top
+- [ ] Student modules use "info" admonition
+- [ ] Teacher modules use "warning" admonition</p>
+<hr>
+<h4 id="task-13-add-alt-text-to-all-existing-images">Task 1.3: Add Alt Text to All Existing Images</h4>
+<p><strong>Estimated Time:</strong> 1 hour</p>
+<p><strong>Actions:</strong>
+For each of the 10 existing images, replace generic alt text with descriptive alt text:</p>
+<p><strong>Current Format:</strong>
+</p><div class="highlight"><pre><span></span><code>![<span class="nt">Motor Installation</span>](<span class="na">images/assembly/motor-mounts-shaping.jpg</span>)
+</code></pre></div><p></p>
+<p><strong>Improved Format:</strong>
+</p><div class="highlight"><pre><span></span><code>![<span class="nt">Hands shaping motor mount pocket with file to create press-fit for N20 motor, showing D-shaft alignment slot</span>](<span class="na">images/assembly/motor-mounts-shaping.jpg</span>)
+</code></pre></div><p></p>
+<p><strong>Guidelines:</strong>
+- Describe what's happening in the image
+- Include relevant technical details
+- 15-25 words optimal
+- Mention tools/parts visible
+- Note orientation or perspective if relevant</p>
+<p><strong>Files Modified:</strong>
+- <code>3d-printing-guide.md</code> (1 image)
+- <code>assembly-and-wiring.md</code> (8 images)
+- <code>cad-your-bot.md</code> (1 image - when integrated)</p>
+<p><strong>Success Criteria:</strong>
+- [ ] All 10 images have descriptive alt text
+- [ ] Alt text includes action/context
+- [ ] Blind reader would understand image purpose</p>
+<hr>
+<h4 id="task-14-fix-inconsistent-file-naming">Task 1.4: Fix Inconsistent File Naming</h4>
+<p><strong>Estimated Time:</strong> 15 minutes</p>
+<p><strong>Actions:</strong>
+1. Rename CAD screenshot to remove timestamp:
+   </p><div class="highlight"><pre><span></span><code>Before: onshape-mass-properties-overview-2026-03-12T23-37-24-035Z.png
+After:  onshape-mass-properties-weapon.png
+</code></pre></div><p></p>
+<ol>
+<li>
+<p>Create second copy for assembly usage:
+   </p><div class="highlight"><pre><span></span><code>onshape-mass-properties-assembly.png
+</code></pre></div><p></p>
+</li>
+<li>
+<p>Update any references (if screenshot is integrated by Agent 2)</p>
+</li>
+</ol>
+<p><strong>Files Modified:</strong>
+- <code>/docs/projects/battlebots/images/cad/</code> (rename/copy file)
+- Module files (if references exist)</p>
+<p><strong>Success Criteria:</strong>
+- [ ] No timestamps in filenames
+- [ ] Descriptive names that indicate content
+- [ ] Consistent with existing naming pattern</p>
+<hr>
+<h4 id="task-15-create-markdown-lint-standards">Task 1.5: Create Markdown Lint Standards</h4>
+<p><strong>Estimated Time:</strong> 30 minutes</p>
+<p><strong>Actions:</strong>
+1. Document markdown standards in QUALITY_STANDARDS.md:
+   - Heading hierarchy (no skipped levels)
+   - List formatting (consistent bullets)
+   - Table formatting (aligned pipes)
+   - Code block language tags
+   - Admonition types and usage</p>
+<ol>
+<li>Run through all module files and fix violations</li>
+</ol>
+<p><strong>Files Modified:</strong>
+- All module files (formatting fixes)
+- <code>QUALITY_STANDARDS.md</code> (document standards)</p>
+<p><strong>Success Criteria:</strong>
+- [ ] All modules follow same formatting rules
+- [ ] No heading level skips (h1 → h2 → h3)
+- [ ] Tables are readable in source markdown
+- [ ] Code blocks have language tags</p>
+<hr>
+<h3 id="dependencies">Dependencies</h3>
+<ul>
+<li><strong>Blocks:</strong> Agent 2 (waits for image integration before adding alt text to new images)</li>
+<li><strong>Blocked by:</strong> None (can start immediately)</li>
+</ul>
+<h3 id="deliverables">Deliverables</h3>
+<ol>
+<li>Updated <code>index.md</code> with correct student workflow</li>
+<li>All modules with role markers</li>
+<li>All existing images with descriptive alt text</li>
+<li>Consistent file naming</li>
+<li>Markdown formatting standards documented</li>
+</ol>
+<hr>
+<h2 id="agent-2-visual-asset-quality-control_1">Agent 2: Visual Asset Quality Control</h2>
+<h3 id="mission_1">Mission</h3>
+<p>Complete visual asset integration: source, optimize, integrate, and verify all images.</p>
+<h3 id="specific-tasks_1">Specific Tasks</h3>
+<h4 id="task-21-source-robot-archetype-photos-critical-tier-1">Task 2.1: Source Robot Archetype Photos (CRITICAL - Tier 1)</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+1. <strong>Drum Spinner:</strong>
+   - Source: Thingiverse thing:7001396 (AlexKorvin)
+   - Download best photo showing drum weapon clearly
+   - Verify CC license allows educational use
+   - Save as: <code>drum-spinner-alexkorvin.jpg</code></p>
+<ol>
+<li><strong>Eggbeater/Beater Bar:</strong></li>
+<li>Source: Repeat Robotics or Team Small Robots</li>
+<li>Find clear photo of bar weapon</li>
+<li>
+<p>Save as: <code>eggbeater-bar-weapon.jpg</code></p>
+</li>
+<li>
+<p><strong>Vertical Disc Spinner:</strong></p>
+</li>
+<li>Source: Team Monsoon "Drizzle" or Instructables DIY project</li>
+<li>Large disc clearly visible</li>
+<li>
+<p>Save as: <code>vertical-disc-drizzle.jpg</code></p>
+</li>
+<li>
+<p><strong>Horizontal Midcutter:</strong></p>
+</li>
+<li>Source: aaronbot3000 "Dinner Time" or Repeat Robotics</li>
+<li>Horizontal blade at mid-height visible</li>
+<li>
+<p>Save as: <code>midcutter-horizontal-blade.jpg</code></p>
+</li>
+<li>
+<p><strong>Undercutter:</strong></p>
+</li>
+<li>Source: Thingiverse thing:5202939 (Lord_Toby)</li>
+<li>Blade under chassis visible</li>
+<li>Save as: <code>undercutter-low-blade.jpg</code></li>
+</ol>
+<p><strong>Directory:</strong>
+- <code>/docs/projects/battlebots/images/archetypes/</code></p>
+<p><strong>Integration:</strong>
+Edit <code>robot-archetypes.md</code>:
+</p><div class="highlight"><pre><span></span><code><span class="gu">### Drum Spinners</span>
+
+[existing text...]
+
+![<span class="nt">3D printed drum spinner beetleweight robot showing wide cylindrical drum weapon with teeth around circumference</span>](<span class="na">images/archetypes/drum-spinner-alexkorvin.jpg</span>)
+<span class="ge">*Drum spinner by AlexKorvin - demonstrates wide attack area and frontal armor*</span>
+</code></pre></div><p></p>
+<p><strong>Files Modified:</strong>
+- <code>robot-archetypes.md</code> (integrate 5 photos)
+- Create <code>/docs/projects/battlebots/images/archetypes/</code> directory</p>
+<p><strong>Success Criteria:</strong>
+- [ ] All 5 archetype photos sourced and saved
+- [ ] Images are high resolution (800px+ wide)
+- [ ] All integrated into robot-archetypes.md with captions
+- [ ] Each placeholder "!!! example" replaced with actual image</p>
+<hr>
+<h4 id="task-22-create-cad-workflow-screenshots-critical-tier-1">Task 2.2: Create CAD Workflow Screenshots (CRITICAL - Tier 1)</h4>
+<p><strong>Estimated Time:</strong> 3 hours</p>
+<p><strong>Actions:</strong>
+1. Open Onshape, create new document "CTRC-BattleBot-Reference"</p>
+<ol>
+<li><strong>Screenshot 1: Bounding Box</strong></li>
+<li>Create 6x6" rectangle sketch on Top plane</li>
+<li>Name sketch "Bounding-Box"</li>
+<li>Screenshot with feature tree visible</li>
+<li>
+<p>Save as: <code>cad-bounding-box-sketch.png</code></p>
+</li>
+<li>
+<p><strong>Screenshot 2: Chassis Sketch</strong></p>
+</li>
+<li>Sketch chassis outline with motor pockets, battery compartment</li>
+<li>Include dimensions</li>
+<li>Screenshot zoomed to show detail</li>
+<li>
+<p>Save as: <code>cad-chassis-sketch-pockets.png</code></p>
+</li>
+<li>
+<p><strong>Screenshot 3: Extruded Chassis</strong></p>
+</li>
+<li>Extrude chassis with internal ribs</li>
+<li>3D view, isometric angle</li>
+<li>Screenshot showing hollowed interior</li>
+<li>
+<p>Save as: <code>cad-chassis-extruded-ribs.png</code></p>
+</li>
+<li>
+<p><strong>Screenshot 4: Weapon Mass Properties</strong></p>
+</li>
+<li>Use existing screenshot (rename from timestamp version)</li>
+<li>Or create new weapon, show mass properties dialog</li>
+<li>Center of mass visible on spin axis</li>
+<li>
+<p>Save as: <code>cad-weapon-mass-properties.png</code></p>
+</li>
+<li>
+<p><strong>Screenshot 5: Assembly Mass Properties</strong></p>
+</li>
+<li>Complete assembly with all parts</li>
+<li>Mass properties dialog open</li>
+<li>Total mass ~500g visible</li>
+<li>
+<p>Save as: <code>cad-assembly-mass-properties.png</code></p>
+</li>
+<li>
+<p><strong>Screenshot 6: Top View with Bounding Box</strong></p>
+</li>
+<li>Assembly in Top view</li>
+<li>Bounding box sketch visible</li>
+<li>Everything fits within 6x6"</li>
+<li>Save as: <code>cad-assembly-top-view-bounds.png</code></li>
+</ol>
+<p><strong>Directory:</strong>
+- <code>/docs/projects/battlebots/images/cad/</code></p>
+<p><strong>Integration:</strong>
+Edit <code>cad-your-bot.md</code>:
+- Replace each "!!! example '🖥️ Screenshot Needed'" with actual image
+- Add descriptive captions
+- Ensure images are referenced in correct step</p>
+<p><strong>Files Modified:</strong>
+- <code>cad-your-bot.md</code> (integrate 5-6 screenshots)</p>
+<p><strong>Success Criteria:</strong>
+- [ ] All CAD workflow steps have screenshots
+- [ ] Onshape UI visible (students can replicate)
+- [ ] Feature tree expanded showing part names
+- [ ] All images are PNG format (sharp UI)
+- [ ] Each screenshot shows exact step described in text</p>
+<hr>
+<h4 id="task-23-create-weapon-design-diagrams-tier-3">Task 2.3: Create Weapon Design Diagrams (Tier 3)</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+1. <strong>Diagram 1: Mass Distribution Comparison</strong>
+   - Vector diagram (SVG) or high-quality PNG
+   - Show 3 weapon shapes: solid disc, ring/shell, bar
+   - Same total mass, different distributions
+   - Arrows showing radius and mass concentration
+   - Save as: <code>weapon-mass-distribution-comparison.svg</code></p>
+<ol>
+<li><strong>Diagram 2: Bite Calculation</strong></li>
+<li>Show weapon tooth, opponent surface</li>
+<li>Arrow showing forward travel distance (bite)</li>
+<li>Labels: closing speed, RPM, tooth spacing</li>
+<li>Formula callout</li>
+<li>
+<p>Save as: <code>weapon-bite-diagram.svg</code></p>
+</li>
+<li>
+<p><strong>Diagram 3: Balance Check (use existing screenshot)</strong></p>
+</li>
+<li>Onshape mass properties screenshot</li>
+<li>Annotate: center of mass location, spin axis</li>
+<li>Red circle highlighting alignment</li>
+<li>Save as: <code>weapon-balance-check-annotated.png</code></li>
+</ol>
+<p><strong>Tools:</strong>
+- Figma (vector diagrams)
+- or Adobe Illustrator
+- or hand-drawn + scanned + cleaned</p>
+<p><strong>Directory:</strong>
+- <code>/docs/projects/battlebots/images/weapon/</code></p>
+<p><strong>Integration:</strong>
+Edit <code>weapon-design.md</code>:
+- Replace "!!! example '📐 Diagram Needed'" markers
+- Add captions explaining what to observe</p>
+<p><strong>Files Modified:</strong>
+- <code>weapon-design.md</code> (integrate 3 diagrams)</p>
+<p><strong>Success Criteria:</strong>
+- [ ] All 3 physics concepts have visual diagrams
+- [ ] Diagrams use limited color palette (3-4 colors)
+- [ ] Labels are legible (14pt+ text)
+- [ ] SVG format for scalability</p>
+<hr>
+<h4 id="task-24-source-safety-hardware-photos-tier-2">Task 2.4: Source Safety &amp; Hardware Photos (Tier 2)</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+1. <strong>Weapon Lock Photo:</strong>
+   - Find reference photo of pin/clip weapon lock on combat robot
+   - Or photograph CTRC robot with weapon lock installed
+   - Save as: <code>safety-weapon-lock-installed.jpg</code></p>
+<ol>
+<li><strong>N20 Motor Photo:</strong></li>
+<li>Product photo from supplier or photograph actual N20</li>
+<li>D-shaft, gearbox, terminals visible</li>
+<li>
+<p>Save as: <code>motor-n20-300rpm-labeled.jpg</code></p>
+</li>
+<li>
+<p><strong>LiPo Safety Photos:</strong></p>
+</li>
+<li>Photo 1: LiPo in fireproof bag on charger</li>
+<li>Photo 2: Side-by-side healthy vs puffy battery</li>
+<li>
+<p>Save as: <code>safety-lipo-charging-setup.jpg</code>, <code>safety-lipo-healthy-vs-puffy.jpg</code></p>
+</li>
+<li>
+<p><strong>TPU Weapon Hub:</strong></p>
+</li>
+<li>Photo of flexible TPU hub, set screw visible</li>
+<li>Contrasted with rigid PLA hub if possible</li>
+<li>Save as: <code>weapon-tpu-hub-flexible.jpg</code></li>
+</ol>
+<p><strong>Directories:</strong>
+- <code>/docs/projects/battlebots/images/safety/</code>
+- <code>/docs/projects/battlebots/images/motor/</code>
+- <code>/docs/projects/battlebots/images/weapon/</code></p>
+<p><strong>Integration:</strong>
+- <code>rules-and-overview.md</code> (weapon lock)
+- <code>drivetrain-design.md</code> (N20 motor)
+- <code>testing-and-safety.md</code> (LiPo photos)
+- <code>weapon-design.md</code> (TPU hub)</p>
+<p><strong>Files Modified:</strong>
+- 4 module files</p>
+<p><strong>Success Criteria:</strong>
+- [ ] All safety-critical concepts have photos
+- [ ] Photos are well-lit and in focus
+- [ ] Critical details are visible (D-shaft flat, puffy battery swelling, etc.)</p>
+<hr>
+<h4 id="task-25-optimize-all-images">Task 2.5: Optimize All Images</h4>
+<p><strong>Estimated Time:</strong> 1 hour</p>
+<p><strong>Actions:</strong>
+1. Resize all images to max 1200px width (except CAD screenshots: 1600px)
+2. Compress JPG images to 85% quality
+3. Optimize PNG images (use pngquant or similar)
+4. Verify no image exceeds 300 KB
+5. Create <code>/docs/projects/battlebots/images/optimized/</code> working directory</p>
+<p><strong>Tools:</strong>
+- ImageMagick (command line)
+- or Squoosh.app (web-based)
+- or Photoshop batch processing</p>
+<p><strong>Files Modified:</strong>
+- All image files (optimized in place or replaced)</p>
+<p><strong>Success Criteria:</strong>
+- [ ] No image larger than 300 KB
+- [ ] Visual quality still excellent
+- [ ] Dimensions appropriate for web viewing
+- [ ] Total image directory under 5 MB</p>
+<hr>
+<h3 id="dependencies_1">Dependencies</h3>
+<ul>
+<li><strong>Blocks:</strong> Agent 1 (alt text), Agent 3 (attribution for new images)</li>
+<li><strong>Blocked by:</strong> None (can start immediately)</li>
+</ul>
+<h3 id="deliverables_1">Deliverables</h3>
+<ol>
+<li>5 robot archetype photos integrated</li>
+<li>5-6 CAD workflow screenshots integrated</li>
+<li>3 weapon design diagrams integrated</li>
+<li>4-5 safety/hardware photos integrated</li>
+<li>All images optimized for web</li>
+<li>Zero "Photo Needed" or "Diagram Needed" placeholders remaining</li>
+</ol>
+<hr>
+<h2 id="agent-3-attribution-licensing_1">Agent 3: Attribution &amp; Licensing</h2>
+<h3 id="mission_2">Mission</h3>
+<p>Ensure legal compliance, proper attribution, and consolidated documentation.</p>
+<h3 id="specific-tasks_2">Specific Tasks</h3>
+<h4 id="task-31-verify-licenses-for-new-images">Task 3.1: Verify Licenses for New Images</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+1. For each robot archetype source (5 total):
+   - Visit source page (Thingiverse, Instructables, etc.)
+   - Document exact license (CC BY-SA, CC BY-NC-SA, etc.)
+   - Verify "educational use" is allowed
+   - Screenshot license statement as proof
+   - Note any attribution requirements (name format, link back, etc.)</p>
+<ol>
+<li>Create verification table:
+   <div class="highlight"><pre><span></span><code>| Image | Source | License | Edu Use? | Attribution Required |
+|-------|--------|---------|----------|---------------------|
+| drum-spinner | Thing:7001396 | CC BY-SA 4.0 | ✅ Yes | Author + link |
+</code></pre></div></li>
+</ol>
+<p><strong>Files Created:</strong>
+- <code>LICENSE_VERIFICATION.md</code> (internal reference)</p>
+<p><strong>Success Criteria:</strong>
+- [ ] Every new image has verified license
+- [ ] All licenses permit educational use
+- [ ] Attribution requirements documented</p>
+<hr>
+<h4 id="task-32-update-attributionmd">Task 3.2: Update Attribution.md</h4>
+<p><strong>Estimated Time:</strong> 1 hour</p>
+<p><strong>Actions:</strong>
+1. Add entries for all newly sourced images:
+   - Robot archetype photos (5)
+   - Safety photos (3-4)
+   - Any other new photos</p>
+<ol>
+<li>
+<p>Use existing format from attribution.md:
+   </p><div class="highlight"><pre><span></span><code><span class="gu">### [Image Name]</span>
+<span class="gs">**Source:**</span> [Platform] - "[Title]"
+<span class="gs">**Author:**</span> [Name]
+<span class="gs">**URL:**</span> [Direct link]
+<span class="gs">**License:**</span> [License type]
+<span class="gs">**Description:**</span> [What it shows]
+<span class="gs">**Usage:**</span> Module X - [Purpose]
+</code></pre></div><p></p>
+</li>
+<li>
+<p>Organize by module for easy lookup</p>
+</li>
+<li>
+<p>Add "Last Updated" date at top</p>
+</li>
+</ol>
+<p><strong>Files Modified:</strong>
+- <code>attribution.md</code></p>
+<p><strong>Success Criteria:</strong>
+- [ ] All images have attribution entries
+- [ ] Format consistent with existing entries
+- [ ] Direct URLs provided for verification
+- [ ] License types clearly stated</p>
+<hr>
+<h4 id="task-33-add-inline-attribution-to-captions">Task 3.3: Add Inline Attribution to Captions</h4>
+<p><strong>Estimated Time:</strong> 1 hour</p>
+<p><strong>Actions:</strong>
+For images requiring attribution (CC-licensed community content):</p>
+<p><strong>Current Caption:</strong>
+</p><div class="highlight"><pre><span></span><code>![<span class="nt">Robot description</span>](<span class="na">image.jpg</span>)
+<span class="ge">*Descriptive caption*</span>
+</code></pre></div><p></p>
+<p><strong>Improved Caption:</strong>
+</p><div class="highlight"><pre><span></span><code>![<span class="nt">Robot description</span>](<span class="na">image.jpg</span>)
+<span class="ge">*Descriptive caption. Photo by [Author Name], licensed under CC BY-SA 4.0.*</span>
+</code></pre></div><p></p>
+<p>Add inline attribution to:
+- Robot archetype photos (5)
+- Instructables assembly photos (8 - already have, verify)
+- Any other CC-licensed content</p>
+<p><strong>Files Modified:</strong>
+- Module files with CC-licensed images</p>
+<p><strong>Success Criteria:</strong>
+- [ ] All CC-licensed images have inline attribution
+- [ ] Attribution format consistent
+- [ ] Links to author profiles included</p>
+<hr>
+<h4 id="task-34-consolidate-documentation-files">Task 3.4: Consolidate Documentation Files</h4>
+<p><strong>Estimated Time:</strong> 1.5 hours</p>
+<p><strong>Actions:</strong>
+1. <strong>Create new README.md</strong> (teacher quick start):
+   - Merge intro content from INTEGRATION_GUIDE.md
+   - Add "How to use this curriculum" section
+   - Add "Student workflow overview" section
+   - Add "Where to find images" → link to attribution.md
+   - Add "How to add content" → link to SOURCING_GUIDE.md</p>
+<ol>
+<li><strong>Create new SOURCING_GUIDE.md</strong>:</li>
+<li>Merge IMAGE_SOURCES.md (where to find images)</li>
+<li>Merge MANUAL_DOWNLOAD_CHECKLIST.md (download steps)</li>
+<li>Merge INTEGRATION_GUIDE.md (how to add to modules)</li>
+<li>
+<p>Add "Quality Standards" section from QUALITY_STANDARDS.md</p>
+</li>
+<li>
+<p><strong>Delete redundant files:</strong></p>
+</li>
+<li>IMAGE_SOURCES.md</li>
+<li>INTEGRATION_GUIDE.md</li>
+<li>SOURCING_SUMMARY.md</li>
+<li>MANUAL_DOWNLOAD_CHECKLIST.md</li>
+<li>DOWNLOAD_CHECKLIST.md</li>
+<li>
+<p>RESOURCE_ACQUISITION_REPORT.md (archive, don't delete)</p>
+</li>
+<li>
+<p><strong>Keep:</strong></p>
+</li>
+<li>README.md (new)</li>
+<li>ATTRIBUTION.md (legal requirement)</li>
+<li>SOURCING_GUIDE.md (new, consolidated)</li>
+<li>QUALITY_STANDARDS.md (maintained by Agent 5)</li>
+</ol>
+<p><strong>Files Created:</strong>
+- <code>README.md</code>
+- <code>SOURCING_GUIDE.md</code></p>
+<p><strong>Files Deleted:</strong>
+- 5 redundant documentation files</p>
+<p><strong>Files Archived:</strong>
+- <code>archive/RESOURCE_ACQUISITION_REPORT.md</code></p>
+<p><strong>Success Criteria:</strong>
+- [ ] Only 4 documentation files remain (README, ATTRIBUTION, SOURCING_GUIDE, QUALITY_STANDARDS)
+- [ ] No duplicate information across files
+- [ ] Clear purpose for each file
+- [ ] All links updated to new file locations</p>
+<hr>
+<h4 id="task-35-create-attribution-footer-template">Task 3.5: Create Attribution Footer Template</h4>
+<p><strong>Estimated Time:</strong> 30 minutes</p>
+<p><strong>Actions:</strong>
+Create reusable Markdown snippet for module footers:</p>
+<div class="highlight"><pre><span></span><code>---
+
+<span class="gu">## Image Credits</span>
+
+All images in this module are used under educational fair use or with permission. See [<span class="nt">complete attribution</span>](<span class="na">images/attribution.md</span>) for sources and licenses.
+
+<span class="gs">**Specific attributions:**</span>
+<span class="k">-</span><span class="w"> </span>[<span class="nl">Image 1 name</span>]: <span class="na">[Author/Source] ([License])</span>
+<span class="k">-</span><span class="w"> </span>[<span class="nl">Image 2 name</span>]: <span class="na">[Author/Source] ([License])</span>
+</code></pre></div>
+<p>Add to bottom of modules with CC-licensed images.</p>
+<p><strong>Files Modified:</strong>
+- Modules with CC-licensed images (robot-archetypes, assembly, printing)</p>
+<p><strong>Success Criteria:</strong>
+- [ ] Modules with CC content have attribution footer
+- [ ] Footer links to full attribution.md
+- [ ] Specific images listed with authors</p>
+<hr>
+<h3 id="dependencies_2">Dependencies</h3>
+<ul>
+<li><strong>Blocks:</strong> None</li>
+<li><strong>Blocked by:</strong> Agent 2 (needs to know which images were sourced before documenting attribution)</li>
+</ul>
+<h3 id="deliverables_2">Deliverables</h3>
+<ol>
+<li>All licenses verified for new images</li>
+<li>attribution.md updated with new entries</li>
+<li>Inline attribution added to captions</li>
+<li>Documentation files consolidated (7 → 4)</li>
+<li>Attribution footers added to relevant modules</li>
+</ol>
+<hr>
+<h2 id="agent-4-student-experience-testing_1">Agent 4: Student Experience Testing</h2>
+<h3 id="mission_3">Mission</h3>
+<p>Validate workflow from student perspective, add checkpoints, improve usability.</p>
+<h3 id="specific-tasks_3">Specific Tasks</h3>
+<h4 id="task-41-create-checkpoint-handoff-pages">Task 4.1: Create Checkpoint Handoff Pages</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+Create 3 new mini-modules:</p>
+<p><strong>1. checkpoint-design-review.md</strong>
+</p><div class="highlight"><pre><span></span><code><span class="gh"># Design Review Checkpoint</span>
+
+You've completed your CAD design. Before printing, you need a design review with a mentor.
+
+<span class="gu">## What Gets Reviewed</span>
+
+Your mentor will check:
+<span class="k">-</span><span class="w"> </span>[Checklist of review items]
+
+<span class="gu">## How to Prepare</span>
+
+Before your review meeting:
+<span class="k">-</span><span class="w"> </span>[Preparation steps]
+
+<span class="gu">## Common Issues Caught Here</span>
+
+[List of typical problems and how to fix them]
+
+<span class="gu">## What Happens Next</span>
+
+After approval:
+<span class="k">-</span><span class="w"> </span>[Next steps]
+If changes needed:
+<span class="k">-</span><span class="w"> </span>[Iteration process]
+</code></pre></div><p></p>
+<p><strong>2. checkpoint-mechanical-complete.md</strong>
+</p><div class="highlight"><pre><span></span><code><span class="gh"># Mechanical Assembly Complete</span>
+
+Your chassis is assembled. Time to hand off to your teacher for electronics.
+
+<span class="gu">## Final Mechanical Checklist</span>
+
+<span class="k">-</span><span class="w"> </span>[Verification items]
+
+<span class="gu">## What to Document</span>
+
+Take photos of:
+<span class="k">-</span><span class="w"> </span>[List]
+
+<span class="gu">## What Your Teacher Will Add</span>
+
+[Explanation of electronics phase]
+
+<span class="gu">## Timeline to Competition</span>
+
+<span class="k">-</span><span class="w"> </span>[Expectations]
+</code></pre></div><p></p>
+<p><strong>3. checkpoint-ready-to-compete.md</strong>
+</p><div class="highlight"><pre><span></span><code><span class="gh"># Ready to Fight</span>
+
+Your robot is complete and safety-tested. Here's what happens next.
+
+<span class="gu">## Pre-Fight Inspection</span>
+
+<span class="k">-</span><span class="w"> </span>[Checklist]
+
+<span class="gu">## Driver Controls Refresher</span>
+
+<span class="k">-</span><span class="w"> </span>[Control layout]
+
+<span class="gu">## Strategy Tips</span>
+
+<span class="k">-</span><span class="w"> </span>[Competition advice]
+
+<span class="gu">## After Your Fight</span>
+
+<span class="k">-</span><span class="w"> </span>[Repair expectations, iteration process]
+</code></pre></div><p></p>
+<p><strong>Files Created:</strong>
+- 3 checkpoint files</p>
+<p><strong>Integration:</strong>
+Add links in navigation flow:
+- After CAD module → link to design-review
+- After assembly module → link to mechanical-complete
+- After testing (teacher) → link to ready-to-compete</p>
+<p><strong>Success Criteria:</strong>
+- [ ] All checkpoints clearly explain handoff process
+- [ ] Student knows what happens next at each stage
+- [ ] Expectations are set for timelines
+- [ ] Clear criteria for moving forward</p>
+<hr>
+<h4 id="task-42-add-learning-objectives-to-all-modules">Task 4.2: Add Learning Objectives to All Modules</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+For each of 9 modules, add at top (after role marker):</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## What You'll Learn</span>
+
+By the end of this module, you will be able to:
+
+<span class="k">- [ ]</span> [Specific, measurable objective 1]
+<span class="k">- [ ]</span> [Specific, measurable objective 2]
+<span class="k">- [ ]</span> [Specific, measurable objective 3]
+</code></pre></div>
+<p><strong>Guidelines:</strong>
+- Use action verbs (design, calculate, identify, demonstrate)
+- Make measurable (not "understand weapon physics" but "calculate kinetic energy given mass and RPM")
+- 3-5 objectives per module</p>
+<p><strong>Files Modified:</strong>
+- All 9 module files</p>
+<p><strong>Success Criteria:</strong>
+- [ ] Every module has 3-5 learning objectives
+- [ ] Objectives are measurable
+- [ ] Objectives align with module content</p>
+<hr>
+<h4 id="task-43-add-success-criteria-to-all-modules">Task 4.3: Add Success Criteria to All Modules</h4>
+<p><strong>Estimated Time:</strong> 1.5 hours</p>
+<p><strong>Actions:</strong>
+For each module, add at bottom (before "Next Step"):</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## How You Know You're Done</span>
+
+✅ <span class="gs">**You can demonstrate:**</span>
+<span class="k">-</span><span class="w"> </span>[Specific outcome]
+<span class="k">-</span><span class="w"> </span>[Specific outcome]
+
+✅ <span class="gs">**Your design/build has:**</span>
+<span class="k">-</span><span class="w"> </span>[Measurable quality]
+<span class="k">-</span><span class="w"> </span>[Measurable quality]
+
+✅ <span class="gs">**You're ready when:**</span>
+<span class="k">-</span><span class="w"> </span>[Final check]
+</code></pre></div>
+<p><strong>Examples:</strong></p>
+<p>For CAD module:
+</p><div class="highlight"><pre><span></span><code>✅ You can demonstrate:
+<span class="k">-</span><span class="w"> </span>Mass properties check shows ~500g total weight
+<span class="k">-</span><span class="w"> </span>Center of mass is low and centered
+<span class="k">-</span><span class="w"> </span>Weapon is balanced (center of mass on spin axis)
+
+✅ Your design has:
+<span class="k">-</span><span class="w"> </span>All parts fit within 6" x 6" bounding box
+<span class="k">-</span><span class="w"> </span>STL files exported for all printable parts
+<span class="k">-</span><span class="w"> </span>Design review completed with mentor
+
+✅ You're ready when:
+<span class="k">-</span><span class="w"> </span>You can explain every design decision
+<span class="k">-</span><span class="w"> </span>You know which parts are PLA+, TPU, PETG
+<span class="k">-</span><span class="w"> </span>You have a backup plan if a part breaks
+</code></pre></div><p></p>
+<p><strong>Files Modified:</strong>
+- All 9 module files</p>
+<p><strong>Success Criteria:</strong>
+- [ ] Every module has explicit success criteria
+- [ ] Criteria are objective (not subjective)
+- [ ] Student knows exactly when to move on</p>
+<hr>
+<h4 id="task-44-add-common-mistakes-callouts">Task 4.4: Add "Common Mistakes" Callouts</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+Review each module, identify 2-3 common student errors, add callouts:</p>
+<div class="highlight"><pre><span></span><code>!!! warning "Common Mistake: [Specific Error]"
+    Students often [do incorrect thing].
+
+    <span class="gs">**Why it's wrong:**</span> [Explanation]
+
+    <span class="gs">**How to avoid:**</span> [Correct approach]
+
+    <span class="gs">**How to fix:**</span> [If already done wrong]
+</code></pre></div>
+<p><strong>Research:</strong>
+- Review existing content for warnings
+- Add from teacher experience (if available)
+- Anticipate based on complexity</p>
+<p><strong>Target:</strong> 2-3 callouts per module minimum</p>
+<p><strong>Files Modified:</strong>
+- All 9 module files</p>
+<p><strong>Success Criteria:</strong>
+- [ ] Each module has 2-3 "Common Mistake" callouts
+- [ ] Mistakes are specific (not generic)
+- [ ] Fix procedures are actionable</p>
+<hr>
+<h4 id="task-45-create-quick-reference-cheat-sheet">Task 4.5: Create Quick Reference Cheat Sheet</h4>
+<p><strong>Estimated Time:</strong> 1.5 hours</p>
+<p><strong>Actions:</strong>
+Create <code>quick-reference.md</code> with:</p>
+<p><strong>1. Key Specifications</strong>
+</p><div class="highlight"><pre><span></span><code><span class="gu">## Robot Specs</span>
+<span class="k">-</span><span class="w"> </span>Max footprint: 6" x 6" (152mm x 152mm)
+<span class="k">-</span><span class="w"> </span>Target weight: ~500g
+<span class="k">-</span><span class="w"> </span>Allowed weapons: Vertical or horizontal spinners only
+</code></pre></div><p></p>
+<p><strong>2. Component Specs</strong>
+</p><div class="highlight"><pre><span></span><code><span class="gu">## N20 Motor</span>
+<span class="k">-</span><span class="w"> </span>Voltage: 3V
+<span class="k">-</span><span class="w"> </span>Speed: 300 RPM
+<span class="k">-</span><span class="w"> </span>Shaft: 3mm D-shaft
+
+<span class="gu">## Malenki Nano</span>
+<span class="k">-</span><span class="w"> </span>Input: 1S-2S LiPo
+<span class="k">-</span><span class="w"> </span>Outputs: 2x brushed, 1x brushless
+</code></pre></div><p></p>
+<p><strong>3. Key Equations</strong>
+</p><div class="highlight"><pre><span></span><code><span class="gu">## Physics</span>
+Kinetic Energy: KE = ½Iω²
+Bite = (closing speed) / (RPM × teeth count)
+</code></pre></div><p></p>
+<p><strong>4. Safety Procedures</strong>
+</p><div class="highlight"><pre><span></span><code><span class="gu">## Power-On Sequence</span>
+<span class="k">1.</span> Transmitter ON
+<span class="k">2.</span> Place robot in arena
+...
+</code></pre></div><p></p>
+<p><strong>5. Troubleshooting Quick Lookup</strong>
+</p><div class="highlight"><pre><span></span><code>| Problem | Check | Fix |
+|---------|-------|-----|
+| Motor wrong direction | Wiring | Swap two wires |
+</code></pre></div><p></p>
+<p><strong>Files Created:</strong>
+- <code>quick-reference.md</code></p>
+<p><strong>Integration:</strong>
+- Add link in navigation
+- Reference from relevant modules</p>
+<p><strong>Success Criteria:</strong>
+- [ ] All critical specs in one place
+- [ ] Formatted for quick lookup
+- [ ] Printable (students can have physical copy)</p>
+<hr>
+<h4 id="task-46-test-workflow-from-student-perspective">Task 4.6: Test Workflow from Student Perspective</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+1. Read through full curriculum as if you're a student
+2. Note every point of confusion
+3. Note every missing link or reference
+4. Note every assumption made without explanation
+5. Note every time you'd ask "what now?"</p>
+<p><strong>Document findings:</strong>
+Create <code>STUDENT_TESTING_NOTES.md</code>:
+</p><div class="highlight"><pre><span></span><code><span class="gh"># Student Perspective Test - [Date]</span>
+
+<span class="gu">## Confusion Points</span>
+<span class="k">-</span><span class="w"> </span>Module X, line Y: [What's unclear]
+
+<span class="gu">## Missing Links</span>
+<span class="k">-</span><span class="w"> </span>Module A references Module B but no link
+
+<span class="gu">## Unexplained Assumptions</span>
+<span class="k">-</span><span class="w"> </span>"Use the bounding box" - which one? where?
+
+<span class="gu">## "What Now?" Moments</span>
+<span class="k">-</span><span class="w"> </span>After CAD export, student doesn't know next step
+</code></pre></div><p></p>
+<p><strong>Actions Taken:</strong>
+Fix issues found during testing by:
+- Adding cross-reference links
+- Clarifying ambiguous instructions
+- Adding "what's next" transitions</p>
+<p><strong>Files Created:</strong>
+- <code>STUDENT_TESTING_NOTES.md</code></p>
+<p><strong>Files Modified:</strong>
+- Module files (fixes based on testing)</p>
+<p><strong>Success Criteria:</strong>
+- [ ] Full workflow readable start-to-finish
+- [ ] No dead ends (every module has "Next Step")
+- [ ] No unexplained jargon
+- [ ] Student could self-navigate entire workflow</p>
+<hr>
+<h3 id="dependencies_3">Dependencies</h3>
+<ul>
+<li><strong>Blocks:</strong> None</li>
+<li><strong>Blocked by:</strong> Agent 1 (navigation fixes), Agent 2 (visual assets complete)</li>
+</ul>
+<h3 id="deliverables_3">Deliverables</h3>
+<ol>
+<li>3 checkpoint handoff pages created</li>
+<li>Learning objectives added to all modules</li>
+<li>Success criteria added to all modules</li>
+<li>Common mistakes callouts added</li>
+<li>Quick reference cheat sheet created</li>
+<li>Student perspective test completed with fixes</li>
+</ol>
+<hr>
+<h2 id="agent-5-documentation-maintenance_1">Agent 5: Documentation &amp; Maintenance</h2>
+<h3 id="mission_4">Mission</h3>
+<p>Create maintainer resources, standards documentation, and future-proofing guides.</p>
+<h3 id="specific-tasks_4">Specific Tasks</h3>
+<h4 id="task-51-create-visual-style-guide">Task 5.1: Create Visual Style Guide</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+Create <code>VISUAL_STYLE_GUIDE.md</code>:</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="gh"># BattleBots Visual Asset Style Guide</span>
+
+<span class="gu">## Purpose</span>
+Ensure consistent, professional, accessible visuals across curriculum.
+
+<span class="gu">## Image Categories</span>
+
+<span class="gu">### Photos</span>
+<span class="k">-</span><span class="w"> </span>Format: JPG
+<span class="k">-</span><span class="w"> </span>Max width: 1200px
+<span class="k">-</span><span class="w"> </span>Quality: 85%
+<span class="k">-</span><span class="w"> </span>Lighting: Natural or soft studio lighting
+<span class="k">-</span><span class="w"> </span>Background: Clean, uncluttered
+<span class="k">-</span><span class="w"> </span>Focus: Subject sharp, background slightly blurred OK
+
+<span class="gu">### Diagrams</span>
+<span class="k">-</span><span class="w"> </span>Format: SVG (preferred) or PNG at 2x
+<span class="k">-</span><span class="w"> </span>Colors: Max 4 colors per diagram
+<span class="k">-</span><span class="w"> </span>Color palette:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Primary: <span class="ni">#2563EB</span> (blue)
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Secondary: <span class="ni">#10B981</span> (green)
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Warning: <span class="ni">#F59E0B</span> (amber)
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Danger: <span class="ni">#EF4444</span> (red)
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Neutral: <span class="ni">#6B7280</span> (gray)
+<span class="k">-</span><span class="w"> </span>Line weight: 2-3px for clarity
+<span class="k">-</span><span class="w"> </span>Text: 14pt minimum, sans-serif font
+<span class="k">-</span><span class="w"> </span>Layout: Arrows top-to-bottom or left-to-right
+
+<span class="gu">### Screenshots</span>
+<span class="k">-</span><span class="w"> </span>Format: PNG
+<span class="k">-</span><span class="w"> </span>Max width: 1600px
+<span class="k">-</span><span class="w"> </span>Crop: Remove unnecessary UI
+<span class="k">-</span><span class="w"> </span>Annotate: Red boxes/arrows (3px stroke)
+<span class="k">-</span><span class="w"> </span>Highlight: Yellow background, 50% opacity
+
+<span class="gu">## Accessibility Standards</span>
+
+<span class="gu">### Alt Text</span>
+<span class="k">-</span><span class="w"> </span>15-25 words optimal
+<span class="k">-</span><span class="w"> </span>Describe action, not just objects
+<span class="k">-</span><span class="w"> </span>Include technical details relevant to learning
+<span class="k">-</span><span class="w"> </span>Format: <span class="sb">`![Descriptive alt text](path/to/image.jpg)`</span>
+
+<span class="gu">### Color Contrast</span>
+<span class="k">-</span><span class="w"> </span>Text on diagrams: WCAG AA minimum (4.5:1)
+<span class="k">-</span><span class="w"> </span>Don't use color alone to convey information
+<span class="k">-</span><span class="w"> </span>Use patterns/shapes in addition to color
+
+<span class="gu">### File Naming</span>
+<span class="k">-</span><span class="w"> </span>Lowercase
+<span class="k">-</span><span class="w"> </span>Hyphens (not underscores or spaces)
+<span class="k">-</span><span class="w"> </span>Descriptive (action-subject.jpg)
+<span class="k">-</span><span class="w"> </span>No timestamps or version numbers in name
+<span class="k">-</span><span class="w"> </span>Examples:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>✅ motor-n20-shaft-detail.jpg
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>❌ IMG_1234.jpg
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>❌ photo-2026-03-12.jpg
+
+<span class="gu">## Directory Structure</span>
+</code></pre></div>
+images/
+  archetypes/       Robot type examples
+  assembly/         Build process photos
+  cad/              Onshape screenshots
+  motor/            Hardware photos
+  printing/         3D printing visuals
+  safety/           Safety procedure photos
+  weapon/           Weapon design photos/diagrams
+<div class="highlight"><pre><span></span><code>## Integration Standards
+
+### Captions
+Always include caption after image:
+```markdown
+![Alt text](image.jpg)
+*Caption explaining what to observe or learn from this image*
+</code></pre></div><p></p>
+<h3 id="attribution">Attribution</h3>
+<p>For CC-licensed images:
+</p><div class="highlight"><pre><span></span><code><span class="ge">*Caption. Photo by [Author], licensed under [License].*</span>
+</code></pre></div><p></p>
+<h3 id="sizing">Sizing</h3>
+<p>Let images be responsive (no fixed widths in markdown)
+Exception: Use HTML figure tags for specific sizing needs</p>
+<h2 id="quality-checklist">Quality Checklist</h2>
+<p>Before adding any image:
+- [ ] Focused and well-lit
+- [ ] Relevant to learning objective
+- [ ] Properly named (descriptive, lowercase, hyphens)
+- [ ] Optimized (appropriate file size)
+- [ ] Alt text is descriptive
+- [ ] Caption explains purpose
+- [ ] Attribution added if CC-licensed
+- [ ] Saved in correct directory
+</p><div class="highlight"><pre><span></span><code>**Files Created:**
+- `VISUAL_STYLE_GUIDE.md`
+
+**Success Criteria:**
+- [ ] Every aspect of visual assets has a standard
+- [ ] Examples show good vs bad
+- [ ] Checklist for adding new images
+- [ ] Covers accessibility requirements
+
+---
+
+#### Task 5.2: Create Contributor Guidelines
+**Estimated Time:** 1.5 hours
+
+**Actions:**
+Create `CONTRIBUTING.md`:
+
+```markdown
+# Contributing to BattleBots Curriculum
+
+## How to Add Content
+
+### Adding a New Module
+[Step-by-step process]
+
+### Adding Images
+1. Ensure it meets standards (see VISUAL_STYLE_GUIDE.md)
+2. Verify license allows educational use
+3. Add to appropriate /images/ subdirectory
+4. Update attribution.md
+5. Integrate into module with alt text and caption
+
+### Updating Existing Content
+[Process for making changes]
+
+## Quality Standards
+
+All content must:
+- [ ] Be technically accurate
+- [ ] Include appropriate safety warnings
+- [ ] Have clear learning objectives
+- [ ] Include success criteria
+- [ ] Be accessible (alt text, WCAG AA contrast)
+
+## Testing Changes
+
+Before submitting:
+1. Build site locally (mkdocs serve)
+2. Test all links
+3. Verify images display correctly
+4. Check mobile responsiveness
+5. Run through student workflow
+
+## Attribution Requirements
+
+[How to properly attribute sources]
+
+## Review Process
+
+[How changes are reviewed before merging]
+</code></pre></div><p></p>
+<p><strong>Files Created:</strong>
+- <code>CONTRIBUTING.md</code></p>
+<p><strong>Success Criteria:</strong>
+- [ ] Clear process for adding content
+- [ ] Quality standards enforced
+- [ ] Attribution requirements explained
+- [ ] Testing procedures documented</p>
+<hr>
+<h4 id="task-53-create-troubleshooting-guide">Task 5.3: Create Troubleshooting Guide</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+Create <code>TROUBLESHOOTING.md</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># BattleBots Curriculum Troubleshooting</span>
+
+<span class="gu">## Content Issues</span>
+
+<span class="gu">### Broken Links</span>
+<span class="gs">**Symptom:**</span> Link returns 404 or doesn't navigate
+<span class="gs">**Causes:**</span>
+<span class="k">-</span><span class="w"> </span>File moved/renamed
+<span class="k">-</span><span class="w"> </span>Incorrect relative path
+<span class="k">-</span><span class="w"> </span>Case sensitivity (works locally, breaks on Linux server)
+<span class="gs">**Fix:**</span> [Step-by-step]
+
+<span class="gu">### Images Not Loading</span>
+<span class="gs">**Symptom:**</span> Broken image icon
+<span class="gs">**Causes:**</span>
+<span class="k">-</span><span class="w"> </span>Incorrect path
+<span class="k">-</span><span class="w"> </span>File not committed to git
+<span class="k">-</span><span class="w"> </span>Image name has spaces/special characters
+<span class="gs">**Fix:**</span> [Step-by-step]
+
+<span class="gu">### MkDocs Build Fails</span>
+<span class="gs">**Symptom:**</span> Error when running mkdocs serve
+<span class="gs">**Causes:**</span>
+<span class="k">-</span><span class="w"> </span>Invalid YAML in mkdocs.yml
+<span class="k">-</span><span class="w"> </span>Markdown syntax error
+<span class="k">-</span><span class="w"> </span>Missing plugin
+<span class="gs">**Fix:**</span> [Step-by-step]
+
+<span class="gu">## Student Workflow Issues</span>
+
+<span class="gu">### Student Confused About Next Steps</span>
+<span class="gs">**Check:**</span>
+<span class="k">-</span><span class="w"> </span>Does module have clear "Next Step" section?
+<span class="k">-</span><span class="w"> </span>Is handoff to teacher clearly marked?
+<span class="k">-</span><span class="w"> </span>Are checkpoints linked in navigation?
+
+<span class="gu">### Student Can't Visualize Concept</span>
+<span class="gs">**Check:**</span>
+<span class="k">-</span><span class="w"> </span>Is there a diagram/photo for this concept?
+<span class="k">-</span><span class="w"> </span>Is the visual actually helpful or decorative?
+<span class="k">-</span><span class="w"> </span>Does the caption explain what to observe?
+
+<span class="gu">## Maintenance Issues</span>
+
+<span class="gu">### Outdated Hardware References</span>
+<span class="gs">**Check:**</span>
+<span class="k">-</span><span class="w"> </span>Are N20 motor specs still current?
+<span class="k">-</span><span class="w"> </span>Is Malenki Nano still available?
+<span class="k">-</span><span class="w"> </span>Have rules changed?
+<span class="gs">**Fix:**</span> [Update process]
+
+<span class="gu">### New Safety Information</span>
+<span class="gs">**When:**</span> Anytime safety procedures change
+<span class="gs">**Process:**</span> [How to update safety content]
+
+<span class="gu">## Common MkDocs Issues</span>
+
+[Platform-specific troubleshooting]
+</code></pre></div>
+<p><strong>Files Created:</strong>
+- <code>TROUBLESHOOTING.md</code></p>
+<p><strong>Success Criteria:</strong>
+- [ ] Common issues documented
+- [ ] Step-by-step fixes provided
+- [ ] Covers content, technical, and workflow issues</p>
+<hr>
+<h4 id="task-54-create-quality-standards-document">Task 5.4: Create Quality Standards Document</h4>
+<p><strong>Estimated Time:</strong> 2 hours</p>
+<p><strong>Actions:</strong>
+Create <code>QUALITY_STANDARDS.md</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># BattleBots Curriculum Quality Standards</span>
+
+<span class="gu">## Content Standards</span>
+
+<span class="gu">### Writing Style</span>
+<span class="k">-</span><span class="w"> </span>Active voice preferred
+<span class="k">-</span><span class="w"> </span>Second person ("you") for student-facing content
+<span class="k">-</span><span class="w"> </span>Clear, concise sentences (15-20 words average)
+<span class="k">-</span><span class="w"> </span>Technical accuracy verified against sources
+
+<span class="gu">### Module Structure</span>
+Every module must have:
+<span class="k">1.</span> Role marker (student or teacher module)
+<span class="k">2.</span> Learning objectives
+<span class="k">3.</span> Prerequisites (if any)
+<span class="k">4.</span> Main content
+<span class="k">5.</span> Common mistakes callouts (2-3 minimum)
+<span class="k">6.</span> Success criteria
+<span class="k">7.</span> Next step
+
+<span class="gu">### Safety Content</span>
+<span class="k">-</span><span class="w"> </span>Safety warnings use <span class="sb">`!!! danger`</span> admonition
+<span class="k">-</span><span class="w"> </span>Every rule has a "why" explanation
+<span class="k">-</span><span class="w"> </span>Critical safety concepts repeated in multiple modules
+<span class="k">-</span><span class="w"> </span>No assumptions about prior safety knowledge
+
+<span class="gu">## Visual Standards</span>
+
+[Import from VISUAL_STYLE_GUIDE.md]
+
+<span class="gu">## Technical Standards</span>
+
+<span class="gu">### Links</span>
+<span class="k">-</span><span class="w"> </span>All internal links use relative paths
+<span class="k">-</span><span class="w"> </span>External links open in new tab (if possible)
+<span class="k">-</span><span class="w"> </span>No broken links (test before committing)
+
+<span class="gu">### Code Blocks</span>
+<span class="k">-</span><span class="w"> </span>Always specify language for syntax highlighting
+<span class="k">-</span><span class="w"> </span>Use markdown code fences (```)
+<span class="k">-</span><span class="w"> </span>Inline code uses single backticks
+
+<span class="gu">### Tables</span>
+<span class="k">-</span><span class="w"> </span>Use markdown tables (not HTML)
+<span class="k">-</span><span class="w"> </span>Align pipes for source readability
+<span class="k">-</span><span class="w"> </span>Include header row
+<span class="k">-</span><span class="w"> </span>Keep under 5 columns for mobile
+
+<span class="gu">### Admonitions</span>
+Types and usage:
+<span class="k">-</span><span class="w"> </span><span class="sb">`!!! note`</span> - Additional information
+<span class="k">-</span><span class="w"> </span><span class="sb">`!!! tip`</span> - Helpful advice
+<span class="k">-</span><span class="w"> </span><span class="sb">`!!! warning`</span> - Common mistakes, cautions
+<span class="k">-</span><span class="w"> </span><span class="sb">`!!! danger`</span> - Safety critical
+<span class="k">-</span><span class="w"> </span><span class="sb">`!!! info`</span> - Context, background
+<span class="k">-</span><span class="w"> </span><span class="sb">`!!! example`</span> - Examples, demonstrations
+
+<span class="gu">## Accessibility Standards</span>
+
+<span class="gu">### WCAG AA Compliance</span>
+<span class="k">-</span><span class="w"> </span>All images have alt text
+<span class="k">-</span><span class="w"> </span>Color contrast 4.5:1 minimum
+<span class="k">-</span><span class="w"> </span>Headings in logical order
+<span class="k">-</span><span class="w"> </span>No color-only information
+
+<span class="gu">### Mobile Responsiveness</span>
+<span class="k">-</span><span class="w"> </span>Tables scroll horizontally if needed
+<span class="k">-</span><span class="w"> </span>Images scale to screen width
+<span class="k">-</span><span class="w"> </span>No fixed-width content
+<span class="k">-</span><span class="w"> </span>Text readable at default zoom
+
+<span class="gu">## Testing Requirements</span>
+
+Before marking module "complete":
+<span class="k">- [ ]</span> All learning objectives are addressed in content
+<span class="k">- [ ]</span> Success criteria are measurable
+<span class="k">- [ ]</span> All links work
+<span class="k">- [ ]</span> All images load and have alt text
+<span class="k">- [ ]</span> Module tested on mobile device
+<span class="k">- [ ]</span> Student workflow test completed
+<span class="k">- [ ]</span> Technical accuracy verified
+
+<span class="gu">## Version Control Standards</span>
+
+<span class="gu">### Commit Messages</span>
+Format: <span class="sb">`type: description`</span>
+
+Types:
+<span class="k">-</span><span class="w"> </span><span class="sb">`feat:`</span> New module or major feature
+<span class="k">-</span><span class="w"> </span><span class="sb">`fix:`</span> Bug fix, correction
+<span class="k">-</span><span class="w"> </span><span class="sb">`docs:`</span> Documentation only
+<span class="k">-</span><span class="w"> </span><span class="sb">`img:`</span> Image additions/updates
+<span class="k">-</span><span class="w"> </span><span class="sb">`style:`</span> Formatting, no content change
+<span class="k">-</span><span class="w"> </span><span class="sb">`refactor:`</span> Content reorganization
+
+Examples:
+<span class="k">-</span><span class="w"> </span>✅ <span class="sb">`feat: add robot archetypes module with 5 example photos`</span>
+<span class="k">-</span><span class="w"> </span>✅ <span class="sb">`fix: correct N20 motor RPM specification`</span>
+<span class="k">-</span><span class="w"> </span>❌ <span class="sb">`updated stuff`</span>
+
+<span class="gu">### Pull Request Standards</span>
+[If using PR workflow]
+
+<span class="gu">## Review Checklist</span>
+
+Use this before publishing any changes:
+<span class="k">- [ ]</span> Content is technically accurate
+<span class="k">- [ ]</span> Safety information is complete
+<span class="k">- [ ]</span> All standards above are met
+<span class="k">- [ ]</span> Tested on local build
+<span class="k">- [ ]</span> Student workflow still makes sense
+<span class="k">- [ ]</span> No broken links or images
+<span class="k">- [ ]</span> Attribution is complete
+</code></pre></div>
+<p><strong>Files Created:</strong>
+- <code>QUALITY_STANDARDS.md</code></p>
+<p><strong>Success Criteria:</strong>
+- [ ] Every quality standard is documented
+- [ ] Clear pass/fail criteria for each standard
+- [ ] Examples of good vs bad
+- [ ] Testing checklist included</p>
+<hr>
+<h4 id="task-55-create-maintenance-checklist">Task 5.5: Create Maintenance Checklist</h4>
+<p><strong>Estimated Time:</strong> 1 hour</p>
+<p><strong>Actions:</strong>
+Create <code>MAINTENANCE_CHECKLIST.md</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># BattleBots Curriculum Maintenance Checklist</span>
+
+<span class="gu">## Monthly Checks</span>
+
+<span class="k">- [ ]</span> Test all external links (use link checker tool)
+<span class="k">- [ ]</span> Verify all images still load
+<span class="k">- [ ]</span> Check for MkDocs plugin updates
+<span class="k">- [ ]</span> Review GitHub issues/feedback
+
+<span class="gu">## Seasonal Checks (Before Each Competition)</span>
+
+<span class="k">- [ ]</span> Verify hardware availability (N20 motors, Malenki Nano)
+<span class="k">- [ ]</span> Update price references if needed
+<span class="k">- [ ]</span> Review safety procedures for any rule changes
+<span class="k">- [ ]</span> Test full student workflow with pilot student
+
+<span class="gu">## Annual Checks</span>
+
+<span class="k">- [ ]</span> Review all technical specifications
+<span class="k">- [ ]</span> Update source attributions (check for moved pages)
+<span class="k">- [ ]</span> Refresh screenshots if UI has changed
+<span class="k">- [ ]</span> Survey students/teachers for improvement ideas
+
+<span class="gu">## After Competition</span>
+
+<span class="k">- [ ]</span> Document any new common mistakes observed
+<span class="k">- [ ]</span> Add photos of student robots (with permission)
+<span class="k">- [ ]</span> Update troubleshooting guide with new issues
+<span class="k">- [ ]</span> Note any hardware failures for future reference
+
+<span class="gu">## Update Triggers</span>
+
+Update immediately when:
+<span class="k">- [ ]</span> Safety procedure changes
+<span class="k">- [ ]</span> Hardware is discontinued
+<span class="k">- [ ]</span> Major rule changes
+<span class="k">- [ ]</span> Critical error discovered
+
+<span class="gu">## Version Numbering</span>
+
+Use semantic versioning (major.minor.patch):
+<span class="k">-</span><span class="w"> </span>Major: Significant curriculum restructure
+<span class="k">-</span><span class="w"> </span>Minor: New modules, major content additions
+<span class="k">-</span><span class="w"> </span>Patch: Fixes, small improvements
+
+Current version: [To be determined]
+</code></pre></div>
+<p><strong>Files Created:</strong>
+- <code>MAINTENANCE_CHECKLIST.md</code></p>
+<p><strong>Success Criteria:</strong>
+- [ ] Clear schedule for maintenance tasks
+- [ ] Covers all aspects (content, technical, feedback)
+- [ ] Update triggers identified
+- [ ] Version numbering system defined</p>
+<hr>
+<h3 id="dependencies_4">Dependencies</h3>
+<ul>
+<li><strong>Blocks:</strong> None</li>
+<li><strong>Blocked by:</strong> All other agents (style guide references their work)</li>
+</ul>
+<h3 id="deliverables_4">Deliverables</h3>
+<ol>
+<li>Visual style guide created</li>
+<li>Contributor guidelines created</li>
+<li>Troubleshooting guide created</li>
+<li>Quality standards documented</li>
+<li>Maintenance checklist created</li>
+</ol>
+<hr>
+<h2 id="coordination-communication">Coordination &amp; Communication</h2>
+<h3 id="daily-standup-async">Daily Standup (Async)</h3>
+<p>Each agent reports:
+1. <strong>Yesterday:</strong> What was completed
+2. <strong>Today:</strong> What will be worked on
+3. <strong>Blockers:</strong> Any dependencies not met</p>
+<h3 id="handoff-points">Handoff Points</h3>
+<p><strong>Agent 2 → Agent 1:</strong>
+- When: Images integrated into modules
+- What: List of images added (so Agent 1 can add alt text to new ones)</p>
+<p><strong>Agent 2 → Agent 3:</strong>
+- When: New images sourced
+- What: List of images + sources (so Agent 3 can document attribution)</p>
+<p><strong>Agent 1 &amp; 2 → Agent 4:</strong>
+- When: All content and visual fixes complete
+- What: Notification that student testing can begin</p>
+<p><strong>All Agents → Agent 5:</strong>
+- When: Any new standards or patterns emerge
+- What: Document for inclusion in style guide / quality standards</p>
+<h3 id="conflict-resolution">Conflict Resolution</h3>
+<p>If agents make conflicting changes:
+1. Agent with lower number has priority (Agent 1 &gt; Agent 2)
+2. Document conflict in shared log
+3. Resolve before final merge</p>
+<h3 id="version-control-strategy">Version Control Strategy</h3>
+<p>Each agent works in own branch:
+</p><div class="highlight"><pre><span></span><code>agent-1-content-fixes
+agent-2-visual-assets
+agent-3-attribution
+agent-4-student-experience
+agent-5-documentation
+</code></pre></div><p></p>
+<p>Merge order:
+1. Agent 1 (content structure fixes)
+2. Agent 2 (visual assets)
+3. Agent 3 (attribution)
+4. Agent 4 (student experience)
+5. Agent 5 (documentation)</p>
+<hr>
+<h2 id="timeline">Timeline</h2>
+<h3 id="phase-1-setup-30-minutes">Phase 1: Setup (30 minutes)</h3>
+<ul>
+<li>All agents create branches</li>
+<li>Review task assignments</li>
+<li>Identify immediate blockers</li>
+</ul>
+<h3 id="phase-2-parallel-execution-6-8-hours">Phase 2: Parallel Execution (6-8 hours)</h3>
+<ul>
+<li>All agents work simultaneously</li>
+<li>Regular handoff communication</li>
+<li>Document progress in shared log</li>
+</ul>
+<h3 id="phase-3-integration-1-2-hours">Phase 3: Integration (1-2 hours)</h3>
+<ul>
+<li>Merge branches in order</li>
+<li>Resolve conflicts</li>
+<li>Test integrated changes</li>
+</ul>
+<h3 id="phase-4-validation-1-2-hours">Phase 4: Validation (1-2 hours)</h3>
+<ul>
+<li>Build full site locally</li>
+<li>Test all links and images</li>
+<li>Run through student workflow</li>
+<li>Mobile device testing</li>
+</ul>
+<h3 id="phase-5-deployment-30-minutes">Phase 5: Deployment (30 minutes)</h3>
+<ul>
+<li>Final review</li>
+<li>Commit to main</li>
+<li>Deploy to production</li>
+<li>Verify live site</li>
+</ul>
+<p><strong>Total Estimated Time:</strong> 8-12 hours (parallel execution)</p>
+<hr>
+<h2 id="success-metrics">Success Metrics</h2>
+<h3 id="completion-criteria">Completion Criteria</h3>
+<p><strong>All agents complete when:</strong>
+- [ ] Zero "Photo Needed" or "Diagram Needed" placeholders
+- [ ] All 35 visual assets integrated
+- [ ] All modules have role markers, objectives, success criteria
+- [ ] 3 checkpoint pages created
+- [ ] Attribution complete for all images
+- [ ] Documentation consolidated (7 → 4 files)
+- [ ] Quality standards documented
+- [ ] Troubleshooting guide created
+- [ ] Full student workflow tested</p>
+<h3 id="quality-validation">Quality Validation</h3>
+<p><strong>Before declaring "done":</strong>
+- [ ] Build succeeds with no errors
+- [ ] All links resolve (no 404s)
+- [ ] All images load
+- [ ] Alt text on all images
+- [ ] Attribution complete
+- [ ] Mobile responsive
+- [ ] Accessibility: WCAG AA for contrast
+- [ ] Student can navigate workflow independently</p>
+<h3 id="acceptance-testing">Acceptance Testing</h3>
+<p><strong>Final check:</strong>
+1. Non-technical teacher reviews README.md - can they use curriculum?
+2. Student pilot test - can they complete workflow?
+3. Accessibility audit - WAVE or similar tool
+4. Mobile test - 3 devices minimum
+5. Print test - quick reference prints cleanly</p>
+<hr>
+<h2 id="risk-mitigation">Risk Mitigation</h2>
+<h3 id="risk-1-images-cant-be-sourced">Risk 1: Images Can't Be Sourced</h3>
+<p><strong>Mitigation:</strong> Agent 2 has fallback options (contact builders, use alternative sources)
+<strong>Backup plan:</strong> Mark as "TO BE ADDED" and continue with everything else</p>
+<h3 id="risk-2-agents-block-each-other">Risk 2: Agents Block Each Other</h3>
+<p><strong>Mitigation:</strong> Clear handoff protocols, async communication
+<strong>Backup plan:</strong> Affected agent works on non-blocked tasks until dependency resolves</p>
+<h3 id="risk-3-time-overruns">Risk 3: Time Overruns</h3>
+<p><strong>Mitigation:</strong> Prioritize critical tasks first (Tier 1 &gt; Tier 2 &gt; Tier 3)
+<strong>Backup plan:</strong> Ship with Tier 1 complete, schedule Tier 2/3 for future iteration</p>
+<h3 id="risk-4-quality-issues-found-late">Risk 4: Quality Issues Found Late</h3>
+<p><strong>Mitigation:</strong> Agent 4 tests throughout, not just at end
+<strong>Backup plan:</strong> Quick fix sprint before deployment</p>
+<h3 id="risk-5-licensing-issues-discovered">Risk 5: Licensing Issues Discovered</h3>
+<p><strong>Mitigation:</strong> Agent 3 verifies licenses before Agent 2 integrates images
+<strong>Backup plan:</strong> Remove problematic images, find alternatives</p>
+<hr>
+<h2 id="post-execution-review">Post-Execution Review</h2>
+<p>After completion, document:</p>
+<p><strong>What Worked Well:</strong>
+- [Successes, efficient processes]</p>
+<p><strong>What Could Improve:</strong>
+- [Bottlenecks, inefficiencies]</p>
+<p><strong>Metrics:</strong>
+- Total time spent: [X hours]
+- Images integrated: [X/35]
+- Issues found in student testing: [X]
+- Final curriculum completeness: [X%]</p>
+<p><strong>Recommendations for Next Iteration:</strong>
+- [Process improvements]
+- [Tool improvements]
+- [Communication improvements]</p>
+<hr>
+<p><strong>Agent Team Plan Completed:</strong> March 12, 2026
+<strong>Ready for Execution:</strong> Upon user approval
+<strong>Next Document:</strong> EXECUTION_ROADMAP.md (step-by-step implementation)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="#" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.footer", "navigation.prune", "navigation.top", "navigation.path", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy", "content.tooltips", "content.action.edit", "content.action.view", "header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
