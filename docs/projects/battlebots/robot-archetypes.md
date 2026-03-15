@@ -49,19 +49,8 @@ A **drum spinner** is a wide, low-diameter cylinder that covers the front of the
 - Requires precise bearing mounts to spin smoothly
 - Heavy for its energy storage compared to other designs
 
-!!! note "Photo: Manual Download Required"
-    **Reference Example:** Drum spinner combat robot
-
-    **Sources to download from:**
-
-    - [AlexKorvin's Beetleweight Drum Spinner](https://www.thingiverse.com/thing:7001396) (Thingiverse - CC Licensed)
-    - [Team Small Robots "Puca"](https://teamsmallrobots.com/blog/introducing-puca-a-4wd-drum-spinner/)
-
-    **What to look for:** Clear side view showing cylindrical drum weapon with teeth/impactors on the perimeter.
-
-    **Installation:** Download photo and save to `/docs/projects/battlebots/images/archetypes/drum-spinner-example.jpg`
-
-    📖 See `/images/MANUAL_TASKS_REQUIRED.md` for detailed instructions (Task 1.1)
+![3D printed beetleweight drum spinner combat robot with wide cylindrical weapon featuring multiple teeth around perimeter for maximum contact area and low center of gravity](images/archetypes/drum-spinner-thingiverse.png)
+*Drum spinner design by AlexKorvin - wide cylinder with teeth provides excellent coverage and bite | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
 
 ### Eggbeater / Beater Bar
 
@@ -82,8 +71,36 @@ An **eggbeater** (also called a beater bar) uses a rectangular or cross-shaped b
 - Less frontal protection
 - Bar can bend on hard impacts
 
-!!! example "📷 Photo Needed"
-    Real eggbeater combat robot showing bar weapon
+```
+EGGBEATER / BEATER BAR (Side View)
+
+         Vertical Bar
+         Weapon ↓
+
+    ╔════════════════════╗
+    ║     ██████         ║ ← Chassis
+    ║     ██████         ║
+    ║   ┌─██████─────┐   ║
+    ║   │ ██████     │   ║
+    ║   │ ██████     │   ║
+    ║   │     │Motor │   ║
+    ║   └─────┼──────┘   ║
+    ║         │          ║
+    ║         ▼          ║
+    ║    ═══════════     ║ ← Bar spins
+    ║    ║         ║     ║   vertically
+    ║    ║  BEATER ║     ║
+    ║    ║   BAR   ║     ║
+    ║    ═══════════     ║
+    ╚════╩═════════╩═════╝
+         ○         ○ ← Wheels
+
+Key Features:
+- Bar rotates in vertical plane
+- Asymmetric shape provides excellent "bite"
+- Simple design (often one solid bar)
+- Each end of bar acts as impactor
+```
 
 ### Large-Diameter Vertical Disc
 
@@ -104,8 +121,32 @@ A **large vert** uses a big disc or blade spinning vertically. Think of a circul
 - More complex weapon mounting
 - Exposed disc can be damaged from the side
 
-!!! example "📷 Photo Needed"
-    Vertical disc spinner showing large disc weapon
+```
+LARGE VERTICAL DISC (Side View)
+
+         Large Disc
+         Weapon ↓
+
+         ╱◯◯◯◯◯◯╲ ← Disc/blade
+        ╱  ◯◯◯  ╲   with teeth
+       │ ◯     ◯ │
+    ╔══╪═◯───◯═╪══════╗
+    ║  │  ◯ ◯  │      ║
+    ║  │◯  │  ◯│Motor ║
+    ║  │ ◯─┼─◯ │Mount ║
+    ║  │  ◯│◯  │      ║
+    ║  │ ◯ ◯ ◯ │      ║
+    ║   ╲  ◯  ╱       ║
+    ║    ╲◯◯◯╱        ║
+    ╚═════════════════╝
+          ○     ○ ← Wheels
+
+Key Features:
+- Large radius = high tip speed
+- Extreme reach and kinetic energy
+- Gyroscopic effects affect steering
+- Heavy weapon uses significant weight budget
+```
 
 ---
 
@@ -134,8 +175,36 @@ A **midcutter** has the spinning blade mounted **between** the top and bottom of
 - Hard to control after a big hit (you spin away from the impact)
 - Gyroscopic effects resist turning
 
-!!! example "📷 Photo Needed"
-    Horizontal midcutter showing exposed horizontal blade
+```
+MIDCUTTER (Top View)
+
+       ╔═══════════════════╗
+       ║   Chassis Body    ║
+       ║                   ║
+  ═════╬═══════════════════╬═════  ← Horizontal blade
+  Blade║      Motor        ║Blade     extends on both
+  Tip  ║        ↓          ║Tip       sides (360° reach)
+  ═════╬═══════════════════╬═════
+       ║                   ║
+       ║   ○           ○   ║
+       ║  Wheels      Wheels
+       ╚═══════════════════╝
+
+(Side View - Blade at Mid-Height)
+
+       ╔═══════════════════╗
+       ║     Chassis       ║
+  ═════╬═══════════════════╬═════  ← Blade spins
+       ║                   ║          horizontally
+       ╚═══════════════════╝          at mid-height
+               ○   ○
+
+Key Features:
+- 360-degree attack area
+- Hits at opponent's midsection
+- Severe recoil after impacts
+- Gyroscopic resistance to turning
+```
 
 ### Undercutters
 
@@ -157,8 +226,36 @@ An **undercutter** has the spinning blade mounted **below** the chassis. The bla
 - Blade can catch on arena floor imperfections
 - Complex mounting (weapon must be below the chassis)
 
-!!! example "📷 Photo Needed"
-    Undercutter combat robot showing low-mounted horizontal blade
+```
+UNDERCUTTER (Side View)
+
+       ╔═══════════════════╗
+       ║   Chassis on Top  ║ ← Electronics protected
+       ║  (Electronics)    ║    above blade
+       ╠═══════════════════╣
+  ═════╬═══════════════════╬═════  ← Blade spins below
+  Blade║      Motor        ║Blade     chassis, just above
+  Tip  ╚═══════════════════╝Tip      ground level
+  ═════════════════════════════
+  ════════ Arena Floor ════════
+
+(Top View)
+
+       ╔═══════════════════╗
+       ║   Chassis Body    ║
+       ║                   ║
+       ║  ═══════════════  ║ ← Blade hidden
+       ║  ║  underneath ║  ║    below chassis
+       ║  ═══════════════  ║
+       ║                   ║
+       ╚═══════════════════╝
+
+Key Features:
+- Attacks from below (under armor)
+- Chassis protects electronics
+- Critical ground clearance tuning
+- Gets under opponents' defenses
+```
 
 ---
 

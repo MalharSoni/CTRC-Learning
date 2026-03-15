@@ -43,8 +43,41 @@ The N20 is a micro geared motor widely used in small combat robots, educational 
 - **3V operation**: Runs well from a single LiPo cell or can be powered from the Malenki Nano's regulated output.
 - **300 RPM output**: Fast enough for an agile 500g robot with properly sized wheels.
 
-!!! example "📷 Photo Needed"
-    N20 3V 300RPM motor close-up: gearbox, body, terminals, D-shaft visible
+```
+N20 MICRO GEARMOTOR ANATOMY
+
+   Motor Terminals (Red +, Black -)
+         ↓
+    ┌────────┐
+    │ ██  ██ │ ← Solder terminals
+    │ ││  ││ │
+    └─┼┼──┼┼─┘
+  ┌───┼┼──┼┼───────────────┐
+  │   ││  ││   DC Motor    │ ← 3V brushed DC motor
+  │   ││  ││   (12mm dia)  │
+  └──────────────┬──────────┘
+                 │
+           ┌─────▼─────┐
+           │ Planetary │ ← Metal gearbox
+           │  Gearbox  │   (300:1 ratio)
+           │ (10mm×12mm)│
+           └─────┬─────┘
+                 │
+            ┌────▼────┐
+            │ D-shaft │ ← Output shaft
+            │   3mm   │   (D-shaped)
+            └─────────┘
+
+SPECIFICATIONS:
+- Voltage: 3V (single LiPo cell)
+- No-load speed: 300 RPM
+- Dimensions: 10mm × 12mm × 25mm (gearbox + motor)
+- Weight: ~10-12g each
+- Output shaft: 3mm D-shaft (flat on one side)
+- Gearbox: Planetary (metal gears, fragile if dropped)
+
+⚠️  HANDLE WITH CARE - Internal gears can strip if dropped or over-tightened
+```
 
 !!! warning "N20 Motors Are Fragile"
     The internal gearbox uses tiny metal gears. Dropping the motor, over-tightening mounts, or subjecting it to severe impact shock can strip the gears. Handle them carefully, mount them securely but gently, and accept that you may need to replace one after a hard fight.
