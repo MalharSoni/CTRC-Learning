@@ -311,13 +311,53 @@ The following standalone .md files contain extended versions of the integrated d
 
 - `/images/weapons/mass-distribution-comparison.md`
 - `/images/weapons/bite-calculation-diagram.md`
+- `/images/weapons/tpu-weapon-hub-design.md` ← **Added March 17, 2026**
 - `/images/safety/power-on-sequence.md`
 - `/images/safety/power-off-sequence.md`
+- `/images/safety/weapon-lock-examples.md` ← **Added March 17, 2026**
 - `/images/electronics/malenki-nano-wiring.md`
 - `/images/electronics/polarity-diagram.md`
 - `/images/motors/d-shaft-diagram.md`
 
 **Purpose:** Provide detailed reference versions that can be viewed independently or linked from other documentation.
+
+### Hardware Safety & Assembly Diagrams
+
+#### Weapon Lock Examples Diagram
+**File:** `/images/safety/weapon-lock-examples.md`
+**Format:** ASCII multi-view diagrams
+**Content:**
+- Pin-style weapon lock (recommended method) - top view, side view, isometric view
+- Vice-grip method (quick but discouraged)
+- Bracket-style lock (advanced/permanent option)
+- Design specifications and safety checklist
+**Sources Referenced:**
+- NHRL (National Havoc Robot League) safety requirements
+- Instructables "Doom Service" hobbyweight robot (lewisb42) - CC BY-NC-SA 4.0
+- Combat robotics community best practices
+**Usage:** Module 1 (Rules & Safety) - demonstrating weapon lock safety devices
+**Created:** March 17, 2026
+
+#### TPU Weapon Hub Design Guide
+**File:** `/images/weapons/tpu-weapon-hub-design.md`
+**Format:** ASCII technical diagrams
+**Content:**
+- Cross-section view showing TPU hub structure
+- Top view with keyed connection options (hex, D-profile, square)
+- Assembly sequence diagrams
+- Shock absorption comparison (rigid vs TPU)
+- 3D print orientation guide
+- Material selection scale (TPU hardness)
+- Common problems & solutions
+- Weight comparison table
+**Sources Referenced:**
+- RobotCombatWiki "3D Printing" section
+- Combat robotics community practices (Ask Aaron, Repeat Robotics design principles)
+- TPU material properties from combat robot builders
+**Usage:** Module 3 (Weapon Design) - explaining flexible weapon hub design for shock absorption
+**Created:** March 17, 2026
+
+**Note on Photo Research:** Attempted to locate openly-licensed photos of weapon locks and TPU hubs from Instructables, Thingiverse, Printables, and combat robotics forums. While reference information was found (including Instructables projects under CC BY-NC-SA), specific high-quality hardware photos with clear licensing were not available. Created comprehensive ASCII diagrams instead, incorporating technical details from multiple community sources.
 
 ## CAD Screenshots
 
@@ -340,7 +380,7 @@ The following standalone .md files contain extended versions of the integrated d
 - Focus maintained on mechanical assembly, 3D printing orientation, and weapon archetypes
 - Robot archetype images sourced from Creative Commons projects, educational resources, and product documentation
 - All motor reference materials are from manufacturer datasheets and open-source CAD models
-- **Original diagrams created by CTRC Learning Team (March 13, 2026)** are freely usable within this curriculum
+- **Original diagrams created by CTRC Learning Team (March 13-17, 2026)** are freely usable within this curriculum
 - Downloaded: March 12, 2026
-- Diagrams created: March 13, 2026
-- Last updated: March 13, 2026
+- Diagrams created: March 13, 2026 (initial set), March 17, 2026 (weapon lock & TPU hub)
+- Last updated: March 17, 2026

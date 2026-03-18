@@ -80,8 +80,56 @@ Every robot **must** have a physical weapon lock — a pin, clip, or bracket tha
 - Design it into your CAD model — don't add it as an afterthought
 
 
-!!! example "📷 Photo Needed"
-    Physical weapon lock (pin/clip/bracket) installed on a combat robot
+!!! example "Weapon Lock Examples"
+
+    **Simple Pin-Style Lock** (easiest to make):
+
+    ```
+    TOP VIEW OF WEAPON:
+
+         Weapon Pulley/Disc
+              ___
+             /   \
+            |  O  |  ← Hole drilled through weapon
+            |  |  |  ← Pin inserted (prevents rotation)
+             \___/
+               |
+          Motor Shaft
+
+
+    SIDE VIEW WITH PIN:
+
+         ┌─────────┐
+         │ Weapon  │
+         │    ●────┼─── Pin (3mm drill rod, bright orange)
+         │ Pulley  │     Passes through weapon body
+         └────┬────┘
+              │
+           Motor
+    ```
+
+    **Vice-Grip Method** (quick but discouraged at competition):
+
+    ```
+                Mini vice-grip clamps
+                onto weapon blade edge
+                      ↓
+         ┌───────────────────────┐
+         │    ╔═══════╗         │
+         │────╣ GRIP  ╠─────────│ ← Weapon Blade
+         │    ╚═══════╝         │
+         └───────────────────────┘
+
+         NOTE: Effective but officials prefer
+         dedicated safety devices over tools
+    ```
+
+    **Design Requirements:**
+    - Must physically prevent weapon rotation
+    - Bright colored (neon orange/yellow preferred)
+    - Easy to insert/remove with one hand
+    - Cannot fall out during transport
+    - Should be attached to robot when removed (lanyard/string)
 
 
 ### LiPo Battery Safety

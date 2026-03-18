@@ -46,6 +46,9 @@ Have the rules page open for reference — you'll need to check the 6" x 6" foot
 !!! tip "Naming Matters"
     Name your Part Studios, parts, and features clearly. When you have 30 features in the tree and something breaks, you'll thank yourself. Examples: `Chassis`, `Weapon-Drum`, `Motor-Mount-Left`, `Wedge-Front`.
 
+![Onshape Part Studio Setup](images/cad/step-1-part-studio-setup.svg)
+*Figure 1: Onshape Part Studio interface. Click the Sketch tool, then select Top Plane to begin your first sketch.*
+
 ---
 
 ## Step 2: Define the Bounding Box
@@ -59,8 +62,8 @@ Before you draw anything, establish your size constraint.
 
 This bounding box is your constant sanity check. Every time you add a feature, make sure nothing sticks outside it.
 
-!!! example "🖥️ Screenshot Needed"
-    6x6 inch rectangle sketch on Top plane labeled Bounding-Box in Onshape
+![Onshape Sketch Mode](images/cad/step-2-sketch-mode.svg)
+*Figure 2: Sketch mode showing rectangle tool active. Add dimensions to fully define your sketch (100mm x 80mm shown as example chassis base). Fully defined sketches turn black.*
 
 ---
 
@@ -80,8 +83,8 @@ The chassis is the structural frame that holds everything together. For a 500g r
 4. Add **internal ribs** for strength (2-3mm thick walls with cross-bracing)
 5. Hollow out the interior to save weight — you want walls, not a solid block
 
-!!! example "🖥️ Screenshot Needed"
-    Extruded chassis in 3D view showing internal ribs and hollowed interior
+![Onshape Extrude Dialog](images/cad/step-3-extrude-dialog.svg)
+*Figure 3: Extrude dialog showing how to convert 2D sketch to 3D part. Set depth to 3mm for wall thickness. The preview shows your part in real-time.*
 
 ### Key Dimensions to Reference
 
@@ -92,9 +95,6 @@ The chassis is the structural frame that holds everything together. For a 500g r
 | Battery compartment | Sized to your LiPo | Add 2mm clearance on each side |
 | Malenki Nano mount | ~30mm x 20mm platform | Check Nano dimensions |
 | Wall thickness | 2-3mm minimum | Thicker near impact zones |
-
-!!! example "🖥️ Screenshot Needed"
-    Chassis sketch: motor pockets, battery compartment, Nano mount within bounding box
 
 ---
 
@@ -115,6 +115,9 @@ The chassis is the structural frame that holds everything together. For a 500g r
 2. Insert the chassis and wheels
 3. Add **Revolute mates** for the wheels on the motor shaft axes
 4. Verify: wheels spin freely, don't collide with the chassis, and are inside the bounding box
+
+![Onshape Assembly with Parts](images/cad/step-4-parts-integration.svg)
+*Figure 4: Assembly view showing how to mate wheels to motor shafts using Revolute mates. The mate connector dialog lets you align parts precisely.*
 
 ---
 
@@ -200,8 +203,8 @@ Before you print anything, verify your design meets all requirements.
     - **Centered** left-right — ensures straight driving
     - **Slightly rear of center** (toward drive wheels) — ensures good traction
 
-!!! example "🖥️ Screenshot Needed"
-    Assembly mass properties showing center of mass location on full robot
+![Onshape Mass Properties Dialog](images/cad/step-5-mass-properties.svg)
+*Figure 5: Mass Properties dialog showing total weight (487.3g - under limit!) and center of mass coordinates. The green crosshairs on the robot show CoM location - low and centered for stability.*
 
 ### Weight Check
 
@@ -221,9 +224,6 @@ Before you print anything, verify your design meets all requirements.
 1. View the assembly from the **Top view**
 2. Verify everything fits within your 6" x 6" bounding box sketch
 3. Pay attention to wheels — they often stick out past the chassis
-
-!!! example "🖥️ Screenshot Needed"
-    Completed assembly from Top view overlaid on 6x6 bounding box — everything fits
 
 ---
 

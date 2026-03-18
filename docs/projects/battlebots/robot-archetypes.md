@@ -49,8 +49,8 @@ A **drum spinner** is a wide, low-diameter cylinder that covers the front of the
 - Requires precise bearing mounts to spin smoothly
 - Heavy for its energy storage compared to other designs
 
-![3D printed beetleweight drum spinner combat robot with wide cylindrical weapon featuring multiple teeth around perimeter for maximum contact area and low center of gravity](images/archetypes/drum-spinner-thingiverse.png)
-*Drum spinner design by AlexKorvin - wide cylinder with teeth provides excellent coverage and bite | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
+![3D printed antweight drum spinner combat robot showing wide cylindrical weapon with multiple teeth around perimeter providing maximum contact area and low center of gravity](images/archetypes/drum-spinner-example.jpg)
+*Antweight drum spinner design by thesaxmachine showing classic cylindrical drum weapon with impactor teeth | Credit: [thesaxmachine](https://www.printables.com/model/88679) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
 
 ### Eggbeater / Beater Bar
 
@@ -71,36 +71,8 @@ An **eggbeater** (also called a beater bar) uses a rectangular or cross-shaped b
 - Less frontal protection
 - Bar can bend on hard impacts
 
-```
-EGGBEATER / BEATER BAR (Side View)
-
-         Vertical Bar
-         Weapon ↓
-
-    ╔════════════════════╗
-    ║     ██████         ║ ← Chassis
-    ║     ██████         ║
-    ║   ┌─██████─────┐   ║
-    ║   │ ██████     │   ║
-    ║   │ ██████     │   ║
-    ║   │     │Motor │   ║
-    ║   └─────┼──────┘   ║
-    ║         │          ║
-    ║         ▼          ║
-    ║    ═══════════     ║ ← Bar spins
-    ║    ║         ║     ║   vertically
-    ║    ║  BEATER ║     ║
-    ║    ║   BAR   ║     ║
-    ║    ═══════════     ║
-    ╚════╩═════════╩═════╝
-         ○         ○ ← Wheels
-
-Key Features:
-- Bar rotates in vertical plane
-- Asymmetric shape provides excellent "bite"
-- Simple design (often one solid bar)
-- Each end of bar acts as impactor
-```
+![FingerTech 3lb beater bar assembly showing rectangular vertical spinner weapon with motor mount pulley and Delrin flanges for beetleweight combat robots](images/archetypes/beater-bar-fingertech.png)
+*FingerTech 3lb Beater Bar assembly - the gold-standard eggbeater weapon used by championship robots including Black Adder, Shreddit Bro, and K2 | Product image courtesy of [FingerTech Robotics](https://www.fingertechrobotics.com/) (educational use)*
 
 ### Large-Diameter Vertical Disc
 
@@ -121,32 +93,8 @@ A **large vert** uses a big disc or blade spinning vertically. Think of a circul
 - More complex weapon mounting
 - Exposed disc can be damaged from the side
 
-```
-LARGE VERTICAL DISC (Side View)
-
-         Large Disc
-         Weapon ↓
-
-         ╱◯◯◯◯◯◯╲ ← Disc/blade
-        ╱  ◯◯◯  ╲   with teeth
-       │ ◯     ◯ │
-    ╔══╪═◯───◯═╪══════╗
-    ║  │  ◯ ◯  │      ║
-    ║  │◯  │  ◯│Motor ║
-    ║  │ ◯─┼─◯ │Mount ║
-    ║  │  ◯│◯  │      ║
-    ║  │ ◯ ◯ ◯ │      ║
-    ║   ╲  ◯  ╱       ║
-    ║    ╲◯◯◯╱        ║
-    ╚═════════════════╝
-          ○     ○ ← Wheels
-
-Key Features:
-- Large radius = high tip speed
-- Extreme reach and kinetic energy
-- Gyroscopic effects affect steering
-- Heavy weapon uses significant weight budget
-```
+![Antweight vertical disc spinner combat robot with large diameter circular blade mounted vertically at front for maximum reach and kinetic energy](images/archetypes/vertical-disc-example.jpg)
+*Antweight vertical disc spinner by thesaxmachine showing large-diameter weapon disc for maximum tip speed and reach | Credit: [thesaxmachine](https://www.printables.com/model/88678) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
 
 ---
 
@@ -175,36 +123,8 @@ A **midcutter** has the spinning blade mounted **between** the top and bottom of
 - Hard to control after a big hit (you spin away from the impact)
 - Gyroscopic effects resist turning
 
-```
-MIDCUTTER (Top View)
-
-       ╔═══════════════════╗
-       ║   Chassis Body    ║
-       ║                   ║
-  ═════╬═══════════════════╬═════  ← Horizontal blade
-  Blade║      Motor        ║Blade     extends on both
-  Tip  ║        ↓          ║Tip       sides (360° reach)
-  ═════╬═══════════════════╬═════
-       ║                   ║
-       ║   ○           ○   ║
-       ║  Wheels      Wheels
-       ╚═══════════════════╝
-
-(Side View - Blade at Mid-Height)
-
-       ╔═══════════════════╗
-       ║     Chassis       ║
-  ═════╬═══════════════════╬═════  ← Blade spins
-       ║                   ║          horizontally
-       ╚═══════════════════╝          at mid-height
-               ○   ○
-
-Key Features:
-- 360-degree attack area
-- Hits at opponent's midsection
-- Severe recoil after impacts
-- Gyroscopic resistance to turning
-```
+![Endbots Vector beetleweight horizontal spinner combat robot showing blade mounted at mid-height extending from chassis sides for 360-degree attack coverage](images/archetypes/horizontal-spinner-vector.jpg)
+*Endbots Vector 3lb beetleweight horizontal spinner kit showing midcutter configuration with blade at mid-chassis height | Credit: [Endbots](https://www.thingiverse.com/thing:3917039) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*
 
 ### Undercutters
 
@@ -226,36 +146,8 @@ An **undercutter** has the spinning blade mounted **below** the chassis. The bla
 - Blade can catch on arena floor imperfections
 - Complex mounting (weapon must be below the chassis)
 
-```
-UNDERCUTTER (Side View)
-
-       ╔═══════════════════╗
-       ║   Chassis on Top  ║ ← Electronics protected
-       ║  (Electronics)    ║    above blade
-       ╠═══════════════════╣
-  ═════╬═══════════════════╬═════  ← Blade spins below
-  Blade║      Motor        ║Blade     chassis, just above
-  Tip  ╚═══════════════════╝Tip      ground level
-  ═════════════════════════════
-  ════════ Arena Floor ════════
-
-(Top View)
-
-       ╔═══════════════════╗
-       ║   Chassis Body    ║
-       ║                   ║
-       ║  ═══════════════  ║ ← Blade hidden
-       ║  ║  underneath ║  ║    below chassis
-       ║  ═══════════════  ║
-       ║                   ║
-       ╚═══════════════════╝
-
-Key Features:
-- Attacks from below (under armor)
-- Chassis protects electronics
-- Critical ground clearance tuning
-- Gets under opponents' defenses
-```
+![Dinner Time beetleweight undercutter combat robot with horizontal spinning blade mounted below chassis attacking opponents from underneath](images/archetypes/undercutter-example.jpg)
+*Dinner Time modular beetleweight undercutter showing blade positioned below chassis for attacking opponents from below - won Motorama 2017 with 9-1 record | Credit: [Aaron Hauser](https://blog.aaronbot3000.com/2017/12/dinner-time-modular-beetleweight-combat.html) | [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)*
 
 ---
 

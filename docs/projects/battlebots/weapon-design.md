@@ -201,8 +201,9 @@ An unbalanced weapon vibrates. Vibration wastes energy, shakes your robot apart,
 3. Check the **center of mass** — it should be exactly on the spin axis
 4. If it's off-center, adjust the geometry until it's centered
 
-!!! example "🖥️ Screenshot Needed"
-    Onshape Mass Properties dialog showing center of mass on weapon part
+![Onshape Mass Properties dialog showing center of mass coordinates and weight calculations for weapon part design verification](images/cad/onshape-mass-properties-overview-2026-03-12T23-37-24-035Z.png)
+
+*Onshape Mass Properties dialog - verify your weapon is balanced and within weight budget*
 
 ### How to Check Balance Physically
 
@@ -278,8 +279,61 @@ A **TPU (flexible) hub** acts as a shock absorber. It deforms slightly on impact
 - **Keyed or hex connection** to weapon (so the weapon doesn't slip)
 - Test fitment before final assembly — TPU dimensions can be slightly off
 
-!!! example "📷 Photo Needed"
-    TPU weapon hub close-up: flexible material, set screw hole, keyed connection
+!!! example "TPU Weapon Hub Design"
+
+    **Hub Cross-Section:**
+
+    ```
+                  Weapon (press-fit or keyed)
+                          ↓
+              ┌───────────────────────┐
+              │                       │
+              │   ╱╲  Hex Socket  ╱╲  │ ← TPU Hub (flexible)
+              │  ╱  ╲           ╱  ╲ │   Printed 95A durometer
+              │ ╱    ╲─────────╱    ╲│   3-4mm wall thickness
+              │╱                     ╱
+              ├──────────●───────────┤ ← Set screw (locks to motor shaft)
+              │╲         ↑          ╱│
+              │ ╲    Threaded     ╱ │
+              │  ╲   M3 hole    ╱  │
+              │   ╲            ╱   │
+              └────╲──────────╱────┘
+                    ╲        ╱
+                     ╲──────╱
+                         │
+                    Motor Shaft
+
+
+    TOP VIEW - Keyed Connection:
+
+              Weapon sits on hub
+                     ↓
+         ┌─────────────────────┐
+         │                     │
+         │      ╔═══════╗      │ ← Hex or D-profile cutout
+         │      ║       ║      │   (prevents weapon slip)
+         │      ║   ●   ║      │ ← Center hole for motor shaft
+         │      ║       ║      │
+         │      ╚═══════╝      │
+         │                     │
+         └─────────────────────┘
+              TPU Hub Body
+    ```
+
+    **Why TPU?**
+    - **Shock absorption**: Flexes on impact, protects motor gearbox
+    - **Weapon slip protection**: If hit is too hard, weapon slips instead of breaking motor
+    - **Easy to print**: No machining required, just 3D printer with TPU filament
+    - **Lightweight**: Adds minimal weight (5-15g typical)
+
+    **Print Settings:**
+    - Material: TPU 95A (semi-flexible)
+    - Infill: 100%
+    - Wall thickness: 3-4mm minimum
+    - Print orientation: Vertical (layer lines perpendicular to stress)
+
+    **Alternative**: Some builders use machined aluminum hubs with rubber o-rings
+    for shock absorption instead of full TPU hubs
 
 ---
 
