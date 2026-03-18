@@ -2,6 +2,40 @@
 
 This is where your robot goes from an idea to a real design. You'll use Onshape to model every part of your combat robot — chassis, weapon, drivetrain, electronics mounts, and armor. By the end, you'll have a complete 3D model ready to export for 3D printing.
 
+!!! tip "Video Tutorials Available"
+    This module includes embedded video tutorials from the official Onshape YouTube channel. Watch the videos first to see the workflow, then follow the written steps as you build your robot.
+
+    **Prefer interactive learning?** Check out the [Onshape Learning Center](https://learn.onshape.com/) for hands-on courses.
+
+---
+
+## Before You Start: Learn Onshape Basics
+
+If you're new to CAD or Onshape, watch these videos first:
+
+### Quick Start (10 minutes total):
+
+**1. Understanding Onshape (2 minutes)**
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/Q4qqN_CdM28" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+*Official Onshape tutorial - "6 Things You Need to Know About Onshape" - Understanding documents, part studios, and assemblies*
+
+**2. Sketching Basics (Watch from 0:00-5:30)**
+- [Part Design Basics Playlist](https://www.youtube.com/playlist?list=PLBKwx9iS-LumF5PBZqE6ZQqh3zZKPcHtB) - Learn rectangle tool, dimensions, and constraints
+
+**3. Extrude Basics**
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/nAJDX8D5e8A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+*"Let's Make a Drill Bit" - Quick demonstration of turning 2D sketches into 3D parts*
+
+### Deep Dive (Optional - 1 hour):
+- Complete the [Introduction to CAD](https://learn.onshape.com/learn/learning-path/introduction-to-cad) pathway on Onshape Learning Center
+
+!!! tip "Alternative Learning Path"
+    Prefer step-by-step written instructions? Check out [CAD Video Tutor](https://www.cadvideotutor.com/) for free downloadable instruction sheets paired with YouTube tutorials. Try the "Robot Gripper" or "Bearing" projects to learn the basics.
+
 ---
 
 ## Learning Objectives
@@ -46,8 +80,13 @@ Have the rules page open for reference — you'll need to check the 6" x 6" foot
 !!! tip "Naming Matters"
     Name your Part Studios, parts, and features clearly. When you have 30 features in the tree and something breaks, you'll thank yourself. Examples: `Chassis`, `Weapon-Drum`, `Motor-Mount-Left`, `Wedge-Front`.
 
-![Onshape Part Studio Setup](images/cad/step-1-part-studio-setup.svg)
-*Figure 1: Onshape Part Studio interface. Click the Sketch tool, then select Top Plane to begin your first sketch.*
+**Watch: Creating Your First Document**
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/Q4qqN_CdM28?start=0&end=30" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+*See how to create a new Onshape document and start a Part Studio (0:00-0:30)*
+
+**Or follow the text guide on Onshape Learning Center:** [Introduction to Part Studios](https://learn.onshape.com/)
 
 ---
 
@@ -62,8 +101,14 @@ Before you draw anything, establish your size constraint.
 
 This bounding box is your constant sanity check. Every time you add a feature, make sure nothing sticks outside it.
 
-![Onshape Sketch Mode](images/cad/step-2-sketch-mode.svg)
-*Figure 2: Sketch mode showing rectangle tool active. Add dimensions to fully define your sketch (100mm x 80mm shown as example chassis base). Fully defined sketches turn black.*
+**Watch: Creating Constrained Sketches**
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/videoseries?list=PLBKwx9iS-LumF5PBZqE6ZQqh3zZKPcHtB" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+*Part Design Basics playlist - Watch the first few videos to learn sketching, dimensions, and constraints. Fully defined sketches turn black!*
+
+!!! tip "Learn by Watching"
+    See sketching demonstrated in real Onshape: Watch the [Part Design Basics playlist](https://www.youtube.com/playlist?list=PLBKwx9iS-LumF5PBZqE6ZQqh3zZKPcHtB) for detailed sketching tutorials
 
 ---
 
@@ -83,8 +128,13 @@ The chassis is the structural frame that holds everything together. For a 500g r
 4. Add **internal ribs** for strength (2-3mm thick walls with cross-bracing)
 5. Hollow out the interior to save weight — you want walls, not a solid block
 
-![Onshape Extrude Dialog](images/cad/step-3-extrude-dialog.svg)
-*Figure 3: Extrude dialog showing how to convert 2D sketch to 3D part. Set depth to 3mm for wall thickness. The preview shows your part in real-time.*
+**Watch: Using the Extrude Feature**
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/nAJDX8D5e8A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+*"Let's Make a Drill Bit" - Shows the Extrude dialog and how to convert 2D sketches into 3D parts. The preview shows your part in real-time.*
+
+**Alternative resource:** Check out CAD Video Tutor's [free instruction sheets](https://www.cadvideotutor.com/) for downloadable PDF guides with extrude tutorials
 
 ### Key Dimensions to Reference
 
@@ -116,8 +166,14 @@ The chassis is the structural frame that holds everything together. For a 500g r
 3. Add **Revolute mates** for the wheels on the motor shaft axes
 4. Verify: wheels spin freely, don't collide with the chassis, and are inside the bounding box
 
-![Onshape Assembly with Parts](images/cad/step-4-parts-integration.svg)
-*Figure 4: Assembly view showing how to mate wheels to motor shafts using Revolute mates. The mate connector dialog lets you align parts precisely.*
+**Watch: Creating Assemblies and Mates**
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/videoseries?list=PLBKwx9iS-LulXPKw_kPJg1pw7hIVxFXD4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+*"Assemblies in Onshape" playlist (15 videos) - Learn how to create assemblies, add mate connectors, and use revolute mates for spinning parts*
+
+!!! tip "Robot-Specific Assembly Tutorial"
+    Want to see a complete robot assembly? Watch [Onshape Robot Arm Tutorial](https://www.youtube.com/watch?v=VTO-nNj_4Fs) - demonstrates mate connectors and revolute joints in a robotics context
 
 ---
 
@@ -203,8 +259,23 @@ Before you print anything, verify your design meets all requirements.
     - **Centered** left-right — ensures straight driving
     - **Slightly rear of center** (toward drive wheels) — ensures good traction
 
-![Onshape Mass Properties Dialog](images/cad/step-5-mass-properties.svg)
-*Figure 5: Mass Properties dialog showing total weight (487.3g - under limit!) and center of mass coordinates. The green crosshairs on the robot show CoM location - low and centered for stability.*
+**Learn: Using Mass Properties in Onshape**
+
+New to mass properties? Complete this interactive course first:
+**[Measure and Mass Properties Course](https://learn.onshape.com/courses/measure-and-mass-properties)** (10 minutes)
+
+This official Onshape Learning Center course shows you how to:
+- Access the mass properties tool
+- Assign materials with correct density
+- Check total mass and center of mass location
+- Verify your design meets weight requirements
+
+**Quick steps for checking mass properties:**
+1. In your Assembly, click the measurement icon (bottom-right toolbar)
+2. Select all parts in your robot
+3. Ensure materials are assigned correctly (PLA+ = 1.24 g/cm³)
+4. Check total mass (should be 450-520g)
+5. View center of mass coordinates - should be low and centered
 
 ### Weight Check
 

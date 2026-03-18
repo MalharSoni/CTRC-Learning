@@ -9,6 +9,29 @@ Take your time. A robot assembled carefully fights better than one thrown togeth
 
 ---
 
+## Video Walkthrough: Complete Beetleweight Assembly
+
+Before you start, watch this complete assembly video to understand the full process:
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/LtPvlPN9Mmg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
+
+**SSP 2.0 Kit Assembly Guide** by Just 'Cuz Robotics (1:10:14) - Posted July 2025
+
+This video shows a complete 3D-printed beetleweight assembly from start to finish. Even if you're not using the SSP kit, the techniques (motor installation, wheel mounting, weapon assembly) apply to all beetleweight builds with N20 or similar drive motors.
+
+**Key Assembly Timestamps:**
+- [21:46](https://youtu.be/LtPvlPN9Mmg?t=1306) - Drive wheel installation
+- [25:38](https://youtu.be/LtPvlPN9Mmg?t=1538) - Drive motor mounting
+- [12:22](https://youtu.be/LtPvlPN9Mmg?t=742) - Weapon arm assembly
+- [33:46](https://youtu.be/LtPvlPN9Mmg?t=2026) - Front attachment installation
+- [37:02](https://youtu.be/LtPvlPN9Mmg?t=2222) - Chassis final assembly
+
+Written assembly guide (backup reference): [SSP 2.0 Assembly Guide - Google Docs](https://docs.google.com/document/d/166_mALVRaIq55Ffp6hWE1syFC-ohi_EdmoM3bOuxBZE/edit)
+
+---
+
 ## Learning Objectives
 
 By completing this module, you will be able to:
@@ -58,6 +81,16 @@ Gather everything on a clean, well-lit workspace:
 
 ## Step 1: Install N20 Drive Motors
 
+**Watch: Drive Motor Installation (25:38-28:27)**
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/LtPvlPN9Mmg?start=1538&end=1707" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
+
+*SSP 2.0 Assembly - Drive motor mounting demonstration*
+
+**Your Steps:**
+
 1. Take your chassis and identify the left and right motor pockets
 2. Orient each N20 motor so the shaft exits through the chassis wall toward the wheel position
 3. **Press-fit** the motor into the pocket — it should be snug but not forced
@@ -65,15 +98,22 @@ Gather everything on a clean, well-lit workspace:
 5. If the fit is too tight, lightly sand the pocket with fine sandpaper
 6. Verify: the motor shaft spins freely and extends past the chassis wall
 
-![Hands using file to shape 3D printed motor mount pocket ensuring N20 brushed motor fits securely with correct D-shaft alignment](images/assembly/motor-mounts-shaping.jpg)
-*Motor mount being shaped to fit the motor profile securely - your 3D printed chassis pockets should have similar precision fit*
-
 !!! warning "Don't Force It"
     If the motor won't go in, do NOT hammer it or use pliers. You'll damage the internal gears. Sand the pocket wider or reprint with 0.1mm more tolerance.
 
 ---
 
 ## Step 2: Attach Wheels
+
+**Watch: Wheel Installation (17:46-21:46)**
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/LtPvlPN9Mmg?start=1066&end=1306" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
+
+*SSP 2.0 Assembly - Front wheel attachment and rear wheel installation on motor shafts*
+
+**Your Steps:**
 
 1. Slide each wheel onto the N20 motor D-shaft
 2. The D-flat on the shaft should align with the D-flat in the wheel hub
@@ -92,14 +132,19 @@ Gather everything on a clean, well-lit workspace:
 
 ---
 
----
-
 ## Step 3: Assemble Chassis Frame
+
+**Watch: Chassis Assembly (37:02-39:38)**
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/LtPvlPN9Mmg?start=2222&end=2378" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
+
+*SSP 2.0 Assembly - Lid installation and chassis final assembly*
 
 Now that motors and wheels are installed, it's time to close up the chassis.
 
-![Aluminum combat robot chassis showing drive motors mounted at rear with wheels attached and weapon motor positioned at front - demonstrates proper component layout](images/assembly/frame-assembly.jpg)
-*Aluminum frame with motors and wheels mounted - your 3D printed chassis follows the same component placement principles*
+**Your Steps:**
 
 1. **If your design has multiple chassis pieces** (top plate, bottom plate, side panels):
    - Align all screw holes
@@ -120,11 +165,10 @@ Now that motors and wheels are installed, it's time to close up the chassis.
 
 If your design includes armor panels or bumpers, install them now.
 
-![Hands cutting white UHMW plastic armor panel using cutting tools to protect vulnerable areas of combat robot chassis](images/assembly/armor-plates-cutting.jpg)
-*Cutting and shaping armor panels from UHMW plastic - for 3D printed robots, use TPU or PETG armor panels instead*
+!!! note "Modern 3D-Printed Armor"
+    Most modern beetleweights use **TPU (flexible filament)** for armor instead of UHMW plastic sheets. TPU absorbs impacts and can be printed directly into your design. Check the SSP assembly video to see examples of TPU armor integration.
 
-![Black protective side bumpers being mounted to robot chassis with screws to shield drive wheels from side impacts](images/assembly/side-bumpers-assembly.jpg)
-*Side bumpers being attached with fasteners to protect wheels from opponent weapons and impacts*
+**Your Steps:**
 
 1. Position armor panels according to your CAD design
 2. Secure with screws, CA glue, or velcro (depending on design)
@@ -149,16 +193,17 @@ If your design includes armor panels or bumpers, install them now.
 !!! warning "Teacher Supervised"
     Weapon installation should be done with teacher supervision for safety.
 
-If your robot has an active weapon (spinner, hammer, etc.):
+**Watch: Weapon Assembly (12:22-17:46)**
 
-![Brushless outrunner motor securely mounted to robot chassis using clamp or screws with shaft positioned for weapon attachment](images/assembly/weapon-motor-mount.jpg)
-*Brushless motor mounted for weapon drive - ensure mounting is rigid to handle weapon impact forces*
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/LtPvlPN9Mmg?start=742&end=1066" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
-![Horizontal aluminum weapon bar with angled teeth mounted on motor shaft showing proper balance and impactor positioning for maximum kinetic energy](images/assembly/weapon-blade-assembly.jpg)
-*Aluminum weapon bar with aggressive impactors - your 3D printed PLA+ weapon follows the same design principles of balanced mass distribution*
+*SSP 2.0 Assembly - Lifting arm assembly showing weapon mounting techniques*
 
-![Metal shaft collars with set screws tightened onto weapon motor shaft preventing axial movement of spinning weapon during impacts](images/assembly/shaft-collars-installation.jpg)
-*Shaft collars securing rotating weapon on axle - prevents lateral movement and keeps weapon centered during spinning*
+If your robot has an active weapon (spinner, hammer, lifter):
+
+**Your Steps:**
 
 1. Mount weapon motor securely to chassis (teacher will assist)
 2. Attach TPU weapon hub to motor shaft
@@ -168,8 +213,13 @@ If your robot has an active weapon (spinner, hammer, etc.):
 
 ### For Wedge/Pusher Designs
 
-![White UHMW plastic wedge plate with low ground clearance angle mounted to robot front to get under opponents and deflect attacks](images/assembly/wedge-installation.jpg)
-*UHMW wedge plate being installed as front defensive element - angled to maximize ground game and win head-to-head collisions*
+**Watch: Front Attachment Installation (33:46-37:02)**
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+  <iframe src="https://www.youtube.com/embed/LtPvlPN9Mmg?start=2026&end=2222" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
+
+*SSP 2.0 Assembly - Front fork installation (similar technique for wedges)*
 
 If you're building a wedge bot:
 1. Attach front wedge plate according to CAD design
@@ -227,6 +277,52 @@ You are ready to move on when you can:
 - [ ] Verify total mechanical weight is 450-520g (or explain why it's different)
 - [ ] Identify which components are removable for repairs (wheels, weapon, armor)
 - [ ] Hand off completed mechanical chassis to teacher with assembly photos
+
+---
+
+## Modern Build Examples (2024-2025)
+
+Here are examples of modern 3D-printed beetleweights competing at NHRL and local events:
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0;">
+  <div>
+    <img src="images/assembly/ssp-mako-beetleweight.jpg" alt="Mako - Rank 1 NHRL beetleweight with overhead saw weapon and custom body" style="width: 100%; border-radius: 8px;">
+    <p><strong>Mako</strong> - Rank 1 NHRL beetle (2023+), started as SSP kit with custom overhead saw weapon</p>
+  </div>
+  <div>
+    <img src="images/assembly/ssp-shameless-self-promotion.jpg" alt="Shameless Self Promotion - original SSP kit upgraded with brushless motors and vertical spinner" style="width: 100%; border-radius: 8px;">
+    <p><strong>Shameless Self Promotion</strong> - Original SSP kit upgraded with brushless drive and vertical spinner addon</p>
+  </div>
+  <div>
+    <img src="images/assembly/ssp-ti-die-beetleweight.jpg" alt="Ti Die - beetleweight with anodized titanium lid and vertical spinner weapon" style="width: 100%; border-radius: 8px;">
+    <p><strong>Ti Die</strong> - Custom SSP build with anodized titanium lid and vertical spinner weapon</p>
+  </div>
+</div>
+
+**More Modern Designs:**
+
+- **[Derivative - Hubmotor Drum Spinner](https://youtu.be/derivative-video-id)** - Modern 2025 beetleweight design by Just 'Cuz Robotics (Nov 2025)
+- **[Proof of Concept Robot](https://makerworld.com/en/models/153103)** - Competition-tested 3D-printed design with free downloadable files (Jan 2024)
+- **[SSP Mod Gallery](https://justcuzrobotics.com/pages/ssp-mod-gallery)** - 220+ builders have customized SSP kits - see what's possible!
+- **[Bristol Bot Builders Gallery](https://bristolbotbuilders.com/guides/)** - UK beetleweight community builds and guides
+- **[NHRL Robot Wiki](https://wiki.nhrl.io/)** - Profiles of competing beetleweights with technical details
+
+---
+
+## Video & Resource Attribution
+
+**Assembly videos and photos courtesy of:**
+- Just 'Cuz Robotics ([YouTube Channel](https://www.youtube.com/@JustCuzRobotics))
+- SSP 2.0 Kit Assembly Guide video (July 2025)
+- Beetleweight build photos from [SSP Mod Gallery](https://justcuzrobotics.com/pages/ssp-mod-gallery)
+- Educational use with attribution - all rights belong to original creators
+
+**Additional resources:**
+- [SSP 2.0 Written Assembly Guide](https://docs.google.com/document/d/166_mALVRaIq55Ffp6hWE1syFC-ohi_EdmoM3bOuxBZE/edit) - Google Docs backup reference
+- [Just 'Cuz Robotics Store](https://justcuzrobotics.com/) - SSP kits and combat robot parts
+- [Bristol Bot Builders](https://bristolbotbuilders.com/guides/) - Community build guides
+
+All videos and images used for educational purposes under fair use. Students should visit [justcuzrobotics.com](https://justcuzrobotics.com) to support the creators and explore their full product line.
 
 ---
 
