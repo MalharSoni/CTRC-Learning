@@ -1989,6 +1989,8 @@
 <p class="admonition-title">Naming Matters</p>
 <p>Name your Part Studios, parts, and features clearly. When you have 30 features in the tree and something breaks, you'll thank yourself. Examples: <code>Chassis</code>, <code>Weapon-Drum</code>, <code>Motor-Mount-Left</code>, <code>Wedge-Front</code>.</p>
 </div>
+<p><a class="glightbox" data-type="image" data-width="90%" data-height="auto" href="../images/cad/step-1-part-studio-setup.svg" data-desc-position="bottom"><img alt="Onshape Part Studio Setup" src="../images/cad/step-1-part-studio-setup.svg"></a>
+<em>Figure 1: Onshape Part Studio interface. Click the Sketch tool, then select Top Plane to begin your first sketch.</em></p>
 <hr>
 <h2 id="step-2-define-the-bounding-box">Step 2: Define the Bounding Box</h2>
 <p>Before you draw anything, establish your size constraint.</p>
@@ -1999,10 +2001,8 @@
 <li>Keep this sketch as a reference (name it <code>Bounding-Box</code>) — don't delete it</li>
 </ol>
 <p>This bounding box is your constant sanity check. Every time you add a feature, make sure nothing sticks outside it.</p>
-<div class="admonition example">
-<p class="admonition-title">🖥️ Screenshot Needed</p>
-<p>6x6 inch rectangle sketch on Top plane labeled Bounding-Box in Onshape</p>
-</div>
+<p><a class="glightbox" data-type="image" data-width="90%" data-height="auto" href="../images/cad/step-2-sketch-mode.svg" data-desc-position="bottom"><img alt="Onshape Sketch Mode" src="../images/cad/step-2-sketch-mode.svg"></a>
+<em>Figure 2: Sketch mode showing rectangle tool active. Add dimensions to fully define your sketch (100mm x 80mm shown as example chassis base). Fully defined sketches turn black.</em></p>
 <hr>
 <h2 id="step-3-design-the-chassis">Step 3: Design the Chassis</h2>
 <p>The chassis is the structural frame that holds everything together. For a 500g robot, the simplest approach is a <strong>3D printed unibody</strong> — a single printed piece that serves as the frame, motor mounts, and electronics tray.</p>
@@ -2020,10 +2020,8 @@
 <li>Add <strong>internal ribs</strong> for strength (2-3mm thick walls with cross-bracing)</li>
 <li>Hollow out the interior to save weight — you want walls, not a solid block</li>
 </ol>
-<div class="admonition example">
-<p class="admonition-title">🖥️ Screenshot Needed</p>
-<p>Extruded chassis in 3D view showing internal ribs and hollowed interior</p>
-</div>
+<p><a class="glightbox" data-type="image" data-width="90%" data-height="auto" href="../images/cad/step-3-extrude-dialog.svg" data-desc-position="bottom"><img alt="Onshape Extrude Dialog" src="../images/cad/step-3-extrude-dialog.svg"></a>
+<em>Figure 3: Extrude dialog showing how to convert 2D sketch to 3D part. Set depth to 3mm for wall thickness. The preview shows your part in real-time.</em></p>
 <h3 id="key-dimensions-to-reference">Key Dimensions to Reference</h3>
 <table>
 <thead>
@@ -2061,10 +2059,6 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition example">
-<p class="admonition-title">🖥️ Screenshot Needed</p>
-<p>Chassis sketch: motor pockets, battery compartment, Nano mount within bounding box</p>
-</div>
 <hr>
 <h2 id="step-4-place-drive-motors-and-wheels">Step 4: Place Drive Motors and Wheels</h2>
 <ol>
@@ -2086,6 +2080,8 @@
 <li>Add <strong>Revolute mates</strong> for the wheels on the motor shaft axes</li>
 <li>Verify: wheels spin freely, don't collide with the chassis, and are inside the bounding box</li>
 </ol>
+<p><a class="glightbox" data-type="image" data-width="90%" data-height="auto" href="../images/cad/step-4-parts-integration.svg" data-desc-position="bottom"><img alt="Onshape Assembly with Parts" src="../images/cad/step-4-parts-integration.svg"></a>
+<em>Figure 4: Assembly view showing how to mate wheels to motor shafts using Revolute mates. The mate connector dialog lets you align parts precisely.</em></p>
 <hr>
 <h2 id="step-5-design-the-weapon-motor-mount">Step 5: Design the Weapon Motor Mount</h2>
 <p>Your brushless weapon motor needs a secure mount that:</p>
@@ -2164,10 +2160,8 @@
 </ul>
 </li>
 </ol>
-<div class="admonition example">
-<p class="admonition-title">🖥️ Screenshot Needed</p>
-<p>Assembly mass properties showing center of mass location on full robot</p>
-</div>
+<p><a class="glightbox" data-type="image" data-width="90%" data-height="auto" href="../images/cad/step-5-mass-properties.svg" data-desc-position="bottom"><img alt="Onshape Mass Properties Dialog" src="../images/cad/step-5-mass-properties.svg"></a>
+<em>Figure 5: Mass Properties dialog showing total weight (487.3g - under limit!) and center of mass coordinates. The green crosshairs on the robot show CoM location - low and centered for stability.</em></p>
 <h3 id="weight-check">Weight Check</h3>
 <ol>
 <li>In the Assembly, check <strong>Mass properties</strong> for total weight</li>
@@ -2190,10 +2184,6 @@
 <li>Verify everything fits within your 6" x 6" bounding box sketch</li>
 <li>Pay attention to wheels — they often stick out past the chassis</li>
 </ol>
-<div class="admonition example">
-<p class="admonition-title">🖥️ Screenshot Needed</p>
-<p>Completed assembly from Top view overlaid on 6x6 bounding box — everything fits</p>
-</div>
 <hr>
 <h2 id="step-10-design-review-with-coach">Step 10: Design Review with Coach</h2>
 <p>Before printing, schedule a <strong>design review with a mentor or coach</strong>. Bring:</p>

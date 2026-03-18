@@ -2106,10 +2106,8 @@ Bite (mm) = (Forward Travel × 360°) / (Tooth Spacing Angle)</p>
 <li>Check the <strong>center of mass</strong> — it should be exactly on the spin axis</li>
 <li>If it's off-center, adjust the geometry until it's centered</li>
 </ol>
-<div class="admonition example">
-<p class="admonition-title">🖥️ Screenshot Needed</p>
-<p>Onshape Mass Properties dialog showing center of mass on weapon part</p>
-</div>
+<p><a class="glightbox" data-type="image" data-width="90%" data-height="auto" href="../images/cad/onshape-mass-properties-overview-2026-03-12T23-37-24-035Z.png" data-desc-position="bottom"><img alt="Onshape Mass Properties dialog showing center of mass coordinates and weight calculations for weapon part design verification" src="../images/cad/onshape-mass-properties-overview-2026-03-12T23-37-24-035Z.png"></a></p>
+<p><em>Onshape Mass Properties dialog - verify your weapon is balanced and within weight budget</em></p>
 <h3 id="how-to-check-balance-physically">How to Check Balance Physically</h3>
 <ol>
 <li>Mount your weapon on a shaft or axle</li>
@@ -2215,8 +2213,55 @@ Bite (mm) = (Forward Travel × 360°) / (Tooth Spacing Angle)</p>
 <li>Test fitment before final assembly — TPU dimensions can be slightly off</li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">📷 Photo Needed</p>
-<p>TPU weapon hub close-up: flexible material, set screw hole, keyed connection</p>
+<p class="admonition-title">TPU Weapon Hub Design</p>
+<p><strong>Hub Cross-Section:</strong></p>
+<div class="highlight"><pre><span></span><code>              Weapon (press-fit or keyed)
+                      ↓
+          ┌───────────────────────┐
+          │                       │
+          │   ╱╲  Hex Socket  ╱╲  │ ← TPU Hub (flexible)
+          │  ╱  ╲           ╱  ╲ │   Printed 95A durometer
+          │ ╱    ╲─────────╱    ╲│   3-4mm wall thickness
+          │╱                     ╱
+          ├──────────●───────────┤ ← Set screw (locks to motor shaft)
+          │╲         ↑          ╱│
+          │ ╲    Threaded     ╱ │
+          │  ╲   M3 hole    ╱  │
+          │   ╲            ╱   │
+          └────╲──────────╱────┘
+                ╲        ╱
+                 ╲──────╱
+                     │
+                Motor Shaft
+
+
+TOP VIEW - Keyed Connection:
+
+          Weapon sits on hub
+                 ↓
+     ┌─────────────────────┐
+     │                     │
+     │      ╔═══════╗      │ ← Hex or D-profile cutout
+     │      ║       ║      │   (prevents weapon slip)
+     │      ║   ●   ║      │ ← Center hole for motor shaft
+     │      ║       ║      │
+     │      ╚═══════╝      │
+     │                     │
+     └─────────────────────┘
+          TPU Hub Body
+</code></pre></div>
+<p><strong>Why TPU?</strong>
+- <strong>Shock absorption</strong>: Flexes on impact, protects motor gearbox
+- <strong>Weapon slip protection</strong>: If hit is too hard, weapon slips instead of breaking motor
+- <strong>Easy to print</strong>: No machining required, just 3D printer with TPU filament
+- <strong>Lightweight</strong>: Adds minimal weight (5-15g typical)</p>
+<p><strong>Print Settings:</strong>
+- Material: TPU 95A (semi-flexible)
+- Infill: 100%
+- Wall thickness: 3-4mm minimum
+- Print orientation: Vertical (layer lines perpendicular to stress)</p>
+<p><strong>Alternative</strong>: Some builders use machined aluminum hubs with rubber o-rings
+for shock absorption instead of full TPU hubs</p>
 </div>
 <hr>
 <h2 id="weight-budget">Weight Budget</h2>

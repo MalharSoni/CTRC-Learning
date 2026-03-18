@@ -1,0 +1,2909 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CTRC Learning Hub — VEX V5 Foundation Program &amp; BattleBots curriculum by Caution Tape Robotics Club.">
+      
+      
+      
+        <link rel="canonical" href="https://malharsoni.github.io/CTRC-Learning/projects/battlebots/BATTLEBOTS_CURRICULUM_GAP_ANALYSIS/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/ctrc-logo-white.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>BattleBots Curriculum - Comprehensive Gap Analysis - CTRC Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M13%209h-2V7h2m0%2010h-2v-6h2m-1-9A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M160.5-26.4c9.3-7.8%2023-7.5%2031.9.9%2012.3%2011.6%2023.3%2024.4%2033.9%2037.4%2013.5%2016.5%2029.7%2038.3%2045.3%2064.2%205.2-6.8%2010-12.8%2014.2-17.9%201.1-1.3%202.2-2.7%203.3-4.1C297%2044.3%20306.8%2032%20319.9%2032c13.4%200%2022.8%2011.9%2030.8%2022.1q1.95%202.55%203.9%204.8c10.3%2012.4%2024%2030.3%2037.7%2052.4%2027.2%2043.9%2055.6%20106.4%2055.6%20176.6%200%20123.7-100.3%20224-224%20224S0%20411.7%200%20288c0-91.1%2041.1-170%2080.5-225%2019.9-27.7%2039.7-49.9%2054.6-65.1%208.2-8.4%2016.5-16.7%2025.5-24.2zM225.7%20416c25.3%200%2047.7-7%2068.8-21%2042.1-29.4%2053.4-88.2%2028.1-134.4-4.5-9-16-9.6-22.5-2l-25.2%2029.3c-6.6%207.6-18.5%207.4-24.7-.5-17.3-22.1-49.1-62.4-65.3-83-5.4-6.9-15.2-8-21.5-1.9-18.3%2017.8-51.5%2056.8-51.5%20104.3%200%2068.6%2050.6%20109.2%20113.7%20109.2z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M480-16c6.9%200%2013%204.4%2015.2%2010.9l13.5%2040.4%2040.4%2013.5C555.6%2051%20560%2057.1%20560%2064s-4.4%2013-10.9%2015.2l-40.4%2013.5-13.5%2040.4c-2.2%206.5-8.3%2010.9-15.2%2010.9s-13-4.4-15.2-10.9l-13.5-40.4-40.4-13.5C404.4%2077%20400%2070.9%20400%2064s4.4-13%2010.9-15.2l40.4-13.5%2013.5-40.4C467-11.6%20473.1-16%20480-16M321.4%2097.4c12.5-12.5%2032.8-12.5%2045.3%200l80%2080c12.5%2012.5%2012.5%2032.8%200%2045.3l-10.9%2010.9c7.9%2022%2012.2%2045.7%2012.2%2070.5%200%20114.9-93.1%20208-208%20208S32%20418.9%2032%20304%20125.1%2096%20240%2096c24.7%200%2048.5%204.3%2070.5%2012.3zM144%20304c0-53%2043-96%2096-96%2013.3%200%2024-10.7%2024-24s-10.7-24-24-24c-79.5%200-144%2064.5-144%20144%200%2013.3%2010.7%2024%2024%2024s24-10.7%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M416%20427.4c58.5-44%2096-111.6%2096-187.4C512%20107.5%20397.4%200%20256%200S0%20107.5%200%20240c0%2075.8%2037.5%20143.4%2096%20187.4V464c0%2026.5%2021.5%2048%2048%2048h32v-40c0-13.3%2010.7-24%2024-24s24%2010.7%2024%2024v40h64v-40c0-13.3%2010.7-24%2024-24s24%2010.7%2024%2024v40h32c26.5%200%2048-21.5%2048-48zM96%20256a64%2064%200%201%201%20128%200%2064%2064%200%201%201-128%200m256-64a64%2064%200%201%201%200%20128%2064%2064%200%201%201%200-128%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20640%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M352%200c0-17.7-14.3-32-32-32s-32%2014.3-32%2032v64h-96c-53%200-96%2043-96%2096v224c0%2053%2043%2096%2096%2096h256c53%200%2096-43%2096-96V160c0-53-43-96-96-96h-96zM160%20368c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24m120%200c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24m120%200c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24M224%20176a48%2048%200%201%201%200%2096%2048%2048%200%201%201%200-96m144%2048a48%2048%200%201%201%2096%200%2048%2048%200%201%201-96%200m-304%200c0-17.7-14.3-32-32-32S0%20206.3%200%20224v96c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32zm544-32c-17.7%200-32%2014.3-32%2032v96c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32v-96c0-17.7-14.3-32-32-32%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flip-button.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/lesson-enhancements.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: none; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#battlebots-curriculum-comprehensive-gap-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CTRC Learning" class="md-header__button md-logo" aria-label="CTRC Learning" data-md-component="logo">
+      
+  <img src="../../../assets/ctrc-logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CTRC Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BattleBots Curriculum - Comprehensive Gap Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="white" aria-label="Switch to Light Mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to Light Mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="black" aria-label="Switch to Dark Mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to Dark Mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MalharSoni/CTRC-Learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    MalharSoni/CTRC-Learning
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../foundation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  V5 Foundation Program
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../design-handbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Design Handbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../mechanism-examples/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mechanism Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../contribution/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contribution
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CTRC Learning" class="md-nav__button md-logo" aria-label="CTRC Learning" data-md-component="logo">
+      
+  <img src="../../../assets/ctrc-logo-white.png" alt="logo">
+
+    </a>
+    CTRC Learning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MalharSoni/CTRC-Learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    MalharSoni/CTRC-Learning
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../foundation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V5 Foundation Program
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../design-handbook/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Handbook
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../mechanism-examples/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanism Examples
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../contribution/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribution
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overall-completeness-65-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Completeness: 65% Complete
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-by-module-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module-by-Module Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module-by-Module Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-1-rules-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 1: Rules &amp; Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-2-robot-archetypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 2: Robot Archetypes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-3-weapon-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 3: Weapon Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-4-drivetrain-design-n20-motors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 4: Drivetrain Design (N20 Motors)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-5-cad-your-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 5: CAD Your Bot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-6-3d-printing-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 6: 3D Printing Guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-7-chassis-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 7: Chassis Assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-8-sources-acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 8: Sources &amp; Acknowledgments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-asset-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Asset Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual Asset Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delivered-assets-10-total" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Delivered Assets (10 total)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ascii-diagrams-present-8-total-excellent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ ASCII Diagrams Present (8 total - EXCELLENT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-assets-by-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Missing Assets by Priority
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="❌ Missing Assets by Priority">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-1-critical-student-blocking-5-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority 1: CRITICAL (Student-Blocking) - 5 assets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority-2-high-significantly-improves-learning-5-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority 2: HIGH (Significantly Improves Learning) - 5 assets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority-3-medium-polish-completeness-2-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority 3: MEDIUM (Polish &amp; Completeness) - 2 assets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority-4-low-teacher-modules-not-student-facing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority 4: LOW (Teacher Modules) - Not student-facing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation-user-flow-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation &amp; User Flow Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation &amp; User Flow Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation-structure-good" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation Structure: ✅ GOOD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-title-consistency-good" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Title Consistency: ✅ GOOD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-progression-excellent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Progression: ✅ EXCELLENT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broken-links-1-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Broken Links: ❌ 1 ISSUE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-completeness-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Completeness Assessment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Completeness Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-content-100-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Content: ✅ 100% COMPLETE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-diagrams-excellent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Diagrams: ✅ EXCELLENT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-references-27-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual References: ⚠️ 27% COMPLETE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-against-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison Against Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison Against Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual_assetsmd-cross-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VISUAL_ASSETS.md Cross-Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual_tasks_requiredmd-cross-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MANUAL_TASKS_REQUIRED.md Cross-Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gap-severity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap Severity Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gap Severity Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-student-blocking-0-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRITICAL (Student-Blocking): 0 Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-significantly-impacts-learning-10-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIGH (Significantly Impacts Learning): 10 Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-degrades-experience-2-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEDIUM (Degrades Experience): 2 Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-polishteacher-support-13-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOW (Polish/Teacher Support): 13 Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strengths-of-current-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strengths of Current Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strengths of Current Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-text-content-is-exceptional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ✅ Text Content is EXCEPTIONAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ascii-diagrams-are-outstanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ✅ ASCII Diagrams are OUTSTANDING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-module-structure-is-consistent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ✅ Module Structure is CONSISTENT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-attribution-is-proper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ✅ Attribution is PROPER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-two-modules-are-100-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ✅ Two Modules are 100% COMPLETE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-actions-this-week-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate Actions (This Week for Students)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Immediate Actions (This Week for Students)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fix-broken-navigation-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Fix Broken Navigation (5 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-source-robot-archetype-photos-2-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Source Robot Archetype Photos (2 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-integrate-existing-onshape-screenshot-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Integrate Existing Onshape Screenshot (10 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-term-actions-next-1-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short-Term Actions (Next 1-2 Weeks)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Short-Term Actions (Next 1-2 Weeks)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-create-cad-workflow-screenshots-3-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Create CAD Workflow Screenshots (3 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-sourcecreate-remaining-photos-2-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Source/Create Remaining Photos (2 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-actions-before-next-competition-season" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Term Actions (Before Next Competition Season)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Long-Term Actions (Before Next Competition Season)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-teacher-module-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Teacher Module Assets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-execution-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Execution Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent Execution Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-approach-parallel-agent-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Approach: Parallel Agent Team
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wave-1-quick-wins-parallel-30-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wave 1: Quick Wins (Parallel - 30 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wave-2-critical-photos-parallel-2-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wave 2: Critical Photos (Parallel - 2 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wave-3-cad-screenshots-sequential-3-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wave 3: CAD Screenshots (Sequential - 3 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wave-4-final-polish-parallel-1-hour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wave 4: Final Polish (Parallel - 1 hour)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-breakdown-with-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Breakdown with Estimates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#student-ready-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Student-Ready Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition-of-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definition of Done
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Assessment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#low-risk-can-execute-this-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Low Risk (Can Execute This Week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-risk-requires-cad-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium Risk (Requires CAD Skills)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-risk-may-need-alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Risk (May Need Alternatives)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Prioritization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Prioritization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week-1-must-have-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 1 (Must-Have for Students)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-2-high-value-addition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 2 (High-Value Addition)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-3-polish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 3+ (Polish)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-state-good-enough-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State: GOOD ENOUGH TO USE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-state-excellent-student-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended State: EXCELLENT STUDENT EXPERIENCE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ideal-state-fully-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ideal State: FULLY COMPLETE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/MalharSoni/CTRC-Learning/edit/main/docs/projects/battlebots/BATTLEBOTS_CURRICULUM_GAP_ANALYSIS.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/MalharSoni/CTRC-Learning/raw/main/docs/projects/battlebots/BATTLEBOTS_CURRICULUM_GAP_ANALYSIS.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+    </a>
+  
+
+
+<h1 id="battlebots-curriculum-comprehensive-gap-analysis">BattleBots Curriculum - Comprehensive Gap Analysis</h1>
+<p><strong>Audit Date:</strong> March 17, 2026
+<strong>Auditor:</strong> Claude (Automated Site Audit)
+<strong>Live Site:</strong> https://malharsoni.github.io/CTRC-Learning/projects/battlebots/
+<strong>Purpose:</strong> Identify gaps between promised content and delivered visuals across all 8 student-facing modules</p>
+<hr>
+<h2 id="executive-summary">Executive Summary</h2>
+<h3 id="overall-completeness-65-complete">Overall Completeness: <strong>65% Complete</strong></h3>
+<p><strong>Critical Findings:</strong>
+- <strong>10 visual assets delivered</strong> out of 37 documented needs (27%)
+- <strong>10 placeholder warnings</strong> remain visible to students ("Photo Needed", "Screenshot Needed")
+- <strong>1 missing module</strong> from navigation (Sources &amp; Acknowledgments - 404 error)
+- <strong>Text-based ASCII diagrams present</strong> for 8 technical concepts (good stopgap solution)
+- <strong>All 8 core modules accessible</strong> with complete text content</p>
+<p><strong>Student Impact:</strong>
+- <strong>HIGH IMPACT GAPS:</strong> 5 robot archetype photos missing (students can't visualize design options)
+- <strong>MEDIUM IMPACT GAPS:</strong> 5 CAD workflow screenshots missing (harder to follow Onshape steps)
+- <strong>LOW IMPACT GAPS:</strong> Safety/hardware photos for teacher modules</p>
+<p><strong>Delivery Status:</strong>
+- ✅ <strong>Content:</strong> 100% complete (all text, explanations, physics, design guidance)
+- ✅ <strong>ASCII Diagrams:</strong> 8 technical concepts visualized (excellent quality)
+- ⚠️ <strong>Photos:</strong> 27% complete (10 of 37 assets)
+- ❌ <strong>Navigation:</strong> 1 broken link (Sources &amp; Acknowledgments 404)</p>
+<hr>
+<h2 id="module-by-module-analysis">Module-by-Module Analysis</h2>
+<h3 id="module-1-rules-overview">Module 1: Rules &amp; Overview</h3>
+<p><strong>URL:</strong> <code>/projects/battlebots/rules-and-overview/</code>
+<strong>Status:</strong> ✅ Accessible, complete text</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Promised</th>
+<th>Delivered</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text content</td>
+<td>Full ruleset, safety requirements</td>
+<td>✅ Complete</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Visuals</td>
+<td>Weapon lock mechanism photo</td>
+<td>❌ Placeholder visible</td>
+<td><strong>1 photo needed</strong></td>
+</tr>
+<tr>
+<td>Navigation</td>
+<td>Listed in sidebar</td>
+<td>✅ Working</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Specific Gap:</strong>
+- Line 83: <code>📷 Photo Needed: Physical weapon lock (pin/clip/bracket) installed on a combat robot</code></p>
+<p><strong>Student Impact:</strong> MEDIUM - Students understand the concept from text, but visual reference would help them design their own locks.</p>
+<hr>
+<h3 id="module-2-robot-archetypes">Module 2: Robot Archetypes</h3>
+<p><strong>URL:</strong> <code>/projects/battlebots/robot-archetypes/</code>
+<strong>Status:</strong> ✅ Accessible, excellent ASCII diagrams</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Promised</th>
+<th>Delivered</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text content</td>
+<td>5 archetypes explained</td>
+<td>✅ Complete</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ASCII diagrams</td>
+<td>Eggbeater, Large Disc, Midcutter, Undercutter</td>
+<td>✅ 4 diagrams</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Photos</td>
+<td>5 robot examples (drum, eggbeater, disc, midcutter, undercutter)</td>
+<td>⚠️ 1 partial (drum)</td>
+<td><strong>4 photos needed</strong></td>
+</tr>
+<tr>
+<td>Attribution</td>
+<td>1 CC-BY-SA credit for drum spinner</td>
+<td>✅ Present</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Specific Gaps:</strong>
+1. <strong>Drum Spinner:</strong> Partial - Thingiverse screenshot present, but not ideal photo (shows webpage UI)
+2. <strong>Eggbeater/Beater Bar:</strong> Missing - text references photo, but only ASCII diagram present
+3. <strong>Vertical Disc Spinner:</strong> Missing - no photo
+4. <strong>Midcutter:</strong> Missing - ASCII diagram only
+5. <strong>Undercutter:</strong> Missing - ASCII diagram only</p>
+<p><strong>Student Impact:</strong> HIGH - This is the "choose your design" module. Students need to SEE real robots to understand physical implementation. ASCII diagrams help but aren't sufficient for design inspiration.</p>
+<p><strong>What Works Well:</strong>
+- ASCII diagrams are EXCELLENT - clear, labeled, show key features
+- Text descriptions are thorough
+- Design tradeoffs well explained</p>
+<hr>
+<h3 id="module-3-weapon-design">Module 3: Weapon Design</h3>
+<p><strong>URL:</strong> <code>/projects/battlebots/weapon-design/</code>
+<strong>Status:</strong> ✅ Accessible, strong technical content</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Promised</th>
+<th>Delivered</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text content</td>
+<td>Physics, MOI, bite, materials</td>
+<td>✅ Complete</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ASCII diagrams</td>
+<td>Mass distribution, bite calculation</td>
+<td>✅ 2 excellent diagrams</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Screenshots</td>
+<td>Onshape mass properties</td>
+<td>❌ Placeholder visible</td>
+<td><strong>1 screenshot needed</strong></td>
+</tr>
+<tr>
+<td>Photos</td>
+<td>TPU weapon hub close-up</td>
+<td>❌ Placeholder visible</td>
+<td><strong>1 photo needed</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Specific Gaps:</strong>
+1. Line 204: <code>🖥️ Screenshot Needed: Onshape Mass Properties dialog showing center of mass on weapon part</code>
+2. Line 281: <code>📷 Photo Needed: TPU weapon hub close-up: flexible material, set screw hole, keyed connection</code></p>
+<p><strong>Student Impact:</strong> MEDIUM - The ASCII diagrams for mass distribution and bite are exceptional and carry most of the teaching load. Screenshots would help with CAD workflow.</p>
+<p><strong>What Works Well:</strong>
+- Mass distribution ASCII comparison is PERFECT
+- Bite calculation diagram with formulas is excellent
+- Physics explanations are clear and actionable</p>
+<hr>
+<h3 id="module-4-drivetrain-design-n20-motors">Module 4: Drivetrain Design (N20 Motors)</h3>
+<p><strong>URL:</strong> <code>/projects/battlebots/drivetrain-design/</code>
+<strong>Status:</strong> ✅ Accessible, excellent ASCII content</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Promised</th>
+<th>Delivered</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text content</td>
+<td>N20 specs, 2WD layout, wheels</td>
+<td>✅ Complete</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ASCII diagrams</td>
+<td>N20 anatomy, D-shaft interface</td>
+<td>✅ 2 excellent diagrams</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Photos</td>
+<td>N20 motor close-up</td>
+<td>Not promised in module</td>
+<td>Per VISUAL_ASSETS.md only</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Specific Gaps:</strong>
+- None visible in rendered module
+- VISUAL_ASSETS.md lists: N20 motor close-up photo (not integrated)</p>
+<p><strong>Student Impact:</strong> LOW - The N20 anatomy ASCII diagram is so good that a photo is "nice to have" not critical.</p>
+<p><strong>What Works Well:</strong>
+- N20 anatomy diagram shows all key features (terminals, motor, gearbox, D-shaft)
+- D-shaft interface comparison (round vs D-shaft) is crystal clear
+- CAD design tip callout is helpful</p>
+<hr>
+<h3 id="module-5-cad-your-bot">Module 5: CAD Your Bot</h3>
+<p><strong>URL:</strong> <code>/projects/battlebots/cad-your-bot/</code>
+<strong>Status:</strong> ✅ Accessible, complete workflow</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Promised</th>
+<th>Delivered</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text content</td>
+<td>11-step CAD workflow</td>
+<td>✅ Complete</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Screenshots</td>
+<td>5 Onshape workflow steps</td>
+<td>❌ 5 placeholders visible</td>
+<td><strong>5 screenshots needed</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Specific Gaps:</strong>
+1. Line 62: <code>🖥️ Screenshot Needed: 6x6 inch rectangle sketch on Top plane labeled Bounding-Box in Onshape</code>
+2. Line 83: <code>🖥️ Screenshot Needed: Extruded chassis in 3D view showing internal ribs and hollowed interior</code>
+3. Line 96: <code>🖥️ Screenshot Needed: Chassis sketch: motor pockets, battery compartment, Nano mount within bounding box</code>
+4. Line 203: <code>🖥️ Screenshot Needed: Assembly mass properties showing center of mass location on full robot</code>
+5. Line 225: <code>🖥️ Screenshot Needed: Completed assembly from Top view overlaid on 6x6 bounding box — everything fits</code></p>
+<p><strong>Note:</strong> File exists but not integrated:
+- <code>/images/cad/onshape-mass-properties-overview-2026-03-12T23-37-24-035Z.png</code> (can be used for #4 or weapon design module)</p>
+<p><strong>Student Impact:</strong> HIGH - CAD is the hardest module for most students. Screenshots showing "what it should look like" are critical for success. Text-only instructions are insufficient for visual learners.</p>
+<p><strong>What Works Well:</strong>
+- Step-by-step workflow is thorough
+- Design review checklist is comprehensive
+- Material density values provided for accurate mass calculations</p>
+<hr>
+<h3 id="module-6-3d-printing-guide">Module 6: 3D Printing Guide</h3>
+<p><strong>URL:</strong> <code>/projects/battlebots/3d-printing-guide/</code>
+<strong>Status:</strong> ✅ Accessible, complete with 1 photo</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Promised</th>
+<th>Delivered</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text content</td>
+<td>Materials, settings, orientation</td>
+<td>✅ Complete</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Photos</td>
+<td>Hole orientation comparison</td>
+<td>✅ 1 photo present</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Diagrams</td>
+<td>Print orientation principles</td>
+<td>✅ Integrated in photo</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Specific Gaps:</strong> NONE</p>
+<p><strong>Student Impact:</strong> EXCELLENT - This module is complete and delivers on all promises.</p>
+<p><strong>What Works Well:</strong>
+- Hole orientation comparison photo is from Servo Magazine (properly attributed)
+- Material comparison table is clear
+- Print settings are specific and actionable
+- Post-processing tips are practical</p>
+<hr>
+<h3 id="module-7-chassis-assembly">Module 7: Chassis Assembly</h3>
+<p><strong>URL:</strong> <code>/projects/battlebots/assembly-and-wiring/</code>
+<strong>Status:</strong> ✅ Accessible, excellent with 8 photos</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Promised</th>
+<th>Delivered</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text content</td>
+<td>7-step assembly workflow</td>
+<td>✅ Complete</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Photos</td>
+<td>8 assembly process photos</td>
+<td>✅ All 8 present</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Attribution</td>
+<td>Instructables credits</td>
+<td>✅ Proper attribution</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Specific Gaps:</strong> NONE</p>
+<p><strong>Student Impact:</strong> EXCELLENT - This module is complete and delivers on all promises.</p>
+<p><strong>What Works Well:</strong>
+- 8 high-quality assembly photos from Instructables projects
+- Photos show: frame assembly, motor mounts, armor cutting, bumpers, wedge, weapon motor, blade assembly, shaft collars
+- Captions are descriptive and actionable
+- Proper attribution: "Photo from 'Naked Singularity' build guide via Instructables"</p>
+<hr>
+<h3 id="module-8-sources-acknowledgments">Module 8: Sources &amp; Acknowledgments</h3>
+<p><strong>URL:</strong> <code>/projects/battlebots/sources-and-acknowledgments/</code>
+<strong>Status:</strong> ❌ 404 ERROR - Page not found</p>
+<p><strong>Issue:</strong> Navigation link exists, but page returns 404.</p>
+<p><strong>Actual file:</strong> <code>/docs/projects/battlebots/sources.md</code> (different filename than nav expects)</p>
+<p><strong>Student Impact:</strong> LOW - Students don't need this page to complete the curriculum, but broken links look unprofessional.</p>
+<p><strong>Fix Required:</strong> Update navigation config to point to <code>sources.md</code> instead of <code>sources-and-acknowledgments.md</code></p>
+<hr>
+<h2 id="visual-asset-inventory">Visual Asset Inventory</h2>
+<h3 id="delivered-assets-10-total">✅ Delivered Assets (10 total)</h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Type</th>
+<th>Location</th>
+<th>Module</th>
+<th>Quality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hole-orientation-comparison.jpg</td>
+<td>Photo</td>
+<td>images/printing/</td>
+<td>3D Printing</td>
+<td>✅ Excellent</td>
+</tr>
+<tr>
+<td>frame-assembly.jpg</td>
+<td>Photo</td>
+<td>images/assembly/</td>
+<td>Assembly</td>
+<td>✅ Excellent</td>
+</tr>
+<tr>
+<td>motor-mounts-shaping.jpg</td>
+<td>Photo</td>
+<td>images/assembly/</td>
+<td>Assembly</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td>armor-plates-cutting.jpg</td>
+<td>Photo</td>
+<td>images/assembly/</td>
+<td>Assembly</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td>side-bumpers-assembly.jpg</td>
+<td>Photo</td>
+<td>images/assembly/</td>
+<td>Assembly</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td>wedge-installation.jpg</td>
+<td>Photo</td>
+<td>images/assembly/</td>
+<td>Assembly</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td>weapon-motor-mount.jpg</td>
+<td>Photo</td>
+<td>images/assembly/</td>
+<td>Assembly</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td>weapon-blade-assembly.jpg</td>
+<td>Photo</td>
+<td>images/assembly/</td>
+<td>Assembly</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td>shaft-collars-installation.jpg</td>
+<td>Photo</td>
+<td>images/assembly/</td>
+<td>Assembly</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td>onshape-mass-properties-overview.png</td>
+<td>Screenshot</td>
+<td>images/cad/</td>
+<td>(Not integrated)</td>
+<td>⚠️ Exists but unused</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ascii-diagrams-present-8-total-excellent">✅ ASCII Diagrams Present (8 total - EXCELLENT)</h3>
+<ol>
+<li><strong>Eggbeater/Beater Bar</strong> (Robot Archetypes) - Side view, labeled</li>
+<li><strong>Large Vertical Disc</strong> (Robot Archetypes) - Side view, shows gyro effect</li>
+<li><strong>Midcutter</strong> (Robot Archetypes) - Top view + side view</li>
+<li><strong>Undercutter</strong> (Robot Archetypes) - Side view + top view</li>
+<li><strong>Mass Distribution Comparison</strong> (Weapon Design) - Solid disc vs ring vs bar with MOI formulas</li>
+<li><strong>Bite Calculation Diagram</strong> (Weapon Design) - Tooth spacing, forward travel, formulas</li>
+<li><strong>N20 Motor Anatomy</strong> (Drivetrain Design) - Terminals, motor, gearbox, D-shaft labeled</li>
+<li><strong>D-Shaft Interface</strong> (Drivetrain Design) - Round vs D-shaft comparison, CAD tip</li>
+</ol>
+<p><strong>Quality Assessment:</strong> ASCII diagrams are EXCEPTIONAL. They're:
+- Clearly labeled
+- Technically accurate
+- Show key dimensions and principles
+- Include formulas where relevant
+- Better than mediocre photos in many cases</p>
+<h3 id="missing-assets-by-priority">❌ Missing Assets by Priority</h3>
+<h4 id="priority-1-critical-student-blocking-5-assets">Priority 1: CRITICAL (Student-Blocking) - 5 assets</h4>
+<ol>
+<li><strong>Drum Spinner Photo</strong> - Students need to see a real drum design (archetype visualization)</li>
+<li><strong>Vertical Disc Spinner Photo</strong> - Most popular archetype, must be visible</li>
+<li><strong>Eggbeater Photo</strong> - Text promises photo, only ASCII present (acceptable but not ideal)</li>
+<li><strong>Midcutter Photo</strong> - Horizontal spinner example needed</li>
+<li><strong>Undercutter Photo</strong> - Unique ground game archetype needs visual</li>
+</ol>
+<p><strong>Impact:</strong> Students choosing archetypes need to SEE real robots, not just read descriptions.</p>
+<h4 id="priority-2-high-significantly-improves-learning-5-assets">Priority 2: HIGH (Significantly Improves Learning) - 5 assets</h4>
+<ol>
+<li><strong>Bounding Box Sketch Screenshot</strong> (CAD step 1) - First critical CAD step</li>
+<li><strong>Extruded Chassis Screenshot</strong> (CAD step 2) - Shows 3D from 2D transition</li>
+<li><strong>Chassis Sketch with Dimensions</strong> (CAD step 3) - Detailed feature modeling</li>
+<li><strong>Assembly Mass Properties Screenshot</strong> (CAD step 9) - Weight verification process</li>
+<li><strong>Final Assembly Top View</strong> (CAD step 10) - Success criteria visualization</li>
+</ol>
+<p><strong>Impact:</strong> CAD is the hardest module. Visual checkpoints are critical for student success.</p>
+<h4 id="priority-3-medium-polish-completeness-2-assets">Priority 3: MEDIUM (Polish &amp; Completeness) - 2 assets</h4>
+<ol>
+<li><strong>Weapon Mass Properties Screenshot</strong> (Weapon Design) - Balance verification</li>
+<li><strong>TPU Weapon Hub Photo</strong> (Weapon Design) - Material/construction detail</li>
+</ol>
+<p><strong>Impact:</strong> Nice to have, but ASCII diagrams + text carry the teaching load.</p>
+<h4 id="priority-4-low-teacher-modules-not-student-facing">Priority 4: LOW (Teacher Modules) - Not student-facing</h4>
+<ul>
+<li>Teacher module assets (Malenki Nano, LiPo safety, failsafe testing)</li>
+<li>Not required for student workflow</li>
+<li>Can be added later for teacher training materials</li>
+</ul>
+<hr>
+<h2 id="navigation-user-flow-analysis">Navigation &amp; User Flow Analysis</h2>
+<h3 id="navigation-structure-good">Navigation Structure: ✅ GOOD</h3>
+<p>All 8 student modules appear in correct order:
+1. ✅ Rules &amp; Overview
+2. ✅ Robot Archetypes
+3. ✅ Weapon Design
+4. ✅ Drivetrain (N20 Motors)
+5. ✅ CAD Your Bot
+6. ✅ 3D Printing Guide
+7. ✅ Chassis Assembly
+8. ❌ Sources &amp; Acknowledgments (404 - file mismatch)</p>
+<h3 id="module-title-consistency-good">Module Title Consistency: ✅ GOOD</h3>
+<p>Titles match between:
+- Navigation sidebar
+- Module headers
+- Breadcrumbs
+- Homepage project table</p>
+<p>Exception: "Assembly &amp; Wiring" in source file is "Chassis Assembly" in nav (intentional - clearer for students)</p>
+<h3 id="learning-progression-excellent">Learning Progression: ✅ EXCELLENT</h3>
+<ol>
+<li>Rules first (constraints)</li>
+<li>Design exploration (archetypes, weapon, drivetrain)</li>
+<li>CAD implementation</li>
+<li>Fabrication (printing)</li>
+<li>Assembly (build)</li>
+</ol>
+<p>Logical flow with clear handoff points (student → teacher) documented.</p>
+<h3 id="broken-links-1-issue">Broken Links: ❌ 1 ISSUE</h3>
+<ul>
+<li><code>/sources-and-acknowledgments/</code> → 404</li>
+<li>Actual file: <code>/sources.md</code></li>
+<li>Fix: Update mkdocs.yml nav config</li>
+</ul>
+<hr>
+<h2 id="content-completeness-assessment">Content Completeness Assessment</h2>
+<h3 id="text-content-100-complete">Text Content: ✅ 100% COMPLETE</h3>
+<p>Every module has:
+- Learning objectives
+- Time estimates
+- Complete explanations
+- Design guidelines
+- Success criteria
+- Checklists
+- Next step navigation</p>
+<p><strong>No incomplete sections identified.</strong></p>
+<h3 id="technical-diagrams-excellent">Technical Diagrams: ✅ EXCELLENT</h3>
+<p>8 ASCII diagrams cover critical concepts:
+- Robot architectures (4)
+- Weapon physics (2)
+- Motor/drivetrain (2)</p>
+<p><strong>Quality exceeds expectations</strong> - these are better than stock photos in many cases.</p>
+<h3 id="visual-references-27-complete">Visual References: ⚠️ 27% COMPLETE</h3>
+<ul>
+<li>10 photos/screenshots delivered</li>
+<li>27 documented as needed</li>
+<li>10 placeholder warnings visible to students</li>
+</ul>
+<p><strong>High-impact gaps in archetype photos and CAD screenshots.</strong></p>
+<hr>
+<h2 id="comparison-against-documentation">Comparison Against Documentation</h2>
+<h3 id="visual_assetsmd-cross-reference">VISUAL_ASSETS.md Cross-Reference</h3>
+<p><strong>Documented needs:</strong> 37 total assets
+- ✅ Implemented: 10 assets (27%)
+- ⚠️ Exists but not integrated: 1 asset (Onshape mass properties)
+- ❌ Missing: 27 assets (73%)</p>
+<p><strong>By module:</strong>
+| Module | Total Needed | Delivered | % Complete |
+|--------|--------------|-----------|------------|
+| Rules &amp; Overview | 1 | 0 | 0% |
+| Robot Archetypes | 5 | 0 | 0% |
+| Weapon Design | 3 | 0 | 0% |
+| Drivetrain | 2 | 0 | 0% |
+| CAD Your Bot | 6 | 1* | 17% |
+| 3D Printing | 1 | 1 | 100% |
+| Assembly | 8 | 8 | 100% |
+| Teacher Modules | 11 | 0 | 0% |</p>
+<p>*One file exists but not integrated</p>
+<h3 id="manual_tasks_requiredmd-cross-reference">MANUAL_TASKS_REQUIRED.md Cross-Reference</h3>
+<p><strong>Tasks identified:</strong> 18 manual tasks, 4-6 hours estimated</p>
+<p><strong>Categories:</strong>
+1. ✅ <strong>Robot Archetype Photos</strong> - Manual download from Thingiverse/Instructables (1.5 hrs)
+2. ⚠️ <strong>CAD Screenshots</strong> - Requires Onshape account + reference build (2 hrs)
+3. ⚠️ <strong>N20 Motor Photo</strong> - Datasheet extraction or product photo (30 min)
+4. ❌ <strong>Safety Photos</strong> - Teacher module only (1 hr)
+5. ❌ <strong>Electronics Photos</strong> - Teacher module only (30 min)</p>
+<p><strong>Student-Facing Priority:</strong>
+- Categories 1-3 are student-facing (4 hours total)
+- Categories 4-5 are teacher modules (1.5 hours total)</p>
+<hr>
+<h2 id="gap-severity-analysis">Gap Severity Analysis</h2>
+<h3 id="critical-student-blocking-0-issues">CRITICAL (Student-Blocking): 0 Issues</h3>
+<p><strong>Why zero?</strong>
+- All text content is complete
+- ASCII diagrams fill most gaps effectively
+- Students CAN complete the curriculum without photos</p>
+<h3 id="high-significantly-impacts-learning-10-issues">HIGH (Significantly Impacts Learning): 10 Issues</h3>
+<ol>
+<li><strong>5 Robot Archetype Photos Missing</strong></li>
+<li>Impact: Students choosing designs need visual references</li>
+<li>
+<p>Workaround: ASCII diagrams help, but photos inspire design decisions</p>
+</li>
+<li>
+<p><strong>5 CAD Workflow Screenshots Missing</strong></p>
+</li>
+<li>Impact: Visual learners struggle with text-only CAD instructions</li>
+<li>Workaround: Experienced CAD users can follow text, beginners will struggle</li>
+</ol>
+<h3 id="medium-degrades-experience-2-issues">MEDIUM (Degrades Experience): 2 Issues</h3>
+<ol>
+<li><strong>Weapon Balance Screenshot Missing</strong></li>
+<li>Impact: Students need to see "what good looks like"</li>
+<li>
+<p>Workaround: Text instructions + trial-and-error work</p>
+</li>
+<li>
+<p><strong>TPU Hub Photo Missing</strong></p>
+</li>
+<li>Impact: Material/construction understanding</li>
+<li>Workaround: Text description sufficient for basic understanding</li>
+</ol>
+<h3 id="low-polishteacher-support-13-issues">LOW (Polish/Teacher Support): 13 Issues</h3>
+<ol>
+<li><strong>Teacher Module Photos Missing</strong></li>
+<li>Impact: Teacher training materials incomplete</li>
+<li>
+<p>Workaround: Teachers already experienced with electronics</p>
+</li>
+<li>
+<p><strong>Sources &amp; Acknowledgments 404</strong></p>
+</li>
+<li>Impact: Broken link looks unprofessional</li>
+<li>Workaround: Students don't need this page for core curriculum</li>
+</ol>
+<hr>
+<h2 id="strengths-of-current-implementation">Strengths of Current Implementation</h2>
+<h3 id="1-text-content-is-exceptional">1. ✅ Text Content is EXCEPTIONAL</h3>
+<ul>
+<li>Every concept thoroughly explained</li>
+<li>Physics formulas included</li>
+<li>Design tradeoffs clearly stated</li>
+<li>Checklists actionable</li>
+<li>Success criteria measurable</li>
+</ul>
+<h3 id="2-ascii-diagrams-are-outstanding">2. ✅ ASCII Diagrams are OUTSTANDING</h3>
+<p><strong>Quality assessment:</strong>
+- Technically accurate
+- Clearly labeled
+- Show key dimensions
+- Include formulas
+- Often BETTER than photos for teaching concepts</p>
+<p><strong>Examples:</strong>
+- Mass distribution comparison (MOI formula + visual)
+- Bite calculation (geometry + math)
+- N20 motor anatomy (every component labeled)
+- D-shaft interface (before/after comparison)</p>
+<h3 id="3-module-structure-is-consistent">3. ✅ Module Structure is CONSISTENT</h3>
+<p>Every module has:
+- Learning objectives
+- Time estimate
+- Main content
+- Success criteria
+- Next step navigation
+- Callout boxes for key concepts</p>
+<h3 id="4-attribution-is-proper">4. ✅ Attribution is PROPER</h3>
+<p>Where photos exist:
+- CC-BY-SA licenses credited
+- Instructables projects linked
+- Servo Magazine article cited
+- Fair use principles followed</p>
+<h3 id="5-two-modules-are-100-complete">5. ✅ Two Modules are 100% COMPLETE</h3>
+<ul>
+<li><strong>3D Printing Guide:</strong> All photos, diagrams, and text complete</li>
+<li><strong>Chassis Assembly:</strong> All 8 photos integrated with proper attribution</li>
+</ul>
+<hr>
+<h2 id="recommendations">Recommendations</h2>
+<h3 id="immediate-actions-this-week-for-students">Immediate Actions (This Week for Students)</h3>
+<h4 id="1-fix-broken-navigation-5-minutes">1. Fix Broken Navigation (5 minutes)</h4>
+<p><strong>File:</strong> <code>/mkdocs.yml</code>
+<strong>Change:</strong> Update nav to point to <code>sources.md</code> instead of <code>sources-and-acknowledgments.md</code></p>
+<h4 id="2-source-robot-archetype-photos-2-hours">2. Source Robot Archetype Photos (2 hours)</h4>
+<p><strong>Priority:</strong> CRITICAL - students need these to choose designs
+<strong>Tasks:</strong>
+- Download 5 robot photos from Thingiverse/Instructables (sources listed in MANUAL_TASKS_REQUIRED.md)
+- Optimize images (max 1200px width, &lt;200KB)
+- Add to <code>/images/archetypes/</code>
+- Integrate into <code>robot-archetypes.md</code>
+- Add attribution to <code>images/attribution.md</code></p>
+<p><strong>Student Impact:</strong> HIGH - this is the "choose your design" module</p>
+<h4 id="3-integrate-existing-onshape-screenshot-10-minutes">3. Integrate Existing Onshape Screenshot (10 minutes)</h4>
+<p><strong>File exists:</strong> <code>/images/cad/onshape-mass-properties-overview-2026-03-12T23-37-24-035Z.png</code>
+<strong>Action:</strong>
+- Rename to <code>mass-properties-dialog.png</code>
+- Replace placeholder in <code>cad-your-bot.md</code> line 203
+- Add descriptive caption</p>
+<h3 id="short-term-actions-next-1-2-weeks">Short-Term Actions (Next 1-2 Weeks)</h3>
+<h4 id="4-create-cad-workflow-screenshots-3-hours">4. Create CAD Workflow Screenshots (3 hours)</h4>
+<p><strong>Requires:</strong> Onshape account + building reference design
+<strong>Steps:</strong>
+1. Build simple beetleweight chassis in Onshape following curriculum steps
+2. Capture 5 screenshots at key workflow points
+3. Annotate with red arrows/boxes
+4. Export as PNG (1400-1600px wide, &lt;400KB each)
+5. Integrate into <code>cad-your-bot.md</code></p>
+<p><strong>Student Impact:</strong> HIGH - CAD is the hardest module for most students</p>
+<h4 id="5-sourcecreate-remaining-photos-2-hours">5. Source/Create Remaining Photos (2 hours)</h4>
+<ul>
+<li><strong>N20 motor photo:</strong> Extract from GA12-N20 datasheet</li>
+<li><strong>TPU weapon hub:</strong> Either source from vendor or create simple diagram</li>
+<li><strong>Weapon lock:</strong> Sketch or photograph simple pin-lock mechanism</li>
+</ul>
+<h3 id="long-term-actions-before-next-competition-season">Long-Term Actions (Before Next Competition Season)</h3>
+<h4 id="6-teacher-module-assets">6. Teacher Module Assets</h4>
+<ul>
+<li>Malenki Nano labeled photo</li>
+<li>LiPo safety photos</li>
+<li>Failsafe test documentation</li>
+<li>Arena setup photos</li>
+</ul>
+<p><strong>Priority:</strong> LOW - teacher modules aren't blocking student work</p>
+<hr>
+<h2 id="agent-execution-plan">Agent Execution Plan</h2>
+<h3 id="recommended-approach-parallel-agent-team">Recommended Approach: Parallel Agent Team</h3>
+<p><strong>Total estimated effort:</strong> 6-8 hours of manual work + 2 hours integration</p>
+<h3 id="wave-1-quick-wins-parallel-30-minutes">Wave 1: Quick Wins (Parallel - 30 minutes)</h3>
+<p><strong>Agent A: Fix Navigation</strong>
+- Update mkdocs.yml
+- Test all nav links
+- Commit fix</p>
+<p><strong>Agent B: Integrate Existing Asset</strong>
+- Rename <code>onshape-mass-properties-overview.png</code> → <code>mass-properties-dialog.png</code>
+- Replace placeholder in CAD module
+- Add caption
+- Test rendering</p>
+<p><strong>Expected Result:</strong> 1 broken link fixed, 1 placeholder removed</p>
+<hr>
+<h3 id="wave-2-critical-photos-parallel-2-hours">Wave 2: Critical Photos (Parallel - 2 hours)</h3>
+<p><strong>Agent C: Robot Archetype Photos</strong>
+<strong>Tasks:</strong>
+1. Download 5 photos from Thingiverse/Instructables:
+   - Drum spinner: https://www.thingiverse.com/thing:7001396
+   - Undercutter: https://www.thingiverse.com/thing:5202939
+   - Vertical disc: Instructables "DIY Easy 3D Printed Vertical Spinner"
+   - Midcutter: Repeat Robotics product page or aaronbot3000 blog
+   - Eggbeater: Repeat Robotics beater bar product</p>
+<ol>
+<li>
+<p>Optimize each image:
+   </p><div class="highlight"><pre><span></span><code>mogrify<span class="w"> </span>-resize<span class="w"> </span>1200x<span class="w"> </span>-quality<span class="w"> </span><span class="m">85</span><span class="w"> </span>*.jpg
+</code></pre></div><p></p>
+</li>
+<li>
+<p>Place in <code>/images/archetypes/</code></p>
+</li>
+<li>
+<p>Add attribution to <code>/images/attribution.md</code>:
+   </p><div class="highlight"><pre><span></span><code><span class="gu">### Drum Spinner Example</span>
+<span class="gs">**Source:**</span> AlexKorvin on Thingiverse
+<span class="gs">**License:**</span> CC BY-SA 4.0
+<span class="gs">**URL:**</span> https://www.thingiverse.com/thing:7001396
+<span class="gs">**Usage:**</span> Robot Archetypes module
+</code></pre></div><p></p>
+</li>
+<li>
+<p>Integrate into <code>robot-archetypes.md</code>:</p>
+</li>
+<li>Replace ASCII diagrams OR add photos alongside ASCII</li>
+<li>Add captions: "Drum spinner design by [Creator] - [key feature to notice]"</li>
+<li>Credit licenses in captions</li>
+</ol>
+<p><strong>Deliverables:</strong>
+- 5 archetype photos integrated
+- 5 attributions added
+- Module rendering tested</p>
+<p><strong>Agent D: Weapon Design Diagrams</strong>
+<strong>Tasks:</strong>
+1. Create 2 simple diagrams in Figma/Excalidraw:
+   - Weapon lock mechanisms (3 types: pin, zip-tie, bracket)
+   - TPU weapon hub construction (if photo not sourced)</p>
+<ol>
+<li>
+<p>Export as SVG or PNG (2x resolution)</p>
+</li>
+<li>
+<p>Place in <code>/images/weapons/</code> or <code>/images/safety/</code></p>
+</li>
+<li>
+<p>Integrate into modules with descriptive captions</p>
+</li>
+</ol>
+<p><strong>Deliverables:</strong>
+- 2 diagrams created
+- 2 placeholders replaced</p>
+<p><strong>Expected Result:</strong> 5 archetype photos + 2 diagrams = 7 gaps closed</p>
+<hr>
+<h3 id="wave-3-cad-screenshots-sequential-3-hours">Wave 3: CAD Screenshots (Sequential - 3 hours)</h3>
+<p><strong>Agent E: Onshape CAD Reference Build</strong>
+<strong>Prerequisites:</strong> Onshape account, CAD experience</p>
+<p><strong>Tasks:</strong>
+1. Create new Onshape document: "CTRC-BattleBot-Reference"</p>
+<ol>
+<li>Follow curriculum steps from <code>cad-your-bot.md</code>:</li>
+<li>Step 2: Bounding box sketch (6"×6")</li>
+<li>Step 3: Chassis extrusion with ribs</li>
+<li>Step 4: Motor pockets + dimensions</li>
+<li>Step 9: Assembly mass properties dialog</li>
+<li>
+<p>Step 10: Top view with bounding box overlay</p>
+</li>
+<li>
+<p>At each step:</p>
+</li>
+<li>Take screenshot (full Onshape UI visible)</li>
+<li>Annotate with red arrows/boxes (Snagit/Photoshop/Skitch)</li>
+<li>Export as PNG (1400-1600px wide)</li>
+<li>
+<p>Optimize file size (&lt;400KB)</p>
+</li>
+<li>
+<p>Name files clearly:</p>
+</li>
+<li><code>bounding-box-sketch.png</code></li>
+<li><code>chassis-3d-view.png</code></li>
+<li><code>chassis-sketch-dimensions.png</code></li>
+<li><code>mass-properties-dialog.png</code> (already exists, verify quality)</li>
+<li>
+<p><code>assembly-top-view-bounding-box.png</code></p>
+</li>
+<li>
+<p>Place in <code>/images/cad/</code></p>
+</li>
+<li>
+<p>Integrate into <code>cad-your-bot.md</code> replacing placeholders</p>
+</li>
+</ol>
+<p><strong>Deliverables:</strong>
+- 5 CAD screenshots
+- 5 placeholders removed
+- CAD module fully illustrated</p>
+<p><strong>Expected Result:</strong> CAD workflow visually complete</p>
+<hr>
+<h3 id="wave-4-final-polish-parallel-1-hour">Wave 4: Final Polish (Parallel - 1 hour)</h3>
+<p><strong>Agent F: Remaining Photos</strong>
+- N20 motor photo (datasheet extraction)
+- Weapon lock photo/diagram
+- Any remaining small assets</p>
+<p><strong>Agent G: Quality Assurance</strong>
+- Test all image links
+- Verify all attributions present
+- Check mobile rendering
+- Validate file sizes
+- Build and deploy site</p>
+<p><strong>Expected Result:</strong> Zero placeholders visible, all images loading</p>
+<hr>
+<h2 id="task-breakdown-with-estimates">Task Breakdown with Estimates</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Agent</th>
+<th>Type</th>
+<th>Time</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fix sources.md navigation</td>
+<td>A</td>
+<td>Config edit</td>
+<td>5 min</td>
+<td>P0 - Immediate</td>
+</tr>
+<tr>
+<td>Integrate existing screenshot</td>
+<td>B</td>
+<td>File ops</td>
+<td>10 min</td>
+<td>P0 - Immediate</td>
+</tr>
+<tr>
+<td>Download 5 archetype photos</td>
+<td>C</td>
+<td>Manual</td>
+<td>1.5 hrs</td>
+<td>P1 - Critical</td>
+</tr>
+<tr>
+<td>Optimize archetype photos</td>
+<td>C</td>
+<td>Automated</td>
+<td>10 min</td>
+<td>P1 - Critical</td>
+</tr>
+<tr>
+<td>Add archetype attributions</td>
+<td>C</td>
+<td>Writing</td>
+<td>20 min</td>
+<td>P1 - Critical</td>
+</tr>
+<tr>
+<td>Integrate archetype photos</td>
+<td>C</td>
+<td>Editing</td>
+<td>30 min</td>
+<td>P1 - Critical</td>
+</tr>
+<tr>
+<td>Create 2 weapon diagrams</td>
+<td>D</td>
+<td>Design</td>
+<td>1 hr</td>
+<td>P2 - High</td>
+</tr>
+<tr>
+<td>Build Onshape reference</td>
+<td>E</td>
+<td>CAD work</td>
+<td>2 hrs</td>
+<td>P2 - High</td>
+</tr>
+<tr>
+<td>Screenshot CAD workflow</td>
+<td>E</td>
+<td>Capture</td>
+<td>30 min</td>
+<td>P2 - High</td>
+</tr>
+<tr>
+<td>Integrate CAD screenshots</td>
+<td>E</td>
+<td>Editing</td>
+<td>30 min</td>
+<td>P2 - High</td>
+</tr>
+<tr>
+<td>Source N20 motor photo</td>
+<td>F</td>
+<td>Manual</td>
+<td>30 min</td>
+<td>P3 - Medium</td>
+</tr>
+<tr>
+<td>QA testing</td>
+<td>G</td>
+<td>Testing</td>
+<td>30 min</td>
+<td>P4 - Final</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total estimated time:</strong> 7.5 hours
+<strong>Can be parallelized to:</strong> 3-4 hours with 4 agents working simultaneously</p>
+<hr>
+<h2 id="success-metrics">Success Metrics</h2>
+<h3 id="student-ready-checklist">Student-Ready Checklist</h3>
+<p><strong>After Wave 1 (Quick Wins):</strong>
+- [ ] Zero broken navigation links
+- [ ] 1 fewer placeholder visible (9 remaining)</p>
+<p><strong>After Wave 2 (Critical Photos):</strong>
+- [ ] All 5 robot archetypes have visual references
+- [ ] Students can see real examples when choosing designs
+- [ ] 2-3 fewer placeholders visible (6-7 remaining)</p>
+<p><strong>After Wave 3 (CAD Screenshots):</strong>
+- [ ] CAD workflow has visual checkpoints at every step
+- [ ] Students can verify "what it should look like"
+- [ ] 0-2 placeholders remaining (just polish items)</p>
+<p><strong>After Wave 4 (Final Polish):</strong>
+- [ ] Zero "Photo Needed" or "Screenshot Needed" placeholders
+- [ ] All images load correctly on mobile and desktop
+- [ ] All CC-licensed images properly attributed
+- [ ] Site builds without errors</p>
+<h3 id="definition-of-done">Definition of Done</h3>
+<p><strong>MINIMUM (Student-Ready):</strong>
+- ✅ Zero broken links
+- ✅ 5 archetype photos (students can choose designs)
+- ✅ 5 CAD screenshots (students can follow workflow)
+- ⚠️ Remaining placeholders acceptable if low-priority</p>
+<p><strong>IDEAL (Fully Complete):</strong>
+- ✅ Zero placeholders visible
+- ✅ All 15 student-facing photos/screenshots present
+- ✅ All attributions complete
+- ✅ All images optimized for web</p>
+<p><strong>STRETCH (Teacher Materials):</strong>
+- ✅ Teacher module photos added
+- ✅ Electronics diagrams complete
+- ✅ Safety procedure visuals present</p>
+<hr>
+<h2 id="risk-assessment">Risk Assessment</h2>
+<h3 id="low-risk-can-execute-this-week">Low Risk (Can Execute This Week)</h3>
+<ul>
+<li><strong>Navigation fix:</strong> Config change only</li>
+<li><strong>Archetype photos:</strong> Clear sources identified, CC-licensed</li>
+<li><strong>Diagram creation:</strong> Simple technical illustrations</li>
+</ul>
+<h3 id="medium-risk-requires-cad-skills">Medium Risk (Requires CAD Skills)</h3>
+<ul>
+<li><strong>CAD screenshots:</strong> Requires Onshape proficiency</li>
+<li><strong>Mitigation:</strong> Use experienced student or teacher to build reference design</li>
+</ul>
+<h3 id="high-risk-may-need-alternatives">High Risk (May Need Alternatives)</h3>
+<ul>
+<li><strong>N20 motor photo:</strong> Datasheet quality may be poor</li>
+<li><strong>Mitigation:</strong> Use product page photo or create labeled diagram</li>
+</ul>
+<hr>
+<h2 id="recommended-prioritization">Recommended Prioritization</h2>
+<h3 id="week-1-must-have-for-students">Week 1 (Must-Have for Students)</h3>
+<ol>
+<li>✅ Fix navigation (5 min)</li>
+<li>✅ Integrate existing screenshot (10 min)</li>
+<li>✅ Download and integrate 5 archetype photos (2.5 hrs)</li>
+</ol>
+<p><strong>Result:</strong> Students can choose archetypes with visual references</p>
+<h3 id="week-2-high-value-addition">Week 2 (High-Value Addition)</h3>
+<ol>
+<li>✅ Create CAD reference build and capture 5 screenshots (3 hrs)</li>
+<li>✅ Create 2 weapon diagrams (1 hr)</li>
+</ol>
+<p><strong>Result:</strong> CAD workflow fully visual, weapon concepts clear</p>
+<h3 id="week-3-polish">Week 3+ (Polish)</h3>
+<ol>
+<li>Source remaining photos (N20 motor, weapon lock)</li>
+<li>Add teacher module assets</li>
+<li>Final QA pass</li>
+</ol>
+<p><strong>Result:</strong> Curriculum 100% complete</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<h3 id="current-state-good-enough-to-use">Current State: GOOD ENOUGH TO USE</h3>
+<p><strong>Students can complete the curriculum today</strong> with:
+- Complete text content
+- Excellent ASCII diagrams
+- 10 photos in key modules (printing, assembly)</p>
+<p><strong>Main limitation:</strong>
+- Archetype visualization relies on ASCII (not ideal for design inspiration)
+- CAD workflow is text-only (harder for visual learners)</p>
+<h3 id="recommended-state-excellent-student-experience">Recommended State: EXCELLENT STUDENT EXPERIENCE</h3>
+<p><strong>Add 10 critical assets</strong> (5 archetypes + 5 CAD screenshots) in ~6 hours:
+- Students see real robots when choosing designs
+- CAD workflow has visual checkpoints
+- Zero student-facing placeholders</p>
+<h3 id="ideal-state-fully-complete">Ideal State: FULLY COMPLETE</h3>
+<p><strong>Add all 15 student-facing assets</strong> in ~8 hours:
+- Every concept visualized
+- Zero placeholders
+- Professional polish
+- Teacher modules complete</p>
+<hr>
+<p><strong>Next Action:</strong> Review this analysis and choose prioritization level (Week 1 only, Weeks 1-2, or full completion)</p>
+<p><strong>Recommended:</strong> Execute Week 1 tasks (2.5 hours) to close critical gaps, then assess whether Week 2 work is needed based on student CAD proficiency.</p>
+<hr>
+<p><em>Analysis completed: March 17, 2026</em>
+<em>Audit coverage: 8/8 student modules, all visual assets documented</em>
+<em>Manual verification: Live site screenshots captured</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="#" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.footer", "navigation.prune", "navigation.top", "navigation.path", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy", "content.tooltips", "content.action.edit", "content.action.view", "header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
