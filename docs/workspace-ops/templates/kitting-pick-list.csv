@@ -1,0 +1,7 @@
+BOM_ID,Team,PickSequence,HomeLocation,InternalPart#,PartName,QtyToPick,Picked,IssuedBy,DateIssued,Notes
+BOM-2026-014,Team 3,1,BK-A-1-01,ELE-MOT-011,V5 Smart Motor 11W,4,,,,Count exact
+BOM-2026-014,Team 3,2,BK-B-2-01,STR-CCH-1x2,C-Channel 1x2x1 (35 hole),6,,,,
+BOM-2026-014,Team 3,3,BK-C-2-03,MOT-GER-84T,Gear 84T,2,,,,
+BOM-2026-014,Team 3,4,BK-D-1-01,WHL-OMN-4IN,Omni Wheel 4in,4,,,,
+BOM-2026-014,Team 3,5,BK-E-1-02,HW-SCR-032-050,Screw 8-32 x 1/2in,40,,,,Or pull from LN-05
+BOM-2026-014,Team 3,6,BK-LOCK-1,ELE-BRN-001,V5 Robot Brain,1,,,,CHECK-OUT: log serial to Team 3

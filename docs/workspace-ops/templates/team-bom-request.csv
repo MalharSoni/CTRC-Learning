@@ -1,0 +1,7 @@
+Team,DateSubmitted,PartsCaptain,LineNo,InternalPart#,PartName,VendorPN,QtyRequested,PurposeMechanism,Priority,ApprovedQty,Status,Notes
+Team 3,2026-09-05,Alex R.,1,STR-CCH-1x2,C-Channel 1x2x1 (35 hole),276-2306,6,Drivetrain frame,High,,Pending,
+Team 3,2026-09-05,Alex R.,2,ELE-MOT-011,V5 Smart Motor 11W,276-4840,4,Drivetrain,High,,Pending,
+Team 3,2026-09-05,Alex R.,3,WHL-OMN-4IN,Omni Wheel 4in,276-3010,4,Drivetrain,High,,Pending,
+Team 3,2026-09-05,Alex R.,4,MOT-GER-84T,Gear 84T,276-2189,2,Intake gearbox,Medium,,Pending,
+Team 3,2026-09-05,Alex R.,5,ELE-BRN-001,V5 Robot Brain,276-4810,1,Control (CHECK-OUT item),High,,Pending,Issue as check-out not permanent
+Team 3,2026-09-05,Alex R.,6,HW-SCR-032-050,Screw 8-32 x 1/2in,276-2004,40,Assembly,Low,,Pending,Pull from line-side if available
