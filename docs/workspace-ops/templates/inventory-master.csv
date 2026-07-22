@@ -1,0 +1,23 @@
+Part#,Name,Category,VendorPN,ABC,HomeLocation,QtyOnHand,Min,Max,Owner,SerialAssetTag,Photo,Notes
+ELE-BRN-001,V5 Robot Brain,ELE,276-4810,A,BK-LOCK-1,6,6,8,Club,V5B-001,,Serialize each; see asset log tab
+ELE-MOT-011,V5 Smart Motor 11W,ELE,276-4840,B,BK-A-1-01,24,16,32,Club,,,Count exact; quarterly cycle count
+ELE-BAT-001,V5 Robot Battery (Li-ion),ELE,276-4811,A,BK-LOCK-1,8,8,10,Club,V5BAT-001,,Log cycles/health; inspect on check-in
+ELE-CTL-001,V5 Controller,ELE,276-4820,A,BK-LOCK-1,6,6,8,Club,V5C-001,,Issued not browsed
+ELE-SNS-ROT,Rotation Sensor,ELE,276-6050,B,BK-A-1-04,10,6,12,Club,,,
+STR-CCH-1x2,C-Channel 1x2x1 (35 hole),STR,276-2306,B,BK-B-2-01,30,20,40,Club,,,Store long parts vertical
+STR-CCH-2x2,C-Channel 2x2 (35 hole),STR,276-2308,B,BK-B-2-02,18,12,24,Club,,,
+STR-STB-1x25,Standoff 1x25mm,STR,275-1069,C,BK-B-3-05,120,60,200,Club,,,Manage by min/max
+MOT-SHF-3IN,Steel Shaft 3in,MOT,276-2098,B,BK-C-1-02,40,24,60,Club,,,
+MOT-GER-84T,Gear 84T,MOT,276-2189,B,BK-C-2-03,16,10,24,Club,,,
+MOT-BRG-FLT,Bearing Flat,MOT,276-1209,C,BK-C-3-01,200,100,300,Club,,,Weigh-count OK
+WHL-OMN-4IN,Omni Wheel 4in,WHL,276-3010,B,BK-D-1-01,16,8,24,Club,,,
+HW-SCR-032-050,"Screw 8-32 x 1/2in, Torx",HW,276-2004,C,LN-05 / BK-E-1-02,600,200,1000,Club,,,Line-side kanban + back reserve
+HW-SCR-032-025,"Screw 8-32 x 1/4in, Torx",HW,276-2003,C,LN-04 / BK-E-1-01,700,200,1000,Club,,,
+HW-NUT-NYL,Nylock Nut 8-32,HW,276-2010,C,LN-06 / BK-E-1-05,500,200,800,Club,,,
+CON-ZIP-100,Zip Tie 4in,CON,,C,LN-01,300,150,500,Club,,,Two-bin kanban
+CON-RBD-33,Rubber Band #33,CON,,C,LN-02,400,200,600,Club,,,
+CON-LOC-242,Loctite 242 (blue),CON,,C,BK-F-1-01,2,1,3,Club,,,FEFO: write open date; retire when old
+PNE-CYL-2IN,Pneumatic Cylinder 2in,PNE,276-6725,B,BK-D-3-01,8,4,12,Club,,,
+BB-MOT-N20,N20 Gearmotor 6V,BB,,B,BK-G-1-01,12,6,20,Club,,,BattleBots drivetrain
+BB-BAT-2S,LiPo 2S 300mAh,BB,,A,CH-SAFE-1,10,6,14,Club,LIPO-001,,STORE IN FIRE-SAFE; log cycles; inspect
+TOOL-HEX-564,Hex Key 5/64in,TOOL,,B,per-team,8,6,10,Club,,,One per team in team color

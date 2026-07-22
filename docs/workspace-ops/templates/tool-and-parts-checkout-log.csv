@@ -1,0 +1,6 @@
+AssetTag_or_Item,Type,CheckedOutBy,DateOut,ExpectedReturn,DateIn,ConditionOut,ConditionIn,LoggedBy,Notes
+V5B-001,V5 Brain,Team 3,2026-09-06,2026-11-15,,Good,,Stockroom Mgr,Issued against BOM-2026-014
+V5BAT-001,V5 Battery,Team 3,2026-09-06,2026-11-15,,Good (health 98%),,Stockroom Mgr,Inspect on return
+LIPO-001,LiPo 2S,Team 5,2026-09-06,2026-09-06,2026-09-06,Good,Good,Safety Officer,Charged & returned same session
+TOOL-BARCUT-1,Bar Cutter (shared),Team 2,2026-09-07,2026-09-07,,Good,,Stockroom Mgr,Return same session; adult-supervised
+TOOL-DRILL-1,Cordless Drill,Team 1,2026-09-07,2026-09-07,,Good,,Stockroom Mgr,

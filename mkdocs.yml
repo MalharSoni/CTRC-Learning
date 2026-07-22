@@ -141,6 +141,17 @@ nav:
     - mechanism-examples/index.md
   - Contribution:
     - contribution/index.md
+  - Workspace Ops:
+    - workspace-ops/index.md
+    - "Digital Systems": workspace-ops/digital-systems.md
+    - "Budget & Shopping List": workspace-ops/budget-and-shopping-list.md
+    - "Roles, Safety & Sustaining": workspace-ops/roles-safety-sustain.md
+    - Templates:
+      - workspace-ops/templates/index.md
+      - "Part Numbering & Locations": workspace-ops/templates/part-numbering-and-bin-locations.md
+      - "Color-Coding Key": workspace-ops/templates/color-coding-key.md
+      - "5S Blitz Runbook": workspace-ops/templates/5s-blitz-runbook.md
+      - "Daily Reset & Weekly Audit": workspace-ops/templates/daily-reset-weekly-audit.md
 
 markdown_extensions:
   - abbr
